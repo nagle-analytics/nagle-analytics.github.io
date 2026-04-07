@@ -1,19 +1,210 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Nagle Analytics</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 40px;
-        background: #f7f7f7;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Welcome to Nagle Analytics</h1>
-    <p>Your website is now live.</p>
-    <p>We will build the modern interactive version next!</p>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Nagle Analytics — Environmental Data & Viz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Fonts: system stack is fine; swap for Inter if you like -->
+  <style>
+    /* Reset + base */
+    :root {
+      --bg-1: #0f172a; /* slate-900 */
+      --bg-2: #111827; /* gray-900 */
+      --accent: #22d3ee; /* cyan-400 */
+      --accent-2: #06b6d4; /* cyan-500 */
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.75);
+      --panel: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background: linear-gradient(130deg, var(--bg-1), var(--bg-2));
+      animation: bgShift 16s ease-in-out infinite alternate;
+    }
+    @keyframes bgShift {
+      0% { background: linear-gradient(130deg, var(--bg-1), var(--bg-2)); }
+      100% { background: linear-gradient(130deg, #0b1020, #0c1b29); }
+    }
+
+    /* Layout wrappers */
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    header { padding: 48px 0 16px; }
+    h1 { font-size: clamp(28px, 6vw, 56px); line-height: 1.05; margin: 0 0 8px; }
+    .lead { font-size: clamp(16px, 2.7vw, 22px); color: var(--muted); margin: 0; }
+
+    /* Panel card */
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      backdrop-filter: blur(5px);
+      padding: 16px;
+    }
+
+    /* Grid links */
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    @media (min-width: 700px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .card {
+      display: block; text-decoration: none; color: var(--text);
+      background: var(--panel); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+    .card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Section titles */
+    section { margin: 28px 0; }
+    h2 { font-size: clamp(22px, 3.6vw, 28px); margin: 0 0 12px; }
+
+    /* Footer */
+    footer { padding: 28px 0 48px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    /* Button */
+    .btn {
+      display: inline-block; padding: 10px 14px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--panel);
+      color: var(--text); text-decoration: none;
+      transition: background 180ms ease, border-color 180ms ease;
+    }
+    .btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
+  </style>
+  <!-- D3 v7 from jsDelivr CDN (official distribution) -->
+  <script defer src="https://cdn.jsdelivr.netin.js</script>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="container">
+    <h1>Nagle Analytics</h1>
+    <p class="lead">Interactive environmental data & visualization — maps, trends, and insights.</p>
+  </header>
+
+  <main class="container">
+    <!-- LIVE CHART -->
+    <section aria-labelledby="chart-title" class="panel">
+      <h2 id="chart-title">Live Time‑Series (auto‑updates)</h2>
+      <svg id="liveChart" role="img" aria-label="Auto-updating line chart" style="width:100%; height:320px;"></svg>
+      <p style="color:var(--muted); font-size:13px; margin-top:6px">Refreshing every 3s with placeholder data.</p>
+    </section>
+
+    <!-- LINKS GRID (point to articles or other pages) -->
+    <section aria-labelledby="links-title">
+      <h2 id="links-title">Explore</h2>
+      <div class="grid">
+        articles.html
+          <h3>Articles</h3>
+          <p>Notes, reports, and explanations of findings.</p>
+        </a>
+        <a class="card" href="maps.html">
+          <p>Interactive station maps, detections, layers.</p>
+        </a>
+        viz-gallery.html
+          <h3>Viz Gallery</h3>
+          <p>D3 examples: bar, line, choropleth, and more.</p>
+        </a>
+      </div>
+      <p style="margin-top:10px; color:var(--muted);">You can change the targets to external articles (e.g., CDPR reports) or keep them as internal pages we’ll add next.</p>
+    </section>
+
+    <!-- YOUTUBE EMBED -->
+    <section aria-labelledby="video-title" class="panel">
+      <h2 id="video-title">Featured Video</h2>
+      <!-- Replace the src with your YouTube video ID -->
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+        <iframe
+          src="https://www.youtube.com/watch?v=-L8S1lIRg50"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+      <p style="color:var(--muted); font-size:13px; margin-top:6px;">Swap the embed URL with your own YouTube link.</p>
+      <a class="btn" href="https://www.youtube.comntent = new Date().getFullYear();
+
+    // D3 live chart (auto-refreshing placeholder data)
+    const svg = d3.select("#liveChart");
+    const margin = { top: 14, right: 18, bottom: 26, left: 38 };
+    let width = 960, height = 320;
+    function getDimensions() {
+      const node = svg.node();
+      const w = node.getBoundingClientRect().width || 960;
+      width = w; height = 320;
+    }
+    getDimensions();
+    const innerW = () => width - margin.left - margin.right;
+    const innerH = () => height - margin.top - margin.bottom;
+
+    // Initial data
+    let data = d3.range(16).map(i => ({ x: i, y: Math.round(Math.random()*40) + 5 }));
+
+    function render() {
+      svg.attr("viewBox", `0 0 ${width} ${height}`);
+
+      const x = d3.scaleLinear().domain(d3.extent(data, d => d.x)).range([0, innerW()]);
+      const y = d3.scaleLinear().domain([0, d3.max(data, d => d.y)]).nice().range([innerH(), 0]);
+
+      const root = svg.selectAll(".root")
+        .data([null])
+        .join("g")
+        .attr("class", "root")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      root.selectAll(".x-axis")
+        .data([null])
+        .join("g")
+        .attr("class","x-axis")
+        .attr("transform", `translate(0,${innerH()})`)
+        .call(d3.axisBottom(x).ticks(8));
+
+      root.selectAll(".y-axis")
+        .data([null])
+        .join("g")
+        .attr("class","y-axis")
+        .call(d3.axisLeft(y));
+
+      const line = d3.line().x(d => x(d.x)).y(d => y(d.y)).curve(d3.curveMonotoneX);
+
+      root.selectAll(".series")
+        .data([data])
+        .join("path")
+        .attr("class", "series")
+        .attr("fill", "none")
+        .attr("stroke", getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#22d3ee')
+        .attr("stroke-width", 2)
+        .transition().duration(600)
+        .attr("d", line);
+
+      const circles = root.selectAll("circle").data(data, d => d.x);
+      circles.join(
+        enter => enter.append("circle")
+          .attr("cx", d => x(d.x))
+          .attr("cy", d => y(d.y))
+          .attr("r", 0)
+          .attr("fill", getComputedStyle(document.documentElement).getPropertyValue('--accent-2').trim() || '#06b6d4')
+          .transition().duration(400).attr("r", 3.8),
+        update => update.transition().duration(400)
+          .attr("cx", d => x(d.x))
+          .attr("cy", d => y(d.y)),
+        exit => exit.transition().duration(200).attr("r", 0).remove()
+      );
+    }
+
+    render();
+    window.addEventListener('resize', () => { getDimensions(); render(); });
+
+    // Auto refresh data every 3s
+    setInterval(() => {
+      data = d3.range(16).map(i => ({ x: i, y: Math.round(Math.random()*40) + 5 }));
+      render();
+    }, 3000);
+  </script>
+</body>
 </html>
