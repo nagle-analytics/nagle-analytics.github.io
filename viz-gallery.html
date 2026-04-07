@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Viz Gallery — Nagle Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { margin:0; font-family: ui-sans-serif, system-ui; color:#fff;
+           background: linear-gradient(130deg, #0f172a, #111827); }
+    .container { max-width: 1040px; margin: 0 auto; padding: 28px 20px; }
+    .panel { background: rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12);
+             border-radius: 12px; padding:16px; }
+  </style>
+  https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js</script>
+</head>
+<body>
+  <div class="container">
+    <h1>Viz Gallery</h1>
+    <p>index.html← Back to Home</a></p>
+
+    <div class="panel">
+      <h2>Example Bar Chart (D3)</h2>
+      <svg id="bar" style="width:100%; height:260px;"></svg>
+    </div>
+  </div>
+
+  <script>
+    const svg = d3.select("#bar");
+    const margin = {top: 16, right: 20, bottom: 30, left: 40};
+    const width = svg.node().getBoundingClientRect().width;
+    const height = 260;
+    svg.attr("viewBox", `0 0 ${width} ${height}`);
+
+    const innerW = width - margin.left - margin.right;
+    const innerH = height - margin.top - margin.bottom;
+
+    const data = [
+      {label:"A", value:12},
+      {label:"B", value:23},
+      {label:"C", value:8},
+      {label:"D", value:15}
+    ];
+
+    const x = d3.scaleBand().domain(data.map(d=>d.label)).range([0, innerW]).padding(0.2);
+    const y = d3.scaleLinear().domain([0, d3.max(data,d=>d.value)]).nice().range([innerH, 0]);
+
+    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    g.append("g").attr("transform", `translate(0,${innerH})`).call(d3.axisBottom(x));
+    g.append("g").call(d3.axisLeft(y));
+
+    g.selectAll("rect").data(data).join("rect")
+      .attr("x", d=>x(d.label))
+      .attr("y", d=>y(d.value))
+      .attr("width", x.bandwidth())
+      .attr("height", d=>innerH - y(d.value))
+      .attr("fill", "#22d3ee")
+      .append("title").text(d=>`${d.label}: ${d.value}`);
+  </script>
+</body>
+</html>
