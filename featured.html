@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Featured | Nagle Analytics</title>
+
+  <meta
+    name="description"
+    content="Featured data visualization projects from Nagle Analytics, including the USL Cup Race Tracker."
+  />
+
+  <style>
+    :root {
+      --bg: #071018;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-card-strong: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --accent: #52f2c2;
+      --accent-2: #7c5cff;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-lg: 28px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #071018;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .dynamic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background: #071018;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 16, 24, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 104px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.88rem;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(82, 242, 194, 0.12);
+    }
+
+    h1 {
+      max-width: 940px;
+      margin: 24px 0 22px;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 10%, #52f2c2 50%, #a38cff 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    .button.primary {
+      color: #06100d;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    section {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .project-shell {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin-top: 0;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .panel h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 18px;
+    }
+
+    .panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.86rem;
+    }
+
+    .tracker-preview {
+      min-height: 520px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
+        rgba(255,255,255,0.035);
+      background-size: 100% 16.66%, 14.28% 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rank-label {
+      position: absolute;
+      left: 18px;
+      color: rgba(248, 250, 252, 0.5);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .rank-label.one { top: 11%; }
+    .rank-label.two { top: 27%; }
+    .rank-label.three { top: 44%; }
+    .rank-label.four { top: 61%; }
+    .rank-label.five { top: 78%; }
+
+    .week-labels {
+      position: absolute;
+      left: 70px;
+      right: 24px;
+      bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      color: rgba(248, 250, 252, 0.5);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .race-line {
+      position: absolute;
+      left: 70px;
+      right: 44px;
+      height: 4px;
+      border-radius: 999px;
+      transform-origin: left center;
+      opacity: 0.9;
+    }
+
+    .race-line.a {
+      top: 22%;
+      transform: rotate(8deg);
+      background: linear-gradient(90deg, #52f2c2, #7c5cff);
+    }
+
+    .race-line.b {
+      top: 42%;
+      transform: rotate(-7deg);
+      background: linear-gradient(90deg, #ffffff, #52f2c2);
+      opacity: 0.6;
+    }
+
+    .race-line.c {
+      top: 62%;
+      transform: rotate(5deg);
+      background: linear-gradient(90deg, #7c5cff, #ffffff);
+      opacity: 0.5;
+    }
+
+    .race-line.d {
+      top: 76%;
+      transform: rotate(-3deg);
+      background: linear-gradient(90deg, rgba(248,250,252,0.4), rgba(82,242,194,0.7));
+      opacity: 0.5;
+    }
+
+    .team-dot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 24px rgba(82, 242, 194, 0.7);
+      animation: floatDot 4.4s ease-in-out infinite;
+    }
+
+    .team-dot.a { top: 19%; left: 18%; }
+    .team-dot.b { top: 38%; left: 42%; animation-delay: 0.4s; background: var(--accent-2); }
+    .team-dot.c { top: 59%; left: 66%; animation-delay: 0.8s; background: #ffffff; }
+    .team-dot.d { top: 72%; left: 84%; animation-delay: 1.2s; background: #52f2c2; }
+
+    @keyframes floatDot {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.07em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .timeline strong {
+      color: var(--accent);
+    }
+
+    .timeline p {
+      margin: 0;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 70px 30px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.14), transparent 36rem),
+        radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.18), transparent 34rem),
+        rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      margin: 0 auto 16px;
+      max-width: 820px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      max-width: 720px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    footer {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 44px 0 58px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .project-shell,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .timeline li {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
+
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Nagle Analytics</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="featured.html">Featured</a>
+          <a href="viz-gallery.html">Gallery</a>
+          <a href="about.html">About</a>
+          <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">
+          <span class="pulse" aria-hidden="true"></span>
+          Featured visualization
+        </span>
+
+        <h1>
+          USL Cup <span class="gradient-text">Race Tracker.</span>
+        </h1>
+
+        <p class="hero-copy">
+          A dynamic sports analytics project designed to show how teams rise,
+          fall, separate, and shift position as the cup race unfolds week by week.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#preview">View tracker preview</a>
+          <a class="button secondary" href="index.html">Back to homepage</a>
+        </div>
+      </section>
+
+      <section id="preview">
+        <div class="project-shell">
+          <div class="panel">
+            <h2>Project concept</h2>
+            <p>
+              The USL Cup Race Tracker will visualize weekly standings movement
+              so the season feels alive instead of static.
+            </p>
+            <p>
+              The final version will focus on team trajectories, rank movement,
+              points progression, and key moments when teams climb, drop, or pull
+              away from the field.
+            </p>
+
+            <div class="tag-list">
+              <span class="tag">Sports analytics</span>
+              <span class="tag">Bump chart</span>
+              <span class="tag">Weekly standings</span>
+              <span class="tag">Interactive chart</span>
+              <span class="tag">Season movement</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="tracker-preview" aria-label="USL Cup Race Tracker preview">
+              <span class="rank-label one">1st</span>
+              <span class="rank-label two">2nd</span>
+              <span class="rank-label three">3rd</span>
+              <span class="rank-label four">4th</span>
+              <span class="rank-label five">5th</span>
+
+              <span class="race-line a"></span>
+              <span class="race-line b"></span>
+              <span class="race-line c"></span>
+              <span class="race-line d"></span>
+
+              <span class="team-dot a"></span>
+              <span class="team-dot b"></span>
+              <span class="team-dot c"></span>
+              <span class="team-dot d"></span>
+
+              <div class="week-labels">
+                <span>W1</span>
+                <span>W2</span>
+                <span>W3</span>
+                <span>W4</span>
+                <span>W5</span>
+                <span>W6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>01</strong>
+            <span>Flagship visualization in development</span>
+          </div>
+
+          <div class="metric">
+            <strong>Wk</strong>
+            <span>Weekly movement as the core storytelling unit</span>
+          </div>
+
+          <div class="metric">
+            <strong>↑↓</strong>
+            <span>Rank changes, momentum, and movement</span>
+          </div>
+
+          <div class="metric">
+            <strong>⚽</strong>
+            <span>Sports analytics as a visual data story</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel">
+          <h2>What the final chart should show</h2>
+
+          <ol class="timeline">
+            <li>
+              <strong>Weekly rank</strong>
+              <p>
+                Where each team sits each week, shown as a movement path across
+                the season.
+              </p>
+            </li>
+
+            <li>
+              <strong>Points race</strong>
+              <p>
+                How teams accumulate points and separate from the rest of the
+                field over time.
+              </p>
+            </li>
+
+            <li>
+              <strong>Momentum</strong>
+              <p>
+                Which teams are rising, falling, staying steady, or making late
+                pushes.
+              </p>
+            </li>
+
+            <li>
+              <strong>Interaction</strong>
+              <p>
+                Team highlighting, tooltips, filtering, and a cleaner way to
+                follow one team through the race.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta">
+          <h2>The real chart comes next.</h2>
+          <p>
+            Once the USL Cup data structure is defined, this preview will become
+            the live interactive tracker for weekly movement, standings, points,
+            and team trajectories.
+          </p>
+
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="button primary" href="viz-gallery.html">View gallery</a>
+            <a class="button secondary" href="about.html">About Nagle Analytics</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Nagle Analytics</span>
+      <span>
+        Built on GitHub Pages ·
+        <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const canvas = document.getElementById("dynamic-bg");
+    const ctx = canvas.getContext("2d");
+
+    let width;
+    let height;
+    let particles = [];
+
+    const particleCount = 72;
+    const maxDistance = 150;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.8 + 0.8
+        });
+      }
+    }
+
+    function drawBackgroundGlow() {
+      const gradientOne = ctx.createRadialGradient(
+        width * 0.18,
+        height * 0.18,
+        0,
+        width * 0.18,
+        height * 0.18,
+        width * 0.55
+      );
+
+      gradientOne.addColorStop(0, "rgba(82, 242, 194, 0.18)");
+      gradientOne.addColorStop(1, "rgba(82, 242, 194, 0)");
+
+      const gradientTwo = ctx.createRadialGradient(
+        width * 0.82,
+        height * 0.12,
+        0,
+        width * 0.82,
+        height * 0.12,
+        width * 0.5
+      );
+
+      gradientTwo.addColorStop(0, "rgba(124, 92, 255, 0.22)");
+      gradientTwo.addColorStop(1, "rgba(124, 92, 255, 0)");
+
+      ctx.fillStyle = "#071018";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientOne;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientTwo;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    function drawParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(248, 250, 252, 0.55)";
+        ctx.fill();
+      }
+    }
+
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            const opacity = 1 - distance / maxDistance;
+
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(82, 242, 194, ${opacity * 0.14})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      drawBackgroundGlow();
+      drawConnections();
+      drawParticles();
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createParticles();
+    });
+
+    resizeCanvas();
+    createParticles();
+    animate();
+  </script>
+</body>
+</html>
