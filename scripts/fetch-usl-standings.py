@@ -284,7 +284,7 @@ def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     """
     html = fetch_html(url)
 
-    try:
+try:
     tables = pd.read_html(StringIO(html))
 except ValueError:
     tables = []
