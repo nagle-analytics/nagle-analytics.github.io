@@ -1,0 +1,9 @@
+{
+  "last_updated": "not-yet-connected",
+  "source": "https://www.uslchampionship.com/league-standings",
+  "status": "placeholder",
+  "conferences": {
+    "Eastern Conference": [],
+    "Western Conference": []
+  }
+}
