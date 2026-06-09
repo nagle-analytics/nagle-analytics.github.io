@@ -17,6 +17,7 @@ import csv
 import json
 import re
 import sys
+from io import StringIO
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -244,17 +245,33 @@ def parse_standings_table(df: pd.DataFrame) -> List[StandingRow]:
 
 
 def fetch_html(url: str) -> str:
-    """Download page HTML."""
+    """Download page HTML and verify that the response is usable."""
     headers = {
         "User-Agent": (
-            "Mozilla/5.0 NagleAnalyticsBot/1.0 "
-            "(https://nagle-analytics.github.io/)"
-        )
+            "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
+            "+https://nagle-analytics.github.io/)"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     }
 
     response = requests.get(url, headers=headers, timeout=30)
     response.raise_for_status()
-    return response.text
+
+    html = response.text or ""
+
+    if not html.strip():
+      raise RuntimeError("Received an empty response from the USL standings page.")
+
+    if "<html" not in html.lower():
+      raise RuntimeError(
+          "The USL standings page response did not look like HTML. "
+          f"Content-Type: {response.headers.get('content-type', 'unknown')}"
+      )
+
+    print(f"[INFO] Downloaded {len(html):,} characters from USL standings page.")
+    print(f"[INFO] Content-Type: {response.headers.get('content-type', 'unknown')}")
+
+    return html
 
 
 def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
@@ -268,9 +285,16 @@ def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     html = fetch_html(url)
 
     try:
-        tables = pd.read_html(html)
-    except ValueError:
-        tables = []
+    tables = pd.read_html(StringIO(html))
+except ValueError:
+    tables = []
+except Exception as exc:
+    html_preview = html[:500].replace("\n", " ")
+    raise RuntimeError(
+        "pandas.read_html failed while parsing the USL standings page. "
+        f"Original error: {exc}. "
+        f"HTML preview: {html_preview}"
+    ) from exc
 
     normalized_tables = []
     for table in tables:
