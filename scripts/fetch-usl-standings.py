@@ -273,7 +273,6 @@ def fetch_html(url: str) -> str:
 
     return html
 
-
 def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     """
     Read standings tables from the official page.
@@ -284,23 +283,31 @@ def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     """
     html = fetch_html(url)
 
-try:
-    tables = pd.read_html(StringIO(html))
-except ValueError:
-    tables = []
-except Exception as exc:
-    html_preview = html[:500].replace("\n", " ")
-    raise RuntimeError(
-        "pandas.read_html failed while parsing the USL standings page. "
-        f"Original error: {exc}. "
-        f"HTML preview: {html_preview}"
-    ) from exc
+    try:
+        tables = pd.read_html(StringIO(html))
+    except ValueError:
+        tables = []
+    except Exception as exc:
+        html_preview = html[:500].replace("\n", " ")
+        raise RuntimeError(
+            "pandas.read_html failed while parsing the USL standings page. "
+            f"Original error: {exc}. "
+            f"HTML preview: {html_preview}"
+        ) from exc
+
+    print(f"[INFO] pandas found {len(tables)} HTML table(s).")
 
     normalized_tables = []
+
     for table in tables:
         table = flatten_columns(table)
+
+        print(f"[INFO] Table columns found: {list(table.columns)}")
+
         if looks_like_standings_table(table):
             normalized_tables.append(table)
+
+    print(f"[INFO] Found {len(normalized_tables)} possible standings table(s).")
 
     if len(normalized_tables) < 2:
         raise RuntimeError(
@@ -319,7 +326,6 @@ except Exception as exc:
         "Eastern Conference": eastern_rows,
         "Western Conference": western_rows,
     }
-
 
 def get_next_week_label(snapshot_date: str) -> str:
     """
