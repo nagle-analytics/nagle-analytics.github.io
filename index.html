@@ -1,219 +1,807 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Nagle Analytics — Environmental Data & Viz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Minimal, modern CSS -->
+  <title>Nagle Analytics | Interactive Data Visualization</title>
+
+  <meta
+    name="description"
+    content="Nagle Analytics is a data visualization brand focused on interactive charts, maps, sports analytics, and visual data stories."
+  />
+
   <style>
     :root {
-      --bg-1: #0f172a; /* slate-900 */
-      --bg-2: #111827; /* gray-900 */
-      --accent: #22d3ee; /* cyan-400 */
-      --accent-2: #06b6d4; /* cyan-500 */
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.78);
-      --panel: rgba(255,255,255,0.09);
-      --border: rgba(255,255,255,0.16);
+      --bg: #071018;
+      --bg-soft: #0d1b2a;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-card-strong: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --accent: #52f2c2;
+      --accent-2: #7c5cff;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --max-width: 1160px;
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
+        linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
       color: var(--text);
-      background: linear-gradient(130deg, var(--bg-1), var(--bg-2));
-      animation: bgShift 16s ease-in-out infinite alternate;
-    }
-    @keyframes bgShift {
-      0%   { background: linear-gradient(130deg, var(--bg-1), var(--bg-2)); }
-      100% { background: linear-gradient(130deg, #0b1020, #0c1b29); }
+      line-height: 1.6;
     }
 
-    /* Layout */
-    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-    header { padding: 56px 0 20px; }
-    h1 { font-size: clamp(28px, 6vw, 56px); line-height: 1.05; margin: 0 0 10px; }
-    .lead { font-size: clamp(16px, 2.5vw, 22px); color: var(--muted); margin: 0; }
-
-    /* Panel card */
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      backdrop-filter: blur(6px);
-      padding: 16px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    /* Grid links */
-    section { margin: 28px 0; }
-    h2 { font-size: clamp(22px, 3.6vw, 28px); margin: 0 0 12px; }
-    .grid { display: grid; gap: 16px; grid-template-columns: repeat(1, minmax(0, 1fr)); }
-    @media (min-width: 700px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .page {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 16, 24, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 104px 0 72px;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.88rem;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(82, 242, 194, 0.12);
+    }
+
+    h1 {
+      margin: 24px 0 20px;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 10%, #52f2c2 50%, #a38cff 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    .button.primary {
+      color: #06100d;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 520px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045)),
+        rgba(255, 255, 255, 0.04);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle, rgba(82, 242, 194, 0.12), transparent 26%),
+        radial-gradient(circle, rgba(124, 92, 255, 0.12), transparent 28%);
+      animation: drift 12s linear infinite;
+    }
+
+    @keyframes drift {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .chart-card {
+      position: absolute;
+      inset: 24px;
+      z-index: 2;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(7, 16, 24, 0.74);
+      backdrop-filter: blur(18px);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chart-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .chart-top h2 {
+      margin: 0;
+      letter-spacing: -0.04em;
+      font-size: 1.35rem;
+    }
+
+    .chart-top p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .status-pill {
+      white-space: nowrap;
+      color: var(--accent);
+      border: 1px solid rgba(82, 242, 194, 0.35);
+      background: rgba(82, 242, 194, 0.08);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .mock-chart {
+      height: 300px;
+      margin: 30px 0 22px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      align-items: end;
+      padding: 18px;
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 100% 25%, 16.66% 100%;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .bar {
+      border-radius: 999px 999px 10px 10px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      min-height: 36px;
+      animation: floatBar 3.2s ease-in-out infinite;
+    }
+
+    .bar:nth-child(1) { height: 44%; animation-delay: 0s; }
+    .bar:nth-child(2) { height: 72%; animation-delay: 0.15s; }
+    .bar:nth-child(3) { height: 56%; animation-delay: 0.3s; }
+    .bar:nth-child(4) { height: 86%; animation-delay: 0.45s; }
+    .bar:nth-child(5) { height: 64%; animation-delay: 0.6s; }
+    .bar:nth-child(6) { height: 92%; animation-delay: 0.75s; }
+
+    @keyframes floatBar {
+      0%, 100% { transform: scaleY(1); opacity: 0.85; }
+      50% { transform: scaleY(0.88); opacity: 1; }
+    }
+
+    .chart-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    section {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .feature-copy,
+    .feature-visual,
     .card {
-      display: block; text-decoration: none; color: var(--text);
-      background: var(--panel); border: 1px solid var(--border);
-      border-radius: 14px; padding: 18px;
-      transition: background 180ms ease, transform 180ms ease;
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
     }
-    .card:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
-    .card h3 { margin: 0 0 6px; font-size: 18px; }
-    .card p { margin: 0; color: var(--muted); font-size: 14px; }
 
-    /* Footer */
-    footer { padding: 30px 0 60px; color: var(--muted); font-size: 14px; text-align: center; }
-
-    /* Button */
-    .btn {
-      display: inline-block; padding: 10px 14px; border-radius: 10px;
-      border: 1px solid var(--border); background: var(--panel);
-      color: var(--text); text-decoration: none;
-      transition: background 180ms ease, border-color 180ms ease;
+    .feature-copy {
+      padding: 30px;
     }
-    .btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
+
+    .feature-copy h3 {
+      margin: 0 0 12px;
+      font-size: 2rem;
+      letter-spacing: -0.05em;
+    }
+
+    .feature-copy p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.86rem;
+    }
+
+    .feature-visual {
+      min-height: 440px;
+      padding: 26px;
+      overflow: hidden;
+    }
+
+    .bump-placeholder {
+      height: 100%;
+      min-height: 380px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
+        rgba(255,255,255,0.035);
+      background-size: 100% 20%, 16.66% 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bump-line {
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform-origin: left center;
+      opacity: 0.9;
+    }
+
+    .bump-line.one {
+      top: 28%;
+      transform: rotate(7deg);
+    }
+
+    .bump-line.two {
+      top: 48%;
+      transform: rotate(-5deg);
+      background: linear-gradient(90deg, #ffffff, var(--accent));
+      opacity: 0.55;
+    }
+
+    .bump-line.three {
+      top: 67%;
+      transform: rotate(4deg);
+      background: linear-gradient(90deg, var(--accent-2), #ffffff);
+      opacity: 0.45;
+    }
+
+    .bump-dot {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 24px rgba(82, 242, 194, 0.7);
+      animation: moveDot 5s ease-in-out infinite;
+    }
+
+    .bump-dot.a { top: 25%; left: 12%; }
+    .bump-dot.b { top: 45%; left: 48%; animation-delay: 0.5s; background: var(--accent-2); }
+    .bump-dot.c { top: 64%; left: 78%; animation-delay: 1s; background: #ffffff; }
+
+    @keyframes moveDot {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-strong);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(82,242,194,0.22), rgba(124,92,255,0.22));
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+    }
+
+    .about-panel {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      padding: 30px;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+      margin-top: 0;
+    }
+
+    .tool-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .tool {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+
+    footer {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 44px 0 58px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .feature,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .hero-panel {
+        min-height: 460px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .chart-caption {
+        flex-direction: column;
+      }
+
+      .tool-list {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-copy,
+      .feature-visual,
+      .about-panel,
+      .card {
+        border-radius: 22px;
+      }
+    }
   </style>
-
-  <!-- D3 v7 (official distribution) -->
-  https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js</script>
 </head>
+
 <body>
-
-  <!-- HERO -->
-  <header class="container">
-    <h1>Nagle Analytics</h1>
-    <p class="lead">Interactive environmental data &amp; visualization — maps, trends, and insights.</p>
-  </header>
-
-  <main class="container">
-    <!-- LIVE CHART -->
-    <section aria-labelledby="chart-title" class="panel">
-      <h2 id="chart-title">Live Time‑Series (auto‑updates)</h2>
-      <svg id="liveChart" role="img" aria-label="Auto-updating line chart" style="width:100%; height:320px;"></svg>
-      <p style="color:var(--muted); font-size:13px; margin-top:6px">Refreshing every 3s with placeholder data.</p>
-    </section>
-
-    <!-- LINKS GRID (internal or external) -->
-    <section aria-labelledby="links-title">
-      <h2 id="links-title">Explore</h2>
-      <div class="grid">
-        <!-- Change href to internal pages (articles.html) or external links -->
-        articles.html
-          <h3>Articles</h3>
-          <p>Notes, reports, and explanations of findings.</p>
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="#">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Nagle Analytics</span>
         </a>
 
-        maps.html
-          <h3>Maps</h3>
-          <p>Interactive station maps, detections, layers.</p>
-        </a>
-
-        viz-gallery.html
-          <h3>Viz Gallery</h3>
-          <p>D3 examples: bar, line, choropleth, and more.</p>
-        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#featured">Featured</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+        </nav>
       </div>
-      <p style="margin-top:10px; color:var(--muted);">Use internal pages or paste external URLs (e.g., CDPR articles, GitHub repos, docs).</p>
-    </section>
+    </header>
 
-    <!-- YOUTUBE EMBED -->
-    <section aria-labelledby="video-title" class="panel">
-      <h2 id="video-title">Featured Video</h2>
-      <!-- Replace src with your YouTube embed URL: https://www.youtube.com/embed/<VIDEO_ID> -->
-      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
-        https://www.youtube.com/embed/-L8S1lIRg50
-        </iframe>
-      </div>
-      <p style="color:var(--muted); font-size:13px; margin-top:6px;">Swap the embed URL with your own video.</p>
-      https://www.youtube.com/@YourChannelHereVisit YouTube Channel</a>
-    </section>
-  </main>
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">
+            <span class="pulse" aria-hidden="true"></span>
+            Interactive data visualization lab
+          </span>
 
-  <footer class="container">
-    © <span id="year"></span> Nagle Analytics — Built with D3 &amp; static HTML • Hosted on GitHub Pages
-  </footer>
+          <h1>
+            Make data <span class="gradient-text">movement</span> visible.
+          </h1>
 
-  <!-- Page scripts -->
+          <p class="hero-copy">
+            Nagle Analytics is a home for visual experiments, sports analytics,
+            interactive maps, and data stories built from real-world datasets.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#featured">Explore featured visualization</a>
+            <a class="button secondary" href="#gallery">View gallery</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Animated chart preview">
+          <div class="chart-card">
+            <div class="chart-top">
+              <div>
+                <h2>USL Cup Race Tracker</h2>
+                <p>Weekly movement preview</p>
+              </div>
+              <span class="status-pill">Coming soon</span>
+            </div>
+
+            <div class="mock-chart" aria-hidden="true">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+
+            <div class="chart-caption">
+              <span>Rank movement, points, and team trajectories</span>
+              <span>Built for interactive storytelling</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured">
+        <div class="section-heading">
+          <h2>Featured visualization</h2>
+          <p>
+            The first flagship project will be a dynamic chart showing how USL Cup
+            teams move through the race week by week.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-copy">
+            <h3>USL Cup Race Tracker</h3>
+            <p>
+              This project will visualize weekly standings movement, team momentum,
+              rank changes, and points progression across the cup race.
+            </p>
+            <p>
+              The goal is to make the season feel alive: teams climbing, falling,
+              separating from the pack, and changing position as results come in.
+            </p>
+
+            <div class="tag-list">
+              <span class="tag">Sports analytics</span>
+              <span class="tag">Animated chart</span>
+              <span class="tag">Weekly movement</span>
+              <span class="tag">Interactive storytelling</span>
+            </div>
+          </div>
+
+          <div class="feature-visual">
+            <div class="bump-placeholder" aria-label="USL Cup bump chart placeholder">
+              <span class="bump-line one"></span>
+              <span class="bump-line two"></span>
+              <span class="bump-line three"></span>
+              <span class="bump-dot a"></span>
+              <span class="bump-dot b"></span>
+              <span class="bump-dot c"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="section-heading">
+          <h2>Visualization gallery</h2>
+          <p>
+            A growing collection of chart experiments, public data stories,
+            sports analytics, and interactive maps.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <article class="card">
+            <div class="card-icon">⚽</div>
+            <h3>Sports analytics</h3>
+            <p>
+              Standings movement, rankings, team trajectories, player trends,
+              and season-long data stories.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🗺️</div>
+            <h3>Maps</h3>
+            <p>
+              Spatial visualizations that help show patterns, clusters,
+              movement, and regional differences.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📊</div>
+            <h3>Data stories</h3>
+            <p>
+              Visual explanations that combine narrative, charts, and
+              interpretation to make data easier to explore.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧪</div>
+            <h3>Experiments</h3>
+            <p>
+              Small visual prototypes testing new chart types, layouts,
+              interactions, and storytelling formats.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🌎</div>
+            <h3>Public data</h3>
+            <p>
+              Visualizations using open datasets from government, science,
+              sports, and public-interest sources.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🛠️</div>
+            <h3>Tools</h3>
+            <p>
+              Reusable workflows, templates, and web components for building
+              better data visualization projects.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-heading">
+          <h2>About Nagle Analytics</h2>
+          <p>
+            A personal data visualization brand focused on making real-world
+            datasets more visual, interactive, and understandable.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-panel">
+            <p>
+              Nagle Analytics is a space for building polished visualizations with
+              a focus on movement, comparison, and storytelling. Projects may
+              include sports analytics, public data, environmental data, maps,
+              dashboards, and visual experiments.
+            </p>
+            <p>
+              The goal is to create work that is clean, useful, and engaging:
+              visualizations that help people see patterns that would otherwise
+              stay hidden in tables.
+            </p>
+          </div>
+
+          <div class="about-panel">
+            <h3>Tools and methods</h3>
+            <div class="tool-list">
+              <span class="tool">HTML / CSS / JavaScript</span>
+              <span class="tool">D3.js</span>
+              <span class="tool">R</span>
+              <span class="tool">Python</span>
+              <span class="tool">GitHub Pages</span>
+              <span class="tool">Maps and spatial data</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Nagle Analytics</span>
+      <span>
+        Built on GitHub Pages ·
+        <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </footer>
+  </div>
+
   <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // D3 live chart (auto-refreshing placeholder data)
-    const svg = d3.select("#liveChart");
-    const margin = { top: 14, right: 18, bottom: 26, left: 38 };
-    let width = 960, height = 320;
-    function getDimensions() {
-      const node = svg.node();
-      const w = node.getBoundingClientRect().width || 960;
-      width = w; height = 320;
-    }
-    getDimensions();
-    const innerW = () => width - margin.left - margin.right;
-    const innerH = () => height - margin.top - margin.bottom;
-
-    // Initial data
-    let data = d3.range(16).map(i => ({ x: i, y: Math.round(Math.random()*40) + 5 }));
-
-    function render() {
-      svg.attr("viewBox", `0 0 ${width} ${height}`);
-
-      const x = d3.scaleLinear().domain(d3.extent(data, d => d.x)).range([0, innerW()]);
-      const y = d3.scaleLinear().domain([0, d3.max(data, d => d.y)]).nice().range([innerH(), 0]);
-
-      const root = svg.selectAll(".root")
-        .data([null])
-        .join("g")
-        .attr("class", "root")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
-
-      root.selectAll(".x-axis")
-        .data([null])
-        .join("g")
-        .attr("class","x-axis")
-        .attr("transform", `translate(0,${innerH()})`)
-        .call(d3.axisBottom(x).ticks(8));
-
-      root.selectAll(".y-axis")
-        .data([null])
-        .join("g")
-        .attr("class","y-axis")
-        .call(d3.axisLeft(y));
-
-      const line = d3.line().x(d => x(d.x)).y(d => y(d.y)).curve(d3.curveMonotoneX);
-
-      root.selectAll(".series")
-        .data([data])
-        .join("path")
-        .attr("class", "series")
-        .attr("fill", "none")
-        .attr("stroke", getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#22d3ee')
-        .attr("stroke-width", 2)
-        .transition().duration(600)
-        .attr("d", line);
-
-      const circles = root.selectAll("circle").data(data, d => d.x);
-      circles.join(
-        enter => enter.append("circle")
-          .attr("cx", d => x(d.x))
-          .attr("cy", d => y(d.y))
-          .attr("r", 0)
-          .attr("fill", getComputedStyle(document.documentElement).getPropertyValue('--accent-2').trim() || '#06b6d4')
-          .transition().duration(400).attr("r", 3.8),
-        update => update.transition().duration(400)
-          .attr("cx", d => x(d.x))
-          .attr("cy", d => y(d.y)),
-        exit => exit.transition().duration(200).attr("r", 0).remove()
-      );
-    }
-
-    render();
-    window.addEventListener('resize', () => { getDimensions(); render(); });
-
-    // Auto refresh data every 3s
-    setInterval(() => {
-      data = d3.range(16).map(i => ({ x: i, y: Math.round(Math.random()*40) + 5 }));
-      render();
-    }, 3000);
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
