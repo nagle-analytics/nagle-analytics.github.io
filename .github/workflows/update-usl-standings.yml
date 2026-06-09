@@ -5,11 +5,13 @@ on:
 
   schedule:
     # Runs every Monday at 8:00 AM UTC.
-    # This is 1:00 AM Pacific during daylight saving time and 12:00 AM Pacific during standard time.
     - cron: "0 8 * * 1"
 
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update-usl-standings:
@@ -29,20 +31,62 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas requests lxml html5lib beautifulsoup4
 
-      - name: Run USL standings fetch script
+      - name: Run USL standings fetch script and save debug log
+        id: run_script
+        shell: bash
         run: |
-          python scripts/fetch-usl-standings.py
+          mkdir -p data/usl
 
-      - name: Commit updated standings data
+          echo "Current folder:" > data/usl/last-run-log.txt
+          pwd >> data/usl/last-run-log.txt
+
+          echo "" >> data/usl/last-run-log.txt
+          echo "Repository files:" >> data/usl/last-run-log.txt
+          find . -maxdepth 4 -type f | sort >> data/usl/last-run-log.txt
+
+          echo "" >> data/usl/last-run-log.txt
+          echo "Python version:" >> data/usl/last-run-log.txt
+          python --version >> data/usl/last-run-log.txt 2>&1
+
+          echo "" >> data/usl/last-run-log.txt
+          echo "Running USL standings script:" >> data/usl/last-run-log.txt
+
+          set +e
+          python scripts/fetch-usl-standings.py >> data/usl/last-run-log.txt 2>&1
+          SCRIPT_EXIT_CODE=$?
+          set -e
+
+          echo "" >> data/usl/last-run-log.txt
+          echo "Script exit code: $SCRIPT_EXIT_CODE" >> data/usl/last-run-log.txt
+
+          echo "$SCRIPT_EXIT_CODE" > data/usl/last-run-status.txt
+
+          cat data/usl/last-run-log.txt
+
+          exit 0
+
+      - name: Commit data and debug log
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add data/usl/current-standings.json data/usl/standings-history.csv
+          git add data/usl/current-standings.json data/usl/standings-history.csv data/usl/last-run-log.txt data/usl/last-run-status.txt
 
           if git diff --staged --quiet; then
-            echo "No standings data changes to commit."
+            echo "No data or log changes to commit."
           else
-            git commit -m "Update USL standings data"
+            git commit -m "Update USL standings data and debug log"
             git push
           fi
+
+      - name: Fail workflow if script failed
+        shell: bash
+        run: |
+          SCRIPT_EXIT_CODE=$(cat data/usl/last-run-status.txt)
+
+          if [ "$SCRIPT_EXIT_CODE" != "0" ]; then
+            echo "USL standings script failed. See data/usl/last-run-log.txt for details."
+            exit "$SCRIPT_EXIT_CODE"
+          fi
+
+          echo "USL standings script completed successfully."
