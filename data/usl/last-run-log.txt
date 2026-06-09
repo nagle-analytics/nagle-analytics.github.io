@@ -1,0 +1,69 @@
+Current folder:
+/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io
+
+Repository files:
+./.git/FETCH_HEAD
+./.git/HEAD
+./.git/config
+./.git/config.worktree
+./.git/description
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/fsmonitor-watchman.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-merge-commit.sample
+./.git/hooks/pre-push.sample
+./.git/hooks/pre-rebase.sample
+./.git/hooks/pre-receive.sample
+./.git/hooks/prepare-commit-msg.sample
+./.git/hooks/push-to-checkout.sample
+./.git/hooks/sendemail-validate.sample
+./.git/hooks/update.sample
+./.git/index
+./.git/info/exclude
+./.git/logs/HEAD
+./.git/objects/02/0be47656871de3c2195703664bc02dc3b606d4
+./.git/objects/17/ccebd080fa5603b5ed87a7a8e1a6f192f67460
+./.git/objects/5c/f3c07f00760bf255770f0c2893a42b623be118
+./.git/objects/69/26963287def404b64e156c6f99ba2b6a3b40aa
+./.git/objects/86/71e010e06900013fa0c4cb91f9e50360d679c1
+./.git/objects/8d/f14c8b2d598a6e3e0a49d943242c43e77b23d7
+./.git/objects/90/aa40f537e09329d78f8a749e825ad07141ff5d
+./.git/objects/96/d4ca250f0654aabfbc4185aad750a8abf47576
+./.git/objects/98/8ed8b56760701e896b18c428e80e2af4b36480
+./.git/objects/b5/a817cfc8c9e8e1837ddf981fdf8ce97054f792
+./.git/objects/bb/51eab351515e4df3cd3b35dcc5e3fc1efcea9d
+./.git/objects/c5/34cda11503386793065f916d65806135009c60
+./.git/objects/cc/c22c4232ac7cbd6f334afc36a8667994bd0f33
+./.git/objects/de/b4dd33d2f33d23f2a5c0fb9dfa039162a70144
+./.git/objects/e3/9b33b07ee5eefbce453918144cf4230ed3593b
+./.git/objects/e7/fbe67898d885374983fe624dec6da853ebd449
+./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
+./.git/objects/fa/ffd9766656c6fd92e02ab7ca1dc76ec22b3e90
+./.git/refs/heads/main
+./.git/shallow
+./.github/workflows/update-usl-standings.yml
+./about.html
+./articles.html
+./backup-index-old.html
+./data/usl/current-standings.json
+./data/usl/last-run-log.txt
+./data/usl/standings-history.csv
+./featured.html
+./index.html
+./maps.html
+./scripts/fetch-usl-standings.py
+./viz-gallery.html
+
+Python version:
+Python 3.11.15
+
+Running USL standings script:
+  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 288
+    tables = pd.read_html(StringIO(html))
+    ^
+IndentationError: expected an indented block after 'try' statement on line 287
+
+Script exit code: 1
