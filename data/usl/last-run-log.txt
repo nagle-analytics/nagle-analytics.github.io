@@ -26,22 +26,22 @@ Repository files:
 ./.git/logs/HEAD
 ./.git/objects/02/0be47656871de3c2195703664bc02dc3b606d4
 ./.git/objects/17/ccebd080fa5603b5ed87a7a8e1a6f192f67460
-./.git/objects/26/df7a0de644a6fa9d17136c4af1533b330ad309
-./.git/objects/34/b5fd89baf77fed47c50fa5b0fc5bf66ae69106
-./.git/objects/50/852794539fa037e2e188bc0750ddbc331523a8
-./.git/objects/53/4b389958b3d6d98559f6d782197be5a27c3c80
-./.git/objects/55/e125ab1cf7841b20fd88d72188e3f36c71f2aa
+./.git/objects/23/5fc6d3b4fe8cf1dddd677b0796f1ecd9b878d6
+./.git/objects/23/f73220d4f21da1d37acf23e3d28566f0360a3c
+./.git/objects/36/a83b3a419753ec21bf5b3fa52d36ec8b13dd3e
+./.git/objects/63/454abcb80e31683722ade319bef5028d406963
 ./.git/objects/69/26963287def404b64e156c6f99ba2b6a3b40aa
+./.git/objects/6c/8388c4f8c924ff7c5a2db47e6376f85eeb59a2
 ./.git/objects/86/71e010e06900013fa0c4cb91f9e50360d679c1
-./.git/objects/8f/9a8c3964a6740d576db0e1065924b22fbe2393
+./.git/objects/87/13f9f3c3f1191b6265579b07a06bf4d848bbaa
 ./.git/objects/90/aa40f537e09329d78f8a749e825ad07141ff5d
-./.git/objects/96/d4ca250f0654aabfbc4185aad750a8abf47576
-./.git/objects/98/6cdeb20f0262600e90f828f91bfae270205ed0
+./.git/objects/9c/f772cf31262bb71d2d2cfda6745a3e2d19dd29
 ./.git/objects/b5/a817cfc8c9e8e1837ddf981fdf8ce97054f792
-./.git/objects/bb/51eab351515e4df3cd3b35dcc5e3fc1efcea9d
 ./.git/objects/c5/34cda11503386793065f916d65806135009c60
 ./.git/objects/d0/0491fd7e5bb6fa28c517a0bb32b8b506539d4d
-./.git/objects/e3/9b33b07ee5eefbce453918144cf4230ed3593b
+./.git/objects/df/e4313bd5d74f8984c57cca614307f7b7356b07
+./.git/objects/e2/6adc956eec86eac5d5938e403c92eb5d769780
+./.git/objects/e6/4f4181119b91ab219bcdb4eb766611dc708cce
 ./.git/objects/e7/fbe67898d885374983fe624dec6da853ebd449
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
 ./.git/refs/heads/main
@@ -65,18 +65,21 @@ Python 3.11.15
 
 Running USL standings script:
 [INFO] Fetching USL standings from: https://www.uslchampionship.com/league-standings
-[INFO] Downloaded 94,704 characters from USL standings page.
-[INFO] Content-Type: text/html; charset=utf-8
+[INFO] Opening main page first: https://www.uslchampionship.com/league-standings
+[INFO] Fetching layout tab endpoint: https://www.uslchampionship.com/layout_container/show_layout_tab?layout_container_id=76090417&page_node_id=2415039&tab_element_id=247942
+[INFO] Downloaded 1,100 characters from layout tab endpoint.
+[INFO] Layout tab Content-Type: text/html; charset=utf-8
+[INFO] Saved debug layout HTML to: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/debug-layout-tab.html
 [INFO] pandas found 0 HTML table(s).
 [INFO] Found 0 possible standings table(s).
 Traceback (most recent call last):
-  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 510, in <module>
+  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 559, in <module>
     raise SystemExit(main())
                      ^^^^^^
-  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 480, in main
+  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 529, in main
     standings = read_standings_tables(SOURCE_URL)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 313, in read_standings_tables
+  File "/home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/scripts/fetch-usl-standings.py", line 362, in read_standings_tables
     raise RuntimeError(
 RuntimeError: Could not find two standings tables on the official page. The standings may be rendered dynamically. Next step would be to inspect the page's network requests for the official JSON endpoint.
 
