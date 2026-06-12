@@ -389,13 +389,32 @@
 
     let rawData = [];
     let allMatchdays = [];
-    let teamIdByKey = new Map();
+    let teamMetaByName = new Map();
     let colorScale;
 
-    function crestUrl(optaId, size = 70) {
-      if (!optaId) return "";
-      return "";
-    }
+    function getTeamMeta(teamName) {
+  return teamMetaByName.get(teamName) || {};
+}
+
+function getLineColor(teamName, fallbackKey) {
+  const meta = getTeamMeta(teamName);
+  return meta.lineColor || colorScale(fallbackKey);
+}
+
+function getSecondaryColor(teamName, fallbackKey) {
+  const meta = getTeamMeta(teamName);
+  return meta.secondaryColor || colorScale(fallbackKey);
+}
+
+function getTextColor(teamName) {
+  const meta = getTeamMeta(teamName);
+  return meta.textColor || "#111827";
+}
+
+function getCrestUrl(teamName) {
+  const meta = getTeamMeta(teamName);
+  return meta.crestUrl || "";
+}
 
     function buildControls() {
       const metricWrap = d3.select("#metricControls");
@@ -687,7 +706,7 @@
       lines.enter()
         .append("path")
         .attr("class", "team-line")
-        .attr("stroke", d => colorScale(d.key))
+        .attr("stroke", d => getLineColor(d.team, d.key))
         .attr("stroke-width", 2.8)
         .style("opacity", 0.72)
         .on("mousemove", function(event, d) {
@@ -697,7 +716,7 @@
         .on("mouseleave", clearHighlight)
         .merge(lines)
         .transition(t)
-        .attr("stroke", d => colorScale(d.key))
+        .attr("stroke", d => getLineColor(d.team, d.key))
         .attr("d", d => {
           const values = visibleValues(d.values, currentFrame);
           return values.length > 1 ? line(values) : null;
@@ -735,7 +754,7 @@
         .attr("dominant-baseline", "middle")
         .attr("font-size", 10)
         .attr("font-weight", 900)
-        .attr("fill", "#111827")
+        .attr("fill", d => getTextColor(d.team))
         .text(d => d.abbr);
 
       enterGroups.append("text")
@@ -746,10 +765,14 @@
       const mergedGroups = enterGroups.merge(endpointGroups);
 
       mergedGroups.select(".crest-ring")
-        .attr("stroke", d => colorScale(d.key));
+        .attr("stroke", d => getLineColor(d.team, d.key));
+
+      mergedGroups.select(".crest-abbr")
+        .attr("fill", d => getTextColor(d.team))
+        .text(d => d.abbr);
 
       mergedGroups.select(".team-label")
-        .attr("fill", d => colorScale(d.key))
+        .attr("fill", d => getLineColor(d.team, d.key))
         .text(d => d.abbr);
 
       mergedGroups.transition(t)
@@ -791,20 +814,11 @@
       }, 900);
     }
 
-    function enrichTeamIds(currentJson) {
-      const map = new Map();
-
-      Object.entries(currentJson.conferences || {}).forEach(([conference, rows]) => {
-        rows.forEach(row => {
-          const key = `${conference}|${row.team}`;
-          map.set(key, String(row.opta_team_id || ""));
-        });
-      });
-
-      return map;
+    function buildTeamMetaMap(teamMetaJson) {
+      return new Map(Object.entries(teamMetaJson || {}));
     }
 
-    function init(csvRows, currentJson) {
+    function init(csvRows, currentJson, teamMetaJson) {
       rawData = csvRows.map(d => ({
         snapshot_date: d.snapshot_date,
         matchday: +d.matchday,
@@ -826,12 +840,16 @@
 
       allMatchdays = Array.from(new Set(rawData.map(d => d.matchday))).sort((a, b) => a - b);
 
-      teamIdByKey = enrichTeamIds(currentJson);
+      teamMetaByName = buildTeamMetaMap(teamMetaJson);
 
       const keys = Array.from(new Set(rawData.map(d => d.key)));
       colorScale = d3.scaleOrdinal()
         .domain(keys)
-        .range(d3.quantize(t => d3.interpolateRainbow(t * 0.88), keys.length));
+        .range(keys.map(key => {
+          const teamName = key.split("|")[1];
+          const meta = teamMetaByName.get(teamName);
+          return meta?.lineColor || "#334155";
+        }));
 
       state.frameIndex = getFrames().length - 1;
 
@@ -841,9 +859,10 @@
 
     Promise.all([
       d3.csv("data/usl/standings-history.csv"),
-      d3.json("data/usl/current-standings.json")
+      d3.json("data/usl/current-standings.json"),
+      d3.json("data/usl/team-crests.json")
     ])
-      .then(([csvRows, currentJson]) => init(csvRows, currentJson))
+      .then(([csvRows, currentJson, teamMetaJson]) => init(csvRows, currentJson, teamMetaJson))
       .catch(error => {
         console.error(error);
         statusPill.text("Data load failed");
