@@ -276,7 +276,35 @@ def parse_current_standings(
 
     return output, conference_by_team_id
 
+def get_current_matchday_and_snapshot_date(standings_payload: dict) -> tuple[int, str]:
+    """
+    Read the official current Opta matchday and timestamp from the f3 standings feed.
+    """
+    soccer_document = standings_payload["SoccerFeed"]["SoccerDocument"]
 
+    doc_attrs = soccer_document.get("@attributes", {})
+    raw_timestamp = doc_attrs.get("timestamp", "")
+
+    snapshot_date = raw_timestamp[:10] if raw_timestamp else datetime.now(timezone.utc).date().isoformat()
+
+    team_standings = ensure_list(
+        soccer_document.get("Competition", {}).get("TeamStandings")
+    )
+
+    matchdays = []
+
+    for group in team_standings:
+        attrs = group.get("@attributes", {})
+        matchday = to_int(attrs.get("Matchday"))
+
+        if matchday > 0:
+            matchdays.append(matchday)
+
+    if not matchdays:
+        raise RuntimeError("Could not identify current Matchday from official f3 standings feed.")
+
+    return max(matchdays), snapshot_date
+    
 def parse_matches(matches_payload: dict) -> List[MatchResult]:
     soccer_document = matches_payload["SoccerFeed"]["SoccerDocument"]
     match_data = ensure_list(soccer_document.get("MatchData"))
@@ -459,7 +487,15 @@ def reconstruct_history_rows(
     matches: List[MatchResult],
     conference_by_team_id: Dict[str, str],
     team_lookup: Dict[str, dict],
+    last_reconstructed_matchday: int,
 ) -> List[dict]:
+    """
+    Reconstruct historical standings from completed match results.
+
+    This only reconstructs actual completed matchdays found in the match-results
+    feed and stops before the official current matchday. The current matchday is
+    added separately from the official f3 standings table.
+    """
     if not matches:
         raise RuntimeError("No completed matches were available to reconstruct history.")
 
@@ -468,16 +504,18 @@ def reconstruct_history_rows(
         for team_id in conference_by_team_id
     }
 
-    max_matchday = max(match.matchday for match in matches)
     matches_by_matchday: Dict[int, List[MatchResult]] = {}
 
     for match in matches:
-        matches_by_matchday.setdefault(match.matchday, []).append(match)
+        if match.matchday <= last_reconstructed_matchday:
+            matches_by_matchday.setdefault(match.matchday, []).append(match)
+
+    completed_matchdays = sorted(matches_by_matchday.keys())
 
     history_rows: List[dict] = []
     latest_snapshot_date = ""
 
-    for matchday in range(1, max_matchday + 1):
+    for matchday in completed_matchdays:
         current_matches = matches_by_matchday.get(matchday, [])
 
         for match in current_matches:
@@ -529,7 +567,43 @@ def reconstruct_history_rows(
 
     return history_rows
 
+def official_current_rows_as_history(
+    current_standings: Dict[str, List[StandingRow]],
+    current_matchday: int,
+    snapshot_date: str,
+) -> List[dict]:
+    """
+    Convert the official current f3 standings table into history CSV rows.
 
+    This avoids relying on reconstructed data for the latest table.
+    """
+    rows: List[dict] = []
+
+    for conference, standings_rows in current_standings.items():
+        for row in standings_rows:
+            rows.append(
+                {
+                    "snapshot_date": snapshot_date,
+                    "matchday": current_matchday,
+                    "week": f"Matchday {current_matchday}",
+                    "conference": conference,
+                    "rank": row.rank,
+                    "team": row.team,
+                    "abbr": row.abbr,
+                    "played": row.played,
+                    "wins": row.wins,
+                    "losses": row.losses,
+                    "ties": row.ties,
+                    "goals_for": row.goals_for,
+                    "goals_against": row.goals_against,
+                    "goal_difference": row.goal_difference,
+                    "points": row.points,
+                    "source": SOURCE_URL,
+                }
+            )
+
+    return rows
+    
 def write_current_json(
     standings: Dict[str, List[StandingRow]],
     fetched_at: str,
@@ -635,7 +709,6 @@ def main() -> int:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     fetched_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
-    snapshot_date = datetime.now(timezone.utc).date().isoformat()
 
     print(f"[INFO] Fetching Opta team translations: {OPTA_TEAM_TRANSLATION_URL}")
     team_translation_text = fetch_text(OPTA_TEAM_TRANSLATION_URL)
@@ -664,6 +737,13 @@ def main() -> int:
 
     validate_counts(current_standings)
 
+    current_matchday, official_snapshot_date = get_current_matchday_and_snapshot_date(
+        standings_payload
+    )
+
+    print(f"[INFO] Official current matchday: {current_matchday}")
+    print(f"[INFO] Official current snapshot date: {official_snapshot_date}")
+
     print(f"[INFO] Fetching completed match results feed: {OPTA_MATCHES_URL}")
     matches_text = fetch_text(OPTA_MATCHES_URL)
     matches_payload = unwrap_jsonp(matches_text)
@@ -678,12 +758,29 @@ def main() -> int:
     print(f"[INFO] Parsed {len(matches)} completed regular-season matches.")
 
     if matches:
-        print(f"[INFO] Matchdays available: 1 to {max(match.matchday for match in matches)}")
+        print(f"[INFO] Matchdays available in match feed: 1 to {max(match.matchday for match in matches)}")
 
     history_rows = reconstruct_history_rows(
         matches=matches,
         conference_by_team_id=conference_by_team_id,
         team_lookup=team_lookup,
+        last_reconstructed_matchday=current_matchday - 1,
+    )
+
+    history_rows.extend(
+        official_current_rows_as_history(
+            current_standings=current_standings,
+            current_matchday=current_matchday,
+            snapshot_date=official_snapshot_date,
+        )
+    )
+
+    history_rows.sort(
+        key=lambda row: (
+            int(row.get("matchday", 999)),
+            row.get("conference", ""),
+            int(row.get("rank", 999)),
+        )
     )
 
     validate_reconstructed_final_against_current(
@@ -694,14 +791,14 @@ def main() -> int:
     write_current_json(
         standings=current_standings,
         fetched_at=fetched_at,
-        snapshot_date=snapshot_date,
+        snapshot_date=official_snapshot_date,
     )
 
     write_history_csv(history_rows)
 
     print(f"[INFO] Updated: {CURRENT_JSON_PATH}")
     print(f"[INFO] Updated: {HISTORY_CSV_PATH}")
-    print(f"[INFO] Reconstructed history rows: {len(history_rows)}")
+    print(f"[INFO] History rows: {len(history_rows)}")
 
     for conference, rows in current_standings.items():
         print(f"[INFO] {conference}: {len(rows)} teams")
@@ -714,7 +811,6 @@ def main() -> int:
             )
 
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
