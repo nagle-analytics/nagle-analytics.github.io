@@ -9,16 +9,16 @@
 
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #111a2b;
-      --panel: rgba(15, 23, 42, 0.78);
-      --panel-border: rgba(148, 163, 184, 0.16);
-      --text: #e5eef9;
-      --muted: #9fb0c8;
-      --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
-      --radius: 22px;
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line-soft: rgba(31, 41, 55, 0.15);
+      --grid: rgba(31, 41, 55, 0.09);
+      --accent: #111827;
+      --blue: #2563eb;
+      --shadow: 0 14px 40px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
     }
 
     * {
@@ -27,168 +27,136 @@
 
     body {
       margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.10), transparent 30%),
-        radial-gradient(circle at top right, rgba(34, 197, 94, 0.08), transparent 25%),
-        linear-gradient(180deg, #07101d 0%, #0b1220 100%);
-      color: var(--text);
-      min-height: 100vh;
     }
 
-    .page-shell {
-      width: min(1400px, calc(100% - 40px));
+    .page {
+      width: min(1500px, calc(100% - 44px));
       margin: 0 auto;
+      padding: 22px 0 34px;
     }
 
-    .topbar {
-      padding: 22px 0 10px;
-    }
-
-    .back-link {
+    .top-link {
+      display: inline-block;
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
+      font-weight: 650;
+      margin-bottom: 20px;
     }
 
-    .back-link:hover {
-      color: var(--accent);
+    .top-link:hover {
+      color: var(--blue);
     }
 
-    .hero {
-      padding: 8px 0 26px;
+    .viz-card {
+      background: var(--panel);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 28px 18px;
     }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-      font-weight: 700;
+    .title-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.045em;
+      line-height: 1;
+      color: #1f2937;
     }
 
     .subtitle {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.7;
-      max-width: 900px;
-    }
-
-    .controls-wrap {
-      display: grid;
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .controls-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .control-label {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-right: 4px;
-      font-weight: 600;
-    }
-
-    .btn,
-    .toggle-btn {
-      appearance: none;
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 15px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    .btn:hover,
-    .toggle-btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(56, 189, 248, 0.45);
-    }
-
-    .btn.primary {
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-      border-color: transparent;
-      color: white;
-      box-shadow: 0 10px 24px rgba(14, 165, 233, 0.28);
-    }
-
-    .toggle-btn.active {
-      background: rgba(56, 189, 248, 0.18);
-      border-color: rgba(56, 189, 248, 0.55);
-      color: #dff5ff;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 320px;
-      gap: 20px;
-      padding-bottom: 40px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--panel-border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      backdrop-filter: blur(14px);
-    }
-
-    .chart-card {
-      padding: 22px 22px 18px;
-      overflow: hidden;
-    }
-
-    .chart-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-
-    .chart-card-top h2 {
-      margin: 0;
-      font-size: 1.35rem;
-      letter-spacing: -0.02em;
-    }
-
-    .chart-card-top p {
       margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      color: #374151;
+      line-height: 1.45;
+    }
+
+    .hint {
+      margin: 24px 0 12px;
+      color: #374151;
+      font-size: 1rem;
     }
 
     .status-pill {
       white-space: nowrap;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #d7e3f3;
-      font-weight: 700;
-      font-size: 0.92rem;
-      border: 1px solid rgba(148, 163, 184, 0.14);
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      background: #f8fafc;
+      color: #334155;
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .controls + .controls {
+      margin-top: -6px;
+      margin-bottom: 4px;
+    }
+
+    .control-label {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #4b5563;
+      margin-right: 2px;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .btn,
+    .toggle {
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      background: #ffffff;
+      color: #1f2937;
+      border-radius: 8px;
+      padding: 8px 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .btn:hover,
+    .toggle:hover {
+      border-color: rgba(37, 99, 235, 0.42);
+      transform: translateY(-1px);
+    }
+
+    .btn.primary {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+
+    .toggle.active {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+
+    .chart-wrap {
+      position: relative;
+      margin-top: 4px;
     }
 
     svg {
@@ -198,217 +166,183 @@
       overflow: visible;
     }
 
-    .chart-footnote {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
+    .axis text {
+      fill: #6b7280;
+      font-size: 15px;
+      font-weight: 650;
     }
 
-    .sidebar-card {
-      padding: 18px 18px 20px;
-      height: fit-content;
-      position: sticky;
-      top: 18px;
+    .axis path,
+    .axis line {
+      stroke: rgba(31, 41, 55, 0.12);
     }
 
-    .sidebar-card h3 {
-      margin: 6px 0 14px;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
+    .grid line {
+      stroke: var(--grid);
     }
 
-    .leaderboard-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 8px;
+    .grid path {
+      display: none;
     }
 
-    .leader-row {
-      display: grid;
-      grid-template-columns: 28px 1fr auto;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.035);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+    .team-line {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: opacity 0.18s ease, stroke-width 0.18s ease;
     }
 
-    .leader-rank {
+    .crest-group {
+      cursor: pointer;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .crest-ring {
+      fill: white;
+      stroke-width: 3;
+    }
+
+    .crest-img {
+      pointer-events: none;
+    }
+
+    .team-label {
+      font-size: 13px;
       font-weight: 800;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.95rem;
+      dominant-baseline: middle;
+      paint-order: stroke;
+      stroke: white;
+      stroke-width: 4px;
+      stroke-linejoin: round;
     }
 
-    .leader-team {
-      min-width: 0;
-    }
-
-    .leader-team .abbr {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      color: #09111d;
-      font-weight: 800;
-      font-size: 0.78rem;
-      margin-right: 8px;
-    }
-
-    .leader-team-name {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--text);
-    }
-
-    .leader-team-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    .leader-value {
-      font-weight: 800;
-      font-size: 1rem;
-      color: white;
-      text-align: right;
+    .frame-label {
+      font-size: 78px;
+      font-weight: 900;
+      fill: rgba(15, 23, 42, 0.06);
+      text-anchor: end;
+      dominant-baseline: middle;
+      letter-spacing: -0.05em;
+      pointer-events: none;
     }
 
     .tooltip {
       position: fixed;
       z-index: 50;
       pointer-events: none;
-      min-width: 220px;
-      max-width: 280px;
+      width: 250px;
       padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(9, 15, 27, 0.94);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.34);
+      border-radius: 12px;
+      background: rgba(17, 24, 39, 0.96);
       color: white;
-      font-size: 0.88rem;
+      box-shadow: 0 16px 42px rgba(15, 23, 42, 0.28);
+      font-size: 0.9rem;
       line-height: 1.45;
     }
 
-    .tooltip .title {
-      font-weight: 800;
+    .tooltip-title {
+      font-weight: 900;
+      font-size: 1rem;
       margin-bottom: 6px;
-      font-size: 0.96rem;
     }
 
-    .tooltip .meta {
-      color: #bfd0e5;
+    .tooltip-muted {
+      color: #cbd5e1;
     }
 
-    .empty-state {
+    .footnote {
+      margin-top: 12px;
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.45;
     }
 
-    @media (max-width: 1100px) {
-      .content-grid {
+    code {
+      background: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: #334155;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 24px, 1500px);
+      }
+
+      .viz-card {
+        padding: 20px 14px 14px;
+      }
+
+      .title-row {
         grid-template-columns: 1fr;
       }
 
-      .sidebar-card {
-        position: static;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .page-shell {
-        width: min(100% - 24px, 1400px);
-      }
-
-      .chart-card {
-        padding: 16px 14px 14px;
-      }
-
-      .sidebar-card {
-        padding: 16px 14px;
-      }
-
-      .chart-card-top {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
       .status-pill {
-        align-self: flex-start;
+        width: fit-content;
+      }
+
+      .axis text {
+        font-size: 11px;
+      }
+
+      .team-label {
+        display: none;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="page-shell">
-    <div class="topbar">
-      <a class="back-link" href="index.html">← Back to home</a>
-    </div>
+  <main class="page">
+    <a class="top-link" href="index.html">← Back to Nagle Analytics</a>
 
-    <section class="hero">
-      <div class="eyebrow">Nagle Analytics • Interactive Visualization</div>
-      <h1>USL Championship Tracker</h1>
-      <p class="subtitle">
-        A replayable, matchday-by-matchday look at how USL Championship clubs move through the season.
-        Start with points, then switch to goals scored, wins, draws, losses, or goal difference.
-      </p>
-
-      <div class="controls-wrap">
-        <div class="controls-row">
-          <button id="replayBtn" class="btn primary">Replay</button>
-          <div class="control-label">Metric:</div>
-          <div id="metricControls" class="controls-row"></div>
+    <section class="viz-card">
+      <div class="title-row">
+        <div>
+          <h1>USL Championship Tracker</h1>
+          <p class="subtitle">
+            Matchday-by-matchday movement across the Eastern and Western Conference tables.
+          </p>
         </div>
-
-        <div class="controls-row">
-          <div class="control-label">Conference:</div>
-          <div id="conferenceControls" class="controls-row"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-grid">
-      <div class="card chart-card">
-        <div class="chart-card-top">
-          <div>
-            <div class="eyebrow">Animated line chart race</div>
-            <h2 id="chartTitle">Points progression</h2>
-            <p id="chartSubtitle">Cumulative points by matchday across both conferences.</p>
-          </div>
-          <div class="status-pill" id="statusPill">Matchday 1</div>
-        </div>
-
-        <svg id="uslChart" viewBox="0 0 1180 680" preserveAspectRatio="xMidYMid meet"></svg>
-
-        <div class="chart-footnote">
-          Hover over a line or point for details. Data source: official USL Championship standings page,
-          using Opta-based historical matchday data prepared in <code>data/usl/standings-history.csv</code>.
-        </div>
+        <div id="statusPill" class="status-pill">Loading…</div>
       </div>
 
-      <aside class="card sidebar-card">
-        <div class="eyebrow">Current frame leaderboard</div>
-        <h3 id="leaderboardTitle">Points</h3>
-        <div id="leaderboard" class="leaderboard-list"></div>
-      </aside>
+      <p class="hint">Hover over each line or crest to highlight a club. Replay from Matchday 1 👇</p>
+
+      <div class="controls">
+        <button id="replayBtn" class="btn primary">Replay</button>
+
+        <span class="control-label">Metric</span>
+        <div id="metricControls" class="controls"></div>
+      </div>
+
+      <div class="controls">
+        <span class="control-label">Conference</span>
+        <div id="conferenceControls" class="controls"></div>
+      </div>
+
+      <div class="chart-wrap">
+        <svg id="chart" viewBox="0 0 1420 760" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+
+      <div class="footnote">
+        Source: official USL Championship standings and Opta match feeds prepared into
+        <code>data/usl/standings-history.csv</code>. Latest table is taken from
+        <code>data/usl/current-standings.json</code>.
+      </div>
     </section>
-  </div>
+  </main>
 
   <div id="tooltip" class="tooltip" hidden></div>
 
   <script>
     const metrics = {
-      points: { label: "Points", field: "points" },
-      goals: { label: "Goals", field: "goals_for" },
-      wins: { label: "Wins", field: "wins" },
-      draws: { label: "Draws", field: "ties" },
-      losses: { label: "Losses", field: "losses" },
-      goalDiff: { label: "Goal Diff", field: "goal_difference" }
+      points: { label: "Points", field: "points", title: "Points race" },
+      goals: { label: "Goals", field: "goals_for", title: "Goals scored" },
+      wins: { label: "Wins", field: "wins", title: "Wins" },
+      draws: { label: "Draws", field: "ties", title: "Draws" },
+      losses: { label: "Losses", field: "losses", title: "Losses" },
+      goalDiff: { label: "Goal Diff", field: "goal_difference", title: "Goal differential" }
     };
 
     const conferenceOptions = ["All", "Eastern Conference", "Western Conference"];
@@ -416,94 +350,88 @@
     const state = {
       metricKey: "points",
       conference: "All",
-      currentFrameIndex: 0,
-      timer: null
+      frameIndex: 0,
+      timer: null,
+      highlightedKey: null
     };
 
-    const svg = d3.select("#uslChart");
+    const svg = d3.select("#chart");
     const tooltip = d3.select("#tooltip");
     const statusPill = d3.select("#statusPill");
-    const chartTitle = d3.select("#chartTitle");
-    const chartSubtitle = d3.select("#chartSubtitle");
-    const leaderboardTitle = d3.select("#leaderboardTitle");
-    const leaderboard = d3.select("#leaderboard");
 
-    const width = 1180;
-    const height = 680;
-    const margin = { top: 20, right: 30, bottom: 56, left: 70 };
+    const width = 1420;
+    const height = 760;
+    const margin = { top: 36, right: 170, bottom: 72, left: 78 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
-    const rootG = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-    const gridG = rootG.append("g");
-    const xAxisG = rootG.append("g").attr("transform", `translate(0,${innerHeight})`);
-    const yAxisG = rootG.append("g");
-    const currentFrameG = rootG.append("g");
-    const linesG = rootG.append("g");
-    const pointsG = rootG.append("g");
+    const root = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const gridG = root.append("g").attr("class", "grid");
+    const xAxisG = root.append("g").attr("class", "axis").attr("transform", `translate(0,${innerHeight})`);
+    const yAxisG = root.append("g").attr("class", "axis");
+    const zeroG = root.append("g");
+    const frameLabelG = root.append("g");
+    const linesG = root.append("g");
+    const endpointsG = root.append("g");
 
     let rawData = [];
     let allMatchdays = [];
-    let teamKeys = [];
+    let teamIdByKey = new Map();
     let colorScale;
+
+    function crestUrl(optaId, size = 70) {
+      if (!optaId) return "";
+      return `https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=${size}&id=${optaId}`;
+    }
 
     function buildControls() {
       const metricWrap = d3.select("#metricControls");
-      const confWrap = d3.select("#conferenceControls");
+      const conferenceWrap = d3.select("#conferenceControls");
 
       Object.entries(metrics).forEach(([key, config]) => {
-        metricWrap
-          .append("button")
-          .attr("class", "toggle-btn")
+        metricWrap.append("button")
+          .attr("class", "toggle")
           .classed("active", key === state.metricKey)
           .text(config.label)
           .on("click", () => {
+            stopReplay();
             state.metricKey = key;
-            updateControlState();
-            render();
+            updateControls();
+            render(true);
           });
       });
 
       conferenceOptions.forEach(conf => {
-        confWrap
-          .append("button")
-          .attr("class", "toggle-btn")
+        conferenceWrap.append("button")
+          .attr("class", "toggle")
           .classed("active", conf === state.conference)
-          .text(conf === "All" ? "Both Conferences" : conf.replace(" Conference", ""))
+          .text(conf === "All" ? "Both" : conf.replace(" Conference", ""))
           .on("click", () => {
+            stopReplay();
             state.conference = conf;
-            updateControlState();
-            render();
+            updateControls();
+            render(true);
           });
       });
 
-      d3.select("#replayBtn").on("click", () => {
-        playReplay();
-      });
+      d3.select("#replayBtn").on("click", playReplay);
     }
 
-    function updateControlState() {
-      d3.select("#metricControls")
-        .selectAll(".toggle-btn")
-        .classed("active", (_, i, nodes) => {
-          const key = Object.keys(metrics)[i];
-          return key === state.metricKey;
-        });
+    function updateControls() {
+      d3.select("#metricControls").selectAll(".toggle")
+        .classed("active", (_, i) => Object.keys(metrics)[i] === state.metricKey);
 
-      d3.select("#conferenceControls")
-        .selectAll(".toggle-btn")
+      d3.select("#conferenceControls").selectAll(".toggle")
         .classed("active", (_, i) => conferenceOptions[i] === state.conference);
     }
 
-    function getFilteredData() {
+    function filteredData() {
       if (state.conference === "All") return rawData;
       return rawData.filter(d => d.conference === state.conference);
     }
 
-    function getSeries(filtered) {
-      const grouped = d3.groups(filtered, d => `${d.conference}|${d.team}`);
-
-      return grouped.map(([key, values]) => {
+    function seriesFromData(data) {
+      return d3.groups(data, d => d.key).map(([key, values]) => {
         values.sort((a, b) => d3.ascending(a.matchday, b.matchday));
         return {
           key,
@@ -515,223 +443,256 @@
       });
     }
 
-    function getVisiblePoint(series, visibleMatchday) {
-      const visible = series.values.filter(d => d.matchday <= visibleMatchday);
+    function visibleValues(values, frameMatchday) {
+      return values.filter(d => d.matchday <= frameMatchday);
+    }
+
+    function lastVisible(values, frameMatchday) {
+      const visible = visibleValues(values, frameMatchday);
       return visible.length ? visible[visible.length - 1] : null;
+    }
+
+    function yDomain(data, field) {
+      const values = data.map(d => d[field]).filter(Number.isFinite);
+
+      let min = d3.min(values);
+      let max = d3.max(values);
+
+      if (min == null || max == null) {
+        return [0, 1];
+      }
+
+      min = Math.min(0, min);
+      max = Math.max(0, max);
+
+      if (min === max) {
+        return [min - 1, max + 1];
+      }
+
+      const pad = (max - min) * 0.12;
+
+      return [min - pad, max + pad];
     }
 
     function showTooltip(event, d) {
       const metric = metrics[state.metricKey];
-      const value = d[metric.field];
 
       tooltip
+        .attr("hidden", null)
         .html(`
-          <div class="title">${d.team}</div>
-          <div class="meta">
-            ${d.conference}<br>
-            Matchday ${d.matchday} • ${d.snapshot_date}
-          </div>
+          <div class="tooltip-title">${d.team}</div>
+          <div class="tooltip-muted">${d.conference} • Matchday ${d.matchday} • ${d.snapshot_date}</div>
           <div style="margin-top:8px;">
-            <strong>${metric.label}:</strong> ${value}<br>
+            <strong>${metric.label}:</strong> ${d[metric.field]}<br>
+            <strong>Rank:</strong> ${d.rank}<br>
             <strong>Points:</strong> ${d.points}<br>
-            <strong>Goals:</strong> ${d.goals_for}<br>
-            <strong>Wins:</strong> ${d.wins}<br>
-            <strong>Draws:</strong> ${d.ties}<br>
-            <strong>Losses:</strong> ${d.losses}<br>
-            <strong>Goal Diff:</strong> ${d.goal_difference}<br>
-            <strong>Rank:</strong> ${d.rank}
+            <strong>Record:</strong> ${d.wins}-${d.losses}-${d.ties}<br>
+            <strong>Goals:</strong> ${d.goals_for} for, ${d.goals_against} against<br>
+            <strong>Goal diff:</strong> ${d.goal_difference}
           </div>
-        `)
-        .attr("hidden", null);
+        `);
 
       moveTooltip(event);
     }
 
     function moveTooltip(event) {
-      const x = event.clientX + 16;
-      const y = event.clientY + 16;
-
       tooltip
-        .style("left", `${x}px`)
-        .style("top", `${y}px`);
+        .style("left", `${event.clientX + 16}px`)
+        .style("top", `${event.clientY + 16}px`);
     }
 
     function hideTooltip() {
       tooltip.attr("hidden", true);
     }
 
-    function renderLeaderboard(visiblePoints) {
-      const metric = metrics[state.metricKey];
+    function setHighlight(key, d, event) {
+      state.highlightedKey = key;
 
-      leaderboardTitle.text(metric.label);
+      if (d && event) {
+        showTooltip(event, d);
+      }
 
-      const sorted = visiblePoints
-        .slice()
-        .sort((a, b) => {
-          const diff = d3.descending(a[metric.field], b[metric.field]);
-          if (diff !== 0) return diff;
-          return d3.ascending(a.team, b.team);
-        });
-
-      const topRows = state.conference === "All" ? sorted.slice(0, 12) : sorted;
-
-      const rows = leaderboard.selectAll(".leader-row").data(topRows, d => `${d.conference}|${d.team}`);
-
-      rows.exit().remove();
-
-      const rowsEnter = rows.enter()
-        .append("div")
-        .attr("class", "leader-row");
-
-      rowsEnter.append("div").attr("class", "leader-rank");
-      rowsEnter.append("div").attr("class", "leader-team");
-      rowsEnter.append("div").attr("class", "leader-value");
-
-      const rowsMerge = rowsEnter.merge(rows);
-
-      rowsMerge.select(".leader-rank").text((d, i) => i + 1);
-
-      rowsMerge.select(".leader-team").html(d => `
-        <div>
-          <span class="abbr" style="background:${colorScale(`${d.conference}|${d.team}`)}">${d.abbr}</span>
-          <span class="leader-team-name">${d.team}</span>
-        </div>
-        <div class="leader-team-meta">${d.conference.replace(" Conference", "")} • Rank ${d.rank}</div>
-      `);
-
-      rowsMerge.select(".leader-value").text(d => d[metric.field]);
+      updateHighlight();
     }
 
-    function render() {
-      const filtered = getFilteredData();
+    function clearHighlight() {
+      state.highlightedKey = null;
+      hideTooltip();
+      updateHighlight();
+    }
+
+    function updateHighlight() {
+      const active = state.highlightedKey;
+
+      linesG.selectAll(".team-line")
+        .style("opacity", d => !active || d.key === active ? 0.95 : 0.08)
+        .attr("stroke-width", d => d.key === active ? 5.5 : 2.8);
+
+      endpointsG.selectAll(".crest-group")
+        .style("opacity", d => !active || d.key === active ? 1 : 0.16);
+
+      endpointsG.selectAll(".team-label")
+        .style("opacity", d => !active || d.key === active ? 1 : 0.10);
+    }
+
+    function render(animate = false) {
+      const data = filteredData();
       const metric = metrics[state.metricKey];
-      const visibleMatchday = allMatchdays[state.currentFrameIndex] ?? allMatchdays[0];
-      const series = getSeries(filtered);
+      const field = metric.field;
 
-      const visiblePoints = series
-        .map(s => getVisiblePoint(s, visibleMatchday))
+      if (!data.length || !allMatchdays.length) {
+        statusPill.text("No data");
+        return;
+      }
+
+      const currentMatchday = allMatchdays[state.frameIndex] ?? allMatchdays[allMatchdays.length - 1];
+      const series = seriesFromData(data);
+      const endpointData = series
+        .map(s => {
+          const point = lastVisible(s.values, currentMatchday);
+          return point ? { ...point, key: s.key, values: s.values } : null;
+        })
         .filter(Boolean);
-
-      const yMax = d3.max(filtered, d => d[metric.field]) || 1;
 
       const x = d3.scaleLinear()
         .domain(d3.extent(allMatchdays))
         .range([0, innerWidth]);
 
       const y = d3.scaleLinear()
-        .domain([0, yMax * 1.08])
+        .domain(yDomain(data, field))
         .nice()
         .range([innerHeight, 0]);
 
-      const xAxis = d3.axisBottom(x)
-        .tickValues(allMatchdays)
-        .tickFormat(d => `MD ${d}`);
+      const t = animate ? svg.transition().duration(650).ease(d3.easeCubicOut) : svg.transition().duration(0);
 
-      const yAxis = d3.axisLeft(y).ticks(8);
+      const xTicks = allMatchdays.filter((d, i) => i === 0 || i === allMatchdays.length - 1 || d % 2 === 0);
 
-      const grid = d3.axisLeft(y)
-        .ticks(8)
-        .tickSize(-innerWidth)
-        .tickFormat("");
+      xAxisG.transition(t)
+        .call(
+          d3.axisBottom(x)
+            .tickValues(xTicks)
+            .tickFormat(d => `MD ${d}`)
+        );
 
-      gridG
-        .call(grid)
-        .call(g => g.select(".domain").remove())
-        .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.08)"));
+      yAxisG.transition(t)
+        .call(d3.axisLeft(y).ticks(8));
 
-      xAxisG
-        .call(xAxis)
-        .call(g => g.select(".domain").attr("stroke", "rgba(255,255,255,0.2)"))
-        .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.18)"))
-        .call(g => g.selectAll("text").attr("fill", "#a8bbd2").style("font-size", "12px"));
+      gridG.transition(t)
+        .call(
+          d3.axisLeft(y)
+            .ticks(8)
+            .tickSize(-innerWidth)
+            .tickFormat("")
+        );
 
-      yAxisG
-        .call(yAxis)
-        .call(g => g.select(".domain").attr("stroke", "rgba(255,255,255,0.2)"))
-        .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.18)"))
-        .call(g => g.selectAll("text").attr("fill", "#a8bbd2").style("font-size", "12px"));
+      zeroG.selectAll("line").data([0]).join("line")
+        .transition(t)
+        .attr("x1", 0)
+        .attr("x2", innerWidth)
+        .attr("y1", y(0))
+        .attr("y2", y(0))
+        .attr("stroke", "rgba(17,24,39,0.22)")
+        .attr("stroke-width", 1.2);
 
-      chartTitle.text(`${metric.label} progression`);
-      chartSubtitle.text(
-        state.conference === "All"
-          ? `Cumulative ${metric.label.toLowerCase()} by matchday across both conferences.`
-          : `Cumulative ${metric.label.toLowerCase()} by matchday for the ${state.conference.toLowerCase()}.`
-      );
+      frameLabelG.selectAll("text").data([currentMatchday]).join("text")
+        .attr("class", "frame-label")
+        .attr("x", innerWidth - 10)
+        .attr("y", innerHeight * 0.52)
+        .text(`MD ${currentMatchday}`);
 
-      const currentRows = filtered.filter(d => d.matchday === visibleMatchday);
-      const statusDate = currentRows.length ? currentRows[0].snapshot_date : "";
-      statusPill.text(`Matchday ${visibleMatchday}${statusDate ? ` • ${statusDate}` : ""}`);
+      const currentRows = data.filter(d => d.matchday === currentMatchday);
+      const currentDate = currentRows.length ? currentRows[0].snapshot_date : "";
+      statusPill.text(`${metric.title} • Matchday ${currentMatchday}${currentDate ? ` • ${currentDate}` : ""}`);
 
-      currentFrameG.selectAll("*").remove();
-
-      currentFrameG.append("line")
-        .attr("x1", x(visibleMatchday))
-        .attr("x2", x(visibleMatchday))
-        .attr("y1", 0)
-        .attr("y2", innerHeight)
-        .attr("stroke", "rgba(56,189,248,0.55)")
-        .attr("stroke-width", 1.5)
-        .attr("stroke-dasharray", "5,5");
-
-      const lineGenerator = d3.line()
+      const line = d3.line()
         .x(d => x(d.matchday))
-        .y(d => y(d[metric.field]))
+        .y(d => y(d[field]))
         .curve(d3.curveMonotoneX);
 
-      const lineSelection = linesG
-        .selectAll(".team-line")
+      const lines = linesG.selectAll(".team-line")
         .data(series, d => d.key);
 
-      lineSelection.exit().remove();
+      lines.exit().remove();
 
-      const lineEnter = lineSelection.enter()
+      lines.enter()
         .append("path")
         .attr("class", "team-line")
-        .attr("fill", "none")
-        .attr("stroke-width", 2.6)
-        .attr("stroke-linecap", "round")
-        .attr("stroke-linejoin", "round")
-        .style("opacity", 0.52)
-        .on("mousemove", function(event, s) {
-          const point = getVisiblePoint(s, visibleMatchday);
-          if (point) {
-            d3.select(this).style("opacity", 1).attr("stroke-width", 4);
-            showTooltip(event, point);
-          }
+        .attr("stroke", d => colorScale(d.key))
+        .attr("stroke-width", 2.8)
+        .style("opacity", 0.72)
+        .on("mousemove", function(event, d) {
+          const point = lastVisible(d.values, currentMatchday);
+          setHighlight(d.key, point, event);
         })
-        .on("mouseleave", function() {
-          d3.select(this).style("opacity", 0.52).attr("stroke-width", 2.6);
-          hideTooltip();
-        });
-
-      lineEnter.merge(lineSelection)
+        .on("mouseleave", clearHighlight)
+        .merge(lines)
+        .transition(t)
         .attr("stroke", d => colorScale(d.key))
         .attr("d", d => {
-          const visibleValues = d.values.filter(v => v.matchday <= visibleMatchday);
-          return visibleValues.length > 1 ? lineGenerator(visibleValues) : null;
+          const values = visibleValues(d.values, currentMatchday);
+          return values.length > 1 ? line(values) : null;
         });
 
-      const pointSelection = pointsG
-        .selectAll(".current-point")
-        .data(visiblePoints, d => `${d.conference}|${d.team}`);
+      const sortedEndpoints = endpointData
+        .slice()
+        .sort((a, b) => d3.ascending(a[field], b[field]));
 
-      pointSelection.exit().remove();
+      const endpointGroups = endpointsG.selectAll(".crest-group")
+        .data(sortedEndpoints, d => d.key);
 
-      const pointEnter = pointSelection.enter()
+      endpointGroups.exit().remove();
+
+      const enterGroups = endpointGroups.enter()
+        .append("g")
+        .attr("class", "crest-group")
+        .on("mousemove", function(event, d) {
+          setHighlight(d.key, d, event);
+        })
+        .on("mouseleave", clearHighlight);
+
+      enterGroups.append("circle")
+        .attr("class", "crest-ring")
+        .attr("r", 20);
+
+      enterGroups.append("clipPath")
+        .attr("id", d => `clip-${safeId(d.key)}`)
         .append("circle")
-        .attr("class", "current-point")
-        .attr("r", 5.5)
-        .attr("stroke", "#09111d")
-        .attr("stroke-width", 1.5)
-        .on("mousemove", (event, d) => showTooltip(event, d))
-        .on("mouseleave", hideTooltip);
+        .attr("r", 17);
 
-      pointEnter.merge(pointSelection)
-        .attr("fill", d => colorScale(`${d.conference}|${d.team}`))
-        .attr("cx", d => x(d.matchday))
-        .attr("cy", d => y(d[metric.field]));
+      enterGroups.append("image")
+        .attr("class", "crest-img")
+        .attr("width", 34)
+        .attr("height", 34)
+        .attr("x", -17)
+        .attr("y", -17)
+        .attr("clip-path", d => `url(#clip-${safeId(d.key)})`)
+        .attr("href", d => crestUrl(teamIdByKey.get(d.key), 70));
 
-      renderLeaderboard(visiblePoints);
+      enterGroups.append("text")
+        .attr("class", "team-label")
+        .attr("x", 26)
+        .text(d => d.abbr);
+
+      const mergedGroups = enterGroups.merge(endpointGroups);
+
+      mergedGroups.select(".crest-ring")
+        .attr("stroke", d => colorScale(d.key));
+
+      mergedGroups.select(".crest-img")
+        .attr("href", d => crestUrl(teamIdByKey.get(d.key), 70));
+
+      mergedGroups.select(".team-label")
+        .attr("fill", d => colorScale(d.key))
+        .text(d => d.abbr);
+
+      mergedGroups.transition(t)
+        .attr("transform", d => `translate(${x(d.matchday)},${y(d[field])})`);
+
+      updateHighlight();
+    }
+
+    function safeId(value) {
+      return String(value).replace(/[^a-zA-Z0-9_-]/g, "-");
     }
 
     function stopReplay() {
@@ -743,25 +704,38 @@
 
     function playReplay() {
       stopReplay();
-      state.currentFrameIndex = 0;
-      render();
+      state.frameIndex = 0;
+      render(true);
 
       state.timer = setInterval(() => {
-        state.currentFrameIndex += 1;
+        state.frameIndex += 1;
 
-        if (state.currentFrameIndex >= allMatchdays.length) {
-          state.currentFrameIndex = allMatchdays.length - 1;
-          render();
+        if (state.frameIndex >= allMatchdays.length) {
+          state.frameIndex = allMatchdays.length - 1;
+          render(true);
           stopReplay();
           return;
         }
 
-        render();
-      }, 1100);
+        render(true);
+      }, 900);
     }
 
-    function init(data) {
-      rawData = data.map(d => ({
+    function enrichTeamIds(currentJson) {
+      const map = new Map();
+
+      Object.entries(currentJson.conferences || {}).forEach(([conference, rows]) => {
+        rows.forEach(row => {
+          const key = `${conference}|${row.team}`;
+          map.set(key, String(row.opta_team_id || ""));
+        });
+      });
+
+      return map;
+    }
+
+    function init(csvRows, currentJson) {
+      rawData = csvRows.map(d => ({
         snapshot_date: d.snapshot_date,
         matchday: +d.matchday,
         week: d.week,
@@ -776,30 +750,40 @@
         goals_for: +d.goals_for,
         goals_against: +d.goals_against,
         goal_difference: +d.goal_difference,
-        points: +d.points
+        points: +d.points,
+        key: `${d.conference}|${d.team}`
       }));
 
       allMatchdays = Array.from(new Set(rawData.map(d => d.matchday))).sort((a, b) => a - b);
 
-      const keyList = Array.from(new Set(rawData.map(d => `${d.conference}|${d.team}`)));
-      teamKeys = keyList;
+      teamIdByKey = enrichTeamIds(currentJson);
 
-      const palette = d3.quantize(t => d3.interpolateRainbow(t * 0.92), keyList.length);
-      colorScale = d3.scaleOrdinal().domain(keyList).range(palette);
+      const keys = Array.from(new Set(rawData.map(d => d.key)));
+      colorScale = d3.scaleOrdinal()
+        .domain(keys)
+        .range(d3.quantize(t => d3.interpolateRainbow(t * 0.88), keys.length));
+
+      state.frameIndex = allMatchdays.length - 1;
 
       buildControls();
-      render();
+      render(false);
     }
 
-    d3.csv("data/usl/standings-history.csv")
-      .then(init)
+    Promise.all([
+      d3.csv("data/usl/standings-history.csv"),
+      d3.json("data/usl/current-standings.json")
+    ])
+      .then(([csvRows, currentJson]) => init(csvRows, currentJson))
       .catch(error => {
         console.error(error);
-
-        d3.select(".chart-card").append("div")
-          .attr("class", "empty-state")
-          .style("margin-top", "18px")
-          .text("Unable to load data/usl/standings-history.csv. Check the file path and make sure the CSV exists in your repo.");
+        statusPill.text("Data load failed");
+        svg.append("text")
+          .attr("x", 70)
+          .attr("y", 100)
+          .attr("fill", "#dc2626")
+          .attr("font-size", 20)
+          .attr("font-weight", 800)
+          .text("Unable to load standings data. Check data/usl/standings-history.csv and current-standings.json.");
       });
   </script>
 </body>
