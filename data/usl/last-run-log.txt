@@ -26,29 +26,31 @@ Repository files:
 ./.git/logs/HEAD
 ./.git/objects/02/0be47656871de3c2195703664bc02dc3b606d4
 ./.git/objects/17/ccebd080fa5603b5ed87a7a8e1a6f192f67460
-./.git/objects/19/70d7f7ccd7bdbbedf818cf0d207450f31aabf0
-./.git/objects/35/7d150417abce89dce0a02c3a0494be1134e0c6
+./.git/objects/26/5915ca22b767818cfb8bd1fc44a7a4d15b9e6e
+./.git/objects/31/cb0fed37bde921e93a6962a2aa1dabefaa02e7
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
-./.git/objects/43/fac462f0ecd9d7cb63bd6aa2b4d3df25950d81
 ./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
 ./.git/objects/49/8c12087062b6f33185bda9af7097a5740b753d
-./.git/objects/4b/399b5faaec1a3efe807dc08d61cb5797e1ae51
-./.git/objects/60/7a1a56f5e60731537d73c2d7e44d16ea7a9d18
+./.git/objects/57/3541ac9702dd3969c9bc859d2b91ec1f7e6e56
+./.git/objects/67/0fdf13252961c47f90ca159ed4e4ce272f2e8e
 ./.git/objects/69/26963287def404b64e156c6f99ba2b6a3b40aa
+./.git/objects/72/cf42cce9745a6687300ee2ea7b5a8c16087589
+./.git/objects/76/b44e2ed17fe47bb9d066ef4ea2784dd6989876
 ./.git/objects/86/71e010e06900013fa0c4cb91f9e50360d679c1
-./.git/objects/90/aa40f537e09329d78f8a749e825ad07141ff5d
-./.git/objects/a6/c2210ec2caaa04642b99034bf264fa0426e751
-./.git/objects/b5/a817cfc8c9e8e1837ddf981fdf8ce97054f792
+./.git/objects/8d/b12b4d5922ced5bfcb3e75e8fe0f9929caf7bd
+./.git/objects/a6/72e53fd46d874688359a5054ffbc8411dbef81
+./.git/objects/b7/21dc476798d41c19dbaae425c012728790947a
+./.git/objects/b8/22ed7c7027abf26acd101184ae656fb1dbb1fb
 ./.git/objects/c5/34cda11503386793065f916d65806135009c60
-./.git/objects/c6/3f6749802c204287c96e960915a5fa27540e72
-./.git/objects/c7/b518d4adaea1f9ae708fcb6fd71adcd7056732
-./.git/objects/d0/0491fd7e5bb6fa28c517a0bb32b8b506539d4d
+./.git/objects/cc/1de18ab4cf31a4f8422a09dc19880f1d61b078
+./.git/objects/d4/90e1142e395f58ddb80bc86ddee7957f79290b
+./.git/objects/d7/5cf70a1a1e7ba73f2443675ee9f76a1b73d70a
 ./.git/objects/d9/4e5dfa2ffa6f223b0be7d21efea01b88897b35
-./.git/objects/e5/e35820198c2fecba26485b1e6943187edb7fd4
+./.git/objects/e2/c7a1b9084cd8ac2e115312a424dc4dbc82a916
 ./.git/objects/e7/fbe67898d885374983fe624dec6da853ebd449
+./.git/objects/eb/9d0d54b4936646eaf8f07ceecce1d042b7c229
+./.git/objects/ef/ae2fe6d1936bcfcd9564ab159a1bc744542c0c
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
-./.git/objects/f8/23d8a4c2082111ac6f149df0c2fa910f68535f
-./.git/objects/fe/0c236f65024029a0c6159322b85b5e4669467e
 ./.git/objects/fe/1e87ac018b41ea8b4e0da3675a052febc81b32
 ./.git/refs/heads/main
 ./.git/shallow
@@ -61,7 +63,9 @@ Repository files:
 ./data/usl/debug-discovered-endpoints.txt
 ./data/usl/debug-layout-tab.html
 ./data/usl/debug-main-page.html
+./data/usl/debug-opta-standings.json
 ./data/usl/debug-scripts.txt
+./data/usl/debug-team-translations.json
 ./data/usl/last-run-log.txt
 ./data/usl/last-run-status.txt
 ./data/usl/standings-history.csv
@@ -81,14 +85,17 @@ Running USL endpoint discovery script:
 Running USL standings script:
 [INFO] Fetching Opta team translations: https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json
 [INFO] Parsed 25 team translations.
-[INFO] Fetching Opta standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
+[INFO] Fetching official current standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
+[INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
+[INFO] Parsed 137 completed regular-season matches.
+[INFO] Matchdays available: 1 to 15
+[INFO] Final reconstructed stats match official current standings.
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/current-standings.json
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/standings-history.csv
-[INFO] Snapshot date: 2026-06-12
-[INFO] Week label: Week 1
+[INFO] Reconstructed history rows: 375
 [INFO] Eastern Conference: 13 teams
-[INFO] Eastern Conference leader: Tampa Bay Rowdies — 28 pts
+[INFO] Current Eastern Conference leader: Tampa Bay Rowdies — 28 pts
 [INFO] Western Conference: 12 teams
-[INFO] Western Conference leader: San Antonio FC — 21 pts
+[INFO] Current Western Conference leader: San Antonio FC — 21 pts
 
 Script exit code: 0

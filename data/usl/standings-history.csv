@@ -1,26 +1,376 @@
-snapshot_date,week,conference,rank,team,abbr,played,wins,losses,ties,goals_for,goals_against,goal_difference,points,source
-2026-06-12,Week 1,Eastern Conference,1,Tampa Bay Rowdies,TBR,12,8,0,4,21,7,14,28,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,2,Louisville City FC,LOU,13,6,5,2,22,20,2,20,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,3,Indy Eleven,IND,10,5,2,3,16,11,5,18,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,4,Detroit City FC,DET,12,5,4,3,13,11,2,18,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,5,Charleston Battery,CHS,11,5,4,2,16,15,1,17,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,7,Miami FC,MIA,12,4,4,4,15,19,-4,16,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,8,Hartford Athletic,HFD,10,3,2,5,9,10,-1,14,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,9,Rhode Island FC,RI,10,3,4,3,17,14,3,12,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,10,Birmingham Legion FC,BHM,10,2,3,5,11,12,-1,11,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,11,Loudoun United FC,LDN,10,1,3,6,12,17,-5,9,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,12,Brooklyn FC,BKN,11,2,7,2,11,20,-9,8,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Eastern Conference,13,Sporting JAX,JAX,12,0,9,3,13,28,-15,3,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,1,San Antonio FC,SA,12,5,1,6,18,14,4,21,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,2,Orange County SC,OC,11,5,2,4,14,10,4,19,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,3,FC Tulsa,TUL,10,4,2,4,13,9,4,16,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,4,Oakland Roots SC,OAK,11,4,3,4,18,16,2,16,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,5,Phoenix Rising FC,PHX,12,4,4,4,15,14,1,16,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,6,El Paso Locomotive FC,ELP,11,4,4,3,22,21,1,15,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,7,New Mexico United,NM,10,4,4,2,11,12,-1,14,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,8,Colorado Springs Switchbacks FC,COS,10,3,3,4,18,17,1,13,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,9,Sacramento Republic FC,SAC,10,3,3,4,12,11,1,13,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,10,Las Vegas Lights FC,LV,11,3,5,3,16,19,-3,12,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,11,Lexington SC,LEX,11,3,5,3,15,15,0,12,https://www.uslchampionship.com/league-standings
-2026-06-12,Week 1,Western Conference,12,Monterey Bay FC,MB,12,3,7,2,13,20,-7,11,https://www.uslchampionship.com/league-standings
+snapshot_date,matchday,week,conference,rank,team,abbr,played,wins,losses,ties,goals_for,goals_against,goal_difference,points,source
+2026-03-08,1,Matchday 1,Eastern Conference,1,Hartford Athletic,HFD,1,1,0,0,3,0,3,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,2,Charleston Battery,CHS,1,1,0,0,2,1,1,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,3,Louisville City FC,LOU,1,1,0,0,2,1,1,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,4,Brooklyn FC,BKN,1,1,0,0,1,0,1,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,5,Tampa Bay Rowdies,TBR,1,1,0,0,1,0,1,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,6,Detroit City FC,DET,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,7,Loudoun United FC,LDN,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,8,Miami FC,MIA,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,9,Rhode Island FC,RI,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,10,Pittsburgh Riverhounds SC,PIT,1,0,1,0,1,2,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,11,Birmingham Legion FC,BHM,1,0,1,0,0,1,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,12,Indy Eleven,IND,1,0,1,0,0,1,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Eastern Conference,13,Sporting JAX,JAX,1,0,1,0,0,3,-3,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,1,Sacramento Republic FC,SAC,1,1,0,0,2,0,2,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,2,San Antonio FC,SA,1,1,0,0,2,1,1,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,3,Oakland Roots SC,OAK,1,1,0,0,1,0,1,3,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,4,Colorado Springs Switchbacks FC,COS,1,0,0,1,2,2,0,1,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,5,El Paso Locomotive FC,ELP,1,0,0,1,2,2,0,1,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,6,Las Vegas Lights FC,LV,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,7,New Mexico United,NM,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,8,Orange County SC,OC,0,0,0,0,0,0,0,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,9,Lexington SC,LEX,1,0,1,0,1,2,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,10,Phoenix Rising FC,PHX,1,0,1,0,1,2,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,11,Monterey Bay FC,MB,1,0,1,0,0,1,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-08,1,Matchday 1,Western Conference,12,FC Tulsa,TUL,1,0,1,0,0,2,-2,0,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,1,Louisville City FC,LOU,2,2,0,0,6,2,4,6,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,2,Hartford Athletic,HFD,2,1,0,1,3,0,3,4,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,3,Detroit City FC,DET,1,1,0,0,3,0,3,3,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,4,Charleston Battery,CHS,1,1,0,0,2,1,1,3,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,5,Tampa Bay Rowdies,TBR,1,1,0,0,1,0,1,3,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,2,1,1,0,4,4,0,3,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,7,Brooklyn FC,BKN,2,1,1,0,1,3,-2,3,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,8,Rhode Island FC,RI,1,0,0,1,1,1,0,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,9,Birmingham Legion FC,BHM,2,0,1,1,0,1,-1,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,10,Sporting JAX,JAX,2,0,1,1,1,4,-3,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,11,Loudoun United FC,LDN,1,0,1,0,2,3,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,12,Indy Eleven,IND,1,0,1,0,0,1,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Eastern Conference,13,Miami FC,MIA,1,0,1,0,1,4,-3,0,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,1,Oakland Roots SC,OAK,2,2,0,0,3,1,2,6,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,2,El Paso Locomotive FC,ELP,2,1,0,1,5,2,3,4,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,3,Sacramento Republic FC,SAC,2,1,0,1,2,0,2,4,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,4,Colorado Springs Switchbacks FC,COS,2,1,0,1,5,4,1,4,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,5,San Antonio FC,SA,2,1,0,1,2,1,1,4,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,6,Orange County SC,OC,1,0,0,1,1,1,0,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,7,Phoenix Rising FC,PHX,2,0,1,1,2,3,-1,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,8,Lexington SC,LEX,2,0,1,1,1,2,-1,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,9,FC Tulsa,TUL,2,0,1,1,0,2,-2,1,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,10,Las Vegas Lights FC,LV,1,0,1,0,2,3,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,11,New Mexico United,NM,1,0,1,0,1,2,-1,0,https://www.uslchampionship.com/league-standings
+2026-03-15,2,Matchday 2,Western Conference,12,Monterey Bay FC,MB,2,0,2,0,0,4,-4,0,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,1,Louisville City FC,LOU,3,3,0,0,10,4,6,9,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,2,Hartford Athletic,HFD,3,2,0,1,5,1,4,7,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,3,Tampa Bay Rowdies,TBR,2,2,0,0,4,0,4,6,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,4,Charleston Battery,CHS,2,2,0,0,5,3,2,6,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,5,Detroit City FC,DET,2,1,1,0,4,2,2,3,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,6,Indy Eleven,IND,2,1,1,0,2,2,0,3,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,7,Pittsburgh Riverhounds SC,PIT,3,1,2,0,4,7,-3,3,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,8,Brooklyn FC,BKN,3,1,2,0,2,5,-3,3,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,9,Loudoun United FC,LDN,2,0,1,1,2,3,-1,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,10,Rhode Island FC,RI,2,0,1,1,3,5,-2,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,11,Birmingham Legion FC,BHM,3,0,2,1,2,4,-2,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,12,Miami FC,MIA,2,0,1,1,1,4,-3,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Eastern Conference,13,Sporting JAX,JAX,2,0,1,1,1,4,-3,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,1,Oakland Roots SC,OAK,3,2,0,1,5,3,2,7,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,2,San Antonio FC,SA,3,2,0,1,3,1,2,7,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,3,Sacramento Republic FC,SAC,3,1,0,2,3,1,2,5,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,4,El Paso Locomotive FC,ELP,2,1,0,1,5,2,3,4,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,5,Orange County SC,OC,2,1,0,1,2,1,1,4,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,6,Colorado Springs Switchbacks FC,COS,3,1,1,1,5,5,0,4,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,7,FC Tulsa,TUL,3,1,1,1,3,4,-1,4,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,8,Phoenix Rising FC,PHX,3,0,1,2,4,5,-1,2,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,9,Lexington SC,LEX,2,0,1,1,1,2,-1,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,10,Monterey Bay FC,MB,3,0,2,1,1,5,-4,1,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,11,Las Vegas Lights FC,LV,2,0,2,0,4,6,-2,0,https://www.uslchampionship.com/league-standings
+2026-03-22,3,Matchday 3,Western Conference,12,New Mexico United,NM,2,0,2,0,1,3,-2,0,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,1,Louisville City FC,LOU,4,4,0,0,11,4,7,12,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,2,Tampa Bay Rowdies,TBR,3,3,0,0,7,1,6,9,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,3,Hartford Athletic,HFD,4,2,0,2,7,3,4,8,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,4,Miami FC,MIA,4,2,1,1,7,7,0,7,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,5,Detroit City FC,DET,3,2,1,0,5,2,3,6,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,6,Charleston Battery,CHS,3,2,1,0,5,4,1,6,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,7,Pittsburgh Riverhounds SC,PIT,4,2,2,0,7,9,-2,6,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,8,Indy Eleven,IND,3,1,1,1,4,4,0,4,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,9,Brooklyn FC,BKN,5,1,4,0,2,9,-7,3,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,10,Birmingham Legion FC,BHM,3,0,2,1,2,4,-2,1,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,11,Rhode Island FC,RI,3,0,2,1,4,7,-3,1,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,12,Loudoun United FC,LDN,3,0,2,1,3,6,-3,1,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Eastern Conference,13,Sporting JAX,JAX,4,0,3,1,5,11,-6,1,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,1,San Antonio FC,SA,4,3,0,1,5,1,4,10,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,2,El Paso Locomotive FC,ELP,3,2,0,1,7,3,4,7,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,3,Orange County SC,OC,3,2,0,1,3,1,2,7,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,4,Oakland Roots SC,OAK,4,2,1,1,5,4,1,7,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,5,Sacramento Republic FC,SAC,4,1,1,2,4,3,1,5,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,6,FC Tulsa,TUL,4,1,1,2,4,5,-1,5,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,7,Lexington SC,LEX,4,1,2,1,4,4,0,4,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,8,Colorado Springs Switchbacks FC,COS,4,1,2,1,7,8,-1,4,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,9,Las Vegas Lights FC,LV,3,1,2,0,5,6,-1,3,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,10,Phoenix Rising FC,PHX,4,0,1,3,5,6,-1,3,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,11,New Mexico United,NM,3,1,2,0,4,5,-1,3,https://www.uslchampionship.com/league-standings
+2026-03-29,4,Matchday 4,Western Conference,12,Monterey Bay FC,MB,4,0,3,1,1,6,-5,1,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,1,Tampa Bay Rowdies,TBR,4,4,0,0,8,1,7,12,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,2,Louisville City FC,LOU,5,4,1,0,11,6,5,12,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,3,Hartford Athletic,HFD,5,2,0,3,7,3,4,9,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,4,Charleston Battery,CHS,4,3,1,0,7,4,3,9,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,5,Miami FC,MIA,5,2,1,2,7,7,0,8,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,6,Detroit City FC,DET,4,2,1,1,5,2,3,7,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,7,Pittsburgh Riverhounds SC,PIT,5,2,2,1,8,10,-2,7,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,8,Indy Eleven,IND,4,1,1,2,5,5,0,5,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,9,Brooklyn FC,BKN,5,1,4,0,2,9,-7,3,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,10,Birmingham Legion FC,BHM,4,0,2,2,4,6,-2,2,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,11,Loudoun United FC,LDN,4,0,2,2,5,8,-3,2,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,12,Rhode Island FC,RI,4,0,2,2,4,7,-3,2,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Eastern Conference,13,Sporting JAX,JAX,5,0,4,1,5,12,-7,1,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,1,San Antonio FC,SA,5,3,0,2,5,1,4,11,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,2,El Paso Locomotive FC,ELP,4,3,0,1,10,5,5,10,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,3,Sacramento Republic FC,SAC,5,2,1,2,6,3,3,8,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,4,Oakland Roots SC,OAK,4,2,1,1,5,4,1,7,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,5,Orange County SC,OC,4,2,1,1,3,2,1,7,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,6,New Mexico United,NM,4,2,2,0,5,5,0,6,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,7,Lexington SC,LEX,5,1,2,2,5,5,0,5,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,8,Colorado Springs Switchbacks FC,COS,5,1,2,2,8,9,-1,5,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,9,FC Tulsa,TUL,4,1,1,2,4,5,-1,5,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,10,Las Vegas Lights FC,LV,4,1,3,0,7,9,-2,3,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,11,Phoenix Rising FC,PHX,5,0,2,3,5,8,-3,3,https://www.uslchampionship.com/league-standings
+2026-04-05,5,Matchday 5,Western Conference,12,Monterey Bay FC,MB,5,0,3,2,1,6,-5,2,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,1,Tampa Bay Rowdies,TBR,5,4,0,1,10,3,7,13,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,2,Louisville City FC,LOU,6,4,1,1,14,9,5,13,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,3,Detroit City FC,DET,5,3,1,1,6,2,4,10,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,4,Charleston Battery,CHS,5,3,2,0,7,7,0,9,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,5,Hartford Athletic,HFD,6,2,1,3,7,7,0,9,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,6,Miami FC,MIA,6,2,1,3,7,7,0,9,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,7,Indy Eleven,IND,5,2,1,2,8,6,2,8,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,8,Pittsburgh Riverhounds SC,PIT,6,2,3,1,8,11,-3,7,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,9,Brooklyn FC,BKN,6,2,4,0,5,9,-4,6,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,10,Rhode Island FC,RI,5,1,2,2,7,8,-1,5,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,11,Birmingham Legion FC,BHM,5,1,2,2,5,6,-1,5,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,12,Loudoun United FC,LDN,5,0,2,3,8,11,-3,3,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Eastern Conference,13,Sporting JAX,JAX,6,0,5,1,5,13,-8,1,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,1,El Paso Locomotive FC,ELP,5,4,0,1,14,5,9,13,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,2,Orange County SC,OC,6,4,1,1,6,2,4,13,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,3,San Antonio FC,SA,7,3,1,3,5,3,2,12,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,4,Sacramento Republic FC,SAC,6,2,1,3,7,4,3,9,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,5,Oakland Roots SC,OAK,5,2,1,2,7,6,1,8,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,6,Phoenix Rising FC,PHX,6,1,2,3,8,8,0,6,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,7,New Mexico United,NM,5,2,3,0,5,8,-3,6,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,8,Colorado Springs Switchbacks FC,COS,5,1,2,2,8,9,-1,5,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,9,Lexington SC,LEX,6,1,3,2,6,8,-2,5,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,10,FC Tulsa,TUL,5,1,2,2,4,6,-2,5,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,11,Las Vegas Lights FC,LV,5,1,3,1,8,10,-2,4,https://www.uslchampionship.com/league-standings
+2026-04-12,6,Matchday 6,Western Conference,12,Monterey Bay FC,MB,6,0,4,2,2,9,-7,2,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,1,Louisville City FC,LOU,7,5,1,1,15,9,6,16,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,2,Tampa Bay Rowdies,TBR,6,4,0,2,11,4,7,14,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,3,Detroit City FC,DET,6,3,2,1,7,4,3,10,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,4,Charleston Battery,CHS,6,3,2,1,8,8,0,10,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,5,Hartford Athletic,HFD,7,2,1,4,7,7,0,10,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,7,3,3,1,10,12,-2,10,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,7,Indy Eleven,IND,6,2,1,3,10,8,2,9,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,8,Miami FC,MIA,7,2,2,3,7,10,-3,9,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,9,Birmingham Legion FC,BHM,6,1,2,3,7,8,-1,6,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,10,Brooklyn FC,BKN,6,2,4,0,5,9,-4,6,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,11,Rhode Island FC,RI,5,1,2,2,7,8,-1,5,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,12,Loudoun United FC,LDN,6,0,2,4,8,11,-3,4,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Eastern Conference,13,Sporting JAX,JAX,7,0,6,1,5,14,-9,1,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,1,San Antonio FC,SA,8,4,1,3,8,5,3,15,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,2,Orange County SC,OC,7,4,1,2,6,2,4,14,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,3,El Paso Locomotive FC,ELP,6,4,1,1,16,8,8,13,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,4,Phoenix Rising FC,PHX,7,2,2,3,11,8,3,9,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,5,Sacramento Republic FC,SAC,6,2,1,3,7,4,3,9,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,6,Oakland Roots SC,OAK,6,2,1,3,8,7,1,9,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,7,Colorado Springs Switchbacks FC,COS,6,2,2,2,12,10,2,8,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,8,Lexington SC,LEX,7,1,3,3,6,8,-2,6,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,9,FC Tulsa,TUL,6,1,2,3,5,7,-2,6,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,10,New Mexico United,NM,5,2,3,0,5,8,-3,6,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,11,Las Vegas Lights FC,LV,5,1,3,1,8,10,-2,4,https://www.uslchampionship.com/league-standings
+2026-04-19,7,Matchday 7,Western Conference,12,Monterey Bay FC,MB,7,0,5,2,3,13,-10,2,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,1,Louisville City FC,LOU,7,5,1,1,15,9,6,16,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,2,Tampa Bay Rowdies,TBR,6,4,0,2,11,4,7,14,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,3,Detroit City FC,DET,6,3,2,1,7,4,3,10,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,4,Hartford Athletic,HFD,7,2,1,4,7,7,0,10,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,5,Pittsburgh Riverhounds SC,PIT,7,3,3,1,10,12,-2,10,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,6,Charleston Battery,CHS,7,3,3,1,8,12,-4,10,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,7,Indy Eleven,IND,6,2,1,3,10,8,2,9,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,8,Miami FC,MIA,7,2,2,3,7,10,-3,9,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,9,Rhode Island FC,RI,6,2,2,2,11,8,3,8,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,10,Brooklyn FC,BKN,7,2,4,1,6,10,-4,7,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,11,Birmingham Legion FC,BHM,6,1,2,3,7,8,-1,6,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,12,Loudoun United FC,LDN,6,0,2,4,8,11,-3,4,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Eastern Conference,13,Sporting JAX,JAX,7,0,6,1,5,14,-9,1,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,1,San Antonio FC,SA,8,4,1,3,8,5,3,15,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,2,Orange County SC,OC,7,4,1,2,6,2,4,14,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,3,El Paso Locomotive FC,ELP,6,4,1,1,16,8,8,13,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,4,Oakland Roots SC,OAK,7,3,1,3,12,9,3,12,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,5,Sacramento Republic FC,SAC,7,2,1,4,8,5,3,10,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,6,Phoenix Rising FC,PHX,7,2,2,3,11,8,3,9,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,7,Colorado Springs Switchbacks FC,COS,6,2,2,2,12,10,2,8,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,8,Lexington SC,LEX,7,1,3,3,6,8,-2,6,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,9,FC Tulsa,TUL,6,1,2,3,5,7,-2,6,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,10,New Mexico United,NM,5,2,3,0,5,8,-3,6,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,11,Las Vegas Lights FC,LV,6,1,4,1,10,14,-4,4,https://www.uslchampionship.com/league-standings
+2026-04-23,8,Matchday 8,Western Conference,12,Monterey Bay FC,MB,7,0,5,2,3,13,-10,2,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,1,Tampa Bay Rowdies,TBR,7,5,0,2,12,4,8,17,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,2,Louisville City FC,LOU,8,5,2,1,16,11,5,16,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,3,Detroit City FC,DET,7,4,2,1,9,5,4,13,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,4,Charleston Battery,CHS,8,4,3,1,12,12,0,13,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,5,Miami FC,MIA,8,3,2,3,10,12,-2,12,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,6,Hartford Athletic,HFD,7,2,1,4,7,7,0,10,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,7,Pittsburgh Riverhounds SC,PIT,8,3,4,1,10,13,-3,10,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,8,Birmingham Legion FC,BHM,7,2,2,3,10,9,1,9,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,9,Indy Eleven,IND,7,2,2,3,10,9,1,9,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,10,Rhode Island FC,RI,7,2,3,2,12,11,1,8,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,11,Brooklyn FC,BKN,8,2,5,1,8,13,-5,7,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,12,Loudoun United FC,LDN,7,0,2,5,10,13,-3,5,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Eastern Conference,13,Sporting JAX,JAX,8,0,7,1,5,18,-13,1,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,1,San Antonio FC,SA,9,4,1,4,11,8,3,16,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,2,Orange County SC,OC,8,4,2,2,8,5,3,14,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,3,El Paso Locomotive FC,ELP,7,4,2,1,17,12,5,13,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,4,Sacramento Republic FC,SAC,8,3,1,4,11,7,4,13,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,5,Oakland Roots SC,OAK,8,3,1,4,14,11,3,13,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,6,Phoenix Rising FC,PHX,8,3,2,3,12,8,4,12,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,7,FC Tulsa,TUL,8,3,2,3,11,9,2,12,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,8,Colorado Springs Switchbacks FC,COS,7,2,2,3,15,13,2,9,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,9,Las Vegas Lights FC,LV,7,2,4,1,12,15,-3,7,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,10,Lexington SC,LEX,8,1,4,3,7,10,-3,6,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,11,New Mexico United,NM,5,2,3,0,5,8,-3,6,https://www.uslchampionship.com/league-standings
+2026-05-03,9,Matchday 9,Western Conference,12,Monterey Bay FC,MB,8,0,6,2,4,15,-11,2,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,1,Tampa Bay Rowdies,TBR,8,5,0,3,13,5,8,18,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,2,Louisville City FC,LOU,9,5,3,1,16,13,3,16,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,3,Detroit City FC,DET,8,4,3,1,10,7,3,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,4,Hartford Athletic,HFD,8,3,1,4,9,8,1,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,5,Charleston Battery,CHS,8,4,3,1,12,12,0,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,9,4,4,1,12,13,-1,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,7,Miami FC,MIA,9,3,2,4,10,12,-2,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,8,Indy Eleven,IND,8,3,2,3,12,10,2,12,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,9,Birmingham Legion FC,BHM,8,2,2,4,10,9,1,10,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,10,Rhode Island FC,RI,8,2,3,3,13,12,1,9,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,11,Loudoun United FC,LDN,8,1,2,5,11,13,-2,8,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,12,Brooklyn FC,BKN,9,2,6,1,8,14,-6,7,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Eastern Conference,13,Sporting JAX,JAX,9,0,8,1,6,20,-14,1,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,1,San Antonio FC,SA,10,4,1,5,12,9,3,17,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,2,Oakland Roots SC,OAK,9,4,1,4,16,12,4,16,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,3,Orange County SC,OC,9,4,2,3,10,7,3,15,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,4,El Paso Locomotive FC,ELP,9,4,3,2,20,16,4,14,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,5,Phoenix Rising FC,PHX,9,3,2,4,13,9,4,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,6,Sacramento Republic FC,SAC,8,3,1,4,11,7,4,13,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,7,FC Tulsa,TUL,8,3,2,3,11,9,2,12,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,8,Colorado Springs Switchbacks FC,COS,8,2,2,4,17,15,2,10,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,9,New Mexico United,NM,7,3,3,1,10,11,-1,10,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,10,Lexington SC,LEX,9,2,4,3,10,11,-1,9,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,11,Las Vegas Lights FC,LV,8,2,5,1,13,18,-5,7,https://www.uslchampionship.com/league-standings
+2026-05-10,10,Matchday 10,Western Conference,12,Monterey Bay FC,MB,9,0,7,2,5,18,-13,2,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,1,Tampa Bay Rowdies,TBR,10,7,0,3,17,5,12,24,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,2,Detroit City FC,DET,10,5,3,2,12,8,4,17,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,3,Louisville City FC,LOU,10,5,4,1,19,17,2,16,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,4,Miami FC,MIA,11,4,3,4,15,17,-2,16,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,5,Indy Eleven,IND,9,4,2,3,15,11,4,15,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,6,Charleston Battery,CHS,9,4,4,1,12,13,-1,13,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,7,Pittsburgh Riverhounds SC,PIT,9,4,4,1,12,13,-1,13,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,8,Hartford Athletic,HFD,9,3,2,4,9,10,-1,13,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,9,Rhode Island FC,RI,9,3,3,3,17,13,4,12,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,10,Birmingham Legion FC,BHM,9,2,3,4,10,11,-1,10,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,11,Loudoun United FC,LDN,9,1,2,6,11,13,-2,9,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,12,Brooklyn FC,BKN,10,2,7,1,9,18,-9,7,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Eastern Conference,13,Sporting JAX,JAX,9,0,8,1,6,20,-14,1,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,1,San Antonio FC,SA,11,5,1,5,14,10,4,20,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,2,Orange County SC,OC,10,5,2,3,13,9,4,18,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,3,Oakland Roots SC,OAK,10,4,2,4,18,15,3,16,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,4,FC Tulsa,TUL,9,4,2,3,13,9,4,15,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,5,El Paso Locomotive FC,ELP,9,4,3,2,20,16,4,14,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,6,Sacramento Republic FC,SAC,9,3,2,4,12,9,3,13,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,7,Phoenix Rising FC,PHX,10,3,3,4,13,12,1,13,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,8,New Mexico United,NM,9,4,4,1,11,12,-1,13,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,9,Colorado Springs Switchbacks FC,COS,9,2,3,4,17,17,0,10,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,10,Las Vegas Lights FC,LV,9,3,5,1,15,18,-3,10,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,11,Lexington SC,LEX,10,2,5,3,11,14,-3,9,https://www.uslchampionship.com/league-standings
+2026-05-24,11,Matchday 11,Western Conference,12,Monterey Bay FC,MB,10,1,7,2,7,18,-11,5,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,1,Tampa Bay Rowdies,TBR,11,8,0,3,19,5,14,27,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,2,Indy Eleven,IND,10,5,2,3,16,11,5,18,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,3,Detroit City FC,DET,11,5,4,2,12,10,2,17,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,4,Charleston Battery,CHS,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,5,Pittsburgh Riverhounds SC,PIT,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,6,Louisville City FC,LOU,11,5,5,1,19,19,0,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,7,Miami FC,MIA,12,4,4,4,15,19,-4,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,8,Hartford Athletic,HFD,10,3,2,5,9,10,-1,14,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,9,Rhode Island FC,RI,10,3,4,3,17,14,3,12,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,10,Birmingham Legion FC,BHM,9,2,3,4,10,11,-1,10,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,11,Loudoun United FC,LDN,10,1,3,6,12,17,-5,9,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,12,Brooklyn FC,BKN,11,2,7,2,11,20,-9,8,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Eastern Conference,13,Sporting JAX,JAX,11,0,8,3,12,26,-14,3,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,1,San Antonio FC,SA,12,5,1,6,18,14,4,21,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,2,Orange County SC,OC,10,5,2,3,13,9,4,18,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,3,FC Tulsa,TUL,10,4,2,4,13,9,4,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,4,Phoenix Rising FC,PHX,11,4,3,4,15,12,3,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,5,Oakland Roots SC,OAK,11,4,3,4,18,16,2,16,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,6,El Paso Locomotive FC,ELP,10,4,4,2,21,20,1,14,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,7,New Mexico United,NM,10,4,4,2,11,12,-1,14,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,8,Colorado Springs Switchbacks FC,COS,10,3,3,4,18,17,1,13,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,9,Sacramento Republic FC,SAC,10,3,3,4,12,11,1,13,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,10,Lexington SC,LEX,11,3,5,3,15,15,0,12,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,11,Las Vegas Lights FC,LV,10,3,5,2,15,18,-3,11,https://www.uslchampionship.com/league-standings
+2026-05-31,12,Matchday 12,Western Conference,12,Monterey Bay FC,MB,11,2,7,2,11,19,-8,8,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,1,Tampa Bay Rowdies,TBR,11,8,0,3,19,5,14,27,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,2,Indy Eleven,IND,10,5,2,3,16,11,5,18,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,3,Detroit City FC,DET,11,5,4,2,12,10,2,17,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,4,Louisville City FC,LOU,12,5,5,2,20,20,0,17,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,5,Charleston Battery,CHS,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,7,Miami FC,MIA,12,4,4,4,15,19,-4,16,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,8,Hartford Athletic,HFD,10,3,2,5,9,10,-1,14,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,9,Rhode Island FC,RI,10,3,4,3,17,14,3,12,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,10,Birmingham Legion FC,BHM,10,2,3,5,11,12,-1,11,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,11,Loudoun United FC,LDN,10,1,3,6,12,17,-5,9,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,12,Brooklyn FC,BKN,11,2,7,2,11,20,-9,8,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Eastern Conference,13,Sporting JAX,JAX,11,0,8,3,12,26,-14,3,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,1,San Antonio FC,SA,12,5,1,6,18,14,4,21,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,2,Orange County SC,OC,10,5,2,3,13,9,4,18,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,3,FC Tulsa,TUL,10,4,2,4,13,9,4,16,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,4,Phoenix Rising FC,PHX,11,4,3,4,15,12,3,16,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,5,Oakland Roots SC,OAK,11,4,3,4,18,16,2,16,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,6,El Paso Locomotive FC,ELP,10,4,4,2,21,20,1,14,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,7,New Mexico United,NM,10,4,4,2,11,12,-1,14,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,8,Colorado Springs Switchbacks FC,COS,10,3,3,4,18,17,1,13,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,9,Sacramento Republic FC,SAC,10,3,3,4,12,11,1,13,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,10,Lexington SC,LEX,11,3,5,3,15,15,0,12,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,11,Las Vegas Lights FC,LV,10,3,5,2,15,18,-3,11,https://www.uslchampionship.com/league-standings
+2026-06-04,13,Matchday 13,Western Conference,12,Monterey Bay FC,MB,11,2,7,2,11,19,-8,8,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,1,Tampa Bay Rowdies,TBR,12,8,0,4,21,7,14,28,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,2,Louisville City FC,LOU,13,6,5,2,22,20,2,20,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,3,Indy Eleven,IND,10,5,2,3,16,11,5,18,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,4,Detroit City FC,DET,12,5,4,3,13,11,2,18,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,5,Charleston Battery,CHS,11,5,4,2,16,15,1,17,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,7,Miami FC,MIA,12,4,4,4,15,19,-4,16,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,8,Hartford Athletic,HFD,10,3,2,5,9,10,-1,14,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,9,Rhode Island FC,RI,10,3,4,3,17,14,3,12,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,10,Birmingham Legion FC,BHM,10,2,3,5,11,12,-1,11,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,11,Loudoun United FC,LDN,10,1,3,6,12,17,-5,9,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,12,Brooklyn FC,BKN,11,2,7,2,11,20,-9,8,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Eastern Conference,13,Sporting JAX,JAX,12,0,9,3,13,28,-15,3,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,1,San Antonio FC,SA,12,5,1,6,18,14,4,21,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,2,Orange County SC,OC,10,5,2,3,13,9,4,18,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,3,FC Tulsa,TUL,10,4,2,4,13,9,4,16,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,4,Oakland Roots SC,OAK,11,4,3,4,18,16,2,16,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,5,Phoenix Rising FC,PHX,12,4,4,4,15,14,1,16,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,6,El Paso Locomotive FC,ELP,11,4,4,3,22,21,1,15,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,7,New Mexico United,NM,10,4,4,2,11,12,-1,14,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,8,Colorado Springs Switchbacks FC,COS,10,3,3,4,18,17,1,13,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,9,Sacramento Republic FC,SAC,10,3,3,4,12,11,1,13,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,10,Lexington SC,LEX,11,3,5,3,15,15,0,12,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,11,Las Vegas Lights FC,LV,10,3,5,2,15,18,-3,11,https://www.uslchampionship.com/league-standings
+2026-06-11,14,Matchday 14,Western Conference,12,Monterey Bay FC,MB,12,3,7,2,13,20,-7,11,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,1,Tampa Bay Rowdies,TBR,12,8,0,4,21,7,14,28,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,2,Louisville City FC,LOU,13,6,5,2,22,20,2,20,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,3,Indy Eleven,IND,10,5,2,3,16,11,5,18,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,4,Detroit City FC,DET,12,5,4,3,13,11,2,18,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,5,Charleston Battery,CHS,11,5,4,2,16,15,1,17,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,6,Pittsburgh Riverhounds SC,PIT,10,5,4,1,14,13,1,16,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,7,Miami FC,MIA,12,4,4,4,15,19,-4,16,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,8,Hartford Athletic,HFD,10,3,2,5,9,10,-1,14,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,9,Rhode Island FC,RI,10,3,4,3,17,14,3,12,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,10,Birmingham Legion FC,BHM,10,2,3,5,11,12,-1,11,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,11,Loudoun United FC,LDN,10,1,3,6,12,17,-5,9,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,12,Brooklyn FC,BKN,11,2,7,2,11,20,-9,8,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Eastern Conference,13,Sporting JAX,JAX,12,0,9,3,13,28,-15,3,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,1,San Antonio FC,SA,12,5,1,6,18,14,4,21,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,2,Orange County SC,OC,11,5,2,4,14,10,4,19,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,3,FC Tulsa,TUL,10,4,2,4,13,9,4,16,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,4,Oakland Roots SC,OAK,11,4,3,4,18,16,2,16,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,5,Phoenix Rising FC,PHX,12,4,4,4,15,14,1,16,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,6,El Paso Locomotive FC,ELP,11,4,4,3,22,21,1,15,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,7,New Mexico United,NM,10,4,4,2,11,12,-1,14,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,8,Colorado Springs Switchbacks FC,COS,10,3,3,4,18,17,1,13,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,9,Sacramento Republic FC,SAC,10,3,3,4,12,11,1,13,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,10,Lexington SC,LEX,11,3,5,3,15,15,0,12,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,11,Las Vegas Lights FC,LV,11,3,5,3,16,19,-3,12,https://www.uslchampionship.com/league-standings
+2026-03-08,15,Matchday 15,Western Conference,12,Monterey Bay FC,MB,12,3,7,2,13,20,-7,11,https://www.uslchampionship.com/league-standings
