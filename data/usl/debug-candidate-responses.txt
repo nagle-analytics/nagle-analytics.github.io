@@ -26,7 +26,7 @@ Preview:
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="fYq3z9LuAFR1fv1TcNMBp7q4xrykT1A3eJ6qUChOsRkoVO6d+RqYXXTz0eBDOxhUBjYffHWy3w9nHAxwFXxRcg==" />
+<meta name="csrf-token" content="/c70/R3jiHYZt7WeSEy2L05qU1N+x+/ApgaoUzkKUDFkf42uhExkGSTz6UfFlKIzN26h42aBZx/9ilce2gge/Q==" />
 <meta name="trace-id" content="ee593969-1334-4403-b7fc-68e72d2d83ac" />
   <title>Global Network</title>
 
@@ -88,7 +88,7 @@ Preview:
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="NanUHwWhDR0HTwvrFuHbzrfwdI1l2vSxNSCro3imgMNgd41NLlWVFAbCJ1glCcI9C36tTbQne4kqog2DRZRgqA==" />
+<meta name="csrf-token" content="mCPFjYbsnSQEQVfeDK3nFqH34ZEKkhV0XW7FBO2TLJ8BkrzeH0NxSzkFCweBdfMK2PMTIRLUnasG4jpJDpFiUw==" />
 <meta name="trace-id" content="abdb24cf-0e20-4a4d-9801-772c85b172a4" />
   <title>Assets</title>
 

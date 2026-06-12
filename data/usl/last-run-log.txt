@@ -26,25 +26,29 @@ Repository files:
 ./.git/logs/HEAD
 ./.git/objects/02/0be47656871de3c2195703664bc02dc3b606d4
 ./.git/objects/17/ccebd080fa5603b5ed87a7a8e1a6f192f67460
-./.git/objects/28/13a8c027e13af987baf9478b2c6bc8bb77a2af
 ./.git/objects/30/e989073a74206bbea0c1b81bbfe05c4a8588e9
-./.git/objects/31/531f89e5f28be7733bef7b2f073aa3eff4f3fc
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
+./.git/objects/48/1d48760f437adb5ddcfbbe803a47802d885a28
+./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
+./.git/objects/49/8c12087062b6f33185bda9af7097a5740b753d
+./.git/objects/54/47f77493f69ddf178e68d457a5221567e8cb48
+./.git/objects/61/9eb14d87e9e9a3626009c3d91690a92ab0c7e4
 ./.git/objects/69/26963287def404b64e156c6f99ba2b6a3b40aa
-./.git/objects/6a/a51ea7895e9dd732df0e7622121f6cb0e6508b
-./.git/objects/76/8051ea46f35b10ec14c4db6d5513f748e87317
 ./.git/objects/86/71e010e06900013fa0c4cb91f9e50360d679c1
 ./.git/objects/90/aa40f537e09329d78f8a749e825ad07141ff5d
+./.git/objects/a3/4fe24cd8473904c0bac1c9a727240fb7087d3a
+./.git/objects/a5/7ee2226a0e355cba8f4c6120d1c002288e2215
+./.git/objects/a9/d1075c35fd9e3d95f95533a9ec89a33a513d30
+./.git/objects/b4/610978e2b503de61f0bef627f3b6446b96d966
 ./.git/objects/b5/a817cfc8c9e8e1837ddf981fdf8ce97054f792
+./.git/objects/c0/69c650104c6868d9ee5d2a07ff4721f6352bb3
 ./.git/objects/c5/34cda11503386793065f916d65806135009c60
-./.git/objects/c7/20a6288447a1775b5f46c15956fc972b5a45a9
-./.git/objects/c7/6e94743bade8456b6f3e773fb0ebc615b8009f
+./.git/objects/cd/a87010de3a0a4e477d6c1fa4873ba7e9e6b50e
 ./.git/objects/d0/0491fd7e5bb6fa28c517a0bb32b8b506539d4d
-./.git/objects/d0/7b18fa3a07d8ef849f9929763fd753ca416c7b
+./.git/objects/e2/21e27a9cacdfffb70266aa0614bc5f3c08e4ec
 ./.git/objects/e7/fbe67898d885374983fe624dec6da853ebd449
-./.git/objects/e8/461a538ea8a34c52491ab799533a1df8971ad1
-./.git/objects/ec/3018795435f7a158c57eb3c8ed97139a013766
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
+./.git/objects/fc/30e3f48916e3a1c652122f52e793e462dd1be5
 ./.git/refs/heads/main
 ./.git/shallow
 ./.github/workflows/update-usl-standings.yml
@@ -52,18 +56,25 @@ Repository files:
 ./articles.html
 ./backup-index-old.html
 ./data/usl/current-standings.json
+./data/usl/debug-candidate-responses.txt
 ./data/usl/debug-layout-tab.html
+./data/usl/debug-main-page.html
+./data/usl/debug-scripts.txt
 ./data/usl/last-run-log.txt
 ./data/usl/last-run-status.txt
 ./data/usl/standings-history.csv
 ./featured.html
 ./index.html
 ./maps.html
+./scripts/discover-usl-endpoints.py
 ./scripts/fetch-usl-standings.py
 ./viz-gallery.html
 
 Python version:
 Python 3.11.15
+Running USL endpoint discovery script:
+[INFO] Saved discovered endpoint debug file to: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/debug-discovered-endpoints.txt
+[INFO] Captured 71 candidate response(s).
 
 Running USL standings script:
 [INFO] Fetching USL standings from: https://www.uslchampionship.com/league-standings
