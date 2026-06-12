@@ -26,12 +26,14 @@ Repository files:
 ./.git/logs/HEAD
 ./.git/objects/02/0be47656871de3c2195703664bc02dc3b606d4
 ./.git/objects/17/ccebd080fa5603b5ed87a7a8e1a6f192f67460
+./.git/objects/26/df7a0de644a6fa9d17136c4af1533b330ad309
+./.git/objects/34/b5fd89baf77fed47c50fa5b0fc5bf66ae69106
 ./.git/objects/50/852794539fa037e2e188bc0750ddbc331523a8
-./.git/objects/66/0190613003e28305b9fe1c126277c7006927d0
-./.git/objects/68/9eb0458f46fb626b45818049937174286ee8a6
+./.git/objects/53/4b389958b3d6d98559f6d782197be5a27c3c80
+./.git/objects/55/e125ab1cf7841b20fd88d72188e3f36c71f2aa
 ./.git/objects/69/26963287def404b64e156c6f99ba2b6a3b40aa
-./.git/objects/7f/c0fb0248a888c49f04d472a2665b9502ab4cf5
 ./.git/objects/86/71e010e06900013fa0c4cb91f9e50360d679c1
+./.git/objects/8f/9a8c3964a6740d576db0e1065924b22fbe2393
 ./.git/objects/90/aa40f537e09329d78f8a749e825ad07141ff5d
 ./.git/objects/96/d4ca250f0654aabfbc4185aad750a8abf47576
 ./.git/objects/98/6cdeb20f0262600e90f828f91bfae270205ed0
@@ -39,10 +41,8 @@ Repository files:
 ./.git/objects/bb/51eab351515e4df3cd3b35dcc5e3fc1efcea9d
 ./.git/objects/c5/34cda11503386793065f916d65806135009c60
 ./.git/objects/d0/0491fd7e5bb6fa28c517a0bb32b8b506539d4d
-./.git/objects/dc/89c0222dc5fb99e7027648b862e6114469fd67
 ./.git/objects/e3/9b33b07ee5eefbce453918144cf4230ed3593b
 ./.git/objects/e7/fbe67898d885374983fe624dec6da853ebd449
-./.git/objects/ea/f7e20e130692a628025d215aa2e22518d427c4
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
 ./.git/refs/heads/main
 ./.git/shallow
@@ -65,7 +65,7 @@ Python 3.11.15
 
 Running USL standings script:
 [INFO] Fetching USL standings from: https://www.uslchampionship.com/league-standings
-[INFO] Downloaded 94,697 characters from USL standings page.
+[INFO] Downloaded 94,704 characters from USL standings page.
 [INFO] Content-Type: text/html; charset=utf-8
 [INFO] pandas found 0 HTML table(s).
 [INFO] Found 0 possible standings table(s).
