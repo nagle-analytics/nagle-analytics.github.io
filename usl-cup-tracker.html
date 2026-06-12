@@ -416,6 +416,19 @@ function getCrestUrl(teamName) {
   return meta.crestUrl || "";
 }
 
+ function getTeamPageUrl(teamName) {
+  const meta = getTeamMeta(teamName);
+  return meta.teamPageUrl || "";
+}
+
+function openTeamPage(teamName) {
+  const url = getTeamPageUrl(teamName);
+
+  if (url) {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+}   
+    
     function buildControls() {
       const metricWrap = d3.select("#metricControls");
       const conferenceWrap = d3.select("#conferenceControls");
@@ -709,6 +722,10 @@ function getCrestUrl(teamName) {
         .attr("stroke", d => getLineColor(d.team, d.key))
         .attr("stroke-width", 2.8)
         .style("opacity", 0.72)
+        .style("cursor", "pointer")
+        .on("click", function(event, d) {
+          openTeamPage(d.team);
+        })
         .on("mousemove", function(event, d) {
           const point = lastVisible(d.values, currentFrame);
           setHighlight(d.key, point, event);
@@ -734,28 +751,49 @@ function getCrestUrl(teamName) {
       const enterGroups = endpointGroups.enter()
         .append("g")
         .attr("class", "crest-group")
+        .style("cursor", "pointer")
+        .on("click", function(event, d) {
+          openTeamPage(d.team);
+        })
         .on("mousemove", function(event, d) {
           setHighlight(d.key, d, event);
-        })
+          })
         .on("mouseleave", clearHighlight);
 
       enterGroups.append("circle")
         .attr("class", "crest-ring")
-        .attr("r", 20);
+        .attr("r", 20)
+        .attr("fill", "#ffffff")
+        .attr("stroke-width", 3);
+
+      enterGroups.append("circle")
+        .attr("class", "crest-bg")
+        .attr("r", 16)
+        .attr("fill", "#ffffff");
 
       enterGroups.append("clipPath")
         .attr("id", d => `clip-${safeId(d.key)}`)
         .append("circle")
         .attr("r", 17);
 
+      enterGroups.append("image")
+        .attr("class", "crest-img")
+        .attr("x", -14)
+        .attr("y", -14)
+        .attr("width", 28)
+        .attr("height", 28)
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .on("error", function() {
+          d3.select(this).style("display", "none");
+          d3.select(this.parentNode).select(".crest-abbr").style("display", null);
+        });
+
       enterGroups.append("text")
         .attr("class", "crest-abbr")
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle")
         .attr("font-size", 10)
-        .attr("font-weight", 900)
-        .attr("fill", d => getTextColor(d.team))
-        .text(d => d.abbr);
+        .attr("font-weight", 900);
 
       enterGroups.append("text")
         .attr("class", "team-label")
@@ -767,8 +805,16 @@ function getCrestUrl(teamName) {
       mergedGroups.select(".crest-ring")
         .attr("stroke", d => getLineColor(d.team, d.key));
 
+      mergedGroups.select(".crest-bg")
+        .attr("fill", "#ffffff");
+
+      mergedGroups.select(".crest-img")
+        .attr("href", d => getCrestUrl(d.team))
+        .style("display", d => getCrestUrl(d.team) ? null : "none");
+
       mergedGroups.select(".crest-abbr")
         .attr("fill", d => getTextColor(d.team))
+        .style("display", d => getCrestUrl(d.team) ? "none" : null)
         .text(d => d.abbr);
 
       mergedGroups.select(".team-label")
