@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """
-Fetch USL Championship standings and update local data files.
+Fetch USL Championship standings from the Opta widget data feed.
 
-This script reads the official USL Championship standings page, extracts the
-Eastern and Western Conference standings, and writes:
+This script updates:
 
 - data/usl/current-standings.json
 - data/usl/standings-history.csv
 
-The history CSV is what we will use later for the animated standings movement chart.
+Source page:
+https://www.uslchampionship.com/league-standings
+
+Discovered data feed:
+Opta f3 competition standings feed for competition 807, season 2026.
 """
 
 from __future__ import annotations
@@ -16,34 +19,39 @@ from __future__ import annotations
 import csv
 import json
 import re
-import sys
-from io import StringIO
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 
-import pandas as pd
 import requests
 
 
 SOURCE_URL = "https://www.uslchampionship.com/league-standings"
 
-LAYOUT_TAB_URL = (
-    "https://www.uslchampionship.com/layout_container/show_layout_tab"
-    "?layout_container_id=76090417"
-    "&page_node_id=2415039"
-    "&tab_element_id=247942"
+OPTA_STANDINGS_URL = (
+    "https://omo.akamai.opta.net/auth/competition.php"
+    "?feed_type=f3"
+    "&competition=807"
+    "&season_id=2026"
+    "&user=OW2017"
+    "&psw=dXWg5gVZ"
+    "&sps=widgets"
+    "&jsoncallback=f3_807_2026"
+)
+
+OPTA_TEAM_TRANSLATION_URL = (
+    "https://secure.widget.cloud.opta.net/translations_v2/default/"
+    "TN_default_1_en_US_1_2026_807.json"
 )
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "usl"
 CURRENT_JSON_PATH = DATA_DIR / "current-standings.json"
 HISTORY_CSV_PATH = DATA_DIR / "standings-history.csv"
-DEBUG_LAYOUT_HTML_PATH = DATA_DIR / "debug-layout-tab.html"
-DEBUG_MAIN_HTML_PATH = DATA_DIR / "debug-main-page.html"
-DEBUG_SCRIPTS_PATH = DATA_DIR / "debug-scripts.txt"
-DEBUG_CANDIDATES_PATH = DATA_DIR / "debug-candidate-responses.txt"
+DEBUG_OPTA_STANDINGS_PATH = DATA_DIR / "debug-opta-standings.json"
+DEBUG_TEAM_TRANSLATIONS_PATH = DATA_DIR / "debug-team-translations.json"
+
 EXPECTED_CONFERENCES = {
     "Eastern Conference": 13,
     "Western Conference": 12,
@@ -77,411 +85,207 @@ class StandingRow:
     wins: int
     losses: int
     ties: int
-    goals_for: Optional[int]
-    goals_against: Optional[int]
+    goals_for: int
+    goals_against: int
     goal_difference: int
     points: int
+    opta_team_id: str
 
 
-def clean_text(value: object) -> str:
-    """Convert a table cell to clean text."""
-    if value is None:
-        return ""
+def unwrap_jsonp(text: str) -> dict:
+    """
+    Convert JSONP like callback({...}) into a Python dictionary.
+    """
+    text = text.strip()
 
-    text = str(value)
-    text = text.replace("\xa0", " ")
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    match = re.match(r"^[A-Za-z0-9_]+\((.*)\)\s*;?\s*$", text, flags=re.S)
 
-
-def to_int(value: object) -> Optional[int]:
-    """Convert a value to int when possible."""
-    text = clean_text(value)
-
-    if text == "" or text.lower() in {"nan", "none", "-"}:
-        return None
-
-    match = re.search(r"-?\d+", text)
     if not match:
-        return None
+        raise RuntimeError("Response did not look like JSONP.")
 
-    return int(match.group(0))
-
-
-def normalize_column_name(name: object) -> str:
-    """Standardize possible standings column names."""
-    text = clean_text(name).lower()
-    text = text.replace(".", "")
-    text = text.replace(" ", "_")
-
-    aliases = {
-        "pos": "rank",
-        "position": "rank",
-        "#": "rank",
-        "club": "team",
-        "team": "team",
-        "teams": "team",
-        "p": "played",
-        "pl": "played",
-        "played": "played",
-        "mp": "played",
-        "gp": "played",
-        "w": "wins",
-        "win": "wins",
-        "wins": "wins",
-        "l": "losses",
-        "loss": "losses",
-        "losses": "losses",
-        "d": "ties",
-        "draw": "ties",
-        "draws": "ties",
-        "t": "ties",
-        "tie": "ties",
-        "ties": "ties",
-        "gf": "goals_for",
-        "goals_for": "goals_for",
-        "ga": "goals_against",
-        "goals_against": "goals_against",
-        "gd": "goal_difference",
-        "goal_difference": "goal_difference",
-        "pts": "points",
-        "points": "points",
-    }
-
-    return aliases.get(text, text)
+    return json.loads(match.group(1))
 
 
-def flatten_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Flatten multi-index columns if pandas reads a complex HTML table."""
-    df = df.copy()
-
-    if isinstance(df.columns, pd.MultiIndex):
-        df.columns = [
-            "_".join([clean_text(part) for part in col if clean_text(part)])
-            for col in df.columns
-        ]
-
-    df.columns = [normalize_column_name(col) for col in df.columns]
-    return df
-
-
-def looks_like_standings_table(df: pd.DataFrame) -> bool:
-    """Check whether a table appears to be a standings table."""
-    columns = set(df.columns)
-
-    required_any_team = {"team"}
-    required_stats = {"rank", "played", "wins", "losses", "ties", "goal_difference", "points"}
-
-    return bool(required_any_team.issubset(columns) and len(required_stats.intersection(columns)) >= 5)
-
-
-def clean_team_name(value: object) -> Tuple[str, str]:
+def fetch_text(url: str) -> str:
     """
-    Return team name and abbreviation.
-
-    Some standings tables show full names, others show abbreviations.
-    If only one value exists, both team and abbr are set to that value for now.
+    Download a text response with a browser-like user agent.
     """
-    text = clean_text(value)
-
-    text = re.sub(r"^[xzey]-\s*", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"\s+", " ", text).strip()
-
-    if not text:
-        return "", ""
-
-    parts = text.split()
-
-    if len(text) <= 4 and text.isupper():
-        return text, text
-
-    possible_abbr = parts[0]
-    if len(possible_abbr) <= 4 and possible_abbr.isupper() and len(parts) > 1:
-        team = " ".join(parts[1:])
-        return team, possible_abbr
-
-    abbreviation = "".join(word[0] for word in parts if word and word[0].isalpha()).upper()
-    abbreviation = abbreviation[:4] if abbreviation else text[:4].upper()
-
-    return text, abbreviation
-
-
-def parse_standings_table(df: pd.DataFrame) -> List[StandingRow]:
-    """Parse one normalized standings table into StandingRow objects."""
-    rows: List[StandingRow] = []
-
-    df = flatten_columns(df)
-
-    for _, row in df.iterrows():
-        rank = to_int(row.get("rank"))
-        team, abbr = clean_team_name(row.get("team"))
-
-        played = to_int(row.get("played"))
-        wins = to_int(row.get("wins"))
-        losses = to_int(row.get("losses"))
-        ties = to_int(row.get("ties"))
-        goals_for = to_int(row.get("goals_for"))
-        goals_against = to_int(row.get("goals_against"))
-        goal_difference = to_int(row.get("goal_difference"))
-        points = to_int(row.get("points"))
-
-        if rank is None or not team:
-            continue
-
-        if played is None or wins is None or losses is None or ties is None:
-            continue
-
-        if goal_difference is None or points is None:
-            continue
-
-        rows.append(
-            StandingRow(
-                rank=rank,
-                team=team,
-                abbr=abbr,
-                played=played,
-                wins=wins,
-                losses=losses,
-                ties=ties,
-                goals_for=goals_for,
-                goals_against=goals_against,
-                goal_difference=goal_difference,
-                points=points,
-            )
-        )
-
-    rows.sort(key=lambda item: item.rank)
-    return rows
-
-
-def fetch_html(url: str) -> str:
-    """Download the main USL standings page HTML."""
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
             "+https://nagle-analytics.github.io/)"
         ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept": "application/javascript, application/json, text/plain, */*",
+        "Referer": SOURCE_URL,
     }
 
     response = requests.get(url, headers=headers, timeout=30)
     response.raise_for_status()
 
-    html = response.text or ""
+    text = response.text or ""
 
-    if not html.strip():
-        raise RuntimeError("Received an empty response from the USL standings page.")
+    if not text.strip():
+        raise RuntimeError(f"Empty response from {url}")
 
-    print(f"[INFO] Downloaded {len(html):,} characters from main USL standings page.")
-    print(f"[INFO] Main page Content-Type: {response.headers.get('content-type', 'unknown')}")
+    return text
 
-    return html
 
-def fetch_layout_tab_html() -> str:
+def parse_team_translations(text: str) -> Dict[str, dict]:
     """
-    Fetch the SportsEngine layout tab HTML used by the USL standings page.
+    Parse the Opta team translation file.
 
-    This endpoint was identified from the browser Network tab. It is likely the
-    page fragment that contains or triggers the standings content.
+    Example translation chunk:
+    5621|Tampa Bay Rowdies||TBR
     """
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    payload = unwrap_jsonp(text)
 
-    session = requests.Session()
+    raw = payload.get("d", "")
+    teams: Dict[str, dict] = {}
 
-    headers_main = {
-        "User-Agent": (
-            "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
-            "+https://nagle-analytics.github.io/)"
-        ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    }
+    for item in raw.split("¦"):
+        item = item.strip()
 
-    headers_ajax = {
-        "User-Agent": headers_main["User-Agent"],
-        "Accept": "text/html, */*; q=0.01",
-        "Referer": SOURCE_URL,
-        "X-Requested-With": "XMLHttpRequest",
-    }
+        if not item:
+            continue
 
-    print(f"[INFO] Opening main page first: {SOURCE_URL}")
-    main_response = session.get(SOURCE_URL, headers=headers_main, timeout=30)
-    main_response.raise_for_status()
+        parts = item.split("|")
 
-    print(f"[INFO] Fetching layout tab endpoint: {LAYOUT_TAB_URL}")
-    tab_response = session.get(LAYOUT_TAB_URL, headers=headers_ajax, timeout=30)
-    tab_response.raise_for_status()
+        if len(parts) < 2:
+            continue
 
-    html = tab_response.text or ""
+        team_id = parts[0].strip()
+        team_name = parts[1].strip()
+        abbr = parts[3].strip() if len(parts) > 3 and parts[3].strip() else ""
 
-    if not html.strip():
-        raise RuntimeError("Received an empty response from the layout tab endpoint.")
+        if team_id and team_name:
+            teams[team_id] = {
+                "name": team_name,
+                "abbr": abbr or make_abbr(team_name),
+            }
 
-    DEBUG_LAYOUT_HTML_PATH.write_text(html, encoding="utf-8")
+    return teams
 
-    print(f"[INFO] Downloaded {len(html):,} characters from layout tab endpoint.")
-    print(f"[INFO] Layout tab Content-Type: {tab_response.headers.get('content-type', 'unknown')}")
-    print(f"[INFO] Saved debug layout HTML to: {DEBUG_LAYOUT_HTML_PATH}")
 
-    return html
-
-def collect_debug_sources() -> None:
+def make_abbr(team_name: str) -> str:
     """
-    Save useful debug information from the USL standings page.
-
-    This helps identify whether standings data is embedded in scripts,
-    loaded from another endpoint, or rendered as custom HTML.
+    Create a fallback abbreviation from a team name.
     """
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    words = [word for word in re.split(r"\s+", team_name) if word]
+    letters = "".join(word[0] for word in words if word[0].isalpha()).upper()
+    return letters[:4] if letters else team_name[:4].upper()
 
-    session = requests.Session()
 
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
-            "+https://nagle-analytics.github.io/)"
-        ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    }
-
-    ajax_headers = {
-        "User-Agent": headers["User-Agent"],
-        "Accept": "text/html,application/json,*/*;q=0.01",
-        "Referer": SOURCE_URL,
-        "X-Requested-With": "XMLHttpRequest",
-    }
-
-    response = session.get(SOURCE_URL, headers=headers, timeout=30)
-    response.raise_for_status()
-
-    html = response.text or ""
-    DEBUG_MAIN_HTML_PATH.write_text(html, encoding="utf-8")
-
-    script_urls = []
-
-    for match in re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', html, flags=re.I):
-        if match.startswith("//"):
-            url = "https:" + match
-        elif match.startswith("/"):
-            url = "https://www.uslchampionship.com" + match
-        elif match.startswith("http"):
-            url = match
-        else:
-            url = "https://www.uslchampionship.com/" + match.lstrip("./")
-
-        script_urls.append(url)
-
-    script_lines = [
-        "Main page:",
-        SOURCE_URL,
-        "",
-        f"Main HTML length: {len(html):,}",
-        "",
-        "Script URLs found:",
-    ]
-
-    script_lines.extend(script_urls)
-
-    DEBUG_SCRIPTS_PATH.write_text("\n".join(script_lines) + "\n", encoding="utf-8")
-
-    candidate_urls = [
-        "https://www.uslchampionship.com/team-network",
-        "https://www.uslchampionship.com/assets",
-        "https://www.uslchampionship.com/layout_container/show_layout_tab?layout_container_id=76090417&page_node_id=2415039&tab_element_id=247942",
-    ]
-
-    output_lines = []
-
-    for url in candidate_urls:
-        output_lines.append("=" * 90)
-        output_lines.append(f"URL: {url}")
-
-        try:
-            candidate_response = session.get(url, headers=ajax_headers, timeout=30)
-            output_lines.append(f"Status: {candidate_response.status_code}")
-            output_lines.append(f"Content-Type: {candidate_response.headers.get('content-type', 'unknown')}")
-            output_lines.append(f"Length: {len(candidate_response.text or ''):,}")
-
-            text = candidate_response.text or ""
-
-            for keyword in [
-                "Tampa Bay Rowdies",
-                "Louisville City FC",
-                "San Antonio FC",
-                "Eastern Conference",
-                "Western Conference",
-                "standings",
-                "team",
-                "points",
-            ]:
-                output_lines.append(f"Contains {keyword!r}: {keyword in text}")
-
-            output_lines.append("")
-            output_lines.append("Preview:")
-            output_lines.append(text[:3000])
-            output_lines.append("")
-
-        except Exception as exc:
-            output_lines.append(f"ERROR: {exc}")
-
-    DEBUG_CANDIDATES_PATH.write_text("\n".join(output_lines) + "\n", encoding="utf-8")
-
-    print(f"[INFO] Saved main page debug file to: {DEBUG_MAIN_HTML_PATH}")
-    print(f"[INFO] Saved script URL debug file to: {DEBUG_SCRIPTS_PATH}")
-    print(f"[INFO] Saved candidate response debug file to: {DEBUG_CANDIDATES_PATH}")
-    
-def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
+def ensure_list(value):
     """
-    Read standings tables from the official page.
-
-    Many sports websites render standings dynamically. pandas.read_html works
-    when the table is present in the HTML. If the site changes, this function
-    may need to be updated to use the site's hidden data endpoint.
+    Force Opta values to list form because some feeds use an object for one item
+    and a list for multiple items.
     """
-    html = fetch_layout_tab_html()
+    if value is None:
+        return []
+
+    if isinstance(value, list):
+        return value
+
+    return [value]
+
+
+def to_int(value: Optional[str], default: int = 0) -> int:
+    """
+    Convert Opta numeric string fields to integers.
+    """
+    if value is None:
+        return default
 
     try:
-        tables = pd.read_html(StringIO(html))
-    except ValueError:
-        tables = []
-    except Exception as exc:
-        html_preview = html[:500].replace("\n", " ")
-        raise RuntimeError(
-            "pandas.read_html failed while parsing the USL standings page. "
-            f"Original error: {exc}. "
-            f"HTML preview: {html_preview}"
-        ) from exc
+        return int(value)
+    except (TypeError, ValueError):
+        return default
 
-    print(f"[INFO] pandas found {len(tables)} HTML table(s).")
 
-    normalized_tables = []
+def normalize_conference_name(group_id: str, group_name: str) -> str:
+    """
+    Convert Opta group labels into the public conference names.
+    """
+    value = f"{group_id} {group_name}".lower()
 
-    for table in tables:
-        table = flatten_columns(table)
+    if "east" in value:
+        return "Eastern Conference"
 
-        print(f"[INFO] Table columns found: {list(table.columns)}")
+    if "west" in value:
+        return "Western Conference"
 
-        if looks_like_standings_table(table):
-            normalized_tables.append(table)
+    return group_name or group_id or "Unknown Conference"
 
-    print(f"[INFO] Found {len(normalized_tables)} possible standings table(s).")
 
-    if len(normalized_tables) < 2:
-        raise RuntimeError(
-            "Could not find two standings tables on the official page. "
-            "The standings may be rendered dynamically. Next step would be "
-            "to inspect the page's network requests for the official JSON endpoint."
-        )
+def parse_standings(
+    standings_payload: dict,
+    team_lookup: Dict[str, dict],
+) -> Dict[str, List[StandingRow]]:
+    """
+    Parse Opta f3 standings payload into Eastern and Western conference rows.
+    """
+    soccer_document = standings_payload["SoccerFeed"]["SoccerDocument"]
+    competition = soccer_document["Competition"]
 
-    eastern_rows = parse_standings_table(normalized_tables[0])
-    western_rows = parse_standings_table(normalized_tables[1])
+    team_standings = ensure_list(competition.get("TeamStandings"))
 
-    if not eastern_rows or not western_rows:
-        raise RuntimeError("Found standings tables, but could not parse team rows.")
-
-    return {
-        "Eastern Conference": eastern_rows,
-        "Western Conference": western_rows,
+    output: Dict[str, List[StandingRow]] = {
+        "Eastern Conference": [],
+        "Western Conference": [],
     }
+
+    for group in team_standings:
+        round_info = group.get("Round", {})
+        name_info = round_info.get("Name", {})
+
+        group_name = name_info.get("@value", "")
+        group_id = name_info.get("@attributes", {}).get("id", "")
+
+        conference = normalize_conference_name(group_id, group_name)
+
+        team_records = ensure_list(group.get("TeamRecord"))
+
+        rows: List[StandingRow] = []
+
+        for record in team_records:
+            team_ref = record.get("@attributes", {}).get("TeamRef", "")
+            opta_team_id = team_ref.replace("t", "")
+
+            standing = record.get("Standing", {})
+
+            team_info = team_lookup.get(opta_team_id, {})
+            team_name = team_info.get("name", f"Team {opta_team_id}")
+            abbr = team_info.get("abbr", make_abbr(team_name))
+
+            goals_for = to_int(standing.get("For"))
+            goals_against = to_int(standing.get("Against"))
+
+            rows.append(
+                StandingRow(
+                    rank=to_int(standing.get("Position")),
+                    team=team_name,
+                    abbr=abbr,
+                    played=to_int(standing.get("Played")),
+                    wins=to_int(standing.get("Won")),
+                    losses=to_int(standing.get("Lost")),
+                    ties=to_int(standing.get("Drawn")),
+                    goals_for=goals_for,
+                    goals_against=goals_against,
+                    goal_difference=goals_for - goals_against,
+                    points=to_int(standing.get("Points")),
+                    opta_team_id=opta_team_id,
+                )
+            )
+
+        rows.sort(key=lambda row: row.rank)
+
+        if conference in output:
+            output[conference] = rows
+        else:
+            output[conference] = rows
+
+    return output
+
 
 def get_next_week_label(snapshot_date: str) -> str:
     """
@@ -517,13 +321,17 @@ def write_current_json(
     fetched_at: str,
     snapshot_date: str,
 ) -> None:
-    """Write the latest standings JSON file."""
+    """
+    Write latest standings JSON.
+    """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     payload = {
         "last_updated": fetched_at,
         "snapshot_date": snapshot_date,
-        "source": SOURCE_URL,
+        "source_page": SOURCE_URL,
+        "source_feed": OPTA_STANDINGS_URL,
+        "team_translation_feed": OPTA_TEAM_TRANSLATION_URL,
         "status": "updated",
         "expected_conferences": EXPECTED_CONFERENCES,
         "conferences": {
@@ -538,7 +346,9 @@ def write_current_json(
 
 
 def read_existing_history() -> List[dict]:
-    """Read current history CSV rows."""
+    """
+    Read current history CSV rows.
+    """
     if not HISTORY_CSV_PATH.exists():
         return []
 
@@ -548,7 +358,9 @@ def read_existing_history() -> List[dict]:
 
 
 def write_history_csv(rows: List[dict]) -> None:
-    """Write history CSV rows."""
+    """
+    Write history CSV rows.
+    """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     with HISTORY_CSV_PATH.open("w", encoding="utf-8", newline="") as file:
@@ -564,8 +376,6 @@ def update_history_csv(
 ) -> None:
     """
     Add or replace rows for the current snapshot date.
-
-    This prevents duplicate rows if you manually run the script twice on the same day.
     """
     existing_rows = read_existing_history()
 
@@ -590,8 +400,8 @@ def update_history_csv(
                     "wins": row.wins,
                     "losses": row.losses,
                     "ties": row.ties,
-                    "goals_for": "" if row.goals_for is None else row.goals_for,
-                    "goals_against": "" if row.goals_against is None else row.goals_against,
+                    "goals_for": row.goals_for,
+                    "goals_against": row.goals_against,
                     "goal_difference": row.goal_difference,
                     "points": row.points,
                     "source": SOURCE_URL,
@@ -599,6 +409,7 @@ def update_history_csv(
             )
 
     all_rows = existing_rows + new_rows
+
     all_rows.sort(
         key=lambda row: (
             row.get("snapshot_date", ""),
@@ -612,29 +423,47 @@ def update_history_csv(
 
 def validate_counts(standings: Dict[str, List[StandingRow]]) -> None:
     """
-    Print a warning if the conference row counts do not match the expected setup.
-
-    This does not stop the script because league structures can change, but it
-    gives us a useful message in the GitHub Actions log.
+    Warn if team counts differ from expected conference sizes.
     """
     for conference, expected_count in EXPECTED_CONFERENCES.items():
         actual_count = len(standings.get(conference, []))
 
         if actual_count != expected_count:
             print(
-                f"[WARN] {conference}: expected {expected_count} teams, "
-                f"found {actual_count} teams.",
-                file=sys.stderr,
+                f"[WARN] {conference}: expected {expected_count}, found {actual_count}."
             )
 
 
 def main() -> int:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
     fetched_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     snapshot_date = datetime.now(timezone.utc).date().isoformat()
 
-    print(f"[INFO] Fetching USL standings from: {SOURCE_URL}")
-    collect_debug_sources()
-    standings = read_standings_tables(SOURCE_URL)
+    print(f"[INFO] Fetching Opta team translations: {OPTA_TEAM_TRANSLATION_URL}")
+    team_translation_text = fetch_text(OPTA_TEAM_TRANSLATION_URL)
+    team_lookup = parse_team_translations(team_translation_text)
+
+    DEBUG_TEAM_TRANSLATIONS_PATH.write_text(
+        json.dumps(team_lookup, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    print(f"[INFO] Parsed {len(team_lookup)} team translations.")
+
+    print(f"[INFO] Fetching Opta standings feed: {OPTA_STANDINGS_URL}")
+    standings_text = fetch_text(OPTA_STANDINGS_URL)
+    standings_payload = unwrap_jsonp(standings_text)
+
+    DEBUG_OPTA_STANDINGS_PATH.write_text(
+        json.dumps(standings_payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+    standings = parse_standings(
+        standings_payload=standings_payload,
+        team_lookup=team_lookup,
+    )
 
     validate_counts(standings)
 
@@ -659,6 +488,13 @@ def main() -> int:
 
     for conference, rows in standings.items():
         print(f"[INFO] {conference}: {len(rows)} teams")
+
+        if rows:
+            leader = rows[0]
+            print(
+                f"[INFO] {conference} leader: "
+                f"{leader.team} — {leader.points} pts"
+            )
 
     return 0
 
