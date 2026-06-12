@@ -74,8 +74,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add data/usl/current-standings.json data/usl/standings-history.csv data/usl/last-run-log.txt data/usl/last-run-status.txt data/usl/debug-layout-tab.html data/usl/debug-main-page.html data/usl/debug-scripts.txt data/usl/debug-candidate-responses.txt data/usl/debug-discovered-endpoints.txt
-
+          git add data/usl/current-standings.json data/usl/standings-history.csv data/usl/last-run-log.txt data/usl/last-run-status.txt data/usl/debug-opta-standings.json data/usl/debug-team-translations.json data/usl/debug-discovered-endpoints.txt data/usl/debug-layout-tab.html data/usl/debug-main-page.html data/usl/debug-scripts.txt data/usl/debug-candidate-responses.txt
           if git diff --staged --quiet; then
             echo "No data or log changes to commit."
           else
