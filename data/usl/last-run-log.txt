@@ -25,32 +25,33 @@ Repository files:
 ./.git/info/exclude
 ./.git/logs/HEAD
 ./.git/objects/02/0be47656871de3c2195703664bc02dc3b606d4
+./.git/objects/13/9975b702c9e8bd29683c64afbf2b6c9c89b34b
 ./.git/objects/17/ccebd080fa5603b5ed87a7a8e1a6f192f67460
-./.git/objects/26/5915ca22b767818cfb8bd1fc44a7a4d15b9e6e
-./.git/objects/31/cb0fed37bde921e93a6962a2aa1dabefaa02e7
+./.git/objects/19/97bae5b01a7828507fed3d4e7bc252d1a1c23b
+./.git/objects/23/7f67b7f96304e06c27754f35a825256f8780aa
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
+./.git/objects/46/60acbdfe891c5bf0dc30356f52db8270e44e28
 ./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
 ./.git/objects/49/8c12087062b6f33185bda9af7097a5740b753d
 ./.git/objects/57/3541ac9702dd3969c9bc859d2b91ec1f7e6e56
 ./.git/objects/67/0fdf13252961c47f90ca159ed4e4ce272f2e8e
 ./.git/objects/69/26963287def404b64e156c6f99ba2b6a3b40aa
-./.git/objects/72/cf42cce9745a6687300ee2ea7b5a8c16087589
-./.git/objects/76/b44e2ed17fe47bb9d066ef4ea2784dd6989876
 ./.git/objects/86/71e010e06900013fa0c4cb91f9e50360d679c1
+./.git/objects/87/5bce7e5a181e17992c7dc79cb8e7228215fa6e
 ./.git/objects/8d/b12b4d5922ced5bfcb3e75e8fe0f9929caf7bd
-./.git/objects/a6/72e53fd46d874688359a5054ffbc8411dbef81
 ./.git/objects/b7/21dc476798d41c19dbaae425c012728790947a
-./.git/objects/b8/22ed7c7027abf26acd101184ae656fb1dbb1fb
+./.git/objects/bd/00d7cf9dbf7e17af86a61b816f6616a1724fc7
+./.git/objects/bd/96118f6049f3ec647d9040fd5d5ee1e3ff9ba9
+./.git/objects/c1/bc97015c51ddae83cd07244d0f750baf44f931
 ./.git/objects/c5/34cda11503386793065f916d65806135009c60
-./.git/objects/cc/1de18ab4cf31a4f8422a09dc19880f1d61b078
-./.git/objects/d4/90e1142e395f58ddb80bc86ddee7957f79290b
 ./.git/objects/d7/5cf70a1a1e7ba73f2443675ee9f76a1b73d70a
 ./.git/objects/d9/4e5dfa2ffa6f223b0be7d21efea01b88897b35
-./.git/objects/e2/c7a1b9084cd8ac2e115312a424dc4dbc82a916
+./.git/objects/dc/3de8fd4e23890208a6ae29a394cd633d75c0e8
+./.git/objects/e0/6e4c8e5bef6b95e350c89fe5eb0b1887e31080
 ./.git/objects/e7/fbe67898d885374983fe624dec6da853ebd449
 ./.git/objects/eb/9d0d54b4936646eaf8f07ceecce1d042b7c229
-./.git/objects/ef/ae2fe6d1936bcfcd9564ab159a1bc744542c0c
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
+./.git/objects/f9/932770bf565c93232d900eaef9feffa681058d
 ./.git/objects/fe/1e87ac018b41ea8b4e0da3675a052febc81b32
 ./.git/refs/heads/main
 ./.git/shallow
@@ -63,6 +64,7 @@ Repository files:
 ./data/usl/debug-discovered-endpoints.txt
 ./data/usl/debug-layout-tab.html
 ./data/usl/debug-main-page.html
+./data/usl/debug-opta-matches.json
 ./data/usl/debug-opta-standings.json
 ./data/usl/debug-scripts.txt
 ./data/usl/debug-team-translations.json
@@ -86,13 +88,15 @@ Running USL standings script:
 [INFO] Fetching Opta team translations: https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json
 [INFO] Parsed 25 team translations.
 [INFO] Fetching official current standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
+[INFO] Official current matchday: 15
+[INFO] Official current snapshot date: 2026-06-12
 [INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
 [INFO] Parsed 137 completed regular-season matches.
-[INFO] Matchdays available: 1 to 15
+[INFO] Matchdays available in match feed: 1 to 15
 [INFO] Final reconstructed stats match official current standings.
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/current-standings.json
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/standings-history.csv
-[INFO] Reconstructed history rows: 375
+[INFO] History rows: 375
 [INFO] Eastern Conference: 13 teams
 [INFO] Current Eastern Conference leader: Tampa Bay Rowdies — 28 pts
 [INFO] Western Conference: 12 teams
