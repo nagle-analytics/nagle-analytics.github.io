@@ -1,0 +1,26 @@
+Main page:
+https://www.uslchampionship.com/league-standings
+
+Main HTML length: 94,807
+
+Script URLs found:
+https://app-assets3.sportngin.com/javascripts/se-analytics-js.umd.min.js?17809506621
+https://app-assets3.sportngin.com/javascripts/jquery/jquery-3.7.1.min.js?17809506621
+https://app-assets1.sportngin.com/javascripts/jquery/jquery-migrate-3.4.1.min.js?17809506621
+https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js
+https://secure.widget.cloud.opta.net/v3/v3.opta-widgets.js
+https://assets.ngin.com/site_files/_templates/usl_league_sites/_site/js/championship_league_script.js
+https://assets.ngin.com/site_files/_templates/usl_league_sites/_stage/_site/js/championship_league_script.js
+https://assets.ngin.com/site_files/11666/js/fbComment_script.js
+https://www.google.com/recaptcha/api.js
+https://cmp.osano.com/Azqe4lTxD2Oxg3Ll1/c9cf0f1f-22e5-44d0-b91b-4b6635bc673b/osano.js
+https://www.googletagmanager.com/gtag/js?id=G-53Q8L637FJ
+https://app-assets2.sportngin.com/javascripts/base_packaged.js?17809506621
+https://app-assets2.sportngin.com/javascripts/dropdown_nav.js?17809506621
+https://app-assets1.sportngin.com/javascripts/grecaptcha.js?17809506621
+https://www.google.com/recaptcha/api.js?onload=recaptchaOnloadCallback&render=explicit
+https://app-assets2.sportngin.com/javascripts/jquery/jquery.toolbar.min.js?17809506621
+https://assets.ngin.com/site_files/_templates/usl_league_sites/_site/js/usl_admin_script.min.js
+https://assets.ngin.com/site_files/_templates/usl_league_sites/vendor/youtube/yt_championship.js
+https://apis.google.com/js/client.js?onload=videoAggLoop
+https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js

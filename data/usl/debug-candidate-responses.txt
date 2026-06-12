@@ -1,0 +1,182 @@
+==========================================================================================
+URL: https://www.uslchampionship.com/team-network
+Status: 200
+Content-Type: text/html; charset=utf-8
+Length: 215,629
+Contains 'Tampa Bay Rowdies': True
+Contains 'Louisville City FC': True
+Contains 'San Antonio FC': True
+Contains 'Eastern Conference': False
+Contains 'Western Conference': False
+Contains 'standings': True
+Contains 'team': True
+Contains 'points': False
+
+Preview:
+<!DOCTYPE html>
+<html lang="en-us" id="ngin11666">
+<head>
+  
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url=/unsupported_browser" />
+    <script type="text/javascript">
+        window.top.location = '/unsupported_browser';
+    </script>
+<![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="fYq3z9LuAFR1fv1TcNMBp7q4xrykT1A3eJ6qUChOsRkoVO6d+RqYXXTz0eBDOxhUBjYffHWy3w9nHAxwFXxRcg==" />
+<meta name="trace-id" content="ee593969-1334-4403-b7fc-68e72d2d83ac" />
+  <title>Global Network</title>
+
+  <!-- Custom | application -->
+
+  <!-- Icons v4 -->
+<link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" />
+
+
+  <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" />
+  <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" />
+  <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" />
+  <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" />
+  <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" />
+
+
+
+  <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16">
+  <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96">
+
+
+
+  
+
+  <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" />
+  
+    <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" />
+  
+  <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" />
+  <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_t
+
+==========================================================================================
+URL: https://www.uslchampionship.com/assets
+Status: 200
+Content-Type: text/html; charset=utf-8
+Length: 84,071
+Contains 'Tampa Bay Rowdies': True
+Contains 'Louisville City FC': True
+Contains 'San Antonio FC': True
+Contains 'Eastern Conference': False
+Contains 'Western Conference': False
+Contains 'standings': True
+Contains 'team': True
+Contains 'points': False
+
+Preview:
+<!DOCTYPE html>
+<html lang="en-us" id="ngin11666">
+<head>
+  
+<!--[if lte IE 9]>
+    <meta http-equiv="refresh" content="0; url=/unsupported_browser" />
+    <script type="text/javascript">
+        window.top.location = '/unsupported_browser';
+    </script>
+<![endif]-->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NanUHwWhDR0HTwvrFuHbzrfwdI1l2vSxNSCro3imgMNgd41NLlWVFAbCJ1glCcI9C36tTbQne4kqog2DRZRgqA==" />
+<meta name="trace-id" content="abdb24cf-0e20-4a4d-9801-772c85b172a4" />
+  <title>Assets</title>
+
+  <!-- Custom | application -->
+
+  <!-- Icons v4 -->
+<link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" />
+
+
+  <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" />
+  <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" />
+  <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" />
+  <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" />
+  <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" />
+
+
+
+  <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16">
+  <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32">
+  <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96">
+
+
+
+  
+
+  <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" />
+  
+    <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" />
+  
+  <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" />
+  <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable
+
+==========================================================================================
+URL: https://www.uslchampionship.com/layout_container/show_layout_tab?layout_container_id=76090417&page_node_id=2415039&tab_element_id=247942
+Status: 200
+Content-Type: text/html; charset=utf-8
+Length: 1,100
+Contains 'Tampa Bay Rowdies': False
+Contains 'Louisville City FC': False
+Contains 'San Antonio FC': False
+Contains 'Eastern Conference': False
+Contains 'Western Conference': False
+Contains 'standings': False
+Contains 'team': False
+Contains 'points': True
+
+Preview:
+    <div class=" layoutContainer row layout-100 ">
+    
+          <div class="column-1 column col-sm-12 col-md-12">
+                <div id="pageEl_511786180" class="pageEl"  >
+  
+      <div class="pageElement textBlockElement clearfix">
+  
+
+
+    <div class="text clearfix">
+      <p>Tiebreakers will be achieved by the following criteria, in order of importance:</p>
+
+<p>1. Total Wins Against Conference Opponents in League Matches</p>
+
+<p>2. Goal Differential Against Conference Opponents in League Matches</p>
+
+<p>3. Goals Scored Against Conference Opponents in League Matches</p>
+
+<p>4. Head-to-Head Points Earned Against Conference Opponents in League Matches</p>
+
+<p>5. Points Per Game against Conference Opponents in League Matches</p>
+
+<p>6. Points Per Game against Non-Conference opponents in League Matches</p>
+
+<p>7. Number of disciplinary points (i.e., fewest disciplinary points).</p>
+
+<p>8. Lottery conducted by the League.</p>
+
+<p>&nbsp;</p>
+
+    </div>
+</div>
+
+  <span class="clearAll"></span>
+</div>
+
+
+        </div>
+    <span class="clearAll"></span>
+  </div>
+  
+
+
