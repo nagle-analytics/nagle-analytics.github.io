@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>USL Championship Tracker | Nagle Analytics</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111a2b;
+      --panel: rgba(15, 23, 42, 0.78);
+      --panel-border: rgba(148, 163, 184, 0.16);
+      --text: #e5eef9;
+      --muted: #9fb0c8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.08), transparent 25%),
+        linear-gradient(180deg, #07101d 0%, #0b1220 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page-shell {
+      width: min(1400px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 22px 0 10px;
+    }
+
+    .back-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 8px 0 26px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+      max-width: 900px;
+    }
+
+    .controls-wrap {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .control-label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-right: 4px;
+      font-weight: 600;
+    }
+
+    .btn,
+    .toggle-btn {
+      appearance: none;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 15px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn:hover,
+    .toggle-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 10px 24px rgba(14, 165, 233, 0.28);
+    }
+
+    .toggle-btn.active {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: rgba(56, 189, 248, 0.55);
+      color: #dff5ff;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 20px;
+      padding-bottom: 40px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+    }
+
+    .chart-card {
+      padding: 22px 22px 18px;
+      overflow: hidden;
+    }
+
+    .chart-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .chart-card-top h2 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .chart-card-top p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .status-pill {
+      white-space: nowrap;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #d7e3f3;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+
+    .chart-footnote {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .sidebar-card {
+      padding: 18px 18px 20px;
+      height: fit-content;
+      position: sticky;
+      top: 18px;
+    }
+
+    .sidebar-card h3 {
+      margin: 6px 0 14px;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .leaderboard-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .leader-row {
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .leader-rank {
+      font-weight: 800;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .leader-team {
+      min-width: 0;
+    }
+
+    .leader-team .abbr {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      color: #09111d;
+      font-weight: 800;
+      font-size: 0.78rem;
+      margin-right: 8px;
+    }
+
+    .leader-team-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .leader-team-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .leader-value {
+      font-weight: 800;
+      font-size: 1rem;
+      color: white;
+      text-align: right;
+    }
+
+    .tooltip {
+      position: fixed;
+      z-index: 50;
+      pointer-events: none;
+      min-width: 220px;
+      max-width: 280px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(9, 15, 27, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.34);
+      color: white;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .tooltip .title {
+      font-weight: 800;
+      margin-bottom: 6px;
+      font-size: 0.96rem;
+    }
+
+    .tooltip .meta {
+      color: #bfd0e5;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1100px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .page-shell {
+        width: min(100% - 24px, 1400px);
+      }
+
+      .chart-card {
+        padding: 16px 14px 14px;
+      }
+
+      .sidebar-card {
+        padding: 16px 14px;
+      }
+
+      .chart-card-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .status-pill {
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="topbar">
+      <a class="back-link" href="index.html">← Back to home</a>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Nagle Analytics • Interactive Visualization</div>
+      <h1>USL Championship Tracker</h1>
+      <p class="subtitle">
+        A replayable, matchday-by-matchday look at how USL Championship clubs move through the season.
+        Start with points, then switch to goals scored, wins, draws, losses, or goal difference.
+      </p>
+
+      <div class="controls-wrap">
+        <div class="controls-row">
+          <button id="replayBtn" class="btn primary">Replay</button>
+          <div class="control-label">Metric:</div>
+          <div id="metricControls" class="controls-row"></div>
+        </div>
+
+        <div class="controls-row">
+          <div class="control-label">Conference:</div>
+          <div id="conferenceControls" class="controls-row"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="card chart-card">
+        <div class="chart-card-top">
+          <div>
+            <div class="eyebrow">Animated line chart race</div>
+            <h2 id="chartTitle">Points progression</h2>
+            <p id="chartSubtitle">Cumulative points by matchday across both conferences.</p>
+          </div>
+          <div class="status-pill" id="statusPill">Matchday 1</div>
+        </div>
+
+        <svg id="uslChart" viewBox="0 0 1180 680" preserveAspectRatio="xMidYMid meet"></svg>
+
+        <div class="chart-footnote">
+          Hover over a line or point for details. Data source: official USL Championship standings page,
+          using Opta-based historical matchday data prepared in <code>data/usl/standings-history.csv</code>.
+        </div>
+      </div>
+
+      <aside class="card sidebar-card">
+        <div class="eyebrow">Current frame leaderboard</div>
+        <h3 id="leaderboardTitle">Points</h3>
+        <div id="leaderboard" class="leaderboard-list"></div>
+      </aside>
+    </section>
+  </div>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+
+  <script>
+    const metrics = {
+      points: { label: "Points", field: "points" },
+      goals: { label: "Goals", field: "goals_for" },
+      wins: { label: "Wins", field: "wins" },
+      draws: { label: "Draws", field: "ties" },
+      losses: { label: "Losses", field: "losses" },
+      goalDiff: { label: "Goal Diff", field: "goal_difference" }
+    };
+
+    const conferenceOptions = ["All", "Eastern Conference", "Western Conference"];
+
+    const state = {
+      metricKey: "points",
+      conference: "All",
+      currentFrameIndex: 0,
+      timer: null
+    };
+
+    const svg = d3.select("#uslChart");
+    const tooltip = d3.select("#tooltip");
+    const statusPill = d3.select("#statusPill");
+    const chartTitle = d3.select("#chartTitle");
+    const chartSubtitle = d3.select("#chartSubtitle");
+    const leaderboardTitle = d3.select("#leaderboardTitle");
+    const leaderboard = d3.select("#leaderboard");
+
+    const width = 1180;
+    const height = 680;
+    const margin = { top: 20, right: 30, bottom: 56, left: 70 };
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
+
+    const rootG = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const gridG = rootG.append("g");
+    const xAxisG = rootG.append("g").attr("transform", `translate(0,${innerHeight})`);
+    const yAxisG = rootG.append("g");
+    const currentFrameG = rootG.append("g");
+    const linesG = rootG.append("g");
+    const pointsG = rootG.append("g");
+
+    let rawData = [];
+    let allMatchdays = [];
+    let teamKeys = [];
+    let colorScale;
+
+    function buildControls() {
+      const metricWrap = d3.select("#metricControls");
+      const confWrap = d3.select("#conferenceControls");
+
+      Object.entries(metrics).forEach(([key, config]) => {
+        metricWrap
+          .append("button")
+          .attr("class", "toggle-btn")
+          .classed("active", key === state.metricKey)
+          .text(config.label)
+          .on("click", () => {
+            state.metricKey = key;
+            updateControlState();
+            render();
+          });
+      });
+
+      conferenceOptions.forEach(conf => {
+        confWrap
+          .append("button")
+          .attr("class", "toggle-btn")
+          .classed("active", conf === state.conference)
+          .text(conf === "All" ? "Both Conferences" : conf.replace(" Conference", ""))
+          .on("click", () => {
+            state.conference = conf;
+            updateControlState();
+            render();
+          });
+      });
+
+      d3.select("#replayBtn").on("click", () => {
+        playReplay();
+      });
+    }
+
+    function updateControlState() {
+      d3.select("#metricControls")
+        .selectAll(".toggle-btn")
+        .classed("active", (_, i, nodes) => {
+          const key = Object.keys(metrics)[i];
+          return key === state.metricKey;
+        });
+
+      d3.select("#conferenceControls")
+        .selectAll(".toggle-btn")
+        .classed("active", (_, i) => conferenceOptions[i] === state.conference);
+    }
+
+    function getFilteredData() {
+      if (state.conference === "All") return rawData;
+      return rawData.filter(d => d.conference === state.conference);
+    }
+
+    function getSeries(filtered) {
+      const grouped = d3.groups(filtered, d => `${d.conference}|${d.team}`);
+
+      return grouped.map(([key, values]) => {
+        values.sort((a, b) => d3.ascending(a.matchday, b.matchday));
+        return {
+          key,
+          team: values[0].team,
+          abbr: values[0].abbr,
+          conference: values[0].conference,
+          values
+        };
+      });
+    }
+
+    function getVisiblePoint(series, visibleMatchday) {
+      const visible = series.values.filter(d => d.matchday <= visibleMatchday);
+      return visible.length ? visible[visible.length - 1] : null;
+    }
+
+    function showTooltip(event, d) {
+      const metric = metrics[state.metricKey];
+      const value = d[metric.field];
+
+      tooltip
+        .html(`
+          <div class="title">${d.team}</div>
+          <div class="meta">
+            ${d.conference}<br>
+            Matchday ${d.matchday} • ${d.snapshot_date}
+          </div>
+          <div style="margin-top:8px;">
+            <strong>${metric.label}:</strong> ${value}<br>
+            <strong>Points:</strong> ${d.points}<br>
+            <strong>Goals:</strong> ${d.goals_for}<br>
+            <strong>Wins:</strong> ${d.wins}<br>
+            <strong>Draws:</strong> ${d.ties}<br>
+            <strong>Losses:</strong> ${d.losses}<br>
+            <strong>Goal Diff:</strong> ${d.goal_difference}<br>
+            <strong>Rank:</strong> ${d.rank}
+          </div>
+        `)
+        .attr("hidden", null);
+
+      moveTooltip(event);
+    }
+
+    function moveTooltip(event) {
+      const x = event.clientX + 16;
+      const y = event.clientY + 16;
+
+      tooltip
+        .style("left", `${x}px`)
+        .style("top", `${y}px`);
+    }
+
+    function hideTooltip() {
+      tooltip.attr("hidden", true);
+    }
+
+    function renderLeaderboard(visiblePoints) {
+      const metric = metrics[state.metricKey];
+
+      leaderboardTitle.text(metric.label);
+
+      const sorted = visiblePoints
+        .slice()
+        .sort((a, b) => {
+          const diff = d3.descending(a[metric.field], b[metric.field]);
+          if (diff !== 0) return diff;
+          return d3.ascending(a.team, b.team);
+        });
+
+      const topRows = state.conference === "All" ? sorted.slice(0, 12) : sorted;
+
+      const rows = leaderboard.selectAll(".leader-row").data(topRows, d => `${d.conference}|${d.team}`);
+
+      rows.exit().remove();
+
+      const rowsEnter = rows.enter()
+        .append("div")
+        .attr("class", "leader-row");
+
+      rowsEnter.append("div").attr("class", "leader-rank");
+      rowsEnter.append("div").attr("class", "leader-team");
+      rowsEnter.append("div").attr("class", "leader-value");
+
+      const rowsMerge = rowsEnter.merge(rows);
+
+      rowsMerge.select(".leader-rank").text((d, i) => i + 1);
+
+      rowsMerge.select(".leader-team").html(d => `
+        <div>
+          <span class="abbr" style="background:${colorScale(`${d.conference}|${d.team}`)}">${d.abbr}</span>
+          <span class="leader-team-name">${d.team}</span>
+        </div>
+        <div class="leader-team-meta">${d.conference.replace(" Conference", "")} • Rank ${d.rank}</div>
+      `);
+
+      rowsMerge.select(".leader-value").text(d => d[metric.field]);
+    }
+
+    function render() {
+      const filtered = getFilteredData();
+      const metric = metrics[state.metricKey];
+      const visibleMatchday = allMatchdays[state.currentFrameIndex] ?? allMatchdays[0];
+      const series = getSeries(filtered);
+
+      const visiblePoints = series
+        .map(s => getVisiblePoint(s, visibleMatchday))
+        .filter(Boolean);
+
+      const yMax = d3.max(filtered, d => d[metric.field]) || 1;
+
+      const x = d3.scaleLinear()
+        .domain(d3.extent(allMatchdays))
+        .range([0, innerWidth]);
+
+      const y = d3.scaleLinear()
+        .domain([0, yMax * 1.08])
+        .nice()
+        .range([innerHeight, 0]);
+
+      const xAxis = d3.axisBottom(x)
+        .tickValues(allMatchdays)
+        .tickFormat(d => `MD ${d}`);
+
+      const yAxis = d3.axisLeft(y).ticks(8);
+
+      const grid = d3.axisLeft(y)
+        .ticks(8)
+        .tickSize(-innerWidth)
+        .tickFormat("");
+
+      gridG
+        .call(grid)
+        .call(g => g.select(".domain").remove())
+        .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.08)"));
+
+      xAxisG
+        .call(xAxis)
+        .call(g => g.select(".domain").attr("stroke", "rgba(255,255,255,0.2)"))
+        .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.18)"))
+        .call(g => g.selectAll("text").attr("fill", "#a8bbd2").style("font-size", "12px"));
+
+      yAxisG
+        .call(yAxis)
+        .call(g => g.select(".domain").attr("stroke", "rgba(255,255,255,0.2)"))
+        .call(g => g.selectAll("line").attr("stroke", "rgba(255,255,255,0.18)"))
+        .call(g => g.selectAll("text").attr("fill", "#a8bbd2").style("font-size", "12px"));
+
+      chartTitle.text(`${metric.label} progression`);
+      chartSubtitle.text(
+        state.conference === "All"
+          ? `Cumulative ${metric.label.toLowerCase()} by matchday across both conferences.`
+          : `Cumulative ${metric.label.toLowerCase()} by matchday for the ${state.conference.toLowerCase()}.`
+      );
+
+      const currentRows = filtered.filter(d => d.matchday === visibleMatchday);
+      const statusDate = currentRows.length ? currentRows[0].snapshot_date : "";
+      statusPill.text(`Matchday ${visibleMatchday}${statusDate ? ` • ${statusDate}` : ""}`);
+
+      currentFrameG.selectAll("*").remove();
+
+      currentFrameG.append("line")
+        .attr("x1", x(visibleMatchday))
+        .attr("x2", x(visibleMatchday))
+        .attr("y1", 0)
+        .attr("y2", innerHeight)
+        .attr("stroke", "rgba(56,189,248,0.55)")
+        .attr("stroke-width", 1.5)
+        .attr("stroke-dasharray", "5,5");
+
+      const lineGenerator = d3.line()
+        .x(d => x(d.matchday))
+        .y(d => y(d[metric.field]))
+        .curve(d3.curveMonotoneX);
+
+      const lineSelection = linesG
+        .selectAll(".team-line")
+        .data(series, d => d.key);
+
+      lineSelection.exit().remove();
+
+      const lineEnter = lineSelection.enter()
+        .append("path")
+        .attr("class", "team-line")
+        .attr("fill", "none")
+        .attr("stroke-width", 2.6)
+        .attr("stroke-linecap", "round")
+        .attr("stroke-linejoin", "round")
+        .style("opacity", 0.52)
+        .on("mousemove", function(event, s) {
+          const point = getVisiblePoint(s, visibleMatchday);
+          if (point) {
+            d3.select(this).style("opacity", 1).attr("stroke-width", 4);
+            showTooltip(event, point);
+          }
+        })
+        .on("mouseleave", function() {
+          d3.select(this).style("opacity", 0.52).attr("stroke-width", 2.6);
+          hideTooltip();
+        });
+
+      lineEnter.merge(lineSelection)
+        .attr("stroke", d => colorScale(d.key))
+        .attr("d", d => {
+          const visibleValues = d.values.filter(v => v.matchday <= visibleMatchday);
+          return visibleValues.length > 1 ? lineGenerator(visibleValues) : null;
+        });
+
+      const pointSelection = pointsG
+        .selectAll(".current-point")
+        .data(visiblePoints, d => `${d.conference}|${d.team}`);
+
+      pointSelection.exit().remove();
+
+      const pointEnter = pointSelection.enter()
+        .append("circle")
+        .attr("class", "current-point")
+        .attr("r", 5.5)
+        .attr("stroke", "#09111d")
+        .attr("stroke-width", 1.5)
+        .on("mousemove", (event, d) => showTooltip(event, d))
+        .on("mouseleave", hideTooltip);
+
+      pointEnter.merge(pointSelection)
+        .attr("fill", d => colorScale(`${d.conference}|${d.team}`))
+        .attr("cx", d => x(d.matchday))
+        .attr("cy", d => y(d[metric.field]));
+
+      renderLeaderboard(visiblePoints);
+    }
+
+    function stopReplay() {
+      if (state.timer) {
+        clearInterval(state.timer);
+        state.timer = null;
+      }
+    }
+
+    function playReplay() {
+      stopReplay();
+      state.currentFrameIndex = 0;
+      render();
+
+      state.timer = setInterval(() => {
+        state.currentFrameIndex += 1;
+
+        if (state.currentFrameIndex >= allMatchdays.length) {
+          state.currentFrameIndex = allMatchdays.length - 1;
+          render();
+          stopReplay();
+          return;
+        }
+
+        render();
+      }, 1100);
+    }
+
+    function init(data) {
+      rawData = data.map(d => ({
+        snapshot_date: d.snapshot_date,
+        matchday: +d.matchday,
+        week: d.week,
+        conference: d.conference,
+        rank: +d.rank,
+        team: d.team,
+        abbr: d.abbr,
+        played: +d.played,
+        wins: +d.wins,
+        losses: +d.losses,
+        ties: +d.ties,
+        goals_for: +d.goals_for,
+        goals_against: +d.goals_against,
+        goal_difference: +d.goal_difference,
+        points: +d.points
+      }));
+
+      allMatchdays = Array.from(new Set(rawData.map(d => d.matchday))).sort((a, b) => a - b);
+
+      const keyList = Array.from(new Set(rawData.map(d => `${d.conference}|${d.team}`)));
+      teamKeys = keyList;
+
+      const palette = d3.quantize(t => d3.interpolateRainbow(t * 0.92), keyList.length);
+      colorScale = d3.scaleOrdinal().domain(keyList).range(palette);
+
+      buildControls();
+      render();
+    }
+
+    d3.csv("data/usl/standings-history.csv")
+      .then(init)
+      .catch(error => {
+        console.error(error);
+
+        d3.select(".chart-card").append("div")
+          .attr("class", "empty-state")
+          .style("margin-top", "18px")
+          .text("Unable to load data/usl/standings-history.csv. Check the file path and make sure the CSV exists in your repo.");
+      });
+  </script>
+</body>
+</html>
