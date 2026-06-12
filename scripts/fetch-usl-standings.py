@@ -29,10 +29,18 @@ import requests
 
 SOURCE_URL = "https://www.uslchampionship.com/league-standings"
 
+LAYOUT_TAB_URL = (
+    "https://www.uslchampionship.com/layout_container/show_layout_tab"
+    "?layout_container_id=76090417"
+    "&page_node_id=2415039"
+    "&tab_element_id=247942"
+)
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data" / "usl"
 CURRENT_JSON_PATH = DATA_DIR / "current-standings.json"
 HISTORY_CSV_PATH = DATA_DIR / "standings-history.csv"
+DEBUG_LAYOUT_HTML_PATH = DATA_DIR / "debug-layout-tab.html"
 
 EXPECTED_CONFERENCES = {
     "Eastern Conference": 13,
@@ -245,7 +253,7 @@ def parse_standings_table(df: pd.DataFrame) -> List[StandingRow]:
 
 
 def fetch_html(url: str) -> str:
-    """Download page HTML and verify that the response is usable."""
+    """Download the main USL standings page HTML."""
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
@@ -260,19 +268,60 @@ def fetch_html(url: str) -> str:
     html = response.text or ""
 
     if not html.strip():
-      raise RuntimeError("Received an empty response from the USL standings page.")
+        raise RuntimeError("Received an empty response from the USL standings page.")
 
-    if "<html" not in html.lower():
-      raise RuntimeError(
-          "The USL standings page response did not look like HTML. "
-          f"Content-Type: {response.headers.get('content-type', 'unknown')}"
-      )
-
-    print(f"[INFO] Downloaded {len(html):,} characters from USL standings page.")
-    print(f"[INFO] Content-Type: {response.headers.get('content-type', 'unknown')}")
+    print(f"[INFO] Downloaded {len(html):,} characters from main USL standings page.")
+    print(f"[INFO] Main page Content-Type: {response.headers.get('content-type', 'unknown')}")
 
     return html
 
+def fetch_layout_tab_html() -> str:
+    """
+    Fetch the SportsEngine layout tab HTML used by the USL standings page.
+
+    This endpoint was identified from the browser Network tab. It is likely the
+    page fragment that contains or triggers the standings content.
+    """
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    session = requests.Session()
+
+    headers_main = {
+        "User-Agent": (
+            "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
+            "+https://nagle-analytics.github.io/)"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+
+    headers_ajax = {
+        "User-Agent": headers_main["User-Agent"],
+        "Accept": "text/html, */*; q=0.01",
+        "Referer": SOURCE_URL,
+        "X-Requested-With": "XMLHttpRequest",
+    }
+
+    print(f"[INFO] Opening main page first: {SOURCE_URL}")
+    main_response = session.get(SOURCE_URL, headers=headers_main, timeout=30)
+    main_response.raise_for_status()
+
+    print(f"[INFO] Fetching layout tab endpoint: {LAYOUT_TAB_URL}")
+    tab_response = session.get(LAYOUT_TAB_URL, headers=headers_ajax, timeout=30)
+    tab_response.raise_for_status()
+
+    html = tab_response.text or ""
+
+    if not html.strip():
+        raise RuntimeError("Received an empty response from the layout tab endpoint.")
+
+    DEBUG_LAYOUT_HTML_PATH.write_text(html, encoding="utf-8")
+
+    print(f"[INFO] Downloaded {len(html):,} characters from layout tab endpoint.")
+    print(f"[INFO] Layout tab Content-Type: {tab_response.headers.get('content-type', 'unknown')}")
+    print(f"[INFO] Saved debug layout HTML to: {DEBUG_LAYOUT_HTML_PATH}")
+
+    return html
+    
 def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     """
     Read standings tables from the official page.
@@ -281,7 +330,7 @@ def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     when the table is present in the HTML. If the site changes, this function
     may need to be updated to use the site's hidden data endpoint.
     """
-    html = fetch_html(url)
+    html = fetch_layout_tab_html()
 
     try:
         tables = pd.read_html(StringIO(html))
