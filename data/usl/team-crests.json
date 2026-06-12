@@ -1,0 +1,202 @@
+{
+  "Birmingham Legion FC": {
+    "abbr": "BHM",
+    "lineColor": "#A28D5B",
+    "secondaryColor": "#101820",
+    "textColor": "#101820",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Black #101820, Gold #A28D5B"
+  },
+  "Brooklyn FC": {
+    "abbr": "BKN",
+    "lineColor": "#25282A",
+    "secondaryColor": "#C8C3B3",
+    "textColor": "#25282A",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Black #25282A, Limestone #C8C3B3"
+  },
+  "Charleston Battery": {
+    "abbr": "CHS",
+    "lineColor": "#FFCD00",
+    "secondaryColor": "#010101",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Black #010101, Gold #FFCD00"
+  },
+  "Colorado Springs Switchbacks FC": {
+    "abbr": "COS",
+    "lineColor": "#00A9E0",
+    "secondaryColor": "#010101",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Light Blue #00A9E0, Black #010101"
+  },
+  "Detroit City FC": {
+    "abbr": "DET",
+    "lineColor": "#643335",
+    "secondaryColor": "#D69A2D",
+    "textColor": "#643335",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Rouge #643335, Gold #D69A2D"
+  },
+  "El Paso Locomotive FC": {
+    "abbr": "ELP",
+    "lineColor": "#041E42",
+    "secondaryColor": "#69B3E7",
+    "textColor": "#041E42",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Desert Dusk Blue #041E42, West Texas Sky Blue #69B3E7"
+  },
+  "Hartford Athletic": {
+    "abbr": "HFD",
+    "lineColor": "#002D72",
+    "secondaryColor": "#009A44",
+    "textColor": "#002D72",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Blue #002D72, Green #009A44"
+  },
+  "Indy Eleven": {
+    "abbr": "IND",
+    "lineColor": "#0C2340",
+    "secondaryColor": "#C8102E",
+    "textColor": "#0C2340",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Navy #0C2340, Red #C8102E"
+  },
+  "Las Vegas Lights FC": {
+    "abbr": "LV",
+    "lineColor": "#FF3EB5",
+    "secondaryColor": "#009ACE",
+    "textColor": "#101820",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Pink #FF3EB5, Blue #009ACE, Yellow #FFE900"
+  },
+  "Lexington SC": {
+    "abbr": "LEX",
+    "lineColor": "#00E11E",
+    "secondaryColor": "#003A0E",
+    "textColor": "#003A0E",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Youthful Green Dark #00E11E, Mature Green Darkest #003A0E"
+  },
+  "Loudoun United FC": {
+    "abbr": "LDN",
+    "lineColor": "#E4002B",
+    "secondaryColor": "#010101",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Red #E4002B, Black #010101"
+  },
+  "Louisville City FC": {
+    "abbr": "LOU",
+    "lineColor": "#330072",
+    "secondaryColor": "#010101",
+    "textColor": "#330072",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Purple #330072, Black #010101"
+  },
+  "Miami FC": {
+    "abbr": "MIA",
+    "lineColor": "#10069F",
+    "secondaryColor": "#FC4C02",
+    "textColor": "#10069F",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Blue #10069F, Orange #FC4C02"
+  },
+  "Monterey Bay FC": {
+    "abbr": "MB",
+    "lineColor": "#2CCCD3",
+    "secondaryColor": "#003865",
+    "textColor": "#003865",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Crisp Blue #2CCCD3, Kelp Blue #003865"
+  },
+  "New Mexico United": {
+    "abbr": "NM",
+    "lineColor": "#FCE300",
+    "secondaryColor": "#19191A",
+    "textColor": "#19191A",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Yellow #FCE300, Black #19191A"
+  },
+  "Oakland Roots SC": {
+    "abbr": "OAK",
+    "lineColor": "#010101",
+    "secondaryColor": "#62B5E5",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Black #010101, Blue #62B5E5, Green #009A44, Red #EF3340"
+  },
+  "Orange County SC": {
+    "abbr": "OC",
+    "lineColor": "#FF6720",
+    "secondaryColor": "#010101",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Orange #FF6720, Black #010101"
+  },
+  "Phoenix Rising FC": {
+    "abbr": "PHX",
+    "lineColor": "#D22730",
+    "secondaryColor": "#F2A900",
+    "textColor": "#D22730",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Red #D22730, Gold #F2A900"
+  },
+  "Pittsburgh Riverhounds SC": {
+    "abbr": "PIT",
+    "lineColor": "#FFC72C",
+    "secondaryColor": "#010101",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Black #010101, Gold #FFC72C"
+  },
+  "Rhode Island FC": {
+    "abbr": "RI",
+    "lineColor": "#0C2340",
+    "secondaryColor": "#FFA400",
+    "textColor": "#0C2340",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Bay Blue #0C2340, Amber #FFA400"
+  },
+  "Sacramento Republic FC": {
+    "abbr": "SAC",
+    "lineColor": "#7C2629",
+    "secondaryColor": "#C8102E",
+    "textColor": "#7C2629",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Old Glory Red #7C2629, Resiliant Red #C8102E"
+  },
+  "San Antonio FC": {
+    "abbr": "SA",
+    "lineColor": "#C5203E",
+    "secondaryColor": "#010101",
+    "textColor": "#010101",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Red #C5203E, Black #010101"
+  },
+  "Sporting JAX": {
+    "abbr": "JAX",
+    "lineColor": "#00A3E0",
+    "secondaryColor": "#FEDB00",
+    "textColor": "#003A5D",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Blue #00A3E0, Yellow #FEDB00"
+  },
+  "Tampa Bay Rowdies": {
+    "abbr": "TBR",
+    "lineColor": "#4C8D2B",
+    "secondaryColor": "#FFCD00",
+    "textColor": "#286140",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Heritage Green #4C8D2B, Heritage Gold #FFCD00"
+  },
+  "FC Tulsa": {
+    "abbr": "TUL",
+    "lineColor": "#BD9B60",
+    "secondaryColor": "#6ECEB2",
+    "textColor": "#4F3B1C",
+    "crestUrl": "",
+    "sourceNote": "TruColor: Gold #BD9B60, Patina Green #6ECEB2"
+  }
+}
