@@ -41,7 +41,9 @@ DATA_DIR = ROOT / "data" / "usl"
 CURRENT_JSON_PATH = DATA_DIR / "current-standings.json"
 HISTORY_CSV_PATH = DATA_DIR / "standings-history.csv"
 DEBUG_LAYOUT_HTML_PATH = DATA_DIR / "debug-layout-tab.html"
-
+DEBUG_MAIN_HTML_PATH = DATA_DIR / "debug-main-page.html"
+DEBUG_SCRIPTS_PATH = DATA_DIR / "debug-scripts.txt"
+DEBUG_CANDIDATES_PATH = DATA_DIR / "debug-candidate-responses.txt"
 EXPECTED_CONFERENCES = {
     "Eastern Conference": 13,
     "Western Conference": 12,
@@ -321,6 +323,111 @@ def fetch_layout_tab_html() -> str:
     print(f"[INFO] Saved debug layout HTML to: {DEBUG_LAYOUT_HTML_PATH}")
 
     return html
+
+def collect_debug_sources() -> None:
+    """
+    Save useful debug information from the USL standings page.
+
+    This helps identify whether standings data is embedded in scripts,
+    loaded from another endpoint, or rendered as custom HTML.
+    """
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    session = requests.Session()
+
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (compatible; NagleAnalyticsBot/1.0; "
+            "+https://nagle-analytics.github.io/)"
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+
+    ajax_headers = {
+        "User-Agent": headers["User-Agent"],
+        "Accept": "text/html,application/json,*/*;q=0.01",
+        "Referer": SOURCE_URL,
+        "X-Requested-With": "XMLHttpRequest",
+    }
+
+    response = session.get(SOURCE_URL, headers=headers, timeout=30)
+    response.raise_for_status()
+
+    html = response.text or ""
+    DEBUG_MAIN_HTML_PATH.write_text(html, encoding="utf-8")
+
+    script_urls = []
+
+    for match in re.findall(r'<script[^>]+src=["\']([^"\']+)["\']', html, flags=re.I):
+        if match.startswith("//"):
+            url = "https:" + match
+        elif match.startswith("/"):
+            url = "https://www.uslchampionship.com" + match
+        elif match.startswith("http"):
+            url = match
+        else:
+            url = "https://www.uslchampionship.com/" + match.lstrip("./")
+
+        script_urls.append(url)
+
+    script_lines = [
+        "Main page:",
+        SOURCE_URL,
+        "",
+        f"Main HTML length: {len(html):,}",
+        "",
+        "Script URLs found:",
+    ]
+
+    script_lines.extend(script_urls)
+
+    DEBUG_SCRIPTS_PATH.write_text("\n".join(script_lines) + "\n", encoding="utf-8")
+
+    candidate_urls = [
+        "https://www.uslchampionship.com/team-network",
+        "https://www.uslchampionship.com/assets",
+        "https://www.uslchampionship.com/layout_container/show_layout_tab?layout_container_id=76090417&page_node_id=2415039&tab_element_id=247942",
+    ]
+
+    output_lines = []
+
+    for url in candidate_urls:
+        output_lines.append("=" * 90)
+        output_lines.append(f"URL: {url}")
+
+        try:
+            candidate_response = session.get(url, headers=ajax_headers, timeout=30)
+            output_lines.append(f"Status: {candidate_response.status_code}")
+            output_lines.append(f"Content-Type: {candidate_response.headers.get('content-type', 'unknown')}")
+            output_lines.append(f"Length: {len(candidate_response.text or ''):,}")
+
+            text = candidate_response.text or ""
+
+            for keyword in [
+                "Tampa Bay Rowdies",
+                "Louisville City FC",
+                "San Antonio FC",
+                "Eastern Conference",
+                "Western Conference",
+                "standings",
+                "team",
+                "points",
+            ]:
+                output_lines.append(f"Contains {keyword!r}: {keyword in text}")
+
+            output_lines.append("")
+            output_lines.append("Preview:")
+            output_lines.append(text[:3000])
+            output_lines.append("")
+
+        except Exception as exc:
+            output_lines.append(f"ERROR: {exc}")
+
+    DEBUG_CANDIDATES_PATH.write_text("\n".join(output_lines) + "\n", encoding="utf-8")
+
+    print(f"[INFO] Saved main page debug file to: {DEBUG_MAIN_HTML_PATH}")
+    print(f"[INFO] Saved script URL debug file to: {DEBUG_SCRIPTS_PATH}")
+    print(f"[INFO] Saved candidate response debug file to: {DEBUG_CANDIDATES_PATH}")
     
 def read_standings_tables(url: str) -> Dict[str, List[StandingRow]]:
     """
@@ -526,6 +633,7 @@ def main() -> int:
     snapshot_date = datetime.now(timezone.utc).date().isoformat()
 
     print(f"[INFO] Fetching USL standings from: {SOURCE_URL}")
+    collect_debug_sources()
     standings = read_standings_tables(SOURCE_URL)
 
     validate_counts(standings)
