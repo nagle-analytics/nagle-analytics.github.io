@@ -321,6 +321,13 @@
         <div id="conferenceControls" class="controls"></div>
       </div>
 
+      <div class="controls">
+        <span class="control-label">X-axis</span>
+        <div id="xAxisControls" class="controls"></div>
+      </div>
+
+      
+
       <div class="chart-wrap">
         <svg id="chart" viewBox="0 0 1420 760" preserveAspectRatio="xMidYMid meet"></svg>
       </div>
@@ -346,10 +353,16 @@
     };
 
     const conferenceOptions = ["All", "Eastern Conference", "Western Conference"];
+  
+    const xAxisOptions = {
+      played: { label: "Matches Played", field: "played", prefix: "GP" },
+      matchday: { label: "Matchday", field: "matchday", prefix: "MD" }
+    };
 
     const state = {
       metricKey: "points",
       conference: "All",
+      xAxisKey: "played",
       frameIndex: 0,
       timer: null,
       highlightedKey: null
@@ -381,12 +394,13 @@
 
     function crestUrl(optaId, size = 70) {
       if (!optaId) return "";
-      return `https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=${size}&id=${optaId}`;
+      return "";
     }
 
     function buildControls() {
       const metricWrap = d3.select("#metricControls");
       const conferenceWrap = d3.select("#conferenceControls");
+      const xAxisWrap = d3.select("#xAxisControls");
 
       Object.entries(metrics).forEach(([key, config]) => {
         metricWrap.append("button")
@@ -414,6 +428,20 @@
           });
       });
 
+      Object.entries(xAxisOptions).forEach(([key, config]) => {
+        xAxisWrap.append("button")
+          .attr("class", "toggle")
+          .classed("active", key === state.xAxisKey)
+          .text(config.label)
+          .on("click", () => {
+            stopReplay();
+            state.xAxisKey = key;
+            state.frameIndex = getFrames().length - 1;
+            updateControls();
+            render(true);
+          });
+      });
+
       d3.select("#replayBtn").on("click", playReplay);
     }
 
@@ -423,32 +451,68 @@
 
       d3.select("#conferenceControls").selectAll(".toggle")
         .classed("active", (_, i) => conferenceOptions[i] === state.conference);
+
+      d3.select("#xAxisControls").selectAll(".toggle")
+        .classed("active", (_, i) => Object.keys(xAxisOptions)[i] === state.xAxisKey);
     }
 
     function filteredData() {
       if (state.conference === "All") return rawData;
       return rawData.filter(d => d.conference === state.conference);
     }
+    
+    function getFrames() {
+      const data = filteredData();
+      const xField = xAxisOptions[state.xAxisKey].field;
+
+    return Array.from(new Set(data.map(d => d[xField])))
+      .filter(value => Number.isFinite(value) && value > 0)
+      .sort((a, b) => a - b);
+    }
+
+    function collapseSeriesForPlayedAxis(values) {
+      const byPlayed = d3.rollups(
+        values,
+        rows => rows[rows.length - 1],
+        d => d.played
+    );
+
+    return byPlayed
+      .map(([, row]) => row)
+      .sort((a, b) => d3.ascending(a.played, b.played));
+    }
+
+    function getSeriesValuesForAxis(values) {
+      const sorted = values.slice().sort((a, b) => d3.ascending(a.matchday, b.matchday));
+
+    if (state.xAxisKey === "played") {
+      return collapseSeriesForPlayedAxis(sorted);
+    }
+
+    return sorted;
+  }
 
     function seriesFromData(data) {
       return d3.groups(data, d => d.key).map(([key, values]) => {
-        values.sort((a, b) => d3.ascending(a.matchday, b.matchday));
+        const axisValues = getSeriesValuesForAxis(values);
+        
         return {
           key,
           team: values[0].team,
           abbr: values[0].abbr,
           conference: values[0].conference,
-          values
+          values: axisValues
         };
       });
     }
 
-    function visibleValues(values, frameMatchday) {
-      return values.filter(d => d.matchday <= frameMatchday);
+    function visibleValues(values, frameValue) {
+      const xField = xAxisOptions[state.xAxisKey].field;
+      return values.filter(d => d[xField] <= frameValue);
     }
 
-    function lastVisible(values, frameMatchday) {
-      const visible = visibleValues(values, frameMatchday);
+    function lastVisible(values, frameValue) {
+      const visible = visibleValues(values, frameValue);
       return visible.length ? visible[visible.length - 1] : null;
     }
 
@@ -462,14 +526,15 @@
         return [0, 1];
       }
 
+      if (field === "goal_difference") {
+        const abs = Math.max(Math.abs(min), Math.abs(max), 1);
+        return [-abs * 1.18, abs * 1.18];
+      }
+
       min = Math.min(0, min);
       max = Math.max(0, max);
 
-      if (min === max) {
-        return [min - 1, max + 1];
-      }
-
-      const pad = (max - min) * 0.12;
+      const pad = Math.max((max - min) * 0.12, 1);
 
       return [min - pad, max + pad];
     }
@@ -545,17 +610,22 @@
         return;
       }
 
-      const currentMatchday = allMatchdays[state.frameIndex] ?? allMatchdays[allMatchdays.length - 1];
+      const frames = getFrames();
+      const xConfig = xAxisOptions[state.xAxisKey];
+      const xField = xConfig.field;
+      const currentFrame = frames[state.frameIndex] ?? frames[frames.length - 1];
+
       const series = seriesFromData(data);
+
       const endpointData = series
         .map(s => {
-          const point = lastVisible(s.values, currentMatchday);
+          const point = lastVisible(s.values, currentFrame);
           return point ? { ...point, key: s.key, values: s.values } : null;
         })
         .filter(Boolean);
 
       const x = d3.scaleLinear()
-        .domain(d3.extent(allMatchdays))
+        .domain(d3.extent(frames))
         .range([0, innerWidth]);
 
       const y = d3.scaleLinear()
@@ -565,13 +635,13 @@
 
       const t = animate ? svg.transition().duration(650).ease(d3.easeCubicOut) : svg.transition().duration(0);
 
-      const xTicks = allMatchdays.filter((d, i) => i === 0 || i === allMatchdays.length - 1 || d % 2 === 0);
+      const xTicks = frames.filter((d, i) => i === 0 || i === frames.length - 1 || d % 2 === 0);
 
       xAxisG.transition(t)
         .call(
           d3.axisBottom(x)
             .tickValues(xTicks)
-            .tickFormat(d => `MD ${d}`)
+            .tickFormat(d => `${xConfig.prefix} ${d}`)
         );
 
       yAxisG.transition(t)
@@ -594,18 +664,18 @@
         .attr("stroke", "rgba(17,24,39,0.22)")
         .attr("stroke-width", 1.2);
 
-      frameLabelG.selectAll("text").data([currentMatchday]).join("text")
+      frameLabelG.selectAll("text").data([currentFrame]).join("text")
         .attr("class", "frame-label")
         .attr("x", innerWidth - 10)
         .attr("y", innerHeight * 0.52)
-        .text(`MD ${currentMatchday}`);
+        .text(`${xConfig.prefix} ${currentFrame}`);
 
-      const currentRows = data.filter(d => d.matchday === currentMatchday);
+      const currentRows = data.filter(d => d[xField] === currentFrame);
       const currentDate = currentRows.length ? currentRows[0].snapshot_date : "";
-      statusPill.text(`${metric.title} • Matchday ${currentMatchday}${currentDate ? ` • ${currentDate}` : ""}`);
+      statusPill.text(`${metric.title} • ${xConfig.label} ${currentFrame}${currentDate ? ` • ${currentDate}` : ""}`);
 
       const line = d3.line()
-        .x(d => x(d.matchday))
+        .x(d => x(d[xField]))
         .y(d => y(d[field]))
         .curve(d3.curveMonotoneX);
 
@@ -621,7 +691,7 @@
         .attr("stroke-width", 2.8)
         .style("opacity", 0.72)
         .on("mousemove", function(event, d) {
-          const point = lastVisible(d.values, currentMatchday);
+          const point = lastVisible(d.values, currentFrame);
           setHighlight(d.key, point, event);
         })
         .on("mouseleave", clearHighlight)
@@ -629,7 +699,7 @@
         .transition(t)
         .attr("stroke", d => colorScale(d.key))
         .attr("d", d => {
-          const values = visibleValues(d.values, currentMatchday);
+          const values = visibleValues(d.values, currentFrame);
           return values.length > 1 ? line(values) : null;
         });
 
@@ -659,14 +729,14 @@
         .append("circle")
         .attr("r", 17);
 
-      enterGroups.append("image")
-        .attr("class", "crest-img")
-        .attr("width", 34)
-        .attr("height", 34)
-        .attr("x", -17)
-        .attr("y", -17)
-        .attr("clip-path", d => `url(#clip-${safeId(d.key)})`)
-        .attr("href", d => crestUrl(teamIdByKey.get(d.key), 70));
+      enterGroups.append("text")
+        .attr("class", "crest-abbr")
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", 10)
+        .attr("font-weight", 900)
+        .attr("fill", "#111827")
+        .text(d => d.abbr);
 
       enterGroups.append("text")
         .attr("class", "team-label")
@@ -678,15 +748,12 @@
       mergedGroups.select(".crest-ring")
         .attr("stroke", d => colorScale(d.key));
 
-      mergedGroups.select(".crest-img")
-        .attr("href", d => crestUrl(teamIdByKey.get(d.key), 70));
-
       mergedGroups.select(".team-label")
         .attr("fill", d => colorScale(d.key))
         .text(d => d.abbr);
 
       mergedGroups.transition(t)
-        .attr("transform", d => `translate(${x(d.matchday)},${y(d[field])})`);
+        .attr("transform", d => `translate(${x(d[xField])},${y(d[field])})`);
 
       updateHighlight();
     }
@@ -704,14 +771,17 @@
 
     function playReplay() {
       stopReplay();
+
+      const frames = getFrames();
+      
       state.frameIndex = 0;
       render(true);
 
       state.timer = setInterval(() => {
         state.frameIndex += 1;
 
-        if (state.frameIndex >= allMatchdays.length) {
-          state.frameIndex = allMatchdays.length - 1;
+        if (state.frameIndex >= frames.length) {
+          state.frameIndex = frames.length - 1;
           render(true);
           stopReplay();
           return;
@@ -763,7 +833,7 @@
         .domain(keys)
         .range(d3.quantize(t => d3.interpolateRainbow(t * 0.88), keys.length));
 
-      state.frameIndex = allMatchdays.length - 1;
+      state.frameIndex = getFrames().length - 1;
 
       buildControls();
       render(false);
