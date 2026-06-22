@@ -8,8 +8,15 @@
 
   <meta
     name="description"
-    content="Nagle Analytics is a data visualization brand focused on interactive charts, maps, sports analytics, and visual data stories."
+    content="Nagle Analytics is a home for interactive data visualization, sports analytics, maps, and visual data stories built from real-world datasets."
   />
+  <meta name="theme-color" content="#071018" />
+  <meta property="og:title" content="Nagle Analytics | Interactive Data Visualization" />
+  <meta
+    property="og:description"
+    content="Interactive charts, sports analytics, maps, and visual data stories built from real-world datasets."
+  />
+  <meta property="og:type" content="website" />
 
   <style>
     :root {
@@ -19,9 +26,12 @@
       --bg-card-strong: rgba(255, 255, 255, 0.1);
       --text: #f8fafc;
       --muted: #a8b3c7;
+      --muted-2: #7f8ba3;
       --accent: #52f2c2;
       --accent-2: #7c5cff;
+      --accent-3: #79d7ff;
       --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.22);
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       --radius-lg: 28px;
       --radius-md: 18px;
@@ -52,27 +62,46 @@
       text-decoration: none;
     }
 
-.dynamic-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  background: #071018;
-}
+    .skip-link {
+      position: fixed;
+      left: 18px;
+      top: 18px;
+      z-index: 999;
+      transform: translateY(-140%);
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #06100d;
+      font-weight: 800;
+      transition: transform 160ms ease;
+    }
 
-.page {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: none;
+    }
+
+    .dynamic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background: #071018;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
       backdrop-filter: blur(18px);
-      background: rgba(7, 16, 24, 0.76);
+      background: rgba(7, 16, 24, 0.78);
       border-bottom: 1px solid var(--line);
     }
 
@@ -90,7 +119,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
+      font-weight: 850;
       letter-spacing: -0.03em;
     }
 
@@ -98,8 +127,7 @@
       width: 36px;
       height: 36px;
       border-radius: 12px;
-      background:
-        linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
     }
 
@@ -111,7 +139,16 @@
       font-size: 0.95rem;
     }
 
-    .nav-links a:hover {
+    .nav-links a,
+    .brand,
+    .button,
+    .project-card,
+    .hero-panel {
+      outline-offset: 5px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
       color: var(--text);
     }
 
@@ -147,13 +184,13 @@
 
     h1 {
       margin: 24px 0 20px;
-      font-size: clamp(3rem, 8vw, 6.4rem);
+      font-size: clamp(3.2rem, 8vw, 6.6rem);
       line-height: 0.92;
       letter-spacing: -0.08em;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #ffffff 10%, #52f2c2 50%, #a38cff 90%);
+      background: linear-gradient(135deg, #ffffff 10%, #52f2c2 48%, #a38cff 90%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -165,7 +202,8 @@
       font-size: clamp(1.08rem, 2vw, 1.35rem);
     }
 
-    .hero-actions {
+    .hero-actions,
+    .section-actions {
       margin-top: 34px;
       display: flex;
       flex-wrap: wrap;
@@ -180,11 +218,12 @@
       padding: 13px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      font-weight: 700;
+      font-weight: 800;
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
     }
 
-    .button:hover {
+    .button:hover,
+    .button:focus-visible {
       transform: translateY(-2px);
       border-color: rgba(255, 255, 255, 0.32);
     }
@@ -210,12 +249,23 @@
         rgba(255, 255, 255, 0.04);
       box-shadow: var(--shadow);
       overflow: hidden;
+      display: block;
+      isolation: isolate;
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .hero-panel:hover,
+    .hero-panel:focus-visible {
+      transform: translateY(-5px);
+      border-color: rgba(82, 242, 194, 0.38);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
     }
 
     .hero-panel::before {
       content: "";
       position: absolute;
       inset: -40%;
+      z-index: -1;
       background:
         radial-gradient(circle, rgba(82, 242, 194, 0.12), transparent 26%),
         radial-gradient(circle, rgba(124, 92, 255, 0.12), transparent 28%);
@@ -233,7 +283,7 @@
       z-index: 2;
       border-radius: 24px;
       border: 1px solid var(--line);
-      background: rgba(7, 16, 24, 0.74);
+      background: rgba(7, 16, 24, 0.78);
       backdrop-filter: blur(18px);
       padding: 22px;
       display: flex;
@@ -241,8 +291,15 @@
       justify-content: space-between;
     }
 
-    .chart-top {
+    .chart-top,
+    .chart-caption,
+    .chart-metrics,
+    .mini-table-row {
       display: flex;
+      align-items: center;
+    }
+
+    .chart-top {
       justify-content: space-between;
       gap: 18px;
       align-items: flex-start;
@@ -250,12 +307,13 @@
 
     .chart-top h2 {
       margin: 0;
-      letter-spacing: -0.04em;
-      font-size: 1.35rem;
+      letter-spacing: -0.045em;
+      font-size: clamp(1.35rem, 3vw, 1.7rem);
+      line-height: 1.05;
     }
 
     .chart-top p {
-      margin: 4px 0 0;
+      margin: 6px 0 0;
       color: var(--muted);
       font-size: 0.94rem;
     }
@@ -268,52 +326,79 @@
       padding: 6px 10px;
       border-radius: 999px;
       font-size: 0.78rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .mock-chart {
-      height: 300px;
-      margin: 30px 0 22px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 14px;
-      align-items: end;
-      padding: 18px;
+    .mini-tracker {
+      position: relative;
+      height: 290px;
+      margin: 26px 0 18px;
       border-radius: 20px;
       background:
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 100% 25%, 16.66% 100%;
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
+        rgba(255,255,255,0.035);
+      background-size: 100% 25%, 20% 100%;
       border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
     }
 
-    .bar {
-      border-radius: 999px 999px 10px 10px;
-      background: linear-gradient(180deg, var(--accent), var(--accent-2));
-      min-height: 36px;
-      animation: floatBar 3.2s ease-in-out infinite;
+    .mini-tracker svg {
+      width: 100%;
+      height: 100%;
+      display: block;
     }
 
-    .bar:nth-child(1) { height: 44%; animation-delay: 0s; }
-    .bar:nth-child(2) { height: 72%; animation-delay: 0.15s; }
-    .bar:nth-child(3) { height: 56%; animation-delay: 0.3s; }
-    .bar:nth-child(4) { height: 86%; animation-delay: 0.45s; }
-    .bar:nth-child(5) { height: 64%; animation-delay: 0.6s; }
-    .bar:nth-child(6) { height: 92%; animation-delay: 0.75s; }
+    .axis-label {
+      position: absolute;
+      color: rgba(248, 250, 252, 0.52);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
 
-    @keyframes floatBar {
-      0%, 100% { transform: scaleY(1); opacity: 0.85; }
-      50% { transform: scaleY(0.88); opacity: 1; }
+    .axis-label.left {
+      left: 14px;
+      top: 12px;
+    }
+
+    .axis-label.bottom-left {
+      left: 18px;
+      bottom: 12px;
+    }
+
+    .axis-label.bottom-right {
+      right: 18px;
+      bottom: 12px;
+    }
+
+    .chart-metrics {
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .metric-chip {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 750;
     }
 
     .chart-caption {
-      display: flex;
       justify-content: space-between;
       gap: 12px;
       color: var(--muted);
       font-size: 0.9rem;
       border-top: 1px solid var(--line);
       padding-top: 16px;
+    }
+
+    .chart-caption strong {
+      color: var(--text);
     }
 
     section {
@@ -323,7 +408,7 @@
     }
 
     .section-heading {
-      max-width: 760px;
+      max-width: 800px;
       margin-bottom: 34px;
     }
 
@@ -349,7 +434,8 @@
 
     .feature-copy,
     .feature-visual,
-    .card {
+    .project-card,
+    .about-panel {
       border: 1px solid var(--line);
       background: var(--bg-card);
       border-radius: var(--radius-lg);
@@ -360,13 +446,20 @@
       padding: 30px;
     }
 
-    .feature-copy h3 {
+    .feature-copy h3,
+    .project-card h3,
+    .about-panel h3 {
       margin: 0 0 12px;
-      font-size: 2rem;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.045em;
     }
 
-    .feature-copy p {
+    .feature-copy h3 {
+      font-size: 2rem;
+    }
+
+    .feature-copy p,
+    .project-card p,
+    .about-panel p {
       color: var(--muted);
       margin: 0 0 18px;
     }
@@ -385,6 +478,7 @@
       color: var(--muted);
       background: rgba(255,255,255,0.04);
       font-size: 0.86rem;
+      font-weight: 700;
     }
 
     .feature-visual {
@@ -393,84 +487,92 @@
       overflow: hidden;
     }
 
-    .bump-placeholder {
+    .tracker-window {
       height: 100%;
-      min-height: 380px;
+      min-height: 390px;
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.1);
-      background:
-        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
-        rgba(255,255,255,0.035);
-      background-size: 100% 20%, 16.66% 100%;
-      position: relative;
+      background: rgba(5, 10, 16, 0.46);
       overflow: hidden;
     }
 
-    .bump-line {
-      position: absolute;
-      left: 8%;
-      right: 8%;
-      height: 3px;
+    .window-bar {
+      min-height: 54px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .window-dot {
+      width: 9px;
+      height: 9px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transform-origin: left center;
-      opacity: 0.9;
+      background: rgba(255,255,255,0.22);
     }
 
-    .bump-line.one {
-      top: 28%;
-      transform: rotate(7deg);
+    .tracker-body {
+      padding: 20px;
     }
 
-    .bump-line.two {
-      top: 48%;
-      transform: rotate(-5deg);
-      background: linear-gradient(90deg, #ffffff, var(--accent));
-      opacity: 0.55;
+    .mini-table {
+      margin-top: 18px;
+      display: grid;
+      gap: 8px;
     }
 
-    .bump-line.three {
-      top: 67%;
-      transform: rotate(4deg);
-      background: linear-gradient(90deg, var(--accent-2), #ffffff);
-      opacity: 0.45;
+    .mini-table-row {
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.035);
+      font-size: 0.84rem;
     }
 
-    .bump-dot {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      border-radius: 99px;
-      background: var(--accent);
-      box-shadow: 0 0 24px rgba(82, 242, 194, 0.7);
-      animation: moveDot 5s ease-in-out infinite;
+    .mini-table-row strong {
+      color: var(--text);
     }
 
-    .bump-dot.a { top: 25%; left: 12%; }
-    .bump-dot.b { top: 45%; left: 48%; animation-delay: 0.5s; background: var(--accent-2); }
-    .bump-dot.c { top: 64%; left: 78%; animation-delay: 1s; background: #ffffff; }
-
-    @keyframes moveDot {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-18px); }
-    }
-
-    .gallery {
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .card {
+    .project-card {
+      position: relative;
+      min-height: 250px;
       padding: 24px;
+      display: flex;
+      flex-direction: column;
       transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      overflow: hidden;
     }
 
-    .card:hover {
+    .project-card:hover,
+    .project-card:focus-visible {
       transform: translateY(-4px);
       background: var(--bg-card-strong);
       border-color: rgba(255,255,255,0.25);
+    }
+
+    .project-card.featured-card {
+      grid-column: span 2;
+      background:
+        radial-gradient(circle at top right, rgba(82, 242, 194, 0.16), transparent 18rem),
+        var(--bg-card);
     }
 
     .card-icon {
@@ -484,15 +586,30 @@
       margin-bottom: 18px;
     }
 
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.22rem;
-      letter-spacing: -0.03em;
+    .project-card h3 {
+      font-size: 1.24rem;
     }
 
-    .card p {
-      margin: 0;
-      color: var(--muted);
+    .project-card .tag-list {
+      margin-top: auto;
+    }
+
+    .project-card.soon {
+      opacity: 0.76;
+      cursor: default;
+    }
+
+    .project-card.soon:hover {
+      transform: none;
+      background: var(--bg-card);
+      border-color: var(--line);
+    }
+
+    .card-link-label {
+      margin-top: auto;
+      color: var(--accent);
+      font-weight: 850;
+      font-size: 0.92rem;
     }
 
     .about-grid {
@@ -502,15 +619,7 @@
     }
 
     .about-panel {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--line);
-      background: var(--bg-card);
       padding: 30px;
-    }
-
-    .about-panel p {
-      color: var(--muted);
-      margin-top: 0;
     }
 
     .tool-list {
@@ -525,6 +634,7 @@
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.04);
       color: var(--muted);
+      font-weight: 650;
     }
 
     footer {
@@ -541,7 +651,7 @@
 
     footer a {
       color: var(--text);
-      font-weight: 700;
+      font-weight: 800;
     }
 
     @media (max-width: 900px) {
@@ -556,21 +666,59 @@
       }
 
       .hero-panel {
-        min-height: 460px;
+        min-height: 480px;
       }
 
-      .gallery {
+      .gallery-grid {
         grid-template-columns: 1fr;
       }
 
+      .project-card.featured-card {
+        grid-column: span 1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+        gap: 12px;
+      }
+
       .nav-links {
-        display: none;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        gap: 16px;
+        white-space: nowrap;
       }
     }
 
     @media (max-width: 560px) {
-      .chart-caption {
+      .hero {
+        padding-bottom: 48px;
+      }
+
+      .hero-panel {
+        min-height: 430px;
+      }
+
+      .chart-card {
+        inset: 14px;
+        padding: 16px;
+      }
+
+      .chart-top,
+      .chart-caption,
+      .window-bar {
         flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mini-tracker {
+        height: 240px;
       }
 
       .tool-list {
@@ -580,19 +728,36 @@
       .feature-copy,
       .feature-visual,
       .about-panel,
-      .card {
+      .project-card {
         border-radius: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
+
   <div class="page">
     <header class="nav">
       <div class="nav-inner">
-        <a class="brand" href="#">
+        <a class="brand" href="index.html" aria-label="Nagle Analytics home">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Nagle Analytics</span>
         </a>
@@ -606,167 +771,214 @@
       </div>
     </header>
 
-    <main>
-      <section class="hero">
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
         <div>
           <span class="eyebrow">
             <span class="pulse" aria-hidden="true"></span>
             Interactive data visualization lab
           </span>
 
-          <h1>
+          <h1 id="hero-title">
             Make data <span class="gradient-text">movement</span> visible.
           </h1>
 
           <p class="hero-copy">
-            Nagle Analytics is a home for visual experiments, sports analytics,
+            Nagle Analytics is a home for polished visual experiments, sports analytics,
             interactive maps, and data stories built from real-world datasets.
           </p>
 
           <div class="hero-actions">
-            <a class="button primary" href="#featured">Explore featured visualization</a>
-            <a class="button secondary" href="#gallery">View gallery</a>
+            <a class="button primary" href="usl-cup-tracker.html">Open USL tracker</a>
+            <a class="button secondary" href="viz-gallery.html">View project gallery</a>
           </div>
         </div>
 
-        <div class="hero-panel" aria-label="Animated chart preview">
+        <a class="hero-panel" href="usl-cup-tracker.html" aria-label="Open the USL Championship Tracker">
           <div class="chart-card">
             <div class="chart-top">
               <div>
-                <h2>USL Cup Race Tracker</h2>
-                <p>Weekly movement preview</p>
+                <h2>USL Championship Tracker</h2>
+                <p>Points race, matchday movement, and team trajectories</p>
               </div>
-              <span class="status-pill">Coming soon</span>
+              <span class="status-pill">Live project</span>
             </div>
 
-            <div class="mock-chart" aria-hidden="true">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+            <div class="mini-tracker" aria-hidden="true">
+              <span class="axis-label left">Points</span>
+              <span class="axis-label bottom-left">GP 1</span>
+              <span class="axis-label bottom-right">GP 12</span>
+
+              <svg viewBox="0 0 520 290" role="img" aria-label="Mini line chart preview of USL team movement">
+                <defs>
+                  <linearGradient id="previewGradientA" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stop-color="#52f2c2" />
+                    <stop offset="100%" stop-color="#7c5cff" />
+                  </linearGradient>
+                  <linearGradient id="previewGradientB" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stop-color="#79d7ff" />
+                    <stop offset="100%" stop-color="#52f2c2" />
+                  </linearGradient>
+                </defs>
+
+                <path d="M42 232 C95 205, 126 158, 174 152 S258 119, 308 96 S398 68, 474 42" fill="none" stroke="url(#previewGradientA)" stroke-width="6" stroke-linecap="round" />
+                <path d="M42 234 C92 228, 126 198, 168 177 S244 164, 300 133 S384 94, 474 84" fill="none" stroke="#ffffff" stroke-opacity="0.72" stroke-width="4" stroke-linecap="round" />
+                <path d="M42 236 C102 216, 154 221, 202 198 S288 182, 336 146 S408 126, 474 118" fill="none" stroke="url(#previewGradientB)" stroke-width="5" stroke-linecap="round" />
+                <path d="M42 236 C92 240, 144 235, 210 218 S330 204, 474 162" fill="none" stroke="#a38cff" stroke-opacity="0.9" stroke-width="4" stroke-linecap="round" />
+
+                <circle cx="474" cy="42" r="15" fill="#071018" stroke="#52f2c2" stroke-width="5" />
+                <circle cx="474" cy="84" r="13" fill="#071018" stroke="#ffffff" stroke-width="4" />
+                <circle cx="474" cy="118" r="13" fill="#071018" stroke="#79d7ff" stroke-width="4" />
+                <circle cx="474" cy="162" r="12" fill="#071018" stroke="#a38cff" stroke-width="4" />
+              </svg>
+            </div>
+
+            <div class="chart-metrics" aria-hidden="true">
+              <span class="metric-chip">Points</span>
+              <span class="metric-chip">Goals</span>
+              <span class="metric-chip">Wins</span>
+              <span class="metric-chip">Goal Diff</span>
             </div>
 
             <div class="chart-caption">
-              <span>Rank movement, points, and team trajectories</span>
-              <span>Built for interactive storytelling</span>
+              <span><strong>Click to open</strong> the full interactive tracker</span>
+              <span>Updated from USL standings data</span>
             </div>
           </div>
-        </div>
+        </a>
       </section>
 
-      <section id="featured">
+      <section id="featured" aria-labelledby="featured-title">
         <div class="section-heading">
-          <h2>Featured visualization</h2>
+          <h2 id="featured-title">Featured visualization</h2>
           <p>
-            The first flagship project will be a dynamic chart showing how USL Cup
-            teams move through the race week by week.
+            The flagship project is now the live USL Championship Tracker: a full-page,
+            interactive view of how clubs move through the standings over time.
           </p>
         </div>
 
         <div class="feature">
           <div class="feature-copy">
-            <h3>USL Cup Race Tracker</h3>
+            <h3>USL Championship Tracker</h3>
             <p>
-              This project will visualize weekly standings movement, team momentum,
-              rank changes, and points progression across the cup race.
+              Follow team movement across matchdays, compare points and goal metrics,
+              and see how the standings race changes as results are added.
             </p>
             <p>
-              The goal is to make the season feel alive: teams climbing, falling,
-              separating from the pack, and changing position as results come in.
+              This should remain a dedicated project page rather than being fully embedded
+              on the homepage. The homepage works best as a polished preview that sends
+              visitors to the full experience.
             </p>
 
-            <div class="tag-list">
+            <div class="tag-list" aria-label="Project tags">
               <span class="tag">Sports analytics</span>
-              <span class="tag">Animated chart</span>
+              <span class="tag">Interactive chart</span>
               <span class="tag">Weekly movement</span>
-              <span class="tag">Interactive storytelling</span>
+              <span class="tag">D3.js</span>
+            </div>
+
+            <div class="section-actions">
+              <a class="button primary" href="usl-cup-tracker.html">View full tracker</a>
+              <a class="button secondary" href="viz-gallery.html">Browse gallery</a>
             </div>
           </div>
 
-          <div class="feature-visual">
-            <div class="bump-placeholder" aria-label="USL Cup bump chart placeholder">
-              <span class="bump-line one"></span>
-              <span class="bump-line two"></span>
-              <span class="bump-line three"></span>
-              <span class="bump-dot a"></span>
-              <span class="bump-dot b"></span>
-              <span class="bump-dot c"></span>
+          <div class="feature-visual" aria-label="USL tracker preview card">
+            <div class="tracker-window">
+              <div class="window-bar">
+                <div class="window-dots" aria-hidden="true">
+                  <span class="window-dot"></span>
+                  <span class="window-dot"></span>
+                  <span class="window-dot"></span>
+                </div>
+                <span>usl-cup-tracker.html</span>
+              </div>
+
+              <div class="tracker-body">
+                <div class="mini-tracker" aria-hidden="true">
+                  <span class="axis-label left">Points race</span>
+                  <span class="axis-label bottom-left">Matchday 1</span>
+                  <span class="axis-label bottom-right">Latest</span>
+
+                  <svg viewBox="0 0 520 290">
+                    <path d="M36 236 C86 205, 132 183, 180 164 S262 124, 312 112 S396 76, 482 54" fill="none" stroke="#52f2c2" stroke-width="6" stroke-linecap="round" />
+                    <path d="M36 238 C98 220, 136 191, 190 185 S270 150, 326 118 S412 96, 482 92" fill="none" stroke="#79d7ff" stroke-width="5" stroke-linecap="round" />
+                    <path d="M36 238 C100 232, 150 212, 200 198 S300 178, 348 146 S416 140, 482 116" fill="none" stroke="#ffffff" stroke-opacity="0.68" stroke-width="4" stroke-linecap="round" />
+                    <path d="M36 238 C84 242, 138 238, 190 226 S296 218, 354 186 S426 160, 482 146" fill="none" stroke="#7c5cff" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="482" cy="54" r="14" fill="#071018" stroke="#52f2c2" stroke-width="5" />
+                    <circle cx="482" cy="92" r="13" fill="#071018" stroke="#79d7ff" stroke-width="4" />
+                    <circle cx="482" cy="116" r="12" fill="#071018" stroke="#ffffff" stroke-opacity="0.8" stroke-width="4" />
+                    <circle cx="482" cy="146" r="12" fill="#071018" stroke="#7c5cff" stroke-width="4" />
+                  </svg>
+                </div>
+
+                <div class="mini-table" aria-hidden="true">
+                  <div class="mini-table-row"><strong>Points</strong><span>Team trajectories</span></div>
+                  <div class="mini-table-row"><strong>Matchday</strong><span>Replay movement</span></div>
+                  <div class="mini-table-row"><strong>Conference</strong><span>East / West filters</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="gallery">
+      <section id="gallery" aria-labelledby="gallery-title">
         <div class="section-heading">
-          <h2>Visualization gallery</h2>
+          <h2 id="gallery-title">Visualization gallery</h2>
           <p>
-            A growing collection of chart experiments, public data stories,
-            sports analytics, and interactive maps.
+            The gallery should act as a project hub: visitors scan a set of project cards,
+            then open the individual visualization that interests them.
           </p>
         </div>
 
-        <div class="gallery">
-          <article class="card">
-            <div class="card-icon">⚽</div>
-            <h3>Sports analytics</h3>
+        <div class="gallery-grid">
+          <a class="project-card featured-card" href="usl-cup-tracker.html">
+            <div class="card-icon" aria-hidden="true">⚽</div>
+            <h3>USL Championship Tracker</h3>
             <p>
-              Standings movement, rankings, team trajectories, player trends,
-              and season-long data stories.
+              A live interactive chart for standings movement, points race trends,
+              conference filters, and team trajectories.
             </p>
+            <div class="tag-list" aria-label="USL tracker tags">
+              <span class="tag">Live</span>
+              <span class="tag">Sports analytics</span>
+              <span class="tag">D3.js</span>
+            </div>
+            <span class="card-link-label">Open project →</span>
+          </a>
+
+          <article class="project-card soon">
+            <div class="card-icon" aria-hidden="true">🗺️</div>
+            <h3>Interactive maps</h3>
+            <p>
+              Future spatial visualizations showing regional differences, clusters,
+              and movement across geographies.
+            </p>
+            <div class="tag-list" aria-label="Map project tags">
+              <span class="tag">Coming next</span>
+              <span class="tag">Maps</span>
+            </div>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🗺️</div>
-            <h3>Maps</h3>
-            <p>
-              Spatial visualizations that help show patterns, clusters,
-              movement, and regional differences.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">📊</div>
+          <article class="project-card soon">
+            <div class="card-icon" aria-hidden="true">📊</div>
             <h3>Data stories</h3>
             <p>
-              Visual explanations that combine narrative, charts, and
-              interpretation to make data easier to explore.
+              Future narrative visualizations combining charts, interpretation,
+              and public-interest datasets.
             </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🧪</div>
-            <h3>Experiments</h3>
-            <p>
-              Small visual prototypes testing new chart types, layouts,
-              interactions, and storytelling formats.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🌎</div>
-            <h3>Public data</h3>
-            <p>
-              Visualizations using open datasets from government, science,
-              sports, and public-interest sources.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">🛠️</div>
-            <h3>Tools</h3>
-            <p>
-              Reusable workflows, templates, and web components for building
-              better data visualization projects.
-            </p>
+            <div class="tag-list" aria-label="Data story tags">
+              <span class="tag">Planned</span>
+              <span class="tag">Storytelling</span>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="about">
+      <section id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <h2>About Nagle Analytics</h2>
+          <h2 id="about-title">About Nagle Analytics</h2>
           <p>
             A personal data visualization brand focused on making real-world
             datasets more visual, interactive, and understandable.
@@ -813,125 +1025,144 @@
   </div>
 
   <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  const canvas = document.getElementById("dynamic-bg");
-  const ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("dynamic-bg");
+    const ctx = canvas.getContext("2d");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  let width;
-  let height;
-  let particles = [];
+    let width;
+    let height;
+    let particles = [];
+    let animationFrameId;
 
-  const particleCount = 72;
-  const maxDistance = 150;
+    const maxDistance = 150;
 
-  function resizeCanvas() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  }
+    function particleCount() {
+      if (window.innerWidth < 560) return 34;
+      if (window.innerWidth < 900) return 48;
+      return 72;
+    }
 
-  function createParticles() {
-    particles = [];
+    function resizeCanvas() {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * pixelRatio);
+      canvas.height = Math.floor(height * pixelRatio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    }
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        radius: Math.random() * 1.8 + 0.8
+    function createParticles() {
+      particles = [];
+
+      for (let i = 0; i < particleCount(); i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.8 + 0.8
+        });
+      }
+    }
+
+    function drawBackgroundGlow() {
+      const gradientOne = ctx.createRadialGradient(
+        width * 0.18,
+        height * 0.18,
+        0,
+        width * 0.18,
+        height * 0.18,
+        width * 0.55
+      );
+
+      gradientOne.addColorStop(0, "rgba(82, 242, 194, 0.18)");
+      gradientOne.addColorStop(1, "rgba(82, 242, 194, 0)");
+
+      const gradientTwo = ctx.createRadialGradient(
+        width * 0.82,
+        height * 0.12,
+        0,
+        width * 0.82,
+        height * 0.12,
+        width * 0.5
+      );
+
+      gradientTwo.addColorStop(0, "rgba(124, 92, 255, 0.22)");
+      gradientTwo.addColorStop(1, "rgba(124, 92, 255, 0)");
+
+      ctx.fillStyle = "#071018";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientOne;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientTwo;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    function drawParticles() {
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(248, 250, 252, 0.55)";
+        ctx.fill();
       });
     }
-  }
 
-  function drawBackgroundGlow() {
-    const gradientOne = ctx.createRadialGradient(
-      width * 0.18,
-      height * 0.18,
-      0,
-      width * 0.18,
-      height * 0.18,
-      width * 0.55
-    );
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-    gradientOne.addColorStop(0, "rgba(82, 242, 194, 0.18)");
-    gradientOne.addColorStop(1, "rgba(82, 242, 194, 0)");
+          if (distance < maxDistance) {
+            const opacity = 1 - distance / maxDistance;
 
-    const gradientTwo = ctx.createRadialGradient(
-      width * 0.82,
-      height * 0.12,
-      0,
-      width * 0.82,
-      height * 0.12,
-      width * 0.5
-    );
-
-    gradientTwo.addColorStop(0, "rgba(124, 92, 255, 0.22)");
-    gradientTwo.addColorStop(1, "rgba(124, 92, 255, 0)");
-
-    ctx.fillStyle = "#071018";
-    ctx.fillRect(0, 0, width, height);
-
-    ctx.fillStyle = gradientOne;
-    ctx.fillRect(0, 0, width, height);
-
-    ctx.fillStyle = gradientTwo;
-    ctx.fillRect(0, 0, width, height);
-  }
-
-  function drawParticles() {
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > width) p.vx *= -1;
-      if (p.y < 0 || p.y > height) p.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(248, 250, 252, 0.55)";
-      ctx.fill();
-    }
-  }
-
-  function drawConnections() {
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < maxDistance) {
-          const opacity = 1 - distance / maxDistance;
-
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(82, 242, 194, ${opacity * 0.14})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(82, 242, 194, ${opacity * 0.14})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
         }
       }
     }
-  }
 
-  function animate() {
-    drawBackgroundGlow();
-    drawConnections();
-    drawParticles();
-    requestAnimationFrame(animate);
-  }
+    function animate() {
+      drawBackgroundGlow();
+      drawConnections();
+      drawParticles();
+      animationFrameId = requestAnimationFrame(animate);
+    }
 
-  window.addEventListener("resize", () => {
-    resizeCanvas();
-    createParticles();
-  });
+    function initBackground() {
+      resizeCanvas();
+      createParticles();
+      drawBackgroundGlow();
 
-  resizeCanvas();
-  createParticles();
-  animate();
-</script>
+      if (!reduceMotion) {
+        animate();
+      }
+    }
+
+    window.addEventListener("resize", () => {
+      cancelAnimationFrame(animationFrameId);
+      initBackground();
+    });
+
+    initBackground();
+  </script>
 </body>
 </html>
