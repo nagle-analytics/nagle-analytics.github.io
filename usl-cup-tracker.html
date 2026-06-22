@@ -257,9 +257,9 @@
 
     .axis-title {
       fill: #334155;
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: -0.015em;
+      font-size: 24px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
     }
 
     .axis path,
@@ -287,6 +287,11 @@
       transition: opacity 0.18s ease, transform 0.18s ease;
     }
 
+    .crest-hitbox {
+      fill: transparent;
+      pointer-events: all;
+    }
+
     .crest-img {
       pointer-events: none;
       filter:
@@ -302,13 +307,7 @@
     }
 
     .team-label {
-      font-size: 13px;
-      font-weight: 800;
-      dominant-baseline: middle;
-      paint-order: stroke;
-      stroke: white;
-      stroke-width: 4px;
-      stroke-linejoin: round;
+      display: none;
     }
 
     .frame-label {
@@ -403,7 +402,7 @@
       }
 
       .axis-title {
-        font-size: 14px;
+        font-size: 16px;
       }
 
       .team-label {
@@ -1025,6 +1024,10 @@ function openTeamPage(teamName) {
           setHighlight(d.key, d, event);
           })
         .on("mouseleave", clearHighlight);
+
+      enterGroups.append("circle")
+        .attr("class", "crest-hitbox")
+        .attr("r", 34);
 
       enterGroups.append("image")
         .attr("class", "crest-img")
