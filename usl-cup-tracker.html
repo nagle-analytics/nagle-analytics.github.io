@@ -9,110 +9,137 @@
 
   <style>
     :root {
-      --bg: #f7f8fb;
-      --panel: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line-soft: rgba(31, 41, 55, 0.15);
+      --bg: #071018;
+      --bg-soft: #0d1b2a;
+      --panel: rgba(7, 16, 24, 0.78);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #52f2c2;
+      --accent-2: #7c5cff;
+      --chart-bg: #f8fafc;
+      --chart-text: #1f2937;
+      --chart-muted: #6b7280;
       --grid: rgba(31, 41, 55, 0.09);
-      --accent: #111827;
-      --blue: #2563eb;
-      --shadow: 0 14px 40px rgba(15, 23, 42, 0.10);
-      --radius: 18px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-lg: 28px;
+      --max-width: 1500px;
     }
 
     * {
       box-sizing: border-box;
     }
-    .nav {
-  position: sticky;
-  top: 0;
-  z-index: 80;
-  backdrop-filter: blur(18px);
-  background: rgba(7, 16, 24, 0.78);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
 
-.nav-inner {
-  width: min(100% - 32px, 1160px);
-  margin: 0 auto;
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #f8fafc;
-  text-decoration: none;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #52f2c2, #7c5cff);
-  box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: #a8b3c7;
-  font-size: 0.95rem;
-}
-
-.nav-links a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  color: #f8fafc;
-}
-    
     body {
       margin: 0;
+      min-height: 100vh;
       background:
         radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
         radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
         linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
-      color: #f8fafc;
+      color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .dynamic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: #071018;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 16, 24, 0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .nav-inner {
+      width: min(100% - 32px, 1160px);
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+      flex: 0 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
     }
 
     .page {
-      width: min(1500px, calc(100% - 44px));
+      position: relative;
+      z-index: 1;
+      width: min(var(--max-width), calc(100% - 44px));
       margin: 0 auto;
-      padding: 28px 0 44px;
+      padding: 28px 0 52px;
     }
 
     .top-link {
       display: inline-block;
       color: var(--muted);
-      text-decoration: none;
-      font-weight: 650;
+      font-weight: 700;
       margin-bottom: 20px;
     }
 
     .top-link:hover {
-      color: var(--blue);
+      color: var(--accent);
     }
 
     .viz-card {
-      background: var(--panel);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.045)),
+        var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
-      padding: 28px 28px 18px;
+      padding: 28px 28px 22px;
+      color: var(--text);
+      backdrop-filter: blur(18px);
     }
 
     .title-row {
@@ -124,22 +151,23 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      letter-spacing: -0.045em;
-      line-height: 1;
-      color: #1f2937;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      letter-spacing: -0.06em;
+      line-height: 0.96;
+      color: var(--text);
     }
 
     .subtitle {
-      margin: 8px 0 0;
-      font-size: clamp(1rem, 1.6vw, 1.3rem);
-      color: #374151;
+      margin: 10px 0 0;
+      max-width: 760px;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      color: var(--muted);
       line-height: 1.45;
     }
 
     .hint {
       margin: 24px 0 12px;
-      color: #374151;
+      color: var(--muted);
       font-size: 1rem;
     }
 
@@ -147,9 +175,9 @@
       white-space: nowrap;
       padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.10);
-      background: #f8fafc;
-      color: #334155;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
       font-size: 0.95rem;
       font-weight: 800;
     }
@@ -170,7 +198,7 @@
     .control-label {
       font-size: 0.9rem;
       font-weight: 800;
-      color: #4b5563;
+      color: var(--muted);
       margin-right: 2px;
     }
 
@@ -180,37 +208,38 @@
 
     .btn,
     .toggle {
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      background: #ffffff;
-      color: #1f2937;
-      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border-radius: 10px;
       padding: 8px 13px;
       font-weight: 800;
       cursor: pointer;
-      transition: 0.18s ease;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
 
     .btn:hover,
     .toggle:hover {
-      border-color: rgba(37, 99, 235, 0.42);
+      border-color: rgba(82, 242, 194, 0.45);
       transform: translateY(-1px);
     }
 
-    .btn.primary {
-      background: #111827;
-      color: #ffffff;
-      border-color: #111827;
-    }
-
+    .btn.primary,
     .toggle.active {
-      background: #111827;
-      color: #ffffff;
-      border-color: #111827;
+      background: var(--accent);
+      color: #06100d;
+      border-color: var(--accent);
     }
 
     .chart-wrap {
       position: relative;
-      margin-top: 4px;
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: inset 0 0 0 1px rgba(15,23,42,0.04);
     }
 
     svg {
@@ -221,7 +250,7 @@
     }
 
     .axis text {
-      fill: #6b7280;
+      fill: #64748b;
       font-size: 15px;
       font-weight: 650;
     }
@@ -251,14 +280,18 @@
       transition: opacity 0.18s ease, transform 0.18s ease;
     }
 
-    .crest-ring {
-      fill: white;
-      stroke-width: 3;
-    }
-
     .crest-img {
       pointer-events: none;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.75));
+      filter:
+        drop-shadow(0 2px 4px rgba(0,0,0,0.78))
+        drop-shadow(0 0 5px rgba(0,0,0,0.55));
+    }
+
+    .crest-abbr {
+      paint-order: stroke;
+      stroke: white;
+      stroke-width: 3px;
+      stroke-linejoin: round;
     }
 
     .team-label {
@@ -283,7 +316,7 @@
 
     .tooltip {
       position: fixed;
-      z-index: 50;
+      z-index: 100;
       pointer-events: none;
       width: 250px;
       padding: 12px 14px;
@@ -306,26 +339,42 @@
     }
 
     .footnote {
-      margin-top: 12px;
+      margin-top: 14px;
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.45;
     }
 
     code {
-      background: #f1f5f9;
+      background: rgba(255,255,255,0.10);
       padding: 2px 5px;
       border-radius: 5px;
-      color: #334155;
+      color: #e2e8f0;
+    }
+
+    @media (max-width: 900px) {
+      .nav-inner {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
     }
 
     @media (max-width: 760px) {
       .page {
-        width: min(100% - 24px, 1500px);
+        width: min(100% - 24px, var(--max-width));
       }
 
       .viz-card {
         padding: 20px 14px 14px;
+        border-radius: 22px;
       }
 
       .title-row {
@@ -334,6 +383,12 @@
 
       .status-pill {
         width: fit-content;
+        white-space: normal;
+      }
+
+      .chart-wrap {
+        padding: 8px;
+        border-radius: 18px;
       }
 
       .axis text {
@@ -344,10 +399,23 @@
         display: none;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
+
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="index.html">
@@ -363,7 +431,7 @@
       </nav>
     </div>
   </header>
-
+  
   <main class="page">
 
   <a class="top-link" href="viz-gallery.html">← Back to gallery</a>
@@ -433,7 +501,7 @@
 
     const state = {
       metricKey: "points",
-      conference: "All",
+      conference: "Western Conference",
       xAxisKey: "played",
       frameIndex: 0,
       timer: null,
@@ -456,7 +524,17 @@
     const yAxisG = root.append("g").attr("class", "axis");
     const zeroG = root.append("g");
     const frameLabelG = root.append("g");
-    const linesG = root.append("g");
+    root.append("clipPath")
+      .attr("id", "plot-clip")
+      .append("rect")
+      .attr("x", 0)
+      .attr("y", -12)
+      .attr("width", innerWidth)
+      .attr("height", innerHeight + 24);
+
+    const linesG = root.append("g")
+      .attr("clip-path", "url(#plot-clip)");
+    
     const endpointsG = root.append("g");
 
     let rawData = [];
@@ -540,7 +618,7 @@ function openTeamPage(teamName) {
           .on("click", () => {
             stopReplay();
             state.xAxisKey = key;
-            state.frameIndex = getFrames().length - 1;
+            state.frameIndex = 0;
             updateControls();
             render(true);
           });
@@ -612,8 +690,15 @@ function openTeamPage(teamName) {
 
     function visibleValues(values, frameValue) {
       const xField = xAxisOptions[state.xAxisKey].field;
-      return values.filter(d => d[xField] <= frameValue);
-    }
+      const frames = getFrames();
+      const firstFrame = frames[0] ?? 1;
+
+      return values.filter(d =>
+        Number.isFinite(d[xField]) &&
+        d[xField] >= firstFrame &&
+        d[xField] <= frameValue
+       );
+     }
 
     function lastVisible(values, frameValue) {
       const visible = visibleValues(values, frameValue);
@@ -715,6 +800,16 @@ function openTeamPage(teamName) {
       }
 
       const frames = getFrames();
+
+      if (!frames.length) {
+        statusPill.text("No data for selected filters");
+        return;
+      }
+
+      if (state.frameIndex >= frames.length) {
+        state.frameIndex = frames.length - 1;
+      }
+
       const xConfig = xAxisOptions[state.xAxisKey];
       const xField = xConfig.field;
       const currentFrame = frames[state.frameIndex] ?? frames[frames.length - 1];
@@ -730,7 +825,7 @@ function openTeamPage(teamName) {
 
       const x = d3.scaleLinear()
         .domain(d3.extent(frames))
-        .range([14, innerWidth - 18]);
+        .range([18, innerWidth - 34]);
 
       const y = d3.scaleLinear()
         .domain(yDomain(data, field))
@@ -775,7 +870,9 @@ function openTeamPage(teamName) {
         .text(`${xConfig.prefix} ${currentFrame}`);
 
       const currentRows = data.filter(d => d[xField] === currentFrame);
-      const currentDate = currentRows.length ? currentRows[0].snapshot_date : "";
+      const currentDate = currentRows.length
+        ? d3.max(currentRows, d => d.snapshot_date)
+        : "";
       statusPill.text(`${metric.title} • ${xConfig.label} ${currentFrame}${currentDate ? ` • ${currentDate}` : ""}`);
 
       const line = d3.line()
@@ -947,16 +1044,23 @@ function openTeamPage(teamName) {
           return meta?.lineColor || "#334155";
         }));
 
-      state.frameIndex = getFrames().length - 1;
+      state.frameIndex = 0;
 
       buildControls();
+
       render(false);
-    }
+
+      window.setTimeout(() => {
+        if (getFrames().length > 1) {
+          playReplay();
+          }
+        }, 700);
+      }
 
     Promise.all([
       d3.csv("data/usl/standings-history.csv"),
       d3.json("data/usl/current-standings.json"),
-      d3.json("data/usl/team-crests.json")
+      d3.json("data/usl/team-crests.json?v=20260622")
     ])
       .then(([csvRows, currentJson, teamMetaJson]) => init(csvRows, currentJson, teamMetaJson))
       .catch(error => {
@@ -971,5 +1075,128 @@ function openTeamPage(teamName) {
           .text("Unable to load standings data. Check data/usl/standings-history.csv and current-standings.json.");
       });
   </script>
+  <script>
+(function () {
+  const canvas = document.getElementById("dynamic-bg");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let width;
+  let height;
+  let particles = [];
+
+  function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  function createParticles() {
+    const particleCount = window.innerWidth < 700 ? 34 : 72;
+
+    particles = Array.from({ length: particleCount }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      radius: Math.random() * 1.8 + 0.8
+    }));
+  }
+
+  function drawBackgroundGlow() {
+    const gradientOne = ctx.createRadialGradient(
+      width * 0.18,
+      height * 0.18,
+      0,
+      width * 0.18,
+      height * 0.18,
+      width * 0.55
+    );
+
+    gradientOne.addColorStop(0, "rgba(82, 242, 194, 0.18)");
+    gradientOne.addColorStop(1, "rgba(82, 242, 194, 0)");
+
+    const gradientTwo = ctx.createRadialGradient(
+      width * 0.82,
+      height * 0.12,
+      0,
+      width * 0.82,
+      height * 0.12,
+      width * 0.5
+    );
+
+    gradientTwo.addColorStop(0, "rgba(124, 92, 255, 0.22)");
+    gradientTwo.addColorStop(1, "rgba(124, 92, 255, 0)");
+
+    ctx.fillStyle = "#071018";
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = gradientOne;
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = gradientTwo;
+    ctx.fillRect(0, 0, width, height);
+  }
+
+  function drawParticles() {
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > width) p.vx *= -1;
+      if (p.y < 0 || p.y > height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(248, 250, 252, 0.55)";
+      ctx.fill();
+    });
+  }
+
+  function drawConnections() {
+    const maxDistance = 150;
+
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < maxDistance) {
+          const opacity = 1 - distance / maxDistance;
+
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(82, 242, 194, ${opacity * 0.14})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    drawBackgroundGlow();
+    drawConnections();
+    drawParticles();
+
+    if (!reduceMotion) {
+      requestAnimationFrame(animate);
+    }
+  }
+
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+    createParticles();
+    drawBackgroundGlow();
+  });
+
+  resizeCanvas();
+  createParticles();
+  animate();
+})();
+</script>
 </body>
 </html>
