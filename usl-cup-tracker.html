@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>USL Championship Tracker | Nagle Analytics</title>
+  <title>USL Championship | Nagle Analytics</title>
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
@@ -24,13 +24,67 @@
     * {
       box-sizing: border-box;
     }
+    .nav {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  backdrop-filter: blur(18px);
+  background: rgba(7, 16, 24, 0.78);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
 
+.nav-inner {
+  width: min(100% - 32px, 1160px);
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #52f2c2, #7c5cff);
+  box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #a8b3c7;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #f8fafc;
+}
+    
     body {
       margin: 0;
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 26%),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
-      color: var(--text);
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
+        linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
+      color: #f8fafc;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
     }
@@ -38,7 +92,7 @@
     .page {
       width: min(1500px, calc(100% - 44px));
       margin: 0 auto;
-      padding: 22px 0 34px;
+      padding: 28px 0 44px;
     }
 
     .top-link {
@@ -204,6 +258,7 @@
 
     .crest-img {
       pointer-events: none;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.75));
     }
 
     .team-label {
@@ -293,13 +348,30 @@
 </head>
 
 <body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Nagle Analytics</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="featured.html">Featured</a>
+        <a href="viz-gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="page">
-    <a class="top-link" href="index.html">← Back to Nagle Analytics</a>
+
+  <a class="top-link" href="viz-gallery.html">← Back to gallery</a>
 
     <section class="viz-card">
       <div class="title-row">
         <div>
-          <h1>USL Championship Tracker</h1>
+          <h1>USL Championship</h1>
           <p class="subtitle">
             Matchday-by-matchday movement across the Eastern and Western Conference tables.
           </p>
@@ -374,7 +446,7 @@
 
     const width = 1420;
     const height = 760;
-    const margin = { top: 36, right: 170, bottom: 72, left: 78 };
+    const margin = { top: 42, right: 210, bottom: 76, left: 82 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
 
@@ -658,7 +730,7 @@ function openTeamPage(teamName) {
 
       const x = d3.scaleLinear()
         .domain(d3.extent(frames))
-        .range([0, innerWidth]);
+        .range([14, innerWidth - 18]);
 
       const y = d3.scaleLinear()
         .domain(yDomain(data, field))
@@ -760,33 +832,17 @@ function openTeamPage(teamName) {
           })
         .on("mouseleave", clearHighlight);
 
-      enterGroups.append("circle")
-        .attr("class", "crest-ring")
-        .attr("r", 20)
-        .attr("fill", "#ffffff")
-        .attr("stroke-width", 3);
-
-      enterGroups.append("circle")
-        .attr("class", "crest-bg")
-        .attr("r", 16)
-        .attr("fill", "#ffffff");
-
-      enterGroups.append("clipPath")
-        .attr("id", d => `clip-${safeId(d.key)}`)
-        .append("circle")
-        .attr("r", 17);
-
       enterGroups.append("image")
         .attr("class", "crest-img")
-        .attr("x", -14)
-        .attr("y", -14)
-        .attr("width", 28)
-        .attr("height", 28)
+        .attr("x", -21)
+        .attr("y", -21)
+        .attr("width", 42)
+        .attr("height", 42)
         .attr("preserveAspectRatio", "xMidYMid meet")
         .on("error", function() {
           d3.select(this).style("display", "none");
           d3.select(this.parentNode).select(".crest-abbr").style("display", null);
-        });
+          });
 
       enterGroups.append("text")
         .attr("class", "crest-abbr")
@@ -801,12 +857,6 @@ function openTeamPage(teamName) {
         .text(d => d.abbr);
 
       const mergedGroups = enterGroups.merge(endpointGroups);
-
-      mergedGroups.select(".crest-ring")
-        .attr("stroke", d => getLineColor(d.team, d.key));
-
-      mergedGroups.select(".crest-bg")
-        .attr("fill", "#ffffff");
 
       mergedGroups.select(".crest-img")
         .attr("href", d => getCrestUrl(d.team))
