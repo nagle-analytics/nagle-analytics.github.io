@@ -118,11 +118,12 @@
     .hero {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 104px 0 72px;
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 48px;
-      align-items: center;
+      padding: 104px 0 96px;
+      display: block;
+    }
+
+    .hero > div {
+      max-width: 900px;
     }
 
     .eyebrow {
@@ -401,10 +402,7 @@
     }
 
     .feature {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-      align-items: stretch;
+      display: block;
     }
 
     .feature-copy,
@@ -429,6 +427,63 @@
     .feature-copy p {
       color: var(--muted);
       margin: 0 0 18px;
+    }
+
+    .feature-copy.is-featured {
+      padding: clamp(28px, 4vw, 44px);
+    }
+
+    .feature-copy.is-featured .feature-text {
+      max-width: 820px;
+    }
+
+    .feature-preview {
+      display: block;
+      margin: 30px 0 26px;
+      color: inherit;
+    }
+
+    .feature-preview .mini-tracker {
+      height: clamp(320px, 38vw, 460px);
+      margin: 0;
+      border-radius: 24px;
+      background-size: 100% 25%, 20% 100%;
+    }
+
+    .feature-preview .mini-tracker::after {
+      font-size: clamp(4.8rem, 11vw, 9rem);
+      right: 26px;
+      bottom: 20px;
+    }
+
+    .feature-preview .mini-line {
+      stroke-width: 4.2;
+      opacity: 0.9;
+    }
+
+    .feature-preview .mini-club,
+    .feature-preview .mini-club img {
+      width: 56px;
+      height: 56px;
+    }
+
+    .feature-preview .mini-club.is-leader img {
+      width: 66px;
+      height: 66px;
+    }
+
+    .feature-preview .mini-club-label {
+      font-size: 0.82rem;
+    }
+
+    .feature-preview .mini-axis-label {
+      font-size: 0.85rem;
+      left: 24px;
+      bottom: 18px;
+    }
+
+    .feature-copy.is-featured .hero-actions {
+      margin-top: 0;
     }
 
     .tag-list {
@@ -604,6 +659,24 @@
       font-weight: 700;
     }
 
+
+    @media (max-width: 760px) {
+      .feature-preview .mini-tracker {
+        height: 300px;
+      }
+
+      .feature-preview .mini-club,
+      .feature-preview .mini-club img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .feature-preview .mini-club.is-leader img {
+        width: 52px;
+        height: 52px;
+      }
+    }
+
     @media (max-width: 900px) {
       .hero,
       .feature,
@@ -689,55 +762,6 @@
           </div>
         </div>
 
-        <a class="hero-panel hero-panel-link" href="usl-cup-tracker.html" aria-label="Open the USL Championship interactive visualization">
-          <div class="chart-card">
-            <div class="chart-top">
-              <div>
-                <h2>USL Championship</h2>
-                <p>Interactive points race</p>
-              </div>
-              <span class="status-pill">Live project</span>
-            </div>
-
-            <div class="mini-tracker" aria-hidden="true">
-              <svg viewBox="0 0 360 220" preserveAspectRatio="none">
-                <path class="mini-line" d="M0,182 C48,160 76,112 122,98 C176,80 204,40 260,24 C304,12 330,16 360,8" stroke="#4C8D2B" />
-                <path class="mini-line" d="M0,184 C58,132 96,142 136,110 C190,68 230,78 282,58 C318,44 338,50 360,48" stroke="#FF6720" />
-                <path class="mini-line" d="M0,188 C52,150 98,124 142,122 C194,118 226,86 276,82 C318,78 338,70 360,70" stroke="#010101" />
-                <path class="mini-line" d="M0,190 C46,174 88,160 134,136 C190,104 226,98 276,90 C318,84 338,94 360,86" stroke="#FCE300" />
-                <path class="mini-line" d="M0,192 C58,184 96,178 142,152 C196,122 228,118 280,112 C318,108 340,104 360,102" stroke="#2CCCD3" />
-              </svg>
-
-              <span class="mini-club is-leader" style="left: 83%; top: 18%;">
-                <img src="assets/usl/crests/tbr.png" alt="" loading="lazy" />
-                <span class="mini-club-label">TBR</span>
-              </span>
-              <span class="mini-club" style="left: 75%; top: 38%;">
-                <img src="assets/usl/crests/oc.png" alt="" loading="lazy" />
-                <span class="mini-club-label">OC</span>
-              </span>
-              <span class="mini-club" style="left: 82%; top: 48%;">
-                <img src="assets/usl/crests/oak.png" alt="" loading="lazy" />
-                <span class="mini-club-label">OAK</span>
-              </span>
-              <span class="mini-club" style="left: 72%; top: 58%;">
-                <img src="assets/usl/crests/nm.png" alt="" loading="lazy" />
-                <span class="mini-club-label">NM</span>
-              </span>
-              <span class="mini-club" style="left: 84%; top: 67%;">
-                <img src="assets/usl/crests/mb.png" alt="" loading="lazy" />
-                <span class="mini-club-label">MB</span>
-              </span>
-
-              <span class="mini-axis-label">Points by matches played</span>
-            </div>
-
-            <div class="chart-caption">
-              <span>Club crests, points, and team trajectories</span>
-              <span>Open full visualization →</span>
-            </div>
-          </div>
-        </a>
       </section>
 
       <section id="featured">
@@ -750,16 +774,53 @@
         </div>
 
         <div class="feature">
-          <div class="feature-copy">
-            <h3>USL Championship</h3>
-            <p>
-              Explore how clubs climb, fall, separate from the pack, and change position as
-              new match results are added to the standings history.
-            </p>
-            <p>
-              The full project page includes interactive controls for metric, conference, and x-axis,
-              with club crests used as visual endpoints for each trajectory.
-            </p>
+          <div class="feature-copy is-featured">
+            <div class="feature-text">
+              <h3>USL Championship</h3>
+              <p>
+                Explore how clubs climb, fall, separate from the pack, and change position as
+                new match results are added to the standings history.
+              </p>
+              <p>
+                The full project page includes interactive controls for metric, conference, and x-axis,
+                with club crests used as visual endpoints for each trajectory.
+              </p>
+            </div>
+
+            <a class="feature-preview hero-panel-link" href="usl-cup-tracker.html" aria-label="Open the USL Championship visualization">
+              <div class="mini-tracker" aria-hidden="true">
+                <svg viewBox="0 0 360 220" preserveAspectRatio="none">
+                  <path class="mini-line" d="M0,182 C48,160 76,112 122,98 C176,80 204,40 260,24 C304,12 330,16 360,8" stroke="#4C8D2B" />
+                  <path class="mini-line" d="M0,184 C58,132 96,142 136,110 C190,68 230,78 282,58 C318,44 338,50 360,48" stroke="#FF6720" />
+                  <path class="mini-line" d="M0,188 C52,150 98,124 142,122 C194,118 226,86 276,82 C318,78 338,70 360,70" stroke="#010101" />
+                  <path class="mini-line" d="M0,190 C46,174 88,160 134,136 C190,104 226,98 276,90 C318,84 338,94 360,86" stroke="#FCE300" />
+                  <path class="mini-line" d="M0,192 C58,184 96,178 142,152 C196,122 228,118 280,112 C318,108 340,104 360,102" stroke="#2CCCD3" />
+                </svg>
+
+                <span class="mini-club is-leader" style="left: 83%; top: 18%;">
+                  <img src="assets/usl/crests/tbr.png" alt="" loading="lazy" />
+                  <span class="mini-club-label">TBR</span>
+                </span>
+                <span class="mini-club" style="left: 75%; top: 38%;">
+                  <img src="assets/usl/crests/oc.png" alt="" loading="lazy" />
+                  <span class="mini-club-label">OC</span>
+                </span>
+                <span class="mini-club" style="left: 82%; top: 48%;">
+                  <img src="assets/usl/crests/oak.png" alt="" loading="lazy" />
+                  <span class="mini-club-label">OAK</span>
+                </span>
+                <span class="mini-club" style="left: 72%; top: 58%;">
+                  <img src="assets/usl/crests/nm.png" alt="" loading="lazy" />
+                  <span class="mini-club-label">NM</span>
+                </span>
+                <span class="mini-club" style="left: 84%; top: 67%;">
+                  <img src="assets/usl/crests/mb.png" alt="" loading="lazy" />
+                  <span class="mini-club-label">MB</span>
+                </span>
+
+                <span class="mini-axis-label">Points by matches played · Open full project →</span>
+              </div>
+            </a>
 
             <div class="hero-actions">
               <a class="button primary" href="usl-cup-tracker.html">Open USL visualization</a>
@@ -773,24 +834,6 @@
               <span class="tag">D3.js</span>
             </div>
           </div>
-
-          <a class="feature-visual hero-panel-link" href="usl-cup-tracker.html" aria-label="Open the USL Championship visualization">
-            <div class="mini-tracker" aria-hidden="true">
-              <svg viewBox="0 0 360 220" preserveAspectRatio="none">
-                <path class="mini-line" d="M0,182 C48,160 76,112 122,98 C176,80 204,40 260,24 C304,12 330,16 360,8" stroke="#4C8D2B" />
-                <path class="mini-line" d="M0,184 C58,132 96,142 136,110 C190,68 230,78 282,58 C318,44 338,50 360,48" stroke="#FF6720" />
-                <path class="mini-line" d="M0,188 C52,150 98,124 142,122 C194,118 226,86 276,82 C318,78 338,70 360,70" stroke="#010101" />
-                <path class="mini-line" d="M0,190 C46,174 88,160 134,136 C190,104 226,98 276,90 C318,84 338,94 360,86" stroke="#FCE300" />
-                <path class="mini-line" d="M0,192 C58,184 96,178 142,152 C196,122 228,118 280,112 C318,108 340,104 360,102" stroke="#2CCCD3" />
-              </svg>
-              <span class="mini-club is-leader" style="left: 83%; top: 18%;"><img src="assets/usl/crests/tbr.png" alt="" loading="lazy" /><span class="mini-club-label">TBR</span></span>
-              <span class="mini-club" style="left: 75%; top: 38%;"><img src="assets/usl/crests/oc.png" alt="" loading="lazy" /><span class="mini-club-label">OC</span></span>
-              <span class="mini-club" style="left: 82%; top: 48%;"><img src="assets/usl/crests/oak.png" alt="" loading="lazy" /><span class="mini-club-label">OAK</span></span>
-              <span class="mini-club" style="left: 72%; top: 58%;"><img src="assets/usl/crests/nm.png" alt="" loading="lazy" /><span class="mini-club-label">NM</span></span>
-              <span class="mini-club" style="left: 84%; top: 67%;"><img src="assets/usl/crests/mb.png" alt="" loading="lazy" /><span class="mini-club-label">MB</span></span>
-              <span class="mini-axis-label">Open full project →</span>
-            </div>
-          </a>
         </div>
       </section>
 
