@@ -25,7 +25,7 @@
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       --radius-lg: 28px;
       --radius-md: 18px;
-      --max-width: 1280px;
+      --max-width: 1360px;
       --copy-size: clamp(1.08rem, 1.55vw, 1.35rem);
       --copy-line: 1.58;
     }
@@ -97,30 +97,24 @@
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      overflow: hidden;
       filter: drop-shadow(0 0 22px rgba(82, 242, 194, 0.24));
     }
 
-    .brand-mark svg {
+    .brand-mark img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
       display: block;
-    }
-
-    .logo-path {
-      fill: none;
-      stroke: rgba(248, 250, 252, 0.92);
-      stroke-width: 3.4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .logo-dot {
-      fill: #f8fafc;
+      transform: scale(1.18);
     }
 
     .nav-links {
@@ -143,11 +137,11 @@
     }
 
     .hero {
-      padding: clamp(72px, 9vw, 116px) 0 clamp(64px, 8vw, 92px);
+      padding: clamp(42px, 5.5vw, 72px) 0 clamp(42px, 5vw, 62px);
     }
 
     .hero-content {
-      max-width: 1180px;
+      max-width: 100%;
     }
 
     .eyebrow {
@@ -177,7 +171,7 @@
     }
 
     h1 {
-      max-width: 1180px;
+      max-width: 100%;
       margin: 24px 0 20px;
       font-size: clamp(3.35rem, 6.1vw, 5.65rem);
       line-height: 0.98;
@@ -202,7 +196,7 @@
     }
 
     .hero-copy {
-      max-width: 1100px;
+      max-width: 100%;
       margin: 0;
     }
 
@@ -242,12 +236,12 @@
     }
 
     section {
-      padding: clamp(56px, 7vw, 80px) 0;
+      padding: clamp(42px, 5vw, 62px) 0;
     }
 
     .section-heading {
-      max-width: 1100px;
-      margin-bottom: 34px;
+      max-width: 100%;
+      margin-bottom: 28px;
     }
 
     .section-heading h2 {
@@ -259,7 +253,7 @@
 
     .section-heading p {
       margin: 0;
-      max-width: 1120px;
+      max-width: 100%;
     }
 
     .feature {
@@ -288,7 +282,7 @@
 
     .feature-copy p {
       margin: 0 0 18px;
-      max-width: 1120px;
+      max-width: 100%;
     }
 
     .feature-preview {
@@ -305,7 +299,7 @@
 
     .mini-tracker {
       position: relative;
-      min-height: clamp(330px, 38vw, 480px);
+      min-height: clamp(300px, 31vw, 420px);
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.10);
       background:
@@ -332,15 +326,15 @@
 
     .mini-tracker svg {
       position: absolute;
-      inset: clamp(18px, 3vw, 34px);
-      width: calc(100% - clamp(36px, 6vw, 68px));
-      height: calc(100% - clamp(36px, 6vw, 68px));
+      inset: clamp(14px, 2.2vw, 28px);
+      width: calc(100% - clamp(28px, 4.4vw, 56px));
+      height: calc(100% - clamp(28px, 4.4vw, 56px));
       overflow: visible;
     }
 
     .mini-line {
       fill: none;
-      stroke-width: 4.3;
+      stroke-width: 4.1;
       stroke-linecap: round;
       stroke-linejoin: round;
       opacity: 0.72;
@@ -510,7 +504,7 @@
       }
 
       .mini-tracker {
-        min-height: 300px;
+        min-height: 260px;
       }
 
       .mini-line {
@@ -554,20 +548,7 @@
       <div class="nav-inner">
         <a class="brand" href="index.html" aria-label="Nagle Analytics home">
           <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 42 42" role="img">
-              <defs>
-                <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#52f2c2" />
-                  <stop offset="1" stop-color="#7c5cff" />
-                </linearGradient>
-              </defs>
-              <rect width="42" height="42" rx="13" fill="url(#logoGradient)" />
-              <path class="logo-path" d="M11 29 L11 14 L31 29 L31 13" />
-              <path class="logo-path" d="M11 29 C17 24 22 22 31 13" opacity="0.72" />
-              <circle class="logo-dot" cx="11" cy="29" r="2.3" />
-              <circle class="logo-dot" cx="21" cy="22" r="2.3" opacity="0.9" />
-              <circle class="logo-dot" cx="31" cy="13" r="2.3" />
-            </svg>
+            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" loading="eager" />
           </span>
           <span>Nagle Analytics</span>
         </a>
@@ -630,28 +611,28 @@
 
             <a class="feature-preview" href="usl-cup-tracker.html" aria-label="Open the USL Championship visualization">
               <div class="mini-tracker" aria-hidden="true">
-                <svg viewBox="0 0 520 300" preserveAspectRatio="none">
-                  <path class="mini-line" d="M28,266 C76,238 104,178 154,150 C214,116 240,86 314,58 C380,32 430,38 488,32" stroke="#4C8D2B" />
-                  <path class="mini-line" d="M28,268 C86,214 118,206 166,166 C224,116 282,118 344,88 C404,62 438,64 474,72" stroke="#FFCD00" />
-                  <path class="mini-line" d="M28,270 C88,220 126,198 180,168 C236,136 282,116 338,104 C402,88 438,96 472,92" stroke="#FF6720" />
-                  <path class="mini-line" d="M28,272 C90,216 132,230 182,176 C236,132 302,148 356,118 C404,96 440,108 482,110" stroke="#010101" />
-                  <path class="mini-line" d="M28,274 C84,244 132,210 178,208 C246,206 300,144 358,138 C408,132 432,132 454,126" stroke="#330072" />
-                  <path class="mini-line" d="M28,276 C88,252 128,236 180,206 C238,172 300,158 352,146 C398,138 422,146 448,144" stroke="#FCE300" />
-                  <path class="mini-line" d="M28,278 C82,260 126,248 178,222 C238,190 300,184 352,166 C398,154 422,162 450,160" stroke="#7C2629" />
-                  <path class="mini-line" d="M28,280 C90,266 138,252 186,236 C244,214 300,202 358,184 C410,170 438,176 488,174" stroke="#2CCCD3" />
-                  <path class="mini-line" d="M28,282 C86,270 130,266 180,246 C238,224 302,220 360,206 C410,196 436,198 462,198" stroke="#0C2340" />
-                  <path class="mini-line" d="M28,284 C84,272 130,274 184,252 C236,232 298,232 350,220 C402,208 430,214 456,214" stroke="#00E11E" />
+                <svg viewBox="0 0 940 300" preserveAspectRatio="xMidYMid meet">
+                  <path class="mini-line" d="M51,266 C137,238 188,178 278,150 C387,116 434,86 567,58 C687,32 777,38 882,32" stroke="#4C8D2B" />
+                  <path class="mini-line" d="M51,268 C155,214 213,206 300,166 C405,116 510,118 622,88 C730,62 792,64 857,72" stroke="#FFCD00" />
+                  <path class="mini-line" d="M51,270 C159,220 228,198 325,168 C426,136 510,116 611,104 C727,88 792,96 853,92" stroke="#FF6720" />
+                  <path class="mini-line" d="M51,272 C163,216 239,230 329,176 C426,132 546,148 643,118 C730,96 795,108 871,110" stroke="#010101" />
+                  <path class="mini-line" d="M51,274 C152,244 239,210 322,208 C445,206 542,144 647,138 C737,132 781,132 821,126" stroke="#330072" />
+                  <path class="mini-line" d="M51,276 C159,252 231,236 325,206 C430,172 542,158 636,146 C719,138 763,146 810,144" stroke="#FCE300" />
+                  <path class="mini-line" d="M51,278 C148,260 228,248 322,222 C430,190 542,184 636,166 C719,154 763,162 813,160" stroke="#7C2629" />
+                  <path class="mini-line" d="M51,280 C163,266 249,252 336,236 C441,214 542,202 647,184 C741,170 792,176 882,174" stroke="#2CCCD3" />
+                  <path class="mini-line" d="M51,282 C155,270 235,266 325,246 C430,224 546,220 651,206 C741,196 788,198 835,198" stroke="#0C2340" />
+                  <path class="mini-line" d="M51,284 C152,272 235,274 333,252 C426,232 539,232 632,220 C727,208 777,214 824,214" stroke="#00E11E" />
 
-                  <image class="mini-crest leader" href="assets/usl/crests/tbr.png" x="464" y="8" width="48" height="48" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/chs.png" x="455" y="53" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/oc.png" x="453" y="73" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/oak.png" x="463" y="91" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/lou.png" x="435" y="107" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/nm.png" x="429" y="125" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/sac.png" x="431" y="141" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/mb.png" x="469" y="155" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/ri.png" x="443" y="179" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
-                  <image class="mini-crest" href="assets/usl/crests/lex.png" x="437" y="195" width="38" height="38" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest leader" href="assets/usl/crests/tbr.png" x="852" y="8" width="50" height="50" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/chs.png" x="835" y="51" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/oc.png" x="829" y="72" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/oak.png" x="850" y="90" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/lou.png" x="799" y="106" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/nm.png" x="789" y="125" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/sac.png" x="792" y="142" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/mb.png" x="857" y="154" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/ri.png" x="814" y="179" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/lex.png" x="803" y="197" width="42" height="42" preserveAspectRatio="xMidYMid meet" />
                 </svg>
 
                 <span class="mini-axis-label">Points by matches played · Open full project →</span>
