@@ -1,20 +1,856 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Articles — Nagle Analytics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Articles | Nagle Analytics</title>
+
+  <meta
+    name="description"
+    content="Articles from Nagle Analytics on data visualization, analytics, sports analytics, public data, maps, and visual storytelling."
+  />
+
   <style>
-    body { margin:0; font-family: ui-sans-serif, system-ui; color:#fff;
-           background: linear-gradient(130deg, #0f172a, #111827); }
-    .container { max-width: 1040px; margin: 0 auto; padding: 28px 20px; }
-    a { color:#22d3ee; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    :root {
+      --bg: #071018;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-card-strong: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --accent: #52f2c2;
+      --accent-2: #7c5cff;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --max-width: 1280px;
+      --copy-size: clamp(1.08rem, 1.45vw, 1.35rem);
+      --small-copy-size: 1rem;
+      --section-space: 46px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
+        linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #06100d;
+      font-weight: 800;
+      transition: top 160ms ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .dynamic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background: #071018;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 16, 24, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(100% - 48px, var(--max-width));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(255,255,255,0.32), transparent 32%),
+        linear-gradient(135deg, rgba(82, 242, 194, 0.92), rgba(124, 92, 255, 0.96));
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+      flex: 0 0 auto;
+    }
+
+    .brand-mark img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.35));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      transition: color 160ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    .hero,
+    section,
+    footer {
+      width: min(100% - 48px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 76px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.92rem;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(82, 242, 194, 0.12);
+    }
+
+    h1 {
+      max-width: 1180px;
+      margin: 24px 0 22px;
+      font-size: clamp(3.2rem, 7.2vw, 6.2rem);
+      line-height: 0.94;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 10%, #52f2c2 50%, #a38cff 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy,
+    .section-intro,
+    .panel p,
+    .article-card p,
+    .topic-card p,
+    .cta p {
+      color: var(--muted);
+      font-size: var(--copy-size);
+    }
+
+    .hero-copy {
+      max-width: 1120px;
+      margin: 0;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 800;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    .button.primary {
+      color: #06100d;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    section {
+      padding: var(--section-space) 0;
+    }
+
+    .section-heading {
+      max-width: 1120px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-intro {
+      max-width: 1120px;
+      margin: 0;
+    }
+
+    .panel,
+    .article-card,
+    .topic-card,
+    .cta {
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: clamp(26px, 3vw, 38px);
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin-top: 0;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .panel h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 18px;
+    }
+
+    .panel h3 {
+      font-size: clamp(1.45rem, 3vw, 1.95rem);
+      margin-bottom: 14px;
+    }
+
+    .panel p {
+      margin: 0 0 18px;
+      max-width: 1040px;
+    }
+
+    .panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .definition-panel {
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.14), transparent 28rem),
+        radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.16), transparent 28rem),
+        rgba(255, 255, 255, 0.065);
+    }
+
+    .definition-text {
+      font-size: clamp(1.45rem, 2.7vw, 2.3rem) !important;
+      line-height: 1.28;
+      letter-spacing: -0.035em;
+      color: var(--text) !important;
+      max-width: 1160px !important;
+    }
+
+    .definition-text strong {
+      color: var(--accent);
+    }
+
+    .article-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+      padding: clamp(24px, 3vw, 36px);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .article-card[href]:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-strong);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .article-kicker {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(82, 242, 194, 0.08);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .article-card h3 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .article-card p {
+      margin: 0;
+      max-width: 980px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .article-arrow {
+      color: var(--accent);
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-top: 42px;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .topic-card {
+      padding: 24px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-strong);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(82,242,194,0.22), rgba(124,92,255,0.22));
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .topic-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+      letter-spacing: -0.03em;
+    }
+
+    .topic-card p {
+      margin: 0;
+    }
+
+    .cta {
+      text-align: center;
+      padding: clamp(42px, 6vw, 64px) 30px;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.14), transparent 36rem),
+        radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.18), transparent 34rem),
+        rgba(255, 255, 255, 0.06);
+    }
+
+    .cta h2 {
+      margin: 0 auto 16px;
+      max-width: 920px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      max-width: 1040px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      padding: 40px 0 54px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .nav-inner,
+      .hero,
+      section,
+      footer {
+        width: min(100% - 32px, var(--max-width));
+      }
+
+      .nav-inner {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .article-card {
+        grid-template-columns: 1fr;
+      }
+
+      .article-arrow {
+        margin-top: 0;
+      }
+
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      :root {
+        --section-space: 36px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 15vw, 4.8rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .panel,
+      .article-card,
+      .topic-card,
+      .cta {
+        border-radius: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Articles</h1>
-    <p><a href="index.html Home</a></p>
-    <ul>
-      <li><a href="https://example.com/article-1" target="_icle</a></li>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
+
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html" aria-label="Nagle Analytics homepage">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" />
+          </span>
+          <span>Nagle Analytics</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="featured.html">Featured</a>
+          <a href="viz-gallery.html">Gallery</a>
+          <a href="articles.html" aria-current="page">Articles</a>
+          <a href="about.html">About</a>
+          <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <span class="eyebrow">
+          <span class="pulse" aria-hidden="true"></span>
+          Articles and notes
+        </span>
+
+        <h1>
+          Notes on <span class="gradient-text">analytics, visualization, and data stories.</span>
+        </h1>
+
+        <p class="hero-copy">
+          A home for short essays, project notes, technical explanations, and visual storytelling ideas
+          behind Nagle Analytics projects.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="usl-cup-tracker.html">Open USL Championship</a>
+          <a class="button secondary" href="viz-gallery.html">View all projects</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel definition-panel">
+          <h2>What analytics means here</h2>
+          <p class="definition-text">
+            <strong>Analytics</strong> is the systematic process of examining raw data to discover meaningful patterns,
+            trends, and insights. Organizations use these insights to optimize operations, reduce costs,
+            and guide strategic decision-making.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>Latest articles</h2>
+          <p class="section-intro">
+            Articles will be added here as projects move from prototype to published visual story.
+            For now, this page is set up as a polished article hub rather than a broken placeholder.
+          </p>
+        </div>
+
+        <div class="article-list">
+          <a class="article-card" href="usl-cup-tracker.html">
+            <div>
+              <span class="article-kicker">Featured project</span>
+              <h3>USL Championship: turning standings into movement</h3>
+              <p>
+                Explore the first live Nagle Analytics project: a matchday-by-matchday visualization showing
+                how clubs climb, fall, separate, and change trajectory as the season develops.
+              </p>
+              <div class="article-meta">
+                <span class="tag">Sports analytics</span>
+                <span class="tag">Interactive chart</span>
+                <span class="tag">D3.js</span>
+              </div>
+            </div>
+            <span class="article-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <article class="article-card">
+            <div>
+              <span class="article-kicker">Coming soon</span>
+              <h3>How to design charts that show change over time</h3>
+              <p>
+                A planned note on using motion, position, rank, color, and endpoints to make temporal patterns
+                easier to recognize without overwhelming the viewer.
+              </p>
+              <div class="article-meta">
+                <span class="tag">Data visualization</span>
+                <span class="tag">Design notes</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <div>
+              <span class="article-kicker">Coming soon</span>
+              <h3>From raw data to visual story</h3>
+              <p>
+                A planned behind-the-scenes article about cleaning data, choosing the right visual form,
+                and deciding when interaction helps rather than distracts.
+              </p>
+              <div class="article-meta">
+                <span class="tag">Workflow</span>
+                <span class="tag">Public data</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>Topics</h2>
+          <p class="section-intro">
+            This section gives the articles page room to grow as more projects are added.
+          </p>
+        </div>
+
+        <div class="topic-grid">
+          <article class="topic-card">
+            <div class="card-icon">📊</div>
+            <h3>Visualization design</h3>
+            <p>Notes on charts, layout, typography, color, motion, and visual storytelling choices.</p>
+          </article>
+
+          <article class="topic-card">
+            <div class="card-icon">⚽</div>
+            <h3>Sports analytics</h3>
+            <p>Project notes on standings movement, ranking systems, trajectories, and competition data.</p>
+          </article>
+
+          <article class="topic-card">
+            <div class="card-icon">🗺️</div>
+            <h3>Maps and public data</h3>
+            <p>Future notes on spatial patterns, public datasets, environmental data, and dashboards.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta">
+          <h2>Built as a living notebook.</h2>
+          <p>
+            Articles will document the thinking behind each visualization: what the data shows,
+            why the design choices matter, and how the project can improve over time.
+          </p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="button primary" href="index.html">Return home</a>
+            <a class="button secondary" href="https://github.com/nagle-analytics" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Nagle Analytics</span>
+      <span>
+        Built on GitHub Pages ·
+        <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const canvas = document.getElementById("dynamic-bg");
+    const ctx = canvas.getContext("2d");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let width;
+    let height;
+    let particles = [];
+
+    const maxDistance = 150;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      const particleCount = window.innerWidth < 700 ? 34 : 72;
+      particles = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.8 + 0.8
+        });
+      }
+    }
+
+    function drawBackgroundGlow() {
+      const gradientOne = ctx.createRadialGradient(
+        width * 0.18,
+        height * 0.18,
+        0,
+        width * 0.18,
+        height * 0.18,
+        width * 0.55
+      );
+
+      gradientOne.addColorStop(0, "rgba(82, 242, 194, 0.18)");
+      gradientOne.addColorStop(1, "rgba(82, 242, 194, 0)");
+
+      const gradientTwo = ctx.createRadialGradient(
+        width * 0.82,
+        height * 0.12,
+        0,
+        width * 0.82,
+        height * 0.12,
+        width * 0.5
+      );
+
+      gradientTwo.addColorStop(0, "rgba(124, 92, 255, 0.22)");
+      gradientTwo.addColorStop(1, "rgba(124, 92, 255, 0)");
+
+      ctx.fillStyle = "#071018";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientOne;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientTwo;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    function drawParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        if (!reduceMotion) {
+          p.x += p.vx;
+          p.y += p.vy;
+        }
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(248, 250, 252, 0.55)";
+        ctx.fill();
+      }
+    }
+
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            const opacity = 1 - distance / maxDistance;
+
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(82, 242, 194, ${opacity * 0.14})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      drawBackgroundGlow();
+      drawConnections();
+      drawParticles();
+
+      if (!reduceMotion) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createParticles();
+      drawBackgroundGlow();
+    });
+
+    resizeCanvas();
+    createParticles();
+    animate();
+  </script>
+</body>
+</html>
