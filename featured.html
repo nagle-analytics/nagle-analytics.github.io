@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Featured data visualization projects from Nagle Analytics, including the USL Championship."
+    content="Featured Nagle Analytics project: an interactive USL Championship visualization showing matchday-by-matchday club movement, points, and trajectories."
   />
 
   <style>
@@ -23,7 +23,9 @@
       --line: rgba(255, 255, 255, 0.12);
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       --radius-lg: 28px;
-      --max-width: 1120px;
+      --radius-md: 18px;
+      --max-width: 1280px;
+      --body-copy: clamp(1.08rem, 1.45vw, 1.32rem);
     }
 
     * {
@@ -37,7 +39,10 @@
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #071018;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
+        linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -90,11 +95,23 @@
     }
 
     .brand-mark {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.18);
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark img {
+      width: 82%;
+      height: 82%;
+      object-fit: contain;
+      display: block;
     }
 
     .nav-links {
@@ -112,7 +129,7 @@
     .hero {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 104px 0 56px;
+      padding: 72px 0 40px;
     }
 
     .eyebrow {
@@ -136,10 +153,10 @@
     }
 
     h1 {
-      max-width: 940px;
+      max-width: 1120px;
       margin: 24px 0 22px;
-      font-size: clamp(3rem, 8vw, 6.4rem);
-      line-height: 0.94;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.96;
       letter-spacing: -0.08em;
     }
 
@@ -150,14 +167,24 @@
       color: transparent;
     }
 
-    .hero-copy {
-      max-width: 820px;
+    .hero-copy,
+    .section-heading p,
+    .panel p,
+    .metric span,
+    .timeline p,
+    .cta p {
       color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-size: var(--body-copy);
+      line-height: 1.55;
+    }
+
+    .hero-copy {
+      max-width: 1180px;
+      margin: 0;
     }
 
     .hero-actions {
-      margin-top: 34px;
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
@@ -170,7 +197,7 @@
       padding: 13px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      font-weight: 700;
+      font-weight: 800;
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
     }
 
@@ -193,44 +220,54 @@
     section {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 56px 0;
+      padding: 42px 0;
     }
 
-    .project-shell {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 24px;
-      align-items: stretch;
+    .section-heading {
+      max-width: 1180px;
+      margin-bottom: 28px;
     }
 
-    .panel {
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .project-card,
+    .panel,
+    .metric,
+    .cta {
       border: 1px solid var(--line);
       background: var(--bg-card);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
-      padding: 30px;
     }
 
+    .project-card {
+      padding: clamp(28px, 4vw, 44px);
+    }
+
+    .project-intro {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .project-intro h2,
     .panel h2,
-    .panel h3 {
-      margin-top: 0;
-      letter-spacing: -0.05em;
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
       line-height: 1;
+      letter-spacing: -0.06em;
     }
 
-    .panel h2 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      margin-bottom: 18px;
-    }
-
-    .panel h3 {
-      font-size: 1.5rem;
-      margin-bottom: 14px;
-    }
-
+    .project-intro p,
     .panel p {
-      color: var(--muted);
-      margin-top: 0;
+      margin: 0 0 18px;
     }
 
     .tag-list {
@@ -246,103 +283,79 @@
       border: 1px solid var(--line);
       color: var(--muted);
       background: rgba(255,255,255,0.04);
-      font-size: 0.86rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .preview-link {
+      display: block;
+      color: inherit;
+    }
+
+    .preview-link:focus-visible {
+      outline: 3px solid rgba(82, 242, 194, 0.8);
+      outline-offset: 6px;
+      border-radius: 26px;
     }
 
     .tracker-preview {
-      min-height: 520px;
+      position: relative;
+      min-height: clamp(360px, 42vw, 580px);
       border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
       background:
         linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
         rgba(255,255,255,0.035);
-      background-size: 100% 16.66%, 14.28% 100%;
-      position: relative;
+      background-size: 100% 25%, 20% 100%;
       overflow: hidden;
+      margin: 30px 0 26px;
     }
 
-    .rank-label {
+    .tracker-preview::after {
+      content: "GP 14";
       position: absolute;
-      left: 18px;
-      color: rgba(248, 250, 252, 0.5);
-      font-size: 0.78rem;
-      font-weight: 700;
+      right: 32px;
+      bottom: 22px;
+      color: rgba(255,255,255,0.08);
+      font-size: clamp(4.8rem, 11vw, 9rem);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      pointer-events: none;
     }
 
-    .rank-label.one { top: 11%; }
-    .rank-label.two { top: 27%; }
-    .rank-label.three { top: 44%; }
-    .rank-label.four { top: 61%; }
-    .rank-label.five { top: 78%; }
-
-    .week-labels {
+    .tracker-preview svg {
       position: absolute;
-      left: 70px;
-      right: 24px;
-      bottom: 20px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      color: rgba(248, 250, 252, 0.5);
-      font-size: 0.78rem;
-      font-weight: 700;
+      inset: 28px;
+      width: calc(100% - 56px);
+      height: calc(100% - 56px);
+      overflow: visible;
     }
 
-    .race-line {
+    .mini-line {
+      fill: none;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.82;
+    }
+
+    .mini-crest {
+      filter:
+        drop-shadow(0 2px 4px rgba(0,0,0,0.78))
+        drop-shadow(0 0 6px rgba(0,0,0,0.45));
+    }
+
+    .mini-axis-label {
       position: absolute;
-      left: 70px;
-      right: 44px;
-      height: 4px;
-      border-radius: 999px;
-      transform-origin: left center;
-      opacity: 0.9;
-    }
-
-    .race-line.a {
-      top: 22%;
-      transform: rotate(8deg);
-      background: linear-gradient(90deg, #52f2c2, #7c5cff);
-    }
-
-    .race-line.b {
-      top: 42%;
-      transform: rotate(-7deg);
-      background: linear-gradient(90deg, #ffffff, #52f2c2);
-      opacity: 0.6;
-    }
-
-    .race-line.c {
-      top: 62%;
-      transform: rotate(5deg);
-      background: linear-gradient(90deg, #7c5cff, #ffffff);
-      opacity: 0.5;
-    }
-
-    .race-line.d {
-      top: 76%;
-      transform: rotate(-3deg);
-      background: linear-gradient(90deg, rgba(248,250,252,0.4), rgba(82,242,194,0.7));
-      opacity: 0.5;
-    }
-
-    .team-dot {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      border-radius: 99px;
-      background: var(--accent);
-      box-shadow: 0 0 24px rgba(82, 242, 194, 0.7);
-      animation: floatDot 4.4s ease-in-out infinite;
-    }
-
-    .team-dot.a { top: 19%; left: 18%; }
-    .team-dot.b { top: 38%; left: 42%; animation-delay: 0.4s; background: var(--accent-2); }
-    .team-dot.c { top: 59%; left: 66%; animation-delay: 0.8s; background: #ffffff; }
-    .team-dot.d { top: 72%; left: 84%; animation-delay: 1.2s; background: #52f2c2; }
-
-    @keyframes floatDot {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-18px); }
+      left: 28px;
+      bottom: 22px;
+      color: rgba(248,250,252,0.65);
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      z-index: 2;
     }
 
     .metric-grid {
@@ -352,9 +365,6 @@
     }
 
     .metric {
-      border: 1px solid var(--line);
-      background: var(--bg-card);
-      border-radius: var(--radius-lg);
       padding: 24px;
     }
 
@@ -367,8 +377,15 @@
       margin-bottom: 8px;
     }
 
-    .metric span {
-      color: var(--muted);
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 30px;
     }
 
     .timeline {
@@ -381,7 +398,7 @@
 
     .timeline li {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 150px 1fr;
       gap: 18px;
       padding: 18px;
       border-radius: 20px;
@@ -391,6 +408,7 @@
 
     .timeline strong {
       color: var(--accent);
+      font-size: 1.02rem;
     }
 
     .timeline p {
@@ -399,35 +417,22 @@
 
     .cta {
       text-align: center;
-      padding: 70px 30px;
-      border: 1px solid var(--line);
+      padding: 54px 30px;
       background:
         radial-gradient(circle at top left, rgba(82, 242, 194, 0.14), transparent 36rem),
         radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.18), transparent 34rem),
         rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .cta h2 {
-      margin: 0 auto 16px;
-      max-width: 820px;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
     }
 
     .cta p {
-      max-width: 720px;
+      max-width: 940px;
       margin: 0 auto 28px;
-      color: var(--muted);
-      font-size: 1.1rem;
     }
 
     footer {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 44px 0 58px;
+      padding: 36px 0 50px;
       color: var(--muted);
       border-top: 1px solid var(--line);
       display: flex;
@@ -442,21 +447,61 @@
     }
 
     @media (max-width: 900px) {
-      .project-shell,
+      .project-intro,
+      .grid-two,
       .metric-grid {
         grid-template-columns: 1fr;
       }
 
       .hero {
-        padding-top: 72px;
+        padding-top: 52px;
+      }
+
+      .nav-inner {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
       }
 
       .nav-links {
-        display: none;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
       }
 
       .timeline li {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .tracker-preview svg {
+        inset: 18px;
+        width: calc(100% - 36px);
+        height: calc(100% - 36px);
+      }
+
+      .mini-line {
+        stroke-width: 5;
+      }
+
+      .project-card,
+      .panel,
+      .metric,
+      .cta {
+        border-radius: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -469,7 +514,9 @@
     <header class="nav">
       <div class="nav-inner">
         <a class="brand" href="index.html">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" />
+          </span>
           <span>Nagle Analytics</span>
         </a>
 
@@ -477,6 +524,7 @@
           <a href="index.html">Home</a>
           <a href="featured.html">Featured</a>
           <a href="viz-gallery.html">Gallery</a>
+          <a href="articles.html">Articles</a>
           <a href="about.html">About</a>
           <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
         </nav>
@@ -491,137 +539,141 @@
         </span>
 
         <h1>
-         USL Cup <span class="gradient-text">Championship Tracker.</span>
+          USL <span class="gradient-text">Championship.</span>
         </h1>
 
         <p class="hero-copy">
-            A dynamic sports analytics project designed to show how clubs move
-            through the Eastern and Western Conference standings week by week
+          A live sports analytics project that shows how clubs move through the
+          Eastern and Western Conference tables as match results accumulate across the season.
         </p>
 
         <div class="hero-actions">
           <a class="button primary" href="usl-cup-tracker.html">Open live visualization</a>
-          <a class="button secondary" href="index.html">Back to homepage</a>
+          <a class="button secondary" href="viz-gallery.html">View all projects</a>
         </div>
       </section>
 
       <section id="preview">
-        <div class="project-shell">
-          <div class="panel">
-            <h2>Project concept</h2>
-            <p>
-              The USL Cup Championship shows weekly standings movement across 
-              two conference tables: the 13-team Eastern Conference and the
-              12-team Western Conference.
-            </p>
-            <p>
-              The chart focuses on points progression, wins, goals, draws, losses, goal
-              differential, and the changing shape of the season as results accumulate.
-            </p>
+        <article class="project-card">
+          <div class="project-intro">
+            <div>
+              <h2>Project concept</h2>
+              <p>
+                The USL Championship visualization tracks club movement matchday by matchday,
+                using points, wins, goals, draws, losses, and goal differential to show how the season changes over time.
+              </p>
+            </div>
 
-            <div class="tag-list">
-              <span class="tag">Sports analytics</span>
-              <span class="tag">Bump chart</span>
-              <span class="tag">Weekly standings</span>
-              <span class="tag">Interactive chart</span>
-              <span class="tag">Conference movement</span>
-              <span class="tag">Eastern Conference</span>
-              <span class="tag">Western Conference</span>
+            <div>
+              <p>
+                Instead of treating standings as a static table, the project turns the season into a movement story:
+                clubs climb, fall, separate from the pack, flatten out, or make late pushes as new results are added.
+              </p>
+              <p>
+                The full project page includes interactive controls for metric, conference, and x-axis, with club crests used as visual endpoints for each trajectory.
+              </p>
             </div>
           </div>
 
-          <div class="panel">
-            <div class="tracker-preview" aria-label="USL Cup Championship Tracker preview">
-              <span class="rank-label one">1st</span>
-              <span class="rank-label two">2nd</span>
-              <span class="rank-label three">3rd</span>
-              <span class="rank-label four">4th</span>
-              <span class="rank-label five">5th</span>
+          <a class="preview-link" href="usl-cup-tracker.html" aria-label="Open the live USL Championship visualization">
+            <div class="tracker-preview" aria-hidden="true">
+              <svg viewBox="0 0 920 360" preserveAspectRatio="xMidYMid meet">
+                <path class="mini-line" d="M40,310 C140,245 215,170 330,135 C470,90 580,48 720,34 C800,26 850,26 900,18" stroke="#4C8D2B" />
+                <path class="mini-line" d="M40,318 C150,215 250,230 360,165 C485,92 602,110 725,82 C805,62 858,72 900,70" stroke="#FF6720" />
+                <path class="mini-line" d="M40,326 C150,238 260,190 370,188 C505,184 610,132 730,126 C810,120 860,108 900,106" stroke="#010101" />
+                <path class="mini-line" d="M40,332 C145,302 245,276 360,220 C500,148 610,144 735,134 C812,124 865,144 900,130" stroke="#FCE300" />
+                <path class="mini-line" d="M40,338 C150,322 260,312 375,260 C512,198 622,190 745,176 C820,168 866,160 900,154" stroke="#2CCCD3" />
+                <path class="mini-line" d="M40,342 C145,336 260,330 370,300 C510,262 620,242 742,218 C820,202 865,198 900,192" stroke="#00E11E" />
+                <path class="mini-line" d="M40,334 C145,284 245,250 365,238 C510,224 610,208 735,182 C805,166 858,170 900,166" stroke="#330072" />
+                <path class="mini-line" d="M40,328 C145,270 255,232 360,204 C500,166 612,152 735,150 C810,150 860,142 900,142" stroke="#C5203E" />
 
-              <span class="race-line a"></span>
-              <span class="race-line b"></span>
-              <span class="race-line c"></span>
-              <span class="race-line d"></span>
+                <image class="mini-crest" href="assets/usl/crests/tbr.png" x="842" y="-3" width="72" height="72" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/oc.png" x="808" y="47" width="66" height="66" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/oak.png" x="850" y="75" width="66" height="66" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/nm.png" x="792" y="100" width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/mb.png" x="842" y="128" width="68" height="68" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/lex.png" x="780" y="166" width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/lou.png" x="778" y="122" width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+                <image class="mini-crest" href="assets/usl/crests/sa.png" x="818" y="138" width="64" height="64" preserveAspectRatio="xMidYMid meet" />
+              </svg>
 
-              <span class="team-dot a"></span>
-              <span class="team-dot b"></span>
-              <span class="team-dot c"></span>
-              <span class="team-dot d"></span>
-
-              <div class="week-labels">
-                <span>W1</span>
-                <span>W2</span>
-                <span>W3</span>
-                <span>W4</span>
-                <span>W5</span>
-                <span>W6</span>
-              </div>
+              <span class="mini-axis-label">Points by matches played · Open full project →</span>
             </div>
+          </a>
+
+          <div class="hero-actions">
+            <a class="button primary" href="usl-cup-tracker.html">Open USL visualization</a>
+            <a class="button secondary" href="viz-gallery.html">View all projects</a>
           </div>
-        </div>
+
+          <div class="tag-list">
+            <span class="tag">Sports analytics</span>
+            <span class="tag">Interactive chart</span>
+            <span class="tag">Club movement</span>
+            <span class="tag">D3.js</span>
+            <span class="tag">Eastern Conference</span>
+            <span class="tag">Western Conference</span>
+          </div>
+        </article>
       </section>
 
       <section>
         <div class="metric-grid">
           <div class="metric">
             <strong>25</strong>
-            <span>Total clubs tracked across both conferences</span>
+            <span>Total clubs tracked across both conferences.</span>
           </div>
 
           <div class="metric">
-            <strong>Wk</strong>
-            <span>Weekly standings movement as the core storytelling unit</span>
+            <strong>GP</strong>
+            <span>Match-by-match movement shown by games played or matchday.</span>
           </div>
 
           <div class="metric">
-            <strong>↑↓</strong>
-            <span>Rank changes, momentum, and movement</span>
+            <strong>6</strong>
+            <span>Metrics available: points, goals, wins, draws, losses, and goal differential.</span>
           </div>
 
           <div class="metric">
-            <strong>⚽</strong>
-            <span>Sports analytics as a visual data story</span>
+            <strong>↗</strong>
+            <span>Movement, separation, momentum, and changing team trajectories.</span>
           </div>
         </div>
       </section>
 
       <section>
-        <div class="panel">
-          <h2>What the final chart should show</h2>
+        <div class="grid-two">
+          <div class="panel">
+            <h2>What it shows</h2>
+            <ol class="timeline">
+              <li>
+                <strong>Points race</strong>
+                <p>How clubs accumulate points and separate from the rest of the table.</p>
+              </li>
+              <li>
+                <strong>Momentum</strong>
+                <p>Which clubs are rising, flattening, falling, or making late pushes.</p>
+              </li>
+              <li>
+                <strong>Filtering</strong>
+                <p>Users can view both conferences together or focus on the Eastern or Western Conference.</p>
+              </li>
+              <li>
+                <strong>Replay</strong>
+                <p>The visualization can replay from the start of the season to the latest available data.</p>
+              </li>
+            </ol>
+          </div>
 
-          <ol class="timeline">
-            <li>
-              <strong>Weekly rank</strong>
-              <p>
-                Where each team sits each week, shown as a movement path across
-                the season.
-              </p>
-            </li>
-
-            <li>
-              <strong>Points progression</strong>
-              <p>
-                How teams accumulate points and separate from the rest of the
-                field over time.
-              </p>
-            </li>
-
-            <li>
-              <strong>Momentum</strong>
-              <p>
-                Which teams are rising, falling, staying steady, or making late
-                pushes.
-              </p>
-            </li>
-
-            <li>
-              <strong>Interaction</strong>
-              <p>
-                Team highlighting, tooltips, filtering, and a cleaner way to
-                follow one club through the standings.
-              </p>
-            </li>
-          </ol>
+          <div class="panel">
+            <h2>Why it matters</h2>
+            <p>
+              A standings table is useful, but it only shows the current state. A movement chart shows the story behind that state: how clubs got there, when they surged, and where the separation happened.
+            </p>
+            <p>
+              This project is also a template for future Nagle Analytics work: take a real dataset, add interaction only where it helps, and make the pattern easier to see than it would be in a table alone.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -629,13 +681,11 @@
         <div class="cta">
           <h2>The live chart is available now.</h2>
           <p>
-            The live USL Championship visualization now opens as its own full project page,
-            with interactive conference filters, metric controls, replay behavior, team crests,
-            and the latest available standings data.
+            Open the full project page to use the interactive conference filters, metric controls, replay behavior, team crest endpoints, and latest available standings data.
           </p>
 
           <div class="hero-actions" style="justify-content:center;">
-            <a class="button primary" href="viz-gallery.html">View gallery</a>
+            <a class="button primary" href="usl-cup-tracker.html">Open live visualization</a>
             <a class="button secondary" href="about.html">About Nagle Analytics</a>
           </div>
         </div>
@@ -656,12 +706,11 @@
 
     const canvas = document.getElementById("dynamic-bg");
     const ctx = canvas.getContext("2d");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let width;
     let height;
     let particles = [];
-
-    const particleCount = 72;
     const maxDistance = 150;
 
     function resizeCanvas() {
@@ -670,17 +719,15 @@
     }
 
     function createParticles() {
-      particles = [];
+      const particleCount = window.innerWidth < 700 ? 34 : 72;
 
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35,
-          radius: Math.random() * 1.8 + 0.8
-        });
-      }
+      particles = Array.from({ length: particleCount }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 1.8 + 0.8
+      }));
     }
 
     function drawBackgroundGlow() {
@@ -710,10 +757,8 @@
 
       ctx.fillStyle = "#071018";
       ctx.fillRect(0, 0, width, height);
-
       ctx.fillStyle = gradientOne;
       ctx.fillRect(0, 0, width, height);
-
       ctx.fillStyle = gradientTwo;
       ctx.fillRect(0, 0, width, height);
     }
@@ -744,7 +789,6 @@
 
           if (distance < maxDistance) {
             const opacity = 1 - distance / maxDistance;
-
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -760,12 +804,16 @@
       drawBackgroundGlow();
       drawConnections();
       drawParticles();
-      requestAnimationFrame(animate);
+
+      if (!reduceMotion) {
+        requestAnimationFrame(animate);
+      }
     }
 
     window.addEventListener("resize", () => {
       resizeCanvas();
       createParticles();
+      drawBackgroundGlow();
     });
 
     resizeCanvas();
