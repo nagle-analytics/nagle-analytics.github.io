@@ -1,24 +1,925 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Maps — Nagle Analytics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maps | Nagle Analytics</title>
+
+  <meta
+    name="description"
+    content="Maps and spatial visualization projects from Nagle Analytics, including planned interactive maps, layers, detections, stations, and spatial data stories."
+  />
+
   <style>
-    body { margin:0; font-family: ui-sans-serif, system-ui; color:#fff;
-           background: linear-gradient(130deg, #0f172a, #111827); }
-    .container { max-width: 1040px; margin: 0 auto; padding: 28px 20px; }
-    .panel { background: rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12);
-             border-radius: 12px; padding:16px; }
+    :root {
+      --bg: #071018;
+      --bg-card: rgba(255, 255, 255, 0.06);
+      --bg-card-strong: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --accent: #52f2c2;
+      --accent-2: #7c5cff;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --max-width: 1280px;
+      --body-size: clamp(1.08rem, 1.45vw, 1.35rem);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
+        linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .dynamic-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background: #071018;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 16, 24, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.20);
+      flex: 0 0 auto;
+    }
+
+    .brand-mark img {
+      width: 122%;
+      height: 122%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    .hero,
+    section,
+    footer {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.88rem;
+    }
+
+    .pulse {
+      width: 9px;
+      height: 9px;
+      border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(82, 242, 194, 0.12);
+    }
+
+    h1 {
+      max-width: 1160px;
+      margin: 24px 0 22px;
+      font-size: clamp(3rem, 6.6vw, 6rem);
+      line-height: 0.94;
+      letter-spacing: -0.08em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 10%, #52f2c2 50%, #a38cff 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy,
+    .section-heading p,
+    .panel p,
+    .card p,
+    .metric span,
+    .legend-note,
+    .cta p {
+      color: var(--muted);
+      font-size: var(--body-size);
+    }
+
+    .hero-copy {
+      max-width: 1120px;
+      margin: 0;
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 800;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    .button.primary {
+      color: #06100d;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .button.secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    section {
+      padding: 46px 0;
+    }
+
+    .section-heading {
+      max-width: 1120px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4.6vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-heading p {
+      margin: 0;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel,
+    .card,
+    .metric,
+    .cta {
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: clamp(28px, 4vw, 44px);
+    }
+
+    .panel h2,
+    .panel h3,
+    .card h3 {
+      margin-top: 0;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .panel h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      margin-bottom: 18px;
+    }
+
+    .panel h3 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-bottom: 14px;
+    }
+
+    .panel p,
+    .card p {
+      margin-top: 0;
+    }
+
+    .map-preview {
+      position: relative;
+      min-height: 520px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        radial-gradient(circle at 18% 28%, rgba(82, 242, 194, 0.18), transparent 22rem),
+        radial-gradient(circle at 82% 20%, rgba(124, 92, 255, 0.20), transparent 24rem),
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
+        rgba(255,255,255,0.035);
+      background-size: auto, auto, 100% 20%, 20% 100%, auto;
+    }
+
+    .map-shape {
+      position: absolute;
+      inset: 9% 8% 12%;
+      opacity: 0.88;
+    }
+
+    .map-region {
+      fill: rgba(82, 242, 194, 0.08);
+      stroke: rgba(82, 242, 194, 0.34);
+      stroke-width: 2;
+      filter: drop-shadow(0 16px 34px rgba(0, 0, 0, 0.28));
+    }
+
+    .map-line {
+      fill: none;
+      stroke: rgba(248, 250, 252, 0.20);
+      stroke-width: 1.4;
+      stroke-dasharray: 6 8;
+    }
+
+    .map-point {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 9px rgba(82, 242, 194, 0.10), 0 0 26px rgba(82, 242, 194, 0.55);
+      transform: translate(-50%, -50%);
+    }
+
+    .map-point.hot {
+      width: 18px;
+      height: 18px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 10px rgba(124, 92, 255, 0.12), 0 0 30px rgba(124, 92, 255, 0.55);
+    }
+
+    .map-label {
+      position: absolute;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-shadow: 0 8px 18px rgba(0,0,0,0.6);
+    }
+
+    .map-badge {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(7, 16, 24, 0.58);
+      color: var(--text);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      backdrop-filter: blur(14px);
+    }
+
+    .map-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 7px rgba(82, 242, 194, 0.12);
+    }
+
+    .map-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      font-weight: 800;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 14px;
+    }
+
+    .card-grid,
+    .metric-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .metric-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card,
+    .metric {
+      padding: 24px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .card:hover,
+    .metric:hover {
+      transform: translateY(-4px);
+      background: var(--bg-card-strong);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(82,242,194,0.22), rgba(124,92,255,0.22));
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.07em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .legend-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .legend-list li {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+      font-size: var(--body-size);
+    }
+
+    .legend-key {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      margin-top: 2px;
+      background: linear-gradient(135deg, rgba(82,242,194,0.24), rgba(124,92,255,0.24));
+      border: 1px solid var(--line);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 58px 30px;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.14), transparent 36rem),
+        radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.18), transparent 34rem),
+        rgba(255, 255, 255, 0.06);
+    }
+
+    .cta h2 {
+      margin: 0 auto 16px;
+      max-width: 900px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .cta p {
+      max-width: 960px;
+      margin: 0 auto 28px;
+    }
+
+    footer {
+      padding: 42px 0 54px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    @media (max-width: 1000px) {
+      .grid-two,
+      .card-grid,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero,
+      section,
+      footer {
+        width: min(100% - 24px, var(--max-width));
+      }
+
+      .map-preview {
+        min-height: 360px;
+      }
+
+      .map-caption {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Maps</h1>
-    <p>index.html← Back to Home</a></p>
-    <div class="panel">
-      <p>Map coming soon. We’ll add a D3 or Leaflet map here (stations, detections, layers).</p>
-    </div>
+  <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
+
+  <div class="page">
+    <header class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" />
+          </span>
+          <span>Nagle Analytics</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="featured.html">Featured</a>
+          <a href="viz-gallery.html">Gallery</a>
+          <a href="articles.html">Articles</a>
+          <a href="maps.html" aria-current="page">Maps</a>
+          <a href="about.html">About</a>
+          <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="eyebrow">
+          <span class="pulse" aria-hidden="true"></span>
+          Spatial visualization lab
+        </span>
+
+        <h1>
+          Maps that reveal <span class="gradient-text">where patterns happen.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Maps will become a home for spatial data stories from Nagle Analytics: layered views of stations, detections, regions, clusters, movement, and geographic differences that are easier to understand visually than in a table.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="viz-gallery.html">View all projects</a>
+          <a class="button secondary" href="index.html">Back to homepage</a>
+        </div>
+      </section>
+
+      <section>
+        <div class="grid-two">
+          <div class="panel">
+            <h2>Spatial pattern explorer</h2>
+            <p>
+              This page is reserved for future map-based projects. The goal is to use location as an analytical layer, not just a background: where observations occur, how they cluster, how they change across regions, and how spatial context changes interpretation.
+            </p>
+            <p>
+              Planned examples include stations, detections, monitoring layers, regional comparisons, and interactive filters that make it easier to move from a broad map view into specific local patterns.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Interactive maps</span>
+              <span class="tag">Spatial data</span>
+              <span class="tag">Layers</span>
+              <span class="tag">Clusters</span>
+              <span class="tag">Regional patterns</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="map-preview" aria-label="Preview of a future interactive map visualization">
+              <span class="map-badge">Map concept</span>
+
+              <svg class="map-shape" viewBox="0 0 700 520" aria-hidden="true">
+                <path class="map-region" d="M112,345 C86,286 103,230 156,195 C201,166 230,109 306,112 C367,114 395,166 455,166 C537,166 592,210 604,286 C616,360 572,420 494,441 C412,463 370,410 304,418 C219,429 145,414 112,345 Z" />
+                <path class="map-region" d="M210,316 C197,277 211,237 249,217 C296,192 342,211 369,251 C393,287 385,335 350,365 C314,396 228,371 210,316 Z" />
+                <path class="map-line" d="M112,345 C190,292 256,257 369,251 C462,246 535,262 604,286" />
+                <path class="map-line" d="M156,195 C238,238 298,296 350,365 C394,422 450,448 494,441" />
+                <path class="map-line" d="M306,112 C320,186 324,253 304,418" />
+              </svg>
+
+              <span class="map-point" style="left: 27%; top: 38%;"></span>
+              <span class="map-point hot" style="left: 47%; top: 50%;"></span>
+              <span class="map-point" style="left: 61%; top: 42%;"></span>
+              <span class="map-point" style="left: 70%; top: 58%;"></span>
+              <span class="map-point hot" style="left: 39%; top: 68%;"></span>
+              <span class="map-point" style="left: 54%; top: 72%;"></span>
+
+              <span class="map-label" style="left: 30%; top: 31%;">stations</span>
+              <span class="map-label" style="left: 51%; top: 46%;">detections</span>
+              <span class="map-label" style="left: 64%; top: 64%;">layers</span>
+
+              <div class="map-caption">
+                <span>Regional patterns · clusters · detections</span>
+                <span>Future D3 or Leaflet project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-heading">
+          <h2>What future maps can show</h2>
+          <p>
+            Spatial data is useful when it helps explain why patterns are different across places. These are the kinds of map layers and interactions this page is designed to support.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-icon">📍</div>
+            <h3>Stations and sites</h3>
+            <p>
+              Monitoring points, sample locations, survey sites, or other fixed places that serve as anchors for spatial analysis.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧭</div>
+            <h3>Regional layers</h3>
+            <p>
+              Boundaries, zones, regions, watersheds, districts, or other spatial layers that give observations geographic context.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🟣</div>
+            <h3>Detections and intensity</h3>
+            <p>
+              Points, clusters, counts, rates, or gradients that show where events are concentrated and how patterns vary by place.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="grid-two">
+          <div class="panel">
+            <h2>Possible map tools</h2>
+            <ul class="legend-list">
+              <li>
+                <span class="legend-key">1</span>
+                <span>Layer toggles for turning stations, regions, detections, and reference boundaries on or off.</span>
+              </li>
+              <li>
+                <span class="legend-key">2</span>
+                <span>Tooltips and labels that explain what each point or region represents without crowding the map.</span>
+              </li>
+              <li>
+                <span class="legend-key">3</span>
+                <span>Filters by time, category, region, dataset, or project so users can narrow the story.</span>
+              </li>
+              <li>
+                <span class="legend-key">4</span>
+                <span>Small summaries beside the map that connect spatial patterns to chart-based evidence.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h2>Recommended direction</h2>
+            <p>
+              Keep this page as a polished project landing page until the first map is ready. Once a real map project exists, this page can either become the map itself or become a map gallery that links to individual map stories.
+            </p>
+            <p>
+              My recommendation is to use this page as a map project hub, similar to the visualization gallery, while each major map gets its own dedicated page when it becomes interactive and data-heavy.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="viz-gallery.html">Open gallery</a>
+              <a class="button secondary" href="articles.html">Read articles</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>📍</strong>
+            <span>Location-based observations and monitoring sites</span>
+          </div>
+          <div class="metric">
+            <strong>▣</strong>
+            <span>Regional layers, boundaries, and context</span>
+          </div>
+          <div class="metric">
+            <strong>◎</strong>
+            <span>Clusters, intensity, and geographic concentration</span>
+          </div>
+          <div class="metric">
+            <strong>↔</strong>
+            <span>Spatial comparison across places and time</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="cta">
+          <h2>Map projects are coming next.</h2>
+          <p>
+            This page is ready for future D3 or Leaflet map work. For now, it keeps the site structure professional while reserving space for spatial data stories as the Nagle Analytics project library grows.
+          </p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="button primary" href="index.html">Return home</a>
+            <a class="button secondary" href="https://github.com/nagle-analytics" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Nagle Analytics</span>
+      <span>
+        Built on GitHub Pages ·
+        <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
+      </span>
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const canvas = document.getElementById("dynamic-bg");
+    const ctx = canvas.getContext("2d");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let width;
+    let height;
+    let particles = [];
+
+    const maxDistance = 150;
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      const particleCount = window.innerWidth < 700 ? 34 : 72;
+
+      particles = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          radius: Math.random() * 1.8 + 0.8
+        });
+      }
+    }
+
+    function drawBackgroundGlow() {
+      const gradientOne = ctx.createRadialGradient(
+        width * 0.18,
+        height * 0.18,
+        0,
+        width * 0.18,
+        height * 0.18,
+        width * 0.55
+      );
+
+      gradientOne.addColorStop(0, "rgba(82, 242, 194, 0.18)");
+      gradientOne.addColorStop(1, "rgba(82, 242, 194, 0)");
+
+      const gradientTwo = ctx.createRadialGradient(
+        width * 0.82,
+        height * 0.12,
+        0,
+        width * 0.82,
+        height * 0.12,
+        width * 0.5
+      );
+
+      gradientTwo.addColorStop(0, "rgba(124, 92, 255, 0.22)");
+      gradientTwo.addColorStop(1, "rgba(124, 92, 255, 0)");
+
+      ctx.fillStyle = "#071018";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientOne;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.fillStyle = gradientTwo;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    function drawParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(248, 250, 252, 0.55)";
+        ctx.fill();
+      }
+    }
+
+    function drawConnections() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < maxDistance) {
+            const opacity = 1 - distance / maxDistance;
+
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(82, 242, 194, ${opacity * 0.14})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      drawBackgroundGlow();
+      drawConnections();
+      drawParticles();
+
+      if (!reduceMotion) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    window.addEventListener("resize", () => {
+      resizeCanvas();
+      createParticles();
+      drawBackgroundGlow();
+    });
+
+    resizeCanvas();
+    createParticles();
+    animate();
+  </script>
 </body>
 </html>
