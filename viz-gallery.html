@@ -23,7 +23,9 @@
       --line: rgba(255, 255, 255, 0.12);
       --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
       --radius-lg: 28px;
-      --max-width: 1120px;
+      --radius-md: 18px;
+      --max-width: 1280px;
+      --copy-size: clamp(1.08rem, 1.35vw, 1.24rem);
     }
 
     * {
@@ -37,7 +39,10 @@
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #071018;
+      background:
+        radial-gradient(circle at top left, rgba(82, 242, 194, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(124, 92, 255, 0.22), transparent 38rem),
+        linear-gradient(180deg, #071018 0%, #09131f 45%, #05080d 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -87,32 +92,47 @@
       gap: 12px;
       font-weight: 800;
       letter-spacing: -0.03em;
+      flex: 0 0 auto;
     }
 
     .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 0 30px rgba(82, 242, 194, 0.18);
+    }
+
+    .brand-mark img {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
       color: var(--text);
     }
 
     .hero {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 104px 0 56px;
+      padding: 72px 0 44px;
     }
 
     .eyebrow {
@@ -136,11 +156,11 @@
     }
 
     h1 {
-      max-width: 940px;
+      max-width: 1120px;
       margin: 24px 0 22px;
-      font-size: clamp(3rem, 8vw, 6.4rem);
-      line-height: 0.94;
-      letter-spacing: -0.08em;
+      font-size: clamp(3rem, 7vw, 5.7rem);
+      line-height: 0.96;
+      letter-spacing: -0.078em;
     }
 
     .gradient-text {
@@ -150,14 +170,23 @@
       color: transparent;
     }
 
-    .hero-copy {
-      max-width: 820px;
+    .hero-copy,
+    .section-copy,
+    .project-card p,
+    .roadmap p,
+    .roadmap-item span,
+    .definition p {
       color: var(--muted);
-      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-size: var(--copy-size);
+    }
+
+    .hero-copy {
+      max-width: 1120px;
+      margin: 0;
     }
 
     .hero-actions {
-      margin-top: 34px;
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
@@ -167,6 +196,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       padding: 13px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
@@ -193,7 +223,27 @@
     section {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 56px 0;
+      padding: 44px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 26px;
+    }
+
+    .section-heading h2,
+    .roadmap h2,
+    .definition h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4.6vw, 3.25rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .section-copy,
+    .roadmap p,
+    .definition p {
+      max-width: 1120px;
+      margin: 0;
     }
 
     .filter-row {
@@ -210,7 +260,7 @@
       color: var(--muted);
       background: rgba(255, 255, 255, 0.04);
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .filter-pill.active {
@@ -226,12 +276,14 @@
     }
 
     .project-card {
-      min-height: 310px;
+      min-height: 330px;
       border: 1px solid var(--line);
-      background: var(--bg-card);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035)),
+        var(--bg-card);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
-      padding: 24px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -242,25 +294,36 @@
 
     .project-card:hover {
       transform: translateY(-4px);
-      background: var(--bg-card-strong);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05)),
+        var(--bg-card-strong);
       border-color: rgba(255, 255, 255, 0.25);
     }
 
     .project-card.featured {
       grid-column: span 2;
-      min-height: 360px;
+      min-height: 420px;
     }
 
     .project-card::before {
       content: "";
       position: absolute;
       inset: auto -20% -45% -20%;
-      height: 220px;
+      height: 240px;
       background: radial-gradient(circle, rgba(82, 242, 194, 0.22), transparent 65%);
       pointer-events: none;
     }
 
-    .project-top {
+    .project-card.maps::before {
+      background: radial-gradient(circle, rgba(124, 92, 255, 0.24), transparent 65%);
+    }
+
+    .project-card.articles::before {
+      background: radial-gradient(circle, rgba(82, 242, 194, 0.18), transparent 65%);
+    }
+
+    .project-top,
+    .project-bottom {
       position: relative;
       z-index: 1;
     }
@@ -282,52 +345,111 @@
     .project-card h2,
     .project-card h3 {
       margin: 0 0 12px;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
       line-height: 1;
     }
 
     .project-card h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
     }
 
     .project-card h3 {
-      font-size: 1.6rem;
-    }
-
-    .project-card p {
-      color: var(--muted);
-      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2rem);
     }
 
     .project-bottom {
-      position: relative;
-      z-index: 1;
       display: flex;
       justify-content: space-between;
       gap: 14px;
       align-items: center;
       margin-top: 28px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.96rem;
+      font-weight: 700;
     }
 
     .status {
       color: var(--accent);
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .mini-chart {
-      height: 78px;
+    .status.planned {
+      color: var(--muted);
+    }
+
+    .mini-race {
+      position: relative;
+      height: 142px;
+      margin-top: 26px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px),
+        rgba(255,255,255,0.035);
+      background-size: 100% 25%, 16.66% 100%;
+      overflow: hidden;
+    }
+
+    .mini-race svg {
+      position: absolute;
+      inset: 14px;
+      width: calc(100% - 28px);
+      height: calc(100% - 28px);
+      overflow: visible;
+    }
+
+    .mini-race path {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 4;
+      opacity: 0.76;
+    }
+
+    .mini-crest {
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.75));
+    }
+
+    .mini-map,
+    .mini-bars,
+    .mini-nodes {
+      height: 112px;
+      margin-top: 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background:
+        radial-gradient(circle at 20% 40%, rgba(82,242,194,0.16), transparent 18%),
+        radial-gradient(circle at 70% 35%, rgba(124,92,255,0.18), transparent 22%),
+        rgba(255,255,255,0.035);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mini-map span,
+    .mini-nodes span {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 22px rgba(82,242,194,0.55);
+    }
+
+    .mini-map span:nth-child(1) { left: 18%; top: 58%; }
+    .mini-map span:nth-child(2) { left: 42%; top: 34%; background: var(--accent-2); }
+    .mini-map span:nth-child(3) { left: 67%; top: 50%; }
+    .mini-map span:nth-child(4) { left: 79%; top: 24%; background: #ffffff; }
+
+    .mini-bars {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       align-items: end;
-      gap: 6px;
-      margin-top: 28px;
-      position: relative;
-      z-index: 1;
+      gap: 7px;
+      padding: 18px;
     }
 
-    .mini-chart span {
+    .mini-bars span {
       display: block;
       border-radius: 999px 999px 8px 8px;
       background: linear-gradient(180deg, var(--accent), var(--accent-2));
@@ -335,15 +457,46 @@
       opacity: 0.86;
     }
 
-    .mini-chart span:nth-child(1) { height: 38%; }
-    .mini-chart span:nth-child(2) { height: 66%; }
-    .mini-chart span:nth-child(3) { height: 50%; }
-    .mini-chart span:nth-child(4) { height: 78%; }
-    .mini-chart span:nth-child(5) { height: 58%; }
-    .mini-chart span:nth-child(6) { height: 88%; }
-    .mini-chart span:nth-child(7) { height: 72%; }
-    .mini-chart span:nth-child(8) { height: 92%; }
+    .mini-bars span:nth-child(1) { height: 38%; }
+    .mini-bars span:nth-child(2) { height: 66%; }
+    .mini-bars span:nth-child(3) { height: 50%; }
+    .mini-bars span:nth-child(4) { height: 78%; }
+    .mini-bars span:nth-child(5) { height: 58%; }
+    .mini-bars span:nth-child(6) { height: 88%; }
+    .mini-bars span:nth-child(7) { height: 72%; }
+    .mini-bars span:nth-child(8) { height: 92%; }
 
+    .mini-nodes::before,
+    .mini-nodes::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(82,242,194,0.46);
+      transform-origin: left center;
+    }
+
+    .mini-nodes::before {
+      left: 18%;
+      top: 56%;
+      width: 58%;
+      transform: rotate(-12deg);
+    }
+
+    .mini-nodes::after {
+      left: 32%;
+      top: 32%;
+      width: 48%;
+      transform: rotate(15deg);
+      background: rgba(124,92,255,0.42);
+    }
+
+    .mini-nodes span:nth-child(1) { left: 16%; top: 52%; }
+    .mini-nodes span:nth-child(2) { left: 40%; top: 36%; background: var(--accent-2); }
+    .mini-nodes span:nth-child(3) { left: 62%; top: 46%; }
+    .mini-nodes span:nth-child(4) { left: 79%; top: 28%; background: #ffffff; }
+
+    .definition,
     .roadmap {
       border: 1px solid var(--line);
       background:
@@ -352,19 +505,18 @@
         rgba(255, 255, 255, 0.06);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
-      padding: 34px;
+      padding: clamp(26px, 4vw, 40px);
     }
 
-    .roadmap h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1;
-      letter-spacing: -0.06em;
+    .definition {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+      align-items: start;
     }
 
-    .roadmap p {
-      color: var(--muted);
-      max-width: 780px;
+    .definition p + p {
+      margin-top: 18px;
     }
 
     .roadmap-list {
@@ -387,15 +539,10 @@
       margin-bottom: 8px;
     }
 
-    .roadmap-item span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     footer {
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 44px 0 58px;
+      padding: 38px 0 52px;
       color: var(--muted);
       border-top: 1px solid var(--line);
       display: flex;
@@ -409,8 +556,9 @@
       font-weight: 700;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
       .gallery-grid,
+      .definition,
       .roadmap-list {
         grid-template-columns: 1fr;
       }
@@ -419,12 +567,48 @@
         grid-column: span 1;
       }
 
-      .hero {
-        padding-top: 72px;
+      .nav-inner {
+        min-height: auto;
+        padding: 16px 0;
+        flex-wrap: wrap;
       }
 
       .nav-links {
-        display: none;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 52px;
+      }
+
+      section {
+        padding: 34px 0;
+      }
+
+      .project-card,
+      .definition,
+      .roadmap {
+        border-radius: 22px;
+      }
+
+      .project-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
@@ -437,14 +621,18 @@
     <header class="nav">
       <div class="nav-inner">
         <a class="brand" href="index.html">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" />
+          </span>
           <span>Nagle Analytics</span>
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="index.html">Home</a>
           <a href="featured.html">Featured</a>
-          <a href="viz-gallery.html">Gallery</a>
+          <a href="viz-gallery.html" aria-current="page">Gallery</a>
+          <a href="articles.html">Articles</a>
+          <a href="maps.html">Maps</a>
           <a href="about.html">About</a>
           <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
         </nav>
@@ -459,25 +647,34 @@
         </span>
 
         <h1>
-          A growing library of <span class="gradient-text">visual experiments.</span>
+          A growing library of <span class="gradient-text">visual projects.</span>
         </h1>
 
         <p class="hero-copy">
-          This gallery will collect Nagle Analytics projects as they are built:
-          sports analytics, maps, public data stories, dashboards, and chart experiments.
+          This gallery is the project hub for Nagle Analytics. Each card points to a full visualization,
+          map, article, dashboard, or experiment as the site grows from one flagship project into a broader
+          portfolio of interactive data work.
         </p>
 
         <div class="hero-actions">
-          <a class="button primary" href="usl-cup-tracker.html">View flagship project</a>
-          <a class="button secondary" href="index.html">Back to homepage</a>
+          <a class="button primary" href="usl-cup-tracker.html">Open USL Championship</a>
+          <a class="button secondary" href="articles.html">Read articles</a>
         </div>
       </section>
 
-      <section>
+      <section aria-labelledby="project-library-title">
+        <div class="section-heading">
+          <h2 id="project-library-title">Project library</h2>
+          <p class="section-copy">
+            Live projects appear first, followed by planned concepts that will become full project pages over time.
+          </p>
+        </div>
+
         <div class="filter-row" aria-label="Project categories">
           <span class="filter-pill active">All</span>
           <span class="filter-pill">Sports</span>
           <span class="filter-pill">Maps</span>
+          <span class="filter-pill">Articles</span>
           <span class="filter-pill">Public data</span>
           <span class="filter-pill">Experiments</span>
         </div>
@@ -485,16 +682,26 @@
         <div class="gallery-grid">
           <a class="project-card featured" href="usl-cup-tracker.html">
             <div class="project-top">
-              <span class="project-type">Featured / Sports analytics</span>
+              <span class="project-type">Live / Sports analytics</span>
               <h2>USL Championship</h2>
               <p>
-                A live matchday-by-matchday visualization showing how USL Championship clubs
-                move through the Eastern and Western Conference tables as results accumulate.
+                A matchday-by-matchday visualization showing how USL Championship clubs move through
+                the Eastern and Western Conference tables as results accumulate.
               </p>
 
-              <div class="mini-chart" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span>
+              <div class="mini-race" aria-hidden="true">
+                <svg viewBox="0 0 520 130" preserveAspectRatio="none">
+                  <path d="M0,114 C62,98 114,62 178,55 C246,48 292,18 366,16 C430,14 474,22 520,10" stroke="#4C8D2B" />
+                  <path d="M0,116 C70,70 122,78 182,58 C250,34 310,44 378,38 C438,34 476,44 520,36" stroke="#FF6720" />
+                  <path d="M0,118 C70,96 126,78 188,82 C254,86 314,58 382,58 C438,58 480,52 520,52" stroke="#010101" />
+                  <path d="M0,121 C64,112 126,108 190,92 C258,74 316,76 382,74 C438,72 478,78 520,70" stroke="#FCE300" />
+                </svg>
+                <svg viewBox="0 0 520 130" preserveAspectRatio="none">
+                  <image class="mini-crest" href="assets/usl/crests/tbr.png" x="480" y="0" width="44" height="44" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/oc.png" x="480" y="24" width="40" height="40" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/oak.png" x="480" y="42" width="40" height="40" preserveAspectRatio="xMidYMid meet" />
+                  <image class="mini-crest" href="assets/usl/crests/nm.png" x="480" y="61" width="40" height="40" preserveAspectRatio="xMidYMid meet" />
+                </svg>
               </div>
             </div>
 
@@ -504,34 +711,57 @@
             </div>
           </a>
 
-          <article class="project-card">
+          <a class="project-card maps" href="maps.html">
             <div class="project-top">
               <span class="project-type">Maps</span>
               <h3>Spatial pattern explorer</h3>
               <p>
-                A future map-based project for showing regional patterns, clusters,
-                and geographic differences.
+                A map-focused project area for regional patterns, clusters, detections, layers, and location-based data stories.
               </p>
+              <div class="mini-map" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
             </div>
 
             <div class="project-bottom">
-              <span class="status">Planned</span>
-              <span>Coming soon</span>
+              <span class="status planned">Planned</span>
+              <span>View map page →</span>
             </div>
-          </article>
+          </a>
+
+          <a class="project-card articles" href="articles.html">
+            <div class="project-top">
+              <span class="project-type">Articles</span>
+              <h3>Analytics notes</h3>
+              <p>
+                Short essays, project notes, design decisions, and explanations behind the visualizations built for the site.
+              </p>
+              <div class="mini-bars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="project-bottom">
+              <span class="status planned">Growing</span>
+              <span>View articles →</span>
+            </div>
+          </a>
 
           <article class="project-card">
             <div class="project-top">
               <span class="project-type">Public data</span>
               <h3>Open data story</h3>
               <p>
-                A narrative visualization using public data to explain a real-world
-                trend or pattern.
+                A future narrative visualization using open datasets to explain a real-world trend, pattern, or decision point.
               </p>
+              <div class="mini-nodes" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
             </div>
 
             <div class="project-bottom">
-              <span class="status">Planned</span>
+              <span class="status planned">Planned</span>
               <span>Coming soon</span>
             </div>
           </article>
@@ -541,29 +771,16 @@
               <span class="project-type">Chart experiment</span>
               <h3>Animated ranking chart</h3>
               <p>
-                A reusable chart concept for showing rank movement, competition,
-                and position changes over time.
+                A reusable concept for showing rank movement, competition, momentum, and position changes over time.
               </p>
+              <div class="mini-bars" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
             </div>
 
             <div class="project-bottom">
-              <span class="status">Planned</span>
-              <span>Coming soon</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-top">
-              <span class="project-type">Dashboard</span>
-              <h3>Interactive dashboard prototype</h3>
-              <p>
-                A future layout for combining filters, summary metrics, charts,
-                and explanatory text.
-              </p>
-            </div>
-
-            <div class="project-bottom">
-              <span class="status">Planned</span>
+              <span class="status planned">Planned</span>
               <span>Coming soon</span>
             </div>
           </article>
@@ -573,13 +790,15 @@
               <span class="project-type">Template</span>
               <h3>Visualization starter kit</h3>
               <p>
-                A reusable template for building future Nagle Analytics pages
-                faster and more consistently.
+                A future reusable page template for building new Nagle Analytics projects faster and more consistently.
               </p>
+              <div class="mini-nodes" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
             </div>
 
             <div class="project-bottom">
-              <span class="status">Planned</span>
+              <span class="status planned">Planned</span>
               <span>Coming soon</span>
             </div>
           </article>
@@ -587,12 +806,29 @@
       </section>
 
       <section>
+        <div class="definition">
+          <div>
+            <h2>What connects these projects</h2>
+          </div>
+          <div>
+            <p>
+              Analytics is the systematic process of examining raw data to discover meaningful patterns, trends, and insights.
+              Organizations use these insights to optimize operations, reduce costs, and guide strategic decision-making.
+            </p>
+            <p>
+              Nagle Analytics applies that same idea visually: each project is built to make patterns easier to see,
+              movement easier to follow, and decisions easier to explain.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <div class="roadmap">
-          <h2>What will live here</h2>
+          <h2>How the gallery will grow</h2>
           <p>
-            The gallery will become the project library for Nagle Analytics. Each card
-            will eventually link to a full project page with context, methods, data notes,
-            and the finished visualization.
+            The gallery is designed as a project hub. The homepage can stay focused and clean, while each visualization,
+            article, or map gets its own page with context, methods, data notes, and the finished interactive work.
           </p>
 
           <div class="roadmap-list">
@@ -603,7 +839,7 @@
 
             <div class="roadmap-item">
               <strong>Live charts</strong>
-              <span>Interactive charts built with JavaScript and D3-style methods.</span>
+              <span>Interactive charts built with JavaScript, D3, R, or Python workflows.</span>
             </div>
 
             <div class="roadmap-item">
@@ -613,7 +849,7 @@
 
             <div class="roadmap-item">
               <strong>Design notes</strong>
-              <span>What the chart is trying to show and why the format was chosen.</span>
+              <span>What each chart is trying to show and why the format was chosen.</span>
             </div>
           </div>
         </div>
@@ -634,12 +870,12 @@
 
     const canvas = document.getElementById("dynamic-bg");
     const ctx = canvas.getContext("2d");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     let width;
     let height;
     let particles = [];
 
-    const particleCount = 72;
     const maxDistance = 150;
 
     function resizeCanvas() {
@@ -648,6 +884,7 @@
     }
 
     function createParticles() {
+      const particleCount = window.innerWidth < 700 ? 34 : 72;
       particles = [];
 
       for (let i = 0; i < particleCount; i++) {
@@ -738,12 +975,16 @@
       drawBackgroundGlow();
       drawConnections();
       drawParticles();
-      requestAnimationFrame(animate);
+
+      if (!reduceMotion) {
+        requestAnimationFrame(animate);
+      }
     }
 
     window.addEventListener("resize", () => {
       resizeCanvas();
       createParticles();
+      drawBackgroundGlow();
     });
 
     resizeCanvas();
