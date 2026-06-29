@@ -227,7 +227,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p484151",
+                    "PlayerRef": "p435257",
                     "Type": "Goal"
                   }
                 },
@@ -235,7 +235,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p435257",
+                    "PlayerRef": "p484151",
                     "Type": "Goal"
                   }
                 }
@@ -1184,7 +1184,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p690516",
+                    "PlayerRef": "p569217",
                     "Type": "Goal"
                   }
                 },
@@ -1192,7 +1192,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p569217",
+                    "PlayerRef": "p690516",
                     "Type": "Goal"
                   }
                 }
@@ -1397,14 +1397,6 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p224590",
-                    "Type": "Own"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "SecondHalf",
                     "PlayerRef": "p206928",
                     "Type": "Goal"
                   }
@@ -1415,6 +1407,14 @@
                     "Period": "SecondHalf",
                     "PlayerRef": "p613935",
                     "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p224590",
+                    "Type": "Own"
                   }
                 }
               ],
@@ -2295,7 +2295,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p148707",
+                    "PlayerRef": "p186704",
                     "Type": "Goal"
                   }
                 },
@@ -2303,7 +2303,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p186704",
+                    "PlayerRef": "p148707",
                     "Type": "Goal"
                   }
                 }
@@ -2776,14 +2776,6 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p576838",
-                    "Type": "Goal"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "SecondHalf",
                     "PlayerRef": "p504850",
                     "Type": "Penalty"
                   }
@@ -2793,6 +2785,14 @@
                   "@attributes": {
                     "Period": "SecondHalf",
                     "PlayerRef": "p504850",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p576838",
                     "Type": "Goal"
                   }
                 }
@@ -3158,6 +3158,14 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
+                    "PlayerRef": "p440659",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
                     "PlayerRef": "p474576",
                     "Type": "Goal"
                   }
@@ -3167,14 +3175,6 @@
                   "@attributes": {
                     "Period": "SecondHalf",
                     "PlayerRef": "p446613",
-                    "Type": "Goal"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "SecondHalf",
-                    "PlayerRef": "p440659",
                     "Type": "Goal"
                   }
                 }
@@ -3311,7 +3311,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p441509",
+                    "PlayerRef": "p503915",
                     "Type": "Goal"
                   }
                 },
@@ -3319,7 +3319,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p503915",
+                    "PlayerRef": "p441509",
                     "Type": "Goal"
                   }
                 }
@@ -3711,7 +3711,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p426031",
+                    "PlayerRef": "p426648",
                     "Type": "Goal"
                   }
                 },
@@ -3719,7 +3719,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p426648",
+                    "PlayerRef": "p426031",
                     "Type": "Goal"
                   }
                 }
@@ -4048,7 +4048,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p248825",
+                    "PlayerRef": "p485354",
                     "Type": "Goal"
                   }
                 },
@@ -4064,7 +4064,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p485354",
+                    "PlayerRef": "p248825",
                     "Type": "Goal"
                   }
                 }
@@ -4177,7 +4177,7 @@
                   "@attributes": {
                     "Period": "FirstHalf",
                     "PlayerRef": "p156663",
-                    "Type": "Goal"
+                    "Type": "Penalty"
                   }
                 },
                 {
@@ -4185,7 +4185,7 @@
                   "@attributes": {
                     "Period": "FirstHalf",
                     "PlayerRef": "p156663",
-                    "Type": "Penalty"
+                    "Type": "Goal"
                   }
                 }
               ],
@@ -4574,7 +4574,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p421952",
+                    "PlayerRef": "p421819",
                     "Type": "Goal"
                   }
                 },
@@ -4582,7 +4582,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p421819",
+                    "PlayerRef": "p421952",
                     "Type": "Goal"
                   }
                 }
@@ -4812,14 +4812,6 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p623394",
-                    "Type": "Goal"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "SecondHalf",
                     "PlayerRef": "p436298",
                     "Type": "Goal"
                   }
@@ -4829,6 +4821,14 @@
                   "@attributes": {
                     "Period": "SecondHalf",
                     "PlayerRef": "p234730",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p623394",
                     "Type": "Goal"
                   }
                 }
@@ -5110,16 +5110,16 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p540971",
-                    "Type": "Own"
+                    "PlayerRef": "p441509",
+                    "Type": "Goal"
                   }
                 },
                 {
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p441509",
-                    "Type": "Goal"
+                    "PlayerRef": "p540971",
+                    "Type": "Own"
                   }
                 }
               ],
@@ -6869,7 +6869,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p219841",
+                    "PlayerRef": "p559317",
                     "Type": "Goal"
                   }
                 },
@@ -6877,7 +6877,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p559317",
+                    "PlayerRef": "p219841",
                     "Type": "Goal"
                   }
                 }
@@ -7099,7 +7099,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p615858",
+                    "PlayerRef": "p652031",
                     "Type": "Goal"
                   }
                 },
@@ -7107,7 +7107,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p652031",
+                    "PlayerRef": "p615858",
                     "Type": "Goal"
                   }
                 }
@@ -7591,7 +7591,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p242700",
+                    "PlayerRef": "p437099",
                     "Type": "Goal"
                   }
                 },
@@ -7599,7 +7599,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p437099",
+                    "PlayerRef": "p242700",
                     "Type": "Goal"
                   }
                 },
@@ -7838,8 +7838,8 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p221252",
-                    "Type": "Penalty"
+                    "PlayerRef": "p200786",
+                    "Type": "Goal"
                   }
                 },
                 {
@@ -7854,8 +7854,8 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p200786",
-                    "Type": "Goal"
+                    "PlayerRef": "p221252",
+                    "Type": "Penalty"
                   }
                 },
                 {
@@ -7973,7 +7973,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p151074",
+                    "PlayerRef": "p574113",
                     "Type": "Goal"
                   }
                 },
@@ -7981,7 +7981,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p574113",
+                    "PlayerRef": "p151074",
                     "Type": "Goal"
                   }
                 }
@@ -8580,7 +8580,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p244989",
+                    "PlayerRef": "p423063",
                     "Type": "Goal"
                   }
                 },
@@ -8588,7 +8588,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p423063",
+                    "PlayerRef": "p244989",
                     "Type": "Goal"
                   }
                 }
@@ -8833,7 +8833,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p451489",
+                    "PlayerRef": "p423050",
                     "Type": "Goal"
                   }
                 },
@@ -8841,7 +8841,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p423050",
+                    "PlayerRef": "p451489",
                     "Type": "Goal"
                   }
                 },
@@ -9248,7 +9248,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p234406",
+                    "PlayerRef": "p224427",
                     "Type": "Goal"
                   }
                 },
@@ -9256,7 +9256,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p224427",
+                    "PlayerRef": "p234406",
                     "Type": "Goal"
                   }
                 },
@@ -10100,7 +10100,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p211793",
+                    "PlayerRef": "p538324",
                     "Type": "Goal"
                   }
                 },
@@ -10108,7 +10108,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p538324",
+                    "PlayerRef": "p211793",
                     "Type": "Goal"
                   }
                 }
@@ -10211,14 +10211,6 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p483552",
-                    "Type": "Penalty"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "SecondHalf",
                     "PlayerRef": "p423069",
                     "Type": "Goal"
                   }
@@ -10237,6 +10229,14 @@
                     "Period": "SecondHalf",
                     "PlayerRef": "p423069",
                     "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p483552",
+                    "Type": "Penalty"
                   }
                 }
               ],
@@ -10753,14 +10753,6 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p431968",
-                    "Type": "Goal"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "FirstHalf",
                     "PlayerRef": "p557270",
                     "Type": "Goal"
                   }
@@ -10770,6 +10762,14 @@
                   "@attributes": {
                     "Period": "FirstHalf",
                     "PlayerRef": "p576838",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p431968",
                     "Type": "Goal"
                   }
                 },
@@ -10889,7 +10889,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p538324",
+                    "PlayerRef": "p587098",
                     "Type": "Goal"
                   }
                 },
@@ -10897,7 +10897,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p587098",
+                    "PlayerRef": "p538324",
                     "Type": "Goal"
                   }
                 }
@@ -11024,16 +11024,16 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p443413",
-                    "Type": "Own"
+                    "PlayerRef": "p106757",
+                    "Type": "Goal"
                   }
                 },
                 {
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p106757",
-                    "Type": "Goal"
+                    "PlayerRef": "p443413",
+                    "Type": "Own"
                   }
                 }
               ],
@@ -11295,7 +11295,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p248096",
+                    "PlayerRef": "p131819",
                     "Type": "Goal"
                   }
                 },
@@ -11303,7 +11303,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p131819",
+                    "PlayerRef": "p248096",
                     "Type": "Goal"
                   }
                 }
@@ -11558,7 +11558,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p234406",
+                    "PlayerRef": "p224427",
                     "Type": "Goal"
                   }
                 },
@@ -11566,7 +11566,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p224427",
+                    "PlayerRef": "p234406",
                     "Type": "Goal"
                   }
                 }
@@ -13427,7 +13427,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p471089",
+                    "PlayerRef": "p442458",
                     "Type": "Goal"
                   }
                 },
@@ -13435,7 +13435,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p442458",
+                    "PlayerRef": "p471089",
                     "Type": "Goal"
                   }
                 }
@@ -13933,7 +13933,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-05-31T15:30:31+00:00",
+            "last_modified": "2026-06-25T04:32:39+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612280"
@@ -14191,7 +14191,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p565784",
+                    "PlayerRef": "p565779",
                     "Type": "Goal"
                   }
                 },
@@ -14199,7 +14199,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p565779",
+                    "PlayerRef": "p565784",
                     "Type": "Goal"
                   }
                 }
@@ -14302,7 +14302,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p575811",
+                    "PlayerRef": "p226698",
                     "Type": "Goal"
                   }
                 },
@@ -14310,7 +14310,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p226698",
+                    "PlayerRef": "p575811",
                     "Type": "Goal"
                   }
                 }
@@ -14540,7 +14540,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p230073",
+                    "PlayerRef": "p649234",
                     "Type": "Goal"
                   }
                 },
@@ -14548,7 +14548,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p649234",
+                    "PlayerRef": "p230073",
                     "Type": "Goal"
                   }
                 }
@@ -14693,7 +14693,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p423069",
+                    "PlayerRef": "p565685",
                     "Type": "Goal"
                   }
                 },
@@ -14701,7 +14701,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p565685",
+                    "PlayerRef": "p423069",
                     "Type": "Goal"
                   }
                 }
@@ -14947,7 +14947,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p441509",
+                    "PlayerRef": "p500186",
                     "Type": "Goal"
                   }
                 },
@@ -14955,7 +14955,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p500186",
+                    "PlayerRef": "p441509",
                     "Type": "Goal"
                   }
                 },
@@ -15082,16 +15082,16 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p156663",
-                    "Type": "Penalty"
+                    "PlayerRef": "p689390",
+                    "Type": "Goal"
                   }
                 },
                 {
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p689390",
-                    "Type": "Goal"
+                    "PlayerRef": "p156663",
+                    "Type": "Penalty"
                   }
                 },
                 {
@@ -15124,7 +15124,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p688537",
+                    "PlayerRef": "p474162",
                     "Type": "Goal"
                   }
                 },
@@ -15132,7 +15132,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p474162",
+                    "PlayerRef": "p688537",
                     "Type": "Goal"
                   }
                 },
@@ -15395,7 +15395,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p531154",
+                    "PlayerRef": "p483705",
                     "Type": "Goal"
                   }
                 },
@@ -15403,7 +15403,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p483705",
+                    "PlayerRef": "p531154",
                     "Type": "Goal"
                   }
                 }
@@ -16458,7 +16458,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p426902",
+                    "PlayerRef": "p242700",
                     "Type": "Goal"
                   }
                 },
@@ -16466,7 +16466,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p242700",
+                    "PlayerRef": "p426902",
                     "Type": "Goal"
                   }
                 }
@@ -16937,7 +16937,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p440659",
+                    "PlayerRef": "p435257",
                     "Type": "Goal"
                   }
                 },
@@ -16945,7 +16945,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p435257",
+                    "PlayerRef": "p440659",
                     "Type": "Goal"
                   }
                 }
@@ -17216,7 +17216,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p483552",
+                    "PlayerRef": "p224608",
                     "Type": "Goal"
                   }
                 },
@@ -17224,7 +17224,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p224608",
+                    "PlayerRef": "p483552",
                     "Type": "Goal"
                   }
                 }
@@ -17454,14 +17454,6 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p504850",
-                    "Type": "Goal"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "FirstHalf",
                     "PlayerRef": "p576838",
                     "Type": "Goal"
                   }
@@ -17471,6 +17463,14 @@
                   "@attributes": {
                     "Period": "FirstHalf",
                     "PlayerRef": "p431968",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p504850",
                     "Type": "Goal"
                   }
                 },
@@ -17831,7 +17831,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p215478",
+                    "PlayerRef": "p614640",
                     "Type": "Goal"
                   }
                 },
@@ -17839,7 +17839,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p614640",
+                    "PlayerRef": "p215478",
                     "Type": "Goal"
                   }
                 }
@@ -18473,7 +18473,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p437032",
+                    "PlayerRef": "p442458",
                     "Type": "Goal"
                   }
                 },
@@ -18481,7 +18481,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p442458",
+                    "PlayerRef": "p437032",
                     "Type": "Goal"
                   }
                 }
@@ -18722,7 +18722,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-22T12:38:36+00:00",
+            "last_modified": "2026-06-23T06:05:52+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612267"
@@ -18842,7 +18842,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-19T10:20:41+00:00",
+            "last_modified": "2026-06-23T06:06:05+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612265"
@@ -19062,7 +19062,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T04:18:58+00:00",
+            "last_modified": "2026-06-24T22:30:30+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612268"
@@ -19159,16 +19159,16 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p244989",
-                    "Type": "Goal"
+                    "PlayerRef": "p441509",
+                    "Type": "Penalty"
                   }
                 },
                 {
                   "@value": "",
                   "@attributes": {
                     "Period": "FirstHalf",
-                    "PlayerRef": "p441509",
-                    "Type": "Penalty"
+                    "PlayerRef": "p244989",
+                    "Type": "Goal"
                   }
                 }
               ],
@@ -19182,7 +19182,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T02:45:23+00:00",
+            "last_modified": "2026-06-26T16:08:38+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612269"
@@ -19309,7 +19309,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-22T12:06:41+00:00",
+            "last_modified": "2026-06-24T05:49:31+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612270"
@@ -19411,7 +19411,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T03:23:30+00:00",
+            "last_modified": "2026-06-24T23:06:28+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612271"
@@ -19533,7 +19533,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p652031",
+                    "PlayerRef": "p436398",
                     "Type": "Goal"
                   }
                 },
@@ -19541,7 +19541,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p436398",
+                    "PlayerRef": "p652031",
                     "Type": "Goal"
                   }
                 }
@@ -19556,7 +19556,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T06:41:37+00:00",
+            "last_modified": "2026-06-23T06:06:19+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612427"
@@ -19666,7 +19666,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-22T10:10:12+00:00",
+            "last_modified": "2026-06-24T05:49:28+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612272"
@@ -19762,16 +19762,16 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p565394",
-                    "Type": "Goal"
+                    "PlayerRef": "p228321",
+                    "Type": "Penalty"
                   }
                 },
                 {
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p228321",
-                    "Type": "Penalty"
+                    "PlayerRef": "p565394",
+                    "Type": "Goal"
                   }
                 }
               ],
@@ -19788,6 +19788,14 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
+                    "PlayerRef": "p208036",
+                    "Type": "Penalty"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
                     "PlayerRef": "p483790",
                     "Type": "Goal"
                   }
@@ -19798,14 +19806,6 @@
                     "Period": "SecondHalf",
                     "PlayerRef": "p208036",
                     "Type": "Goal"
-                  }
-                },
-                {
-                  "@value": "",
-                  "@attributes": {
-                    "Period": "SecondHalf",
-                    "PlayerRef": "p208036",
-                    "Type": "Penalty"
                   }
                 },
                 {
@@ -19827,7 +19827,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T06:50:26+00:00",
+            "last_modified": "2026-06-24T05:49:48+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612274"
@@ -19937,7 +19937,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T06:50:20+00:00",
+            "last_modified": "2026-06-26T04:16:31+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612275"
@@ -20075,7 +20075,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p688517",
+                    "PlayerRef": "p501277",
                     "Type": "Goal"
                   }
                 },
@@ -20083,7 +20083,7 @@
                   "@value": "",
                   "@attributes": {
                     "Period": "SecondHalf",
-                    "PlayerRef": "p501277",
+                    "PlayerRef": "p688517",
                     "Type": "Goal"
                   }
                 }
@@ -20098,7 +20098,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-06-21T05:36:50+00:00",
+            "last_modified": "2026-06-24T05:49:38+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612276"
@@ -20118,11 +20118,52 @@
             "@attributes": {
               "MatchDay": "16",
               "MatchType": "Regular",
-              "Period": "PreMatch",
+              "MatchWinner": "t1267",
+              "Period": "FullTime",
               "RoundNumber": "1",
               "TimeFrameLengthId": "1",
               "Venue_id": "14576"
             }
+          },
+          "MatchOfficials": {
+            "MatchOfficial": [
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Kevin",
+                  "LastName": "Broadley",
+                  "Type": "Referee",
+                  "uID": "o47635"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Noah",
+                  "LastName": "Kenyawani",
+                  "Type": "Assistant Referee#1",
+                  "uID": "o49937"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Josh",
+                  "LastName": "Lampkins",
+                  "Type": "Assistant Referee#2",
+                  "uID": "o67202"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Daniel",
+                  "LastName": "Emeri",
+                  "Type": "Fourth official",
+                  "uID": "o67218"
+                }
+              }
+            ]
           },
           "Stat": [
             {
@@ -20140,15 +20181,59 @@
           ],
           "TeamData": [
             {
-              "@value": "",
+              "Goal": [
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p431968",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p576838",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p225170",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p504850",
+                    "Type": "Penalty"
+                  }
+                }
+              ],
               "@attributes": {
+                "HalfScore": "2",
+                "Score": "4",
                 "Side": "Home",
                 "TeamRef": "t1267"
               }
             },
             {
-              "@value": "",
+              "Goal": {
+                "@value": "",
+                "@attributes": {
+                  "Period": "SecondHalf",
+                  "PlayerRef": "p609304",
+                  "Type": "Goal"
+                }
+              },
               "@attributes": {
+                "HalfScore": "0",
+                "Score": "1",
                 "Side": "Away",
                 "TeamRef": "t15147"
               }
@@ -20156,7 +20241,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-01-15T14:16:53+00:00",
+            "last_modified": "2026-06-29T06:08:29+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612277"
@@ -20176,11 +20261,52 @@
             "@attributes": {
               "MatchDay": "16",
               "MatchType": "Regular",
-              "Period": "PreMatch",
+              "MatchWinner": "t11663",
+              "Period": "FullTime",
               "RoundNumber": "1",
               "TimeFrameLengthId": "1",
               "Venue_id": "11248"
             }
+          },
+          "MatchOfficials": {
+            "MatchOfficial": [
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Calin",
+                  "LastName": "Radosav",
+                  "Type": "Referee",
+                  "uID": "o49837"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Matthew",
+                  "LastName": "Rodman",
+                  "Type": "Assistant Referee#1",
+                  "uID": "o50065"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Eric",
+                  "LastName": "Krueger",
+                  "Type": "Assistant Referee#2",
+                  "uID": "o51247"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Bowen",
+                  "LastName": "Taylor",
+                  "Type": "Fourth official",
+                  "uID": "o54162"
+                }
+              }
+            ]
           },
           "Stat": [
             {
@@ -20198,15 +20324,43 @@
           ],
           "TeamData": [
             {
-              "@value": "",
+              "Goal": {
+                "@value": "",
+                "@attributes": {
+                  "Period": "FirstHalf",
+                  "PlayerRef": "p423050",
+                  "Type": "Goal"
+                }
+              },
               "@attributes": {
+                "HalfScore": "1",
+                "Score": "1",
                 "Side": "Home",
                 "TeamRef": "t10969"
               }
             },
             {
-              "@value": "",
+              "Goal": [
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p688537",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p234406",
+                    "Type": "Goal"
+                  }
+                }
+              ],
               "@attributes": {
+                "HalfScore": "1",
+                "Score": "2",
                 "Side": "Away",
                 "TeamRef": "t11663"
               }
@@ -20214,7 +20368,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-03-09T19:59:38+00:00",
+            "last_modified": "2026-06-27T16:49:42+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612278"
@@ -20222,23 +20376,64 @@
         },
         {
           "MatchInfo": {
-            "Date": "2026-06-25 00:00:00",
+            "Date": "2026-06-25 00:33:00",
             "DateLocal": {
-              "@value": "2026-06-24 19:00:00",
+              "@value": "2026-06-24 19:33:00",
               "@attributes": {
                 "Offset": "-04:00"
               }
             },
-            "DateUtc": "2026-06-24 23:00:00",
+            "DateUtc": "2026-06-24 23:33:00",
             "TZ": "BST",
             "@attributes": {
               "MatchDay": "16",
               "MatchType": "Regular",
-              "Period": "PreMatch",
+              "MatchWinner": "t8677",
+              "Period": "FullTime",
               "RoundNumber": "1",
               "TimeFrameLengthId": "1",
               "Venue_id": "4727"
             }
+          },
+          "MatchOfficials": {
+            "MatchOfficial": [
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Alexandra",
+                  "LastName": "Billeter",
+                  "Type": "Referee",
+                  "uID": "o56122"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Fritz",
+                  "LastName": "Barberousse",
+                  "Type": "Assistant Referee#1",
+                  "uID": "o50753"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Diego",
+                  "LastName": "Lucio",
+                  "Type": "Assistant Referee#2",
+                  "uID": "o51595"
+                }
+              },
+              {
+                "@value": "",
+                "@attributes": {
+                  "FirstName": "Edson",
+                  "LastName": "Carvajal",
+                  "Type": "Fourth official",
+                  "uID": "o67506"
+                }
+              }
+            ]
           },
           "Stat": [
             {
@@ -20256,15 +20451,69 @@
           ],
           "TeamData": [
             {
-              "@value": "",
+              "Goal": [
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p425096",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p707975",
+                    "Type": "Goal"
+                  }
+                }
+              ],
               "@attributes": {
+                "HalfScore": "1",
+                "Score": "2",
                 "Side": "Home",
                 "TeamRef": "t11528"
               }
             },
             {
-              "@value": "",
+              "Goal": [
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "FirstHalf",
+                    "PlayerRef": "p652031",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p652031",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p230073",
+                    "Type": "Goal"
+                  }
+                },
+                {
+                  "@value": "",
+                  "@attributes": {
+                    "Period": "SecondHalf",
+                    "PlayerRef": "p595101",
+                    "Type": "Goal"
+                  }
+                }
+              ],
               "@attributes": {
+                "HalfScore": "1",
+                "Score": "4",
                 "Side": "Away",
                 "TeamRef": "t8677"
               }
@@ -20272,7 +20521,7 @@
           ],
           "@attributes": {
             "detail_id": "1",
-            "last_modified": "2026-01-15T15:00:40+00:00",
+            "last_modified": "2026-06-29T11:36:58+00:00",
             "timestamp_accuracy_id": "1",
             "timing_id": "1",
             "uID": "g2612279"
@@ -32659,59 +32908,11 @@
       },
       "Team": [
         {
-          "Name": "Indy Eleven",
-          "OfficialTeamName": "Indy Eleven",
-          "ShortTeamName": "Indy Eleven",
-          "@attributes": {
-            "uID": "t9911"
-          }
-        },
-        {
-          "Name": "New Mexico United",
-          "OfficialTeamName": "New Mexico United",
-          "ShortTeamName": "New Mexico",
-          "@attributes": {
-            "uID": "t15151"
-          }
-        },
-        {
-          "Name": "Detroit City FC",
-          "OfficialTeamName": "Detroit City FC",
-          "ShortTeamName": "Detroit City",
-          "@attributes": {
-            "uID": "t14304"
-          }
-        },
-        {
-          "Name": "Orange County SC",
-          "OfficialTeamName": "Orange County SC",
-          "ShortTeamName": "Orange County",
-          "@attributes": {
-            "uID": "t8677"
-          }
-        },
-        {
           "Name": "Louisville City",
           "OfficialTeamName": "Louisville City FC",
           "ShortTeamName": "Louisville",
           "@attributes": {
             "uID": "t10967"
-          }
-        },
-        {
-          "Name": "Miami",
-          "OfficialTeamName": "Miami FC",
-          "ShortTeamName": "Miami",
-          "@attributes": {
-            "uID": "t11528"
-          }
-        },
-        {
-          "Name": "Hartford Athletic",
-          "OfficialTeamName": "Hartford Athletic",
-          "ShortTeamName": "Hartford Ath",
-          "@attributes": {
-            "uID": "t15146"
           }
         },
         {
@@ -32723,75 +32924,11 @@
           }
         },
         {
-          "Name": "Las Vegas Lights FC",
-          "OfficialTeamName": "Las Vegas Lights FC",
-          "ShortTeamName": "LV Lights",
+          "Name": "Detroit City FC",
+          "OfficialTeamName": "Detroit City FC",
+          "ShortTeamName": "Detroit City",
           "@attributes": {
-            "uID": "t14160"
-          }
-        },
-        {
-          "Name": "Colorado Springs Switchbacks",
-          "OfficialTeamName": "Colorado Springs Switchbacks FC",
-          "ShortTeamName": "Switchbacks",
-          "@attributes": {
-            "uID": "t10969"
-          }
-        },
-        {
-          "Name": "Sporting JAX",
-          "OfficialTeamName": "Sporting Club Jacksonville",
-          "ShortTeamName": "Sporting JAX",
-          "@attributes": {
-            "uID": "t22496"
-          }
-        },
-        {
-          "Name": "Sacramento Republic",
-          "OfficialTeamName": "Sacramento Republic FC",
-          "ShortTeamName": "Sacramento",
-          "@attributes": {
-            "uID": "t9907"
-          }
-        },
-        {
-          "Name": "Tampa Bay Rowdies",
-          "OfficialTeamName": "Tampa Bay Rowdies",
-          "ShortTeamName": "Tampa Bay",
-          "@attributes": {
-            "uID": "t5621"
-          }
-        },
-        {
-          "Name": "Charleston Battery",
-          "OfficialTeamName": "Charleston Battery",
-          "ShortTeamName": "Charleston",
-          "@attributes": {
-            "uID": "t1267"
-          }
-        },
-        {
-          "Name": "San Antonio",
-          "OfficialTeamName": "San Antonio FC",
-          "ShortTeamName": "San Antonio",
-          "@attributes": {
-            "uID": "t11663"
-          }
-        },
-        {
-          "Name": "FC Tulsa",
-          "OfficialTeamName": "FC Tulsa",
-          "ShortTeamName": "Tulsa",
-          "@attributes": {
-            "uID": "t12141"
-          }
-        },
-        {
-          "Name": "Phoenix Rising",
-          "OfficialTeamName": "Phoenix Rising FC",
-          "ShortTeamName": "Phoenix Rising",
-          "@attributes": {
-            "uID": "t9904"
+            "uID": "t14304"
           }
         },
         {
@@ -32803,19 +32940,35 @@
           }
         },
         {
-          "Name": "Oakland Roots",
-          "OfficialTeamName": "Oakland Roots SC",
-          "ShortTeamName": "Roots",
+          "Name": "Charleston Battery",
+          "OfficialTeamName": "Charleston Battery",
+          "ShortTeamName": "Charleston",
           "@attributes": {
-            "uID": "t16550"
+            "uID": "t1267"
           }
         },
         {
-          "Name": "Rhode Island",
-          "OfficialTeamName": "Rhode Island FC",
-          "ShortTeamName": "Rhode Island",
+          "Name": "Orange County SC",
+          "OfficialTeamName": "Orange County SC",
+          "ShortTeamName": "Orange County",
           "@attributes": {
-            "uID": "t21257"
+            "uID": "t8677"
+          }
+        },
+        {
+          "Name": "Hartford Athletic",
+          "OfficialTeamName": "Hartford Athletic",
+          "ShortTeamName": "Hartford Ath",
+          "@attributes": {
+            "uID": "t15146"
+          }
+        },
+        {
+          "Name": "Tampa Bay Rowdies",
+          "OfficialTeamName": "Tampa Bay Rowdies",
+          "ShortTeamName": "Tampa Bay",
+          "@attributes": {
+            "uID": "t5621"
           }
         },
         {
@@ -32827,19 +32980,59 @@
           }
         },
         {
-          "Name": "Monterey Bay",
-          "OfficialTeamName": "Monterey Bay FC",
-          "ShortTeamName": "Monterey Bay",
+          "Name": "Rhode Island",
+          "OfficialTeamName": "Rhode Island FC",
+          "ShortTeamName": "Rhode Island",
           "@attributes": {
-            "uID": "t18778"
+            "uID": "t21257"
           }
         },
         {
-          "Name": "El Paso Locomotive",
-          "OfficialTeamName": "El Paso Locomotive FC",
-          "ShortTeamName": "El Paso Loco",
+          "Name": "Phoenix Rising",
+          "OfficialTeamName": "Phoenix Rising FC",
+          "ShortTeamName": "Phoenix Rising",
           "@attributes": {
-            "uID": "t15150"
+            "uID": "t9904"
+          }
+        },
+        {
+          "Name": "New Mexico United",
+          "OfficialTeamName": "New Mexico United",
+          "ShortTeamName": "New Mexico",
+          "@attributes": {
+            "uID": "t15151"
+          }
+        },
+        {
+          "Name": "Las Vegas Lights FC",
+          "OfficialTeamName": "Las Vegas Lights FC",
+          "ShortTeamName": "LV Lights",
+          "@attributes": {
+            "uID": "t14160"
+          }
+        },
+        {
+          "Name": "Sacramento Republic",
+          "OfficialTeamName": "Sacramento Republic FC",
+          "ShortTeamName": "Sacramento",
+          "@attributes": {
+            "uID": "t9907"
+          }
+        },
+        {
+          "Name": "Pittsburgh Riverhounds SC",
+          "OfficialTeamName": "Pittsburgh Riverhounds SC",
+          "ShortTeamName": "Riverhounds",
+          "@attributes": {
+            "uID": "t9908"
+          }
+        },
+        {
+          "Name": "FC Tulsa",
+          "OfficialTeamName": "FC Tulsa",
+          "ShortTeamName": "Tulsa",
+          "@attributes": {
+            "uID": "t12141"
           }
         },
         {
@@ -32851,11 +33044,67 @@
           }
         },
         {
-          "Name": "Pittsburgh Riverhounds SC",
-          "OfficialTeamName": "Pittsburgh Riverhounds SC",
-          "ShortTeamName": "Riverhounds",
+          "Name": "Colorado Springs Switchbacks",
+          "OfficialTeamName": "Colorado Springs Switchbacks FC",
+          "ShortTeamName": "Switchbacks",
           "@attributes": {
-            "uID": "t9908"
+            "uID": "t10969"
+          }
+        },
+        {
+          "Name": "Monterey Bay",
+          "OfficialTeamName": "Monterey Bay FC",
+          "ShortTeamName": "Monterey Bay",
+          "@attributes": {
+            "uID": "t18778"
+          }
+        },
+        {
+          "Name": "Miami",
+          "OfficialTeamName": "Miami FC",
+          "ShortTeamName": "Miami",
+          "@attributes": {
+            "uID": "t11528"
+          }
+        },
+        {
+          "Name": "Sporting JAX",
+          "OfficialTeamName": "Sporting Club Jacksonville",
+          "ShortTeamName": "Sporting JAX",
+          "@attributes": {
+            "uID": "t22496"
+          }
+        },
+        {
+          "Name": "Oakland Roots",
+          "OfficialTeamName": "Oakland Roots SC",
+          "ShortTeamName": "Roots",
+          "@attributes": {
+            "uID": "t16550"
+          }
+        },
+        {
+          "Name": "Indy Eleven",
+          "OfficialTeamName": "Indy Eleven",
+          "ShortTeamName": "Indy Eleven",
+          "@attributes": {
+            "uID": "t9911"
+          }
+        },
+        {
+          "Name": "El Paso Locomotive",
+          "OfficialTeamName": "El Paso Locomotive FC",
+          "ShortTeamName": "El Paso Loco",
+          "@attributes": {
+            "uID": "t15150"
+          }
+        },
+        {
+          "Name": "San Antonio",
+          "OfficialTeamName": "San Antonio FC",
+          "ShortTeamName": "San Antonio",
+          "@attributes": {
+            "uID": "t11663"
           }
         }
       ],
@@ -32867,7 +33116,7 @@
         "game_system_id": "1",
         "season_id": "2026",
         "season_name": "Season 2026/2027",
-        "timestamp": "2026-06-22 13-38-40"
+        "timestamp": "2026-06-29 12-37-01"
       }
     }
   }
