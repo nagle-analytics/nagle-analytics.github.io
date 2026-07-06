@@ -26,16 +26,14 @@ Repository files:
 ./.git/logs/HEAD
 ./.git/objects/05/b5453fac536d91f7fd689fb0f7bd9b4fe56352
 ./.git/objects/09/b4a7b15c8ef9c8627b3ddfeae74b7075877f7a
-./.git/objects/0c/f03a57ff4a04bb9ac0f606c2f90bdc0b6fc5aa
 ./.git/objects/0f/1013f10608e0f89b0eb7caae6aba2fc0ed7cda
 ./.git/objects/10/3ebd6f37caaf684fed2e275bfbe9c2222c5977
 ./.git/objects/18/405397c33511c82a67631c7a154fbc297a853f
 ./.git/objects/21/d0e7b45844778dffc3e3473014190a1d73ffef
 ./.git/objects/2c/75f1c5de8b390803e2bb3ca3e44029148d6007
 ./.git/objects/2e/aeefad887c37e1223528e1c855a94b465ca342
-./.git/objects/37/4cb7084312c2034d24e08335311bbe5f91240d
-./.git/objects/38/10524fa0ce6ba3165b4946ae20cac34b112fff
 ./.git/objects/3d/16e2a01a3ab2dde568765d1109a3f26ef88c7c
+./.git/objects/43/095ec88613392dc41476057a570129e69ebe9b
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
 ./.git/objects/46/60acbdfe891c5bf0dc30356f52db8270e44e28
 ./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
@@ -46,18 +44,17 @@ Repository files:
 ./.git/objects/5c/685dc87502048c473a8ea5a863d72ee0eea54c
 ./.git/objects/67/0fdf13252961c47f90ca159ed4e4ce272f2e8e
 ./.git/objects/69/719596b59b86943e570cb8f45ff5258021f63e
-./.git/objects/6a/e62ca8bc31dce01501ae9bbbd9178ceacfd477
-./.git/objects/70/d606a0985ea16e2470f44efd4e07b709397ab7
 ./.git/objects/71/cd952d2eead7e7f4e5d6089628cbf787c7e27d
 ./.git/objects/75/3fd5137f16b13919fa362e9d872f6d98358a7e
-./.git/objects/7b/d50da2d5838f1d4d6c3b9686137ba020f8fea9
+./.git/objects/79/6072937b93fffb8b0755b8aee51c099271b2d0
+./.git/objects/7e/5d668db2826e8c5afbae5c71f040d91ef8ee6f
 ./.git/objects/83/0a56ab54e857276c052784ff906377573f2f16
 ./.git/objects/88/cd0406809eb7a491b11366dce82dffbc1e99ab
 ./.git/objects/89/475bb5c1c9a93fdb1753a76dd30a7f51fb97b8
+./.git/objects/8a/686784b82dcd342260f8a53a1a968c7bd08c0d
 ./.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
 ./.git/objects/8d/19da83643ddc77d239876e42af9435e13bc5a3
 ./.git/objects/8d/b12b4d5922ced5bfcb3e75e8fe0f9929caf7bd
-./.git/objects/96/acbcf7f7e84e6064d47f428c70115412df0768
 ./.git/objects/97/530d453726740e2838ee8daf5650c0047bab5b
 ./.git/objects/9c/4649b59680cb6516916cac7309c76b4e5867a0
 ./.git/objects/a7/a6c36a675b2602be30830c19eda019e072ea32
@@ -69,21 +66,24 @@ Repository files:
 ./.git/objects/b6/9adc760c94de6611129b44ae23280357ed1be2
 ./.git/objects/b7/21dc476798d41c19dbaae425c012728790947a
 ./.git/objects/c1/bc97015c51ddae83cd07244d0f750baf44f931
+./.git/objects/cc/04e8cb6e04f53ed753bca47b8f884eb698ec69
 ./.git/objects/cd/658d54a97e31fbf5b72c54b96bb5c4b50de719
+./.git/objects/cd/a83f6247288ed1bfba0a0b875f6430f9bda905
+./.git/objects/ce/f84c4c61c635287999148f78acd8f0295dd783
+./.git/objects/d1/98f88b5a89c14e1f3967d58a099284df39cbb7
 ./.git/objects/d3/39ea2a8ad2bf7c34b5451dee72473d49699e56
+./.git/objects/d4/ff8dfa50f69bf503a79acae23269a0adb1dbca
 ./.git/objects/d7/5cf70a1a1e7ba73f2443675ee9f76a1b73d70a
 ./.git/objects/d7/737c44a5ec645467b3a60a7dda7cbe50eedd73
 ./.git/objects/d9/4e5dfa2ffa6f223b0be7d21efea01b88897b35
 ./.git/objects/d9/6262090f642dcc54fcdc04c8d5142d0967c6c8
 ./.git/objects/da/32a90b6eaef399e63d235c3f931f1fdd173986
+./.git/objects/da/7f5fe6dea5d03d189fb3ba79f27f6cf8371f78
 ./.git/objects/db/97d5eb27d9ea2354c0d944f6ad65b450fb80c7
-./.git/objects/db/f0405abebc7b030180d0d06153857319edf6b5
 ./.git/objects/dc/0b125f83cebbd087803fd1c943b6836f1d9492
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
 ./.git/objects/f1/0a80458c821484d712ec369af06d6c5914c692
 ./.git/objects/f1/1989af32b4701a50a2164143097b173dedae20
-./.git/objects/f1/7f59e98c96ee3072d490fb8205df9aac1e99f6
-./.git/objects/f9/15f3f03b742bbf557a90a4bfbdf1af21fa466f
 ./.git/objects/fd/a1e28904fe4fc6fc90a2854bfbc0d88e1efbac
 ./.git/objects/fe/1e87ac018b41ea8b4e0da3675a052febc81b32
 ./.git/refs/heads/main
@@ -152,17 +152,17 @@ Running USL standings script:
 [INFO] Parsed 25 team translations.
 [INFO] Fetching official current standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
 [INFO] Official current matchday: 29
-[INFO] Official current snapshot date: 2026-06-29
+[INFO] Official current snapshot date: 2026-07-06
 [INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
-[INFO] Parsed 163 completed regular-season matches.
+[INFO] Parsed 175 completed regular-season matches.
 [INFO] Matchdays available in match feed: 1 to 29
 [INFO] Final reconstructed stats match official current standings.
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/current-standings.json
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/standings-history.csv
-[INFO] History rows: 425
+[INFO] History rows: 450
 [INFO] Eastern Conference: 13 teams
 [INFO] Current Eastern Conference leader: Tampa Bay Rowdies — 31 pts
 [INFO] Western Conference: 12 teams
-[INFO] Current Western Conference leader: Orange County SC — 26 pts
+[INFO] Current Western Conference leader: Orange County SC — 27 pts
 
 Script exit code: 0
