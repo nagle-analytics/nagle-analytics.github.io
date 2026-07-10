@@ -11,6 +11,8 @@
     content="About Nagle Analytics, a data visualization brand focused on interactive charts, maps, sports analytics, public data stories, and visual experiments."
   />
 
+  <link rel="stylesheet" href="assets/css/site.css" />
+
   <style>
     :root {
       --bg: #071018;
@@ -103,37 +105,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 28% 24%, rgba(255,255,255,0.32), transparent 32%),
-        linear-gradient(135deg, rgba(82, 242, 194, 0.92), rgba(124, 92, 255, 0.96));
-      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
-      flex: 0 0 auto;
-    }
-
-    .brand-mark img {
-      width: 32px;
-      height: 32px;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.35));
     }
 
     .nav-links {
@@ -521,23 +492,28 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
 
   <div class="page">
     <header class="nav">
       <div class="nav-inner">
-        <a class="brand" href="index.html" aria-label="Nagle Analytics homepage">
+        <a class="brand" href="index.html" aria-label="Nagle Analytics home">
           <span class="brand-mark" aria-hidden="true">
-            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" />
+            <img
+              src="assets/brand/nagle-analytics-mark-transparent.png"
+              alt=""
+              loading="eager"
+            />
           </span>
           <span>Nagle Analytics</span>
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="featured.html">Featured</a>
           <a href="viz-gallery.html">Gallery</a>
+          <a href="usl-cup-tracker.html">USL Championship</a>
+          <a href="maps.html">Maps</a>
           <a href="about.html" aria-current="page">About</a>
           <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
         </nav>
