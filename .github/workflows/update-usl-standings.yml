@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
 
   schedule:
-    # Runs every Monday at 8:00 AM UTC.
-    - cron: "0 8 * * 1"
+    # Runs Wednesday through Sunday at 10:00 p.m. Pacific time.
+    - cron: "0 22 * * 0,3-6"
+      timezone: "America/Los_Angeles"
 
 permissions:
   contents: write

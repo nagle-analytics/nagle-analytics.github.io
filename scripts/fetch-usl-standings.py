@@ -380,6 +380,34 @@ def parse_matches(matches_payload: dict) -> List[MatchResult]:
     return matches
 
 
+def get_latest_contiguous_matchday(matches: List[MatchResult]) -> int:
+    """Return the end of the gap-free completed-match sequence beginning at MD 1."""
+    available = sorted({match.matchday for match in matches if match.matchday > 0})
+
+    if not available or available[0] != 1:
+        raise RuntimeError(
+            "Completed-match feed does not contain a valid sequence beginning at Matchday 1."
+        )
+
+    latest = 0
+
+    for matchday in available:
+        if matchday == latest + 1:
+            latest = matchday
+        elif matchday > latest + 1:
+            break
+
+    ignored = [matchday for matchday in available if matchday > latest]
+
+    if ignored:
+        print(
+            "[WARN] Ignoring noncontiguous completed-match Matchday values after "
+            f"Matchday {latest}: {ignored}."
+        )
+
+    return latest
+
+
 def empty_team_stats() -> dict:
     return {
         "played": 0,
@@ -705,6 +733,139 @@ def validate_reconstructed_final_against_current(
         print(f"[WARN] Reconstructed final validation found {mismatch_count} mismatch(es).")
 
 
+def validate_generated_history(
+    history_rows: List[dict],
+    current_standings: Dict[str, List[StandingRow]],
+    chart_matchday: int,
+) -> None:
+    """Fail before writing if chart history is incomplete or internally inconsistent."""
+    if not history_rows:
+        raise RuntimeError("Generated standings history is empty.")
+
+    actual_matchdays = sorted({to_int(row.get("matchday")) for row in history_rows})
+    expected_matchdays = list(range(1, chart_matchday + 1))
+
+    if actual_matchdays != expected_matchdays:
+        missing = sorted(set(expected_matchdays) - set(actual_matchdays))
+        unexpected = sorted(set(actual_matchdays) - set(expected_matchdays))
+        raise RuntimeError(
+            "Generated standings history has a non-sequential matchday series. "
+            f"Expected 1 through {chart_matchday}; missing={missing}, unexpected={unexpected}."
+        )
+
+    seen = set()
+    duplicates = []
+
+    for row in history_rows:
+        key = (
+            to_int(row.get("matchday")),
+            row.get("conference", ""),
+            row.get("team", ""),
+        )
+
+        if key in seen:
+            duplicates.append(key)
+        seen.add(key)
+
+    if duplicates:
+        sample = ", ".join(str(key) for key in duplicates[:5])
+        raise RuntimeError(
+            "Generated standings history contains duplicate "
+            f"matchday/conference/team rows: {sample}"
+        )
+
+    rows_by_matchday_conference: Dict[tuple[int, str], List[dict]] = {}
+
+    for row in history_rows:
+        matchday = to_int(row.get("matchday"))
+        conference = row.get("conference", "")
+        rank = row.get("rank")
+        conference_count = EXPECTED_CONFERENCES.get(conference)
+
+        if conference_count is None:
+            raise RuntimeError(
+                f"Generated history contains an unknown conference: {conference!r}."
+            )
+
+        if not isinstance(rank, int) or isinstance(rank, bool):
+            raise RuntimeError(
+                f"Invalid rank for Matchday {matchday} / {conference} / "
+                f"{row.get('team', '')}: expected an integer, got {rank!r}."
+            )
+
+        if rank < 1 or rank > conference_count:
+            raise RuntimeError(
+                f"Out-of-range rank for Matchday {matchday} / {conference} / "
+                f"{row.get('team', '')}: {rank}; expected 1 through {conference_count}."
+            )
+
+        rows_by_matchday_conference.setdefault(
+            (matchday, conference), []
+        ).append(row)
+
+    for (matchday, conference), rows in rows_by_matchday_conference.items():
+        conference_count = EXPECTED_CONFERENCES[conference]
+        actual_ranks = sorted(row["rank"] for row in rows)
+        expected_ranks = list(range(1, conference_count + 1))
+
+        if actual_ranks != expected_ranks:
+            raise RuntimeError(
+                f"Incomplete or duplicate rank sequence for Matchday {matchday} / "
+                f"{conference}: expected {expected_ranks}, got {actual_ranks}."
+            )
+
+    final_rows = [
+        row for row in history_rows
+        if to_int(row.get("matchday")) == chart_matchday
+    ]
+    current_rows = [
+        (conference, row)
+        for conference, rows in current_standings.items()
+        for row in rows
+    ]
+
+    if len(final_rows) != len(current_rows):
+        raise RuntimeError(
+            f"Final matchday {chart_matchday} contains {len(final_rows)} rows; "
+            f"expected one row for each of {len(current_rows)} current teams."
+        )
+
+    final_lookup = {
+        (row["conference"], row["team"]): row
+        for row in final_rows
+    }
+    comparison_fields = [
+        "rank", "abbr", "played", "wins", "losses", "ties",
+        "goals_for", "goals_against", "goal_difference", "points",
+    ]
+
+    for conference, current in current_rows:
+        generated = final_lookup.get((conference, current.team))
+
+        if generated is None:
+            raise RuntimeError(
+                f"Final matchday {chart_matchday} is missing {conference} / {current.team}."
+            )
+
+        for field in comparison_fields:
+            expected = getattr(current, field)
+            actual = generated.get(field)
+
+            if field != "abbr":
+                actual = to_int(actual)
+
+            if actual != expected:
+                raise RuntimeError(
+                    f"Final official row mismatch for {current.team}: "
+                    f"{field} expected {expected}, got {actual}."
+                )
+
+    print(
+        f"[INFO] Validated sequential matchdays 1 through {chart_matchday}, "
+        "unique team rows, and the complete official final snapshot."
+    )
+
+
 def main() -> int:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -737,11 +898,11 @@ def main() -> int:
 
     validate_counts(current_standings)
 
-    current_matchday, official_snapshot_date = get_current_matchday_and_snapshot_date(
+    standings_feed_matchday, official_snapshot_date = get_current_matchday_and_snapshot_date(
         standings_payload
     )
 
-    print(f"[INFO] Official current matchday: {current_matchday}")
+    print(f"[INFO] Standings-feed Matchday (diagnostic): {standings_feed_matchday}")
     print(f"[INFO] Official current snapshot date: {official_snapshot_date}")
 
     print(f"[INFO] Fetching completed match results feed: {OPTA_MATCHES_URL}")
@@ -760,17 +921,31 @@ def main() -> int:
     if matches:
         print(f"[INFO] Matchdays available in match feed: 1 to {max(match.matchday for match in matches)}")
 
+    if not matches:
+        raise RuntimeError("No completed regular-season matches were available.")
+
+    chart_matchday = get_latest_contiguous_matchday(matches)
+
+    if standings_feed_matchday != chart_matchday:
+        print(
+            "[WARN] Standings-feed Matchday differs from completed-match Matchday: "
+            f"f3={standings_feed_matchday}, completed matches={chart_matchday}. "
+            "Using the completed-match Matchday for chart history."
+        )
+
+    print(f"[INFO] Chart current matchday: {chart_matchday}")
+
     history_rows = reconstruct_history_rows(
         matches=matches,
         conference_by_team_id=conference_by_team_id,
         team_lookup=team_lookup,
-        last_reconstructed_matchday=current_matchday - 1,
+        last_reconstructed_matchday=chart_matchday - 1,
     )
 
     history_rows.extend(
         official_current_rows_as_history(
             current_standings=current_standings,
-            current_matchday=current_matchday,
+            current_matchday=chart_matchday,
             snapshot_date=official_snapshot_date,
         )
     )
@@ -786,6 +961,12 @@ def main() -> int:
     validate_reconstructed_final_against_current(
         history_rows=history_rows,
         current_standings=current_standings,
+    )
+
+    validate_generated_history(
+        history_rows=history_rows,
+        current_standings=current_standings,
+        chart_matchday=chart_matchday,
     )
 
     write_current_json(

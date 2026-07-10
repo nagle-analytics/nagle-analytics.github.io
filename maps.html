@@ -11,6 +11,8 @@
     content="Maps and spatial visualization projects from Nagle Analytics, including planned interactive maps, layers, detections, stations, and spatial data stories."
   />
 
+  <link rel="stylesheet" href="assets/css/site.css" />
+
   <style>
     :root {
       --bg: #071018;
@@ -84,34 +86,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 13px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 0 30px rgba(82, 242, 194, 0.20);
-      flex: 0 0 auto;
-    }
-
-    .brand-mark img {
-      width: 122%;
-      height: 122%;
-      object-fit: contain;
-      display: block;
     }
 
     .nav-links {
@@ -579,23 +553,27 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
 
   <div class="page">
     <header class="nav">
       <div class="nav-inner">
-        <a class="brand" href="index.html">
+        <a class="brand" href="index.html" aria-label="Nagle Analytics home">
           <span class="brand-mark" aria-hidden="true">
-            <img src="assets/brand/nagle-analytics-mark-transparent.png" alt="" />
+            <img
+              src="assets/brand/nagle-analytics-mark-transparent.png"
+              alt=""
+              loading="eager"
+            />
           </span>
           <span>Nagle Analytics</span>
         </a>
 
         <nav class="nav-links" aria-label="Main navigation">
           <a href="index.html">Home</a>
-          <a href="featured.html">Featured</a>
           <a href="viz-gallery.html">Gallery</a>
-          <a href="articles.html">Articles</a>
+          <a href="usl-cup-tracker.html">USL Championship</a>
           <a href="maps.html" aria-current="page">Maps</a>
           <a href="about.html">About</a>
           <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
@@ -603,7 +581,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero">
         <span class="eyebrow">
           <span class="pulse" aria-hidden="true"></span>

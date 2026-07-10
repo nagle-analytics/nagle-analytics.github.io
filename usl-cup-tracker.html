@@ -4,6 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>USL Championship | Nagle Analytics</title>
+  <meta name="description" content="Explore USL Championship team trajectories by games played with interactive metric and conference controls." />
+
+  <link rel="stylesheet" href="assets/css/site.css" />
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
@@ -79,24 +82,6 @@
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 30px rgba(82, 242, 194, 0.25);
-      flex: 0 0 auto;
     }
 
     .nav-links {
@@ -424,26 +409,34 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <canvas class="dynamic-bg" id="dynamic-bg" aria-hidden="true"></canvas>
 
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true"></span>
+      <a class="brand" href="index.html" aria-label="Nagle Analytics home">
+        <span class="brand-mark" aria-hidden="true">
+          <img
+            src="assets/brand/nagle-analytics-mark-transparent.png"
+            alt=""
+            loading="eager"
+          />
+        </span>
         <span>Nagle Analytics</span>
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="featured.html">Featured</a>
         <a href="viz-gallery.html">Gallery</a>
+        <a href="usl-cup-tracker.html" aria-current="page">USL Championship</a>
+        <a href="maps.html">Maps</a>
         <a href="about.html">About</a>
         <a href="https://github.com/nagle-analytics" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
   </header>
-  
-  <main class="page">
+
+  <main class="page" id="main-content">
 
   <a class="top-link" href="viz-gallery.html">← Back to gallery</a>
 
@@ -452,13 +445,13 @@
         <div>
           <h1>USL Championship</h1>
           <p class="subtitle">
-            Matchday-by-matchday movement across the Eastern and Western Conference tables.
+            Team movement across the Eastern and Western Conference tables by games played.
           </p>
         </div>
-        <div id="statusPill" class="status-pill">Loading…</div>
+        <div id="statusPill" class="status-pill" role="status" aria-live="polite">Loading…</div>
       </div>
 
-      <p class="hint">Hover over each line or crest to highlight a club. Replay from the season start 👇</p>
+      <p class="hint" id="chart-instructions">The chart shows each club's selected metric by games played. Use the controls to change the view, replay the season, or hover over and focus a crest to highlight a club.</p>
 
       <div class="controls">
         <button id="replayBtn" class="btn primary">Replay</button>
@@ -472,21 +465,16 @@
         <div id="conferenceControls" class="controls"></div>
       </div>
 
-      <div class="controls">
-        <span class="control-label">X-axis</span>
-        <div id="xAxisControls" class="controls"></div>
-      </div>
-
-      
-
       <div class="chart-wrap">
-        <svg id="chart" viewBox="0 0 1420 780" preserveAspectRatio="xMidYMid meet"></svg>
+        <svg id="chart" viewBox="0 0 1420 780" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="chart-title chart-description">
+          <title id="chart-title">USL Championship team trajectories</title>
+          <desc id="chart-description">An interactive line chart comparing USL Championship clubs by games played using the selected metric and conference. Crest endpoints can be focused to highlight teams.</desc>
+        </svg>
       </div>
 
-      <div class="footnote">
-        Source: official USL Championship standings and Opta match feeds prepared into
-        <code>data/usl/standings-history.csv</code>. Latest table is taken from
-        <code>data/usl/current-standings.json</code>.
+      <div class="footnote" id="dataFreshness">
+        Data through <span id="snapshotDate">latest available snapshot</span> • Source:
+        <a href="https://www.uslchampionship.com/league-standings" target="_blank" rel="noopener">USL Championship</a>
       </div>
     </section>
   </main>
@@ -504,18 +492,21 @@
     };
 
     const conferenceOptions = ["All", "Eastern Conference", "Western Conference"];
-  
-    const xAxisOptions = {
-      played: { label: "Matches Played", field: "played", prefix: "GP", xLabel: "Matches played" },
-      matchday: { label: "Matchday", field: "matchday", prefix: "MD", xLabel: "Matchday" }
+    const conferenceTeamCounts = {
+      "Eastern Conference": 13,
+      "Western Conference": 12
     };
+    const PRIORITY_CREST_ABBR = "SAC";
+
+    const xConfig = { field: "played", prefix: "GP", xLabel: "Games played" };
 
     const state = {
       metricKey: "points",
       conference: "Western Conference",
-      xAxisKey: "played",
-      frameIndex: 0,
       timer: null,
+      isReplaying: false,
+      replayRunId: 0,
+      currentFrame: 0,
       highlightedKey: null
     };
 
@@ -550,8 +541,14 @@
     
     const endpointsG = root.append("g");
 
+    function raisePriorityCrest() {
+      endpointsG
+        .selectAll(".crest-group")
+        .filter(d => d.abbr === PRIORITY_CREST_ABBR)
+        .raise();
+    }
+
     let rawData = [];
-    let allMatchdays = [];
     let teamMetaByName = new Map();
     let colorScale;
 
@@ -595,45 +592,34 @@ function openTeamPage(teamName) {
     function buildControls() {
       const metricWrap = d3.select("#metricControls");
       const conferenceWrap = d3.select("#conferenceControls");
-      const xAxisWrap = d3.select("#xAxisControls");
 
       Object.entries(metrics).forEach(([key, config]) => {
         metricWrap.append("button")
           .attr("class", "toggle")
+          .attr("aria-pressed", key === state.metricKey)
           .classed("active", key === state.metricKey)
           .text(config.label)
           .on("click", () => {
+            const restartReplay = state.isReplaying;
             stopReplay();
             state.metricKey = key;
             updateControls();
-            render(true);
+            restartReplay ? playReplay() : render(false, getLatestFrame());
           });
       });
 
       conferenceOptions.forEach(conf => {
         conferenceWrap.append("button")
           .attr("class", "toggle")
+          .attr("aria-pressed", conf === state.conference)
           .classed("active", conf === state.conference)
-          .text(conf === "All" ? "Both" : conf.replace(" Conference", ""))
+          .text(conf === "All" ? "All teams" : conf.replace(" Conference", ""))
           .on("click", () => {
+            const restartReplay = state.isReplaying;
             stopReplay();
             state.conference = conf;
             updateControls();
-            render(true);
-          });
-      });
-
-      Object.entries(xAxisOptions).forEach(([key, config]) => {
-        xAxisWrap.append("button")
-          .attr("class", "toggle")
-          .classed("active", key === state.xAxisKey)
-          .text(config.label)
-          .on("click", () => {
-            stopReplay();
-            state.xAxisKey = key;
-            state.frameIndex = 0;
-            updateControls();
-            render(true);
+            restartReplay ? playReplay() : render(false, getLatestFrame());
           });
       });
 
@@ -642,13 +628,12 @@ function openTeamPage(teamName) {
 
     function updateControls() {
       d3.select("#metricControls").selectAll(".toggle")
-        .classed("active", (_, i) => Object.keys(metrics)[i] === state.metricKey);
+        .classed("active", (_, i) => Object.keys(metrics)[i] === state.metricKey)
+        .attr("aria-pressed", (_, i) => Object.keys(metrics)[i] === state.metricKey);
 
       d3.select("#conferenceControls").selectAll(".toggle")
-        .classed("active", (_, i) => conferenceOptions[i] === state.conference);
-
-      d3.select("#xAxisControls").selectAll(".toggle")
-        .classed("active", (_, i) => Object.keys(xAxisOptions)[i] === state.xAxisKey);
+        .classed("active", (_, i) => conferenceOptions[i] === state.conference)
+        .attr("aria-pressed", (_, i) => conferenceOptions[i] === state.conference);
     }
 
     function filteredData() {
@@ -658,17 +643,22 @@ function openTeamPage(teamName) {
     
     function getFrames() {
       const data = filteredData();
-      const xField = xAxisOptions[state.xAxisKey].field;
+      const maxPlayed = d3.max(data, d => d.played) || 0;
+      return d3.range(0, Math.floor(maxPlayed) + 1);
+    }
 
-    return Array.from(new Set(data.map(d => d[xField])))
-      .filter(value => Number.isFinite(value) && value > 0)
-      .sort((a, b) => a - b);
+    function getLatestFrame() {
+      const frames = getFrames();
+      return frames.length ? frames[frames.length - 1] : 0;
     }
 
     function collapseSeriesForPlayedAxis(values) {
       const byPlayed = d3.rollups(
         values,
-        rows => rows[rows.length - 1],
+        rows => rows
+          .slice()
+          .reverse()
+          .find(row => hasValidRank(row)) || rows[rows.length - 1],
         d => d.played
     );
 
@@ -679,13 +669,8 @@ function openTeamPage(teamName) {
 
     function getSeriesValuesForAxis(values) {
       const sorted = values.slice().sort((a, b) => d3.ascending(a.matchday, b.matchday));
-
-    if (state.xAxisKey === "played") {
       return collapseSeriesForPlayedAxis(sorted);
     }
-
-    return sorted;
-  }
 
     function seriesFromData(data) {
       return d3.groups(data, d => d.key).map(([key, values]) => {
@@ -703,9 +688,17 @@ function openTeamPage(teamName) {
 
     function numericInterpolationKeys() {
       return [
-        "matchday", "rank", "played", "wins", "losses", "ties",
+        "matchday", "played", "wins", "losses", "ties",
         "goals_for", "goals_against", "goal_difference", "points"
       ];
+    }
+
+    function hasValidRank(row) {
+      const maxRank = conferenceTeamCounts[row?.conference];
+      return Number.isInteger(row?.rank)
+        && row.rank >= 1
+        && Number.isInteger(maxRank)
+        && row.rank <= maxRank;
     }
 
     function originRow(values) {
@@ -729,7 +722,7 @@ function openTeamPage(teamName) {
     }
 
     function interpolateRow(previous, next, frameValue) {
-      const xField = xAxisOptions[state.xAxisKey].field;
+      const xField = xConfig.field;
       const x0 = previous[xField];
       const x1 = next[xField];
       const progress = x1 === x0 ? 1 : Math.max(0, Math.min(1, (frameValue - x0) / (x1 - x0)));
@@ -744,12 +737,13 @@ function openTeamPage(teamName) {
         }
       });
 
+      row.rank = hasValidRank(previous) ? previous.rank : null;
       row[xField] = frameValue;
       return row;
     }
 
     function visibleValues(values, frameValue) {
-      const xField = xAxisOptions[state.xAxisKey].field;
+      const xField = xConfig.field;
       const sorted = values
         .filter(d => Number.isFinite(d[xField]))
         .sort((a, b) => d3.ascending(a[xField], b[xField]));
@@ -803,17 +797,20 @@ function openTeamPage(teamName) {
     }
 
     function showTooltip(event, d) {
-      const metric = metrics[state.metricKey];
+      if (!d || d.played < 1 || !hasValidRank(d)) {
+        hideTooltip();
+        return;
+      }
 
       tooltip
         .attr("hidden", null)
         .html(`
           <div class="tooltip-title">${d.team}</div>
-          <div class="tooltip-muted">${d.conference} • Matchday ${Math.round(d.matchday)} • ${d.snapshot_date}</div>
+          <div class="tooltip-muted">${d.conference} • GP ${Math.round(d.played)} • ${d.snapshot_date}</div>
           <div style="margin-top:8px;">
-            <strong>${metric.label}:</strong> ${formatMetricValue(d[metric.field])}<br>
             <strong>Rank:</strong> ${Number.isFinite(d.rank) ? Math.round(d.rank) : "—"}<br>
             <strong>Points:</strong> ${formatMetricValue(d.points)}<br>
+            <strong>Games played:</strong> ${formatMetricValue(d.played)}<br>
             <strong>Record:</strong> ${formatMetricValue(d.wins)}-${formatMetricValue(d.losses)}-${formatMetricValue(d.ties)}<br>
             <strong>Goals:</strong> ${formatMetricValue(d.goals_for)} for, ${formatMetricValue(d.goals_against)} against<br>
             <strong>Goal diff:</strong> ${formatMetricValue(d.goal_difference)}
@@ -861,6 +858,8 @@ function openTeamPage(teamName) {
 
       endpointsG.selectAll(".team-label")
         .style("opacity", d => !active || d.key === active ? 1 : 0.10);
+
+      raisePriorityCrest();
     }
 
     function render(animate = false, frameValueOverride = null) {
@@ -868,7 +867,7 @@ function openTeamPage(teamName) {
       const metric = metrics[state.metricKey];
       const field = metric.field;
 
-      if (!data.length || !allMatchdays.length) {
+      if (!data.length) {
         statusPill.text("No data");
         return;
       }
@@ -880,19 +879,13 @@ function openTeamPage(teamName) {
         return;
       }
 
-      if (state.frameIndex >= frames.length) {
-        state.frameIndex = frames.length - 1;
-      }
-
-      const xConfig = xAxisOptions[state.xAxisKey];
       const xField = xConfig.field;
       const maxFrame = d3.max(frames);
       const currentFrame = frameValueOverride == null
-        ? (frames[state.frameIndex] ?? frames[frames.length - 1])
+        ? getLatestFrame()
         : Math.max(0, Math.min(maxFrame, frameValueOverride));
-      const displayFrame = Math.max(frames[0], Math.min(maxFrame, Math.round(currentFrame)));
-
-      state.frameIndex = Math.max(0, d3.bisectRight(frames, currentFrame) - 1);
+      const displayFrame = Math.max(0, Math.min(maxFrame, Math.round(currentFrame)));
+      state.currentFrame = currentFrame;
 
       const series = seriesFromData(data);
 
@@ -901,7 +894,7 @@ function openTeamPage(teamName) {
           const point = lastVisible(s.values, currentFrame);
           return point ? { ...point, key: s.key, values: s.values } : null;
         })
-        .filter(Boolean);
+        .filter(d => d && d.played >= 1 && hasValidRank(d));
 
       const x = d3.scaleLinear()
         .domain([0, maxFrame])
@@ -914,7 +907,7 @@ function openTeamPage(teamName) {
 
       const t = animate ? svg.transition().duration(550).ease(d3.easeCubicOut) : svg.transition().duration(0);
 
-      const xTicks = [0, ...frames];
+      const xTicks = frames;
 
       xAxisG.transition(t)
         .call(
@@ -970,7 +963,7 @@ function openTeamPage(teamName) {
       const currentDate = currentRows.length
         ? d3.max(currentRows, d => d.snapshot_date)
         : "";
-      statusPill.text(`${metric.title} • ${xConfig.label} ${displayFrame}${currentDate ? ` • ${currentDate}` : ""}`);
+      statusPill.text(`${metric.title} • GP ${displayFrame}${currentDate ? ` • ${currentDate}` : ""}`);
 
       const line = d3.line()
         .x(d => x(d[xField]))
@@ -1017,6 +1010,9 @@ function openTeamPage(teamName) {
       const enterGroups = endpointGroups.enter()
         .append("g")
         .attr("class", "crest-group")
+        .attr("tabindex", 0)
+        .attr("role", "link")
+        .attr("aria-label", d => `${d.team}: open team page`)
         .style("cursor", "pointer")
         .on("click", function(event, d) {
           openTeamPage(d.team);
@@ -1024,7 +1020,17 @@ function openTeamPage(teamName) {
         .on("mousemove", function(event, d) {
           setHighlight(d.key, d, event);
           })
-        .on("mouseleave", clearHighlight);
+        .on("mouseleave", clearHighlight)
+        .on("focus", function(event, d) {
+          setHighlight(d.key, d);
+        })
+        .on("blur", clearHighlight)
+        .on("keydown", function(event, d) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openTeamPage(d.team);
+          }
+        });
 
       enterGroups.append("circle")
         .attr("class", "crest-hitbox")
@@ -1070,9 +1076,11 @@ function openTeamPage(teamName) {
         .text(d => d.abbr);
 
       mergedGroups.transition(t)
-        .attr("transform", d => `translate(${x(d[xField])},${y(d[field])})`);
+        .attr("transform", d => `translate(${x(d[xField])},${y(d[field])})`)
+        .on("end", raisePriorityCrest);
 
       updateHighlight();
+      raisePriorityCrest();
     }
 
     function safeId(value) {
@@ -1080,15 +1088,14 @@ function openTeamPage(teamName) {
     }
 
     function stopReplay() {
-      if (state.timer) {
-        if (typeof state.timer.stop === "function") {
-          state.timer.stop();
-        } else {
-          clearInterval(state.timer);
-        }
+      state.replayRunId += 1;
 
+      if (state.timer) {
+        state.timer.stop();
         state.timer = null;
       }
+
+      state.isReplaying = false;
     }
 
     function playReplay() {
@@ -1101,11 +1108,17 @@ function openTeamPage(teamName) {
       const endFrame = frames[frames.length - 1];
       const durationPerFrame = 820;
       const totalDuration = Math.max((endFrame - startFrame) * durationPerFrame, durationPerFrame);
+      const runId = ++state.replayRunId;
 
-      state.frameIndex = 0;
+      state.isReplaying = true;
       render(false, startFrame);
 
-      state.timer = d3.timer(elapsed => {
+      const timer = d3.timer(elapsed => {
+        if (runId !== state.replayRunId) {
+          timer.stop();
+          return;
+        }
+
         const progress = Math.min(1, elapsed / totalDuration);
         const eased = d3.easeCubicInOut(progress);
         const currentFrame = startFrame + (endFrame - startFrame) * eased;
@@ -1113,15 +1126,37 @@ function openTeamPage(teamName) {
         render(false, currentFrame);
 
         if (progress >= 1) {
-          state.frameIndex = frames.length - 1;
           render(false, endFrame);
-          stopReplay();
+          timer.stop();
+
+          if (runId === state.replayRunId) {
+            state.timer = null;
+            state.isReplaying = false;
+            state.currentFrame = endFrame;
+          }
         }
       });
+
+      state.timer = timer;
     }
 
     function buildTeamMetaMap(teamMetaJson) {
       return new Map(Object.entries(teamMetaJson || {}));
+    }
+
+    function formatSnapshotDate(value) {
+      if (!value) return "latest available snapshot";
+
+      const date = new Date(`${value}T00:00:00Z`);
+
+      if (Number.isNaN(date.getTime())) return value;
+
+      return new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC"
+      }).format(date);
     }
 
     function init(csvRows, currentJson, teamMetaJson) {
@@ -1144,8 +1179,6 @@ function openTeamPage(teamName) {
         key: `${d.conference}|${d.team}`
       }));
 
-      allMatchdays = Array.from(new Set(rawData.map(d => d.matchday))).sort((a, b) => a - b);
-
       teamMetaByName = buildTeamMetaMap(teamMetaJson);
 
       const keys = Array.from(new Set(rawData.map(d => d.key)));
@@ -1157,17 +1190,12 @@ function openTeamPage(teamName) {
           return meta?.lineColor || "#334155";
         }));
 
-      state.frameIndex = 0;
-
       buildControls();
 
-      render(false);
+      const snapshotDate = currentJson?.snapshot_date;
+      d3.select("#snapshotDate").text(formatSnapshotDate(snapshotDate));
 
-      window.setTimeout(() => {
-        if (getFrames().length > 1) {
-          playReplay();
-          }
-        }, 700);
+      playReplay();
       }
 
     Promise.all([
