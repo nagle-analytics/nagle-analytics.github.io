@@ -10,7 +10,7 @@ Length: 94945
 Keyword hits: standings, standing, Eastern Conference, Western Conference, competition, table, rank, points, team, club, opta, widgets, view, match, season
 
 Preview:
-<!DOCTYPE html> <html lang="en-us" id="ngin11666"> <head> <!--[if lte IE 9]> <meta http-equiv="refresh" content="0; url=/unsupported_browser" /> <script type="text/javascript"> window.top.location = '/unsupported_browser'; </script> <![endif]--> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="csrf-param" content="authenticity_token" /> <meta name="csrf-token" content="DJD3EqUQ+roc5xw36KRkMy+gNFaipfESLCej7uq+wQ4cLiHJLh4YhJGs81qjy4g7rnbY3ELesw7Pnx1VGRhLgQ==" /> <meta name="trace-id" content="e77e1de8-c9cd-49c3-9592-63586fe8d172" /> <title>Prinx Performance Standings</title> <!-- Custom | application --> <!-- Icons v4 --> <link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" /> <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" /> <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96"> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable.css?17804268681" /> <link rel="stylesheet" media="screen" hre
+<!DOCTYPE html> <html lang="en-us" id="ngin11666"> <head> <!--[if lte IE 9]> <meta http-equiv="refresh" content="0; url=/unsupported_browser" /> <script type="text/javascript"> window.top.location = '/unsupported_browser'; </script> <![endif]--> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="csrf-param" content="authenticity_token" /> <meta name="csrf-token" content="UTl/q7PjiXcJetjF8XwZC6IX1LT/Y3YcRKN+mDyC5FPktPBLAcWDafDcSYjIDc1hAyHmiIGehN32NHIG29aWsA==" /> <meta name="trace-id" content="e77e1de8-c9cd-49c3-9592-63586fe8d172" /> <title>Prinx Performance Standings</title> <!-- Custom | application --> <!-- Icons v4 --> <link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" /> <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" /> <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96"> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable.css?17804268681" /> <link rel="stylesheet" media="screen" hre
 
 ====================================================================================================
 Candidate 2
@@ -36,7 +36,18 @@ Preview:
 
 ====================================================================================================
 Candidate 4
-URL: blob:https://www.uslchampionship.com/0ffda2ea-3486-4553-b0ad-27946a33899a
+URL: https://www.uslchampionship.com/apigateway/v3/utd?platform=ngin&org_id=26775&platformSubSec=cms
+Status: 200
+Content-Type: application/json; charset=utf-8
+Length: 1244
+Keyword hits: season
+
+Preview:
+{"metadata":{"trace_id":"dbe673f7-00e5-413c-85ce-8aea5f64a046"},"result":{"organization":{"id":26775,"name":"United Soccer League - Championship","sports":["soccer"],"billing_account_id":380252,"organization_types":"","org_affiliations":["176170 - League"],"service_level":"Standard","cs_service_level":"V","country":"USA","state":"FL","status":"active","organization_products":["Sitebuilder","League","Registration","API","Platform","PowerPay","Season Management","Memberships","Affiliations","Dibs","3rd Party Integrations","Governing Body"],"parent_org_name":"United Soccer League - Corporate","provider_products":["8a12972d8594917001859ced1247516e","2c92a0fb4df0032e014df796c8c956e7","8a128e2d85ed80e10185ef30ef376b06"],"root_organization_products":["176170 - Governing Body","176170 - Affiliations"],"claimed_at":"2016-12-27T20:32:06Z","financial_settings":{"exists":true,"approved":true,"new_financial_tools":true}},"user":{"id":"","uuid":"","user_name":"","full_name":"","email":"","first_name":"","last_name":"","logged_in":false,"created_at":"","roles":[],"gender":""},"intercom_settings":{"app_id":"","user_hash":"","render_intercom_override":false,"is_admin":false},"elevio_settings":{"app_id":"","user_hash":"","registered_at":""}}}
+
+====================================================================================================
+Candidate 5
+URL: blob:https://www.uslchampionship.com/8f47ae52-d759-4c87-bdaf-c81562d5df74
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -46,19 +57,8 @@ Preview:
 self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
 
 ====================================================================================================
-Candidate 5
-URL: https://www.uslchampionship.com/apigateway/v3/utd?platform=ngin&org_id=26775&platformSubSec=cms
-Status: 200
-Content-Type: application/json; charset=utf-8
-Length: 1244
-Keyword hits: season
-
-Preview:
-{"metadata":{"trace_id":"58688947-b30e-41ff-8164-3762b77097a5"},"result":{"organization":{"id":26775,"name":"United Soccer League - Championship","sports":["soccer"],"billing_account_id":380252,"organization_types":"","org_affiliations":["176170 - League"],"service_level":"Standard","cs_service_level":"V","country":"USA","state":"FL","status":"active","organization_products":["Sitebuilder","League","Registration","API","Platform","PowerPay","Season Management","Memberships","Affiliations","Dibs","3rd Party Integrations","Governing Body"],"parent_org_name":"United Soccer League - Corporate","provider_products":["8a12972d8594917001859ced1247516e","2c92a0fb4df0032e014df796c8c956e7","8a128e2d85ed80e10185ef30ef376b06"],"root_organization_products":["176170 - Governing Body","176170 - Affiliations"],"claimed_at":"2016-12-27T20:32:06Z","financial_settings":{"exists":true,"approved":true,"new_financial_tools":true}},"user":{"id":"","uuid":"","user_name":"","full_name":"","email":"","first_name":"","last_name":"","logged_in":false,"created_at":"","roles":[],"gender":""},"intercom_settings":{"app_id":"","user_hash":"","render_intercom_override":false,"is_admin":false},"elevio_settings":{"app_id":"","user_hash":"","registered_at":""}}}
-
-====================================================================================================
 Candidate 6
-URL: blob:https://www.uslchampionship.com/7eada489-6660-4c13-8de1-d42295e5a821
+URL: blob:https://www.uslchampionship.com/c9ea8d4f-8b82-4443-b3c4-a37d4c46682d
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -69,7 +69,7 @@ self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.len
 
 ====================================================================================================
 Candidate 7
-URL: blob:https://www.uslchampionship.com/29fc40b8-5698-4460-8304-b8dc98b4d87c
+URL: blob:https://www.uslchampionship.com/33e3c297-55b7-4339-8f30-5c62595bc475
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -80,7 +80,7 @@ self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.len
 
 ====================================================================================================
 Candidate 8
-URL: blob:https://www.uslchampionship.com/c3c361fd-3e24-4861-85a0-97e7694fc93b
+URL: blob:https://www.uslchampionship.com/916b8f2c-cd47-4c7d-bab6-e7af845aef8e
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -91,7 +91,7 @@ self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.len
 
 ====================================================================================================
 Candidate 9
-URL: blob:https://www.uslchampionship.com/92fadc53-c5d4-47c6-8fc5-1d5b264718b9
+URL: blob:https://www.uslchampionship.com/45774e82-4834-44f9-b5ab-6a2a4b36fc99
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -102,7 +102,7 @@ self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.len
 
 ====================================================================================================
 Candidate 10
-URL: blob:https://www.uslchampionship.com/7da8d2c7-b723-4656-a324-4193269bf92f
+URL: blob:https://www.uslchampionship.com/77875057-225c-4b77-9e0a-619c4d63afbe
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -113,7 +113,7 @@ self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.len
 
 ====================================================================================================
 Candidate 11
-URL: blob:https://www.uslchampionship.com/0b534a83-15c3-4681-978f-78fdf74df07e
+URL: blob:https://www.uslchampionship.com/eeb07186-d6f0-457c-a40d-1c4152060036
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -124,28 +124,6 @@ self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.len
 
 ====================================================================================================
 Candidate 12
-URL: blob:https://www.uslchampionship.com/2de9248b-0109-4912-8961-f0ecd50b6c31
-Status: 200
-Content-Type: text/javascript
-Length: 390
-Keyword hits: match
-
-Preview:
-self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
-
-====================================================================================================
-Candidate 13
-URL: blob:https://www.uslchampionship.com/e0f7d76c-5263-4f06-b4d0-59599d21f0db
-Status: 200
-Content-Type: text/javascript
-Length: 390
-Keyword hits: match
-
-Preview:
-self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
-
-====================================================================================================
-Candidate 14
 URL: https://secure.widget.cloud.opta.net/subscriptions/v3_e05a8eb04d7caeed19dcf275aad5aa83.json
 Status: 200
 Content-Type: application/javascript; charset=utf-8
@@ -156,6 +134,28 @@ Preview:
 v3_e05a8eb04d7caeed19dcf275aad5aa83 ({"data":"BmUwNWE4ZWIwNGQ3Y2FlZWQxOWRjZjI3NWFhZDVhYTgzAHpoY3c4NDF5dGptNDFlN2k3bHR1MmYydnIAAAAAAAAwAACic2VjdXJlLndpZGdldC5jbG91ZC5vcHRhLm5ldAAqLmFjYm9pc2UuY29tACouYXVzdGluYm9sZGZjLmNvbQAqLmF2YWx0YWZjLmNvbQAqLmJhdHRlcnktbWF0Y2gtY2VudGVyLWRldi5zdHJlYW0ubGl2ZQAqLmJhdHRlcnl0di5zb21vdHNvZnQuY29tACouYmV0aGxlaGVtc3RlZWxmYy5jb20AKi5iaG1sZWdpb24uY29tACouY2hhcmxlc3RvbmJhdHRlcnkuY29tACouY2hhcmxvdHRlaW5kZXBlbmRlbmNlLmNvbQAqLmNoYXR0YW5vb2dhcmVkd29sdmVzLXNjLmNvbQAqLmNoYXR0cmVkd29sdmVzLmNvbQAqLmNvcnAudXNsc29jY2VyLmNvbQAqLmRldGNpdHlmYy5jb20AKi5kZXRjaXR5ZmMuY29tL3NjaGVkdWxlcy8yMDI0LXVzbGMtc2NoZWR1bGUvACouZW5lcmd5ZmMuY29tACouZXBsb2NvbW90aXZlZmMuY29tACouZmNjaW5jaW5uYXRpLmNvbQAqLmZjbmFwbGVzLmNvbQAqLmZjdHVjc29uLmNvbQAqLmZjdHVsc2EuY29tACouZm9yd2FyZG1hZGlzb25mYy5jb20AKi5mcmVzbm9mYy5jb20AKi5mdWVnb2ZjLmNvbQAqLmdhaW5icmlkZ2VzdXBlcmxlYWd1ZS5jb20AKi5ncmVlbnZpbGxldHJpdW1waC5jb20AKi5oYWlsc3Rvcm1mYy5jb20AKi5oYXJ0Zm9yZGF0aGxldGljLmNvbQAqLmhlYXJ0c29mcGluZS5jb20AKi5odHRwczovL3VzbC1jaGFtcGlvbnNoaXAtZXhwYW5zaW9uLXh5ei5zcG9ydHNlbmdpbmUtcHJlbGl2ZS5jb20vACouaW5keWVsZXZlbi5jb20AKi5qb2hud2VpbmVydGguc3BvcnRuZ2luLmNvbQAqLmttYm5xLnh5egAqLmxhbnNpbmdpZ25pdGUuY29tACoubGFzdmVnYXNsaWdodHNmYy5jb20AKi5sZXhzcG9ydGluZy5jb20AKi5sb3VjaXR5LmNvbQAqLmxvdWRvdW51bml0ZWRmYy5jb20AKi5sb3Vpc3ZpbGxlY2l0eWZjLmNvbQAqLm1lbXBoaXM5MDFmYy5jb20AKi5taWFtaWZjLmNvbQAqLm1vbnRlcmV5YmF5ZmMuY29tACoubmFzaHZpbGxlc2MuY29tACoubmV3bWV4aWNvdXRkLmNvbQAqLm5vcnRoY2Fyb2xpbmFmYy5jb20AKi5vYWtsYW5kcm9vdHNzYy5jb20AKi5vbmVrbm94c2MuY29tACoub3JhbmdlY291bnR5c29jY2VyLmNvbQAqLm9yYW5nZWNvdW50eXNvY2Nlci5jb20vACoub3R0YXdhZnVyeWZjLmNvbQAqLnBlbm5mYy5jb20AKi5waHhyaXNpbmdmYy5jb20AKi5xdWVlbnNib3JvZmMuY29tACoucmVubzE4NjhmYy5jb20AKi5yZ3ZmYy5jb20AKi5yaGlub3Nzb2NjZXIuY29tACoucmhvZGVpc2xhbmRmYy5jb20AKi5yaG9kZWlzbGFuZGZjLmNvbS8AKi5yaG9kZWlzbGFuZGZjLmNvbS90ZXN0LwAqLnJpY2htb25ka2lja2Vycy5jb20AKi5yaXZlcmhvdW5kcy5jb20AKi5yb3VnaG5lY2tzZmMuY29tACoucm93ZGllc3NvY2Nlci5jb20AKi5zYWNyZXB1YmxpY2ZjLmNvbQAqLnNhaW50bG91aXNmYy5jb20AKi5zYW5hbnRvbmlvZmMuY29tACouc2Rsb3lhbC5jb20AKi5zcG9rYW5ldmVsb2NpdHlmYy5jb20AKi5zcG9rYW5ldmVsb2NpdHlmYy5jb20vACouc3BvcnRpbmdqYXguY29tACouc3BvcnRuZ2luLmNvbQAqLnNwb3J0c2VuZ2luZS5nby12aXAubmV0ACouc3BvcnRzZW5naW5lLnRlc3QAKi5zd2l0Y2hiYWNrc2ZjLmNvbQAqLnRleG9tYWZjLmNvbQAqLnRpbWJlcnMyLmNvbQAqLnRvcm1lbnRhZmMuY29tACoudW5pb25vbWFoYS5jb20AKi51bmlvbm9tYWhhc2MuY29tACoudXNsYmlybWluZ2hhbS5jb20AKi51c2xiaXJtaW5naGFtLmNvbS5wcm9kLnNwb3J0bmdpbi5jb20AKi51c2xjaGFtcGlvbnNoaXAuY29tACoudXNsY29ycG9yYXRlLnNwb3J0c2VuZ2luZS1wcmVsaXZlLmNvbQAqLnVzbGxlYWd1ZW9uZS5jb20AKi51c2xsZWFndWVvbmUuY29tL3dlc3RjaGVzdGVyLXNjACoudXNsbGVhZ3VldHdvLmNvbQAqLnVzbG5hcGxlcy5jb20AKi51c2xzb2NjZXIuY29tACoudXNsc3VwZXJsZWFndWUuY29tACoudmlwLnNwb3J0c2VuZ2luZS5jb20AKi52aXAud29yZHByZXNzLmNvbQAqLnd3dy5icm9va2x5bmZvb3RiYWxsY2x1Yi5jb20AKi53d3cuY2Fyb2xpbmFhc2NlbnQuY29tACoud3d3LmNvcnB1c2NmYy5jb20AKi53d3cuZGFsbGFzdHJpbml0eWZjLmNvbQAqLnd3dy5kY3Bvd2VyZm9vdGJhbGxjbHViLmNvbQAqLnd3dy5mb3J0d2F5bmVmYy5jb20AKi53d3cuZnRsdXRkLmNvbQAqLnd3dy5ueWNvc21vcy5jb20AKi53d3cub3JhbmdlY291bnR5c29jY2VyLm
 
 ====================================================================================================
+Candidate 13
+URL: blob:https://www.uslchampionship.com/51edc90b-4ab3-4eda-8532-231071b6d23b
+Status: 200
+Content-Type: text/javascript
+Length: 390
+Keyword hits: match
+
+Preview:
+self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
+
+====================================================================================================
+Candidate 14
+URL: https://www.uslchampionship.com/assets
+Status: 200
+Content-Type: text/html; charset=utf-8
+Length: 84071
+Keyword hits: standings, standing, Tampa Bay Rowdies, Louisville City FC, San Antonio FC, table, rank, team, club, opta, widgets, view, match, season
+
+Preview:
+<!DOCTYPE html> <html lang="en-us" id="ngin11666"> <head> <!--[if lte IE 9]> <meta http-equiv="refresh" content="0; url=/unsupported_browser" /> <script type="text/javascript"> window.top.location = '/unsupported_browser'; </script> <![endif]--> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="csrf-param" content="authenticity_token" /> <meta name="csrf-token" content="ptGpUYnC3N5GCukEND+OxNTafo+whpnN9Lk9VT1Cor4TXCaxO+TWwL+seEkNTlqudexMs857awxGLjHL2hbQXQ==" /> <meta name="trace-id" content="960c9fd6-476d-4e32-96be-345e827f1f34" /> <title>Assets</title> <!-- Custom | application --> <!-- Icons v4 --> <link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" /> <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" /> <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96"> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets
+
+====================================================================================================
 Candidate 15
 URL: https://www.uslchampionship.com/team-network
 Status: 200
@@ -164,11 +164,11 @@ Length: 215629
 Keyword hits: standings, standing, Tampa Bay Rowdies, Louisville City FC, San Antonio FC, table, rank, team, club, opta, widgets, view, match, season
 
 Preview:
-<!DOCTYPE html> <html lang="en-us" id="ngin11666"> <head> <!--[if lte IE 9]> <meta http-equiv="refresh" content="0; url=/unsupported_browser" /> <script type="text/javascript"> window.top.location = '/unsupported_browser'; </script> <![endif]--> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="csrf-param" content="authenticity_token" /> <meta name="csrf-token" content="INQn8/5rdeDa44MYsHXVWwfRveBajZWqloiEgrtQE6IwavEodWWX3leobHX7GjlThgdRarr217Z1MDo5SPaZLQ==" /> <meta name="trace-id" content="6cfd764b-e511-4a97-93e7-b508be1d3e56" /> <title>Global Network</title> <!-- Custom | application --> <!-- Icons v4 --> <link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" /> <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" /> <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96"> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://ap
+<!DOCTYPE html> <html lang="en-us" id="ngin11666"> <head> <!--[if lte IE 9]> <meta http-equiv="refresh" content="0; url=/unsupported_browser" /> <script type="text/javascript"> window.top.location = '/unsupported_browser'; </script> <![endif]--> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="csrf-param" content="authenticity_token" /> <meta name="csrf-token" content="tkHBM9/67x7385AItQjddQXaZXE1oz6Zu5SnmXeWIJ4DzE7TbdzlAA5VAUWMeQkfpOxXTUtezFgJA6sHkMJSfQ==" /> <meta name="trace-id" content="6cfd764b-e511-4a97-93e7-b508be1d3e56" /> <title>Global Network</title> <!-- Custom | application --> <!-- Icons v4 --> <link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" /> <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" /> <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96"> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://ap
 
 ====================================================================================================
 Candidate 16
-URL: https://www.uslchampionship.com/javascripts/jwplayer.js?_=1783841249888
+URL: https://www.uslchampionship.com/javascripts/jwplayer.js?_=1783930538432
 Status: 200
 Content-Type: application/javascript
 Length: 72036
@@ -190,28 +190,6 @@ Preview:
 
 ====================================================================================================
 Candidate 18
-URL: https://www.uslchampionship.com/assets
-Status: 200
-Content-Type: text/html; charset=utf-8
-Length: 84071
-Keyword hits: standings, standing, Tampa Bay Rowdies, Louisville City FC, San Antonio FC, table, rank, team, club, opta, widgets, view, match, season
-
-Preview:
-<!DOCTYPE html> <html lang="en-us" id="ngin11666"> <head> <!--[if lte IE 9]> <meta http-equiv="refresh" content="0; url=/unsupported_browser" /> <script type="text/javascript"> window.top.location = '/unsupported_browser'; </script> <![endif]--> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="csrf-param" content="authenticity_token" /> <meta name="csrf-token" content="oLsZ5qlikIjTeq13uebm+jFltejJuYWjPpUJqr/+9jywBc89Imxytl4xQhryiQrysLNZYinCx7/dLbcRTFh8sw==" /> <meta name="trace-id" content="960c9fd6-476d-4e32-96be-345e827f1f34" /> <title>Assets</title> <!-- Custom | application --> <!-- Icons v4 --> <link rel="shortcut icon" href="https://assets.ngin.com/site_files/11666/favicon.ico" /> <link href="https://cdn4.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_120.png" rel="apple-touch-icon" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_152.png" rel="apple-touch-icon" sizes="152x152" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_167.png" rel="apple-touch-icon" sizes="167x167" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_180.png" rel="apple-touch-icon" sizes="180x180" /> <link href="https://cdn2.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_192.png" rel="icon" sizes="192x192" /> <link href="https://cdn3.sportngin.com/attachments/logo_graphic/e12f-114125653/Championship-Abbrev-RGB-Light__1__touch_icon_size_128.png" rel="icon" sizes="128x128" /> <link href="https://cdn1.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_16.png" rel="icon" type="image/png" sizes="16x16"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_32.png" rel="icon" type="image/png" sizes="32x32"> <link href="https://cdn3.sportngin.com/attachments/favicon_graphic/0ab1-114126401/Screen_Shot_2018-11-15_at_4.07.15_PM_size_96.png" rel="icon" type="image/png" sizes="96x96"> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/page_elements.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/11666/custom/sports.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets1.sportngin.com/site_stylesheets_secure/11666/custom/default.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets3.sportngin.com/site_stylesheets_secure/jquery_treeTable.css?17804268681" /> <link rel="stylesheet" media="screen" href="https://app-assets
-
-====================================================================================================
-Candidate 19
-URL: blob:https://www.uslchampionship.com/20a5391a-5dd6-4518-b7c5-0b19b08fc9d1
-Status: 200
-Content-Type: text/javascript
-Length: 390
-Keyword hits: match
-
-Preview:
-self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
-
-====================================================================================================
-Candidate 20
 URL: https://www.uslchampionship.com/top-prospects
 Status: 404
 Content-Type: text/html; charset=utf-8
@@ -222,8 +200,30 @@ Preview:
 <!DOCTYPE> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> <script> window.dataLayer = window.dataLayer || [] window.dataLayer.push({ intercom: { renderIntercom: false } }) </script> <script src="https://app-assets3.sportngin.com/javascripts/se-analytics-js.umd.min.js?17809506621"></script> <script> window.seAnalyticsGateway = /\.(sportngin\.com|ngin-staging\.com|sportngin\.com\.dev)$/.test(window.origin) === false window.addEventListener('message', function(event){ if (event.data === 'utd:ready') { var displayAds = (false || false); var platformDL = {'siteId': '11666', 'siteName': 'USL Championship', 'siteShortName': 'USL Championship', 'sportType': 'soccer', 'addrState': 'FL', 'displayAds': displayAds, 'inEditMode': false, 'propertySubSection': 'general', 'property': 'Ngin'}; var quantcastDL = {'quantcastID': ''}; var elevioAdditionalGroups = ["ngin_super_reg:0", "Ngin:general"]; window.seAnalytics.push({ type: 'dataLayerData', data: { platform: platformDL, quantcast: quantcastDL, elevioAddlGroups: elevioAdditionalGroups, } }) } }) window.seAnalytics = new window['se-analytics-js'].SeFeAnalytics({ platProp: 'ngin', platformSubSec: 'general', currentEnv: 'production', orgId: 26775 }) </script> <script> function inIframe() { try { return window.self !== window.top; } catch (e) { return true; } } </script> <!-- Google Tag Manager for NGIN --> <script> if(!inIframe()) { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TMK6MGB'); } </script> <!-- End Google Tag Manager for NGIN--> <!-- Google Tag Manager for SE Global --> <script> if(!inIframe()) { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KGG8ZWR'); } </script> <!-- End Google Tag Manager for SE Global --> <title>404 Not Found</title> <!-- error --> <style type="text/css"> <!-- body{ font-family: "Lucida Grande", verdana, geneva, helvetica, arial, sans; font-size: 12px; line-height: 140%; margin: 25px; width: 400px; } h1{ font-size: 24px; line-height: 28px; } h2{ font-size: 14px; line-height: 22px; color: #666666; font-weight: normal; text-transform: uppercase; letter-spacing: .15em; border-top: solid 1px #CCCCCC; border-bottom: solid 1px #CCCCCC; margin-bottom: 20px; } --> </style> </head> <body> <script> //<![CDATA[ window.seAnalytics.push(JSON.parse('{"type":"pageView","data":{"depth1":"Sitebuilder","title":"404 - Page Not Found"}}')) //]]> </script> <!-- Needs to be immediately after the openin
 
 ====================================================================================================
+Candidate 19
+URL: blob:https://www.uslchampionship.com/c0c5f471-796a-4ea7-be83-62290c3d8a25
+Status: 200
+Content-Type: text/javascript
+Length: 94
+Keyword hits: 
+
+Preview:
+[Could not read response text: Response.text: Target page, context or browser has been closed]
+
+====================================================================================================
+Candidate 20
+URL: blob:https://www.uslchampionship.com/794769cf-6b0d-42ac-a8b7-2f1c53e703ac
+Status: 200
+Content-Type: text/javascript
+Length: 390
+Keyword hits: match
+
+Preview:
+self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
+
+====================================================================================================
 Candidate 21
-URL: blob:https://www.uslchampionship.com/a40bbaa6-06f4-439e-a20e-c51fb4108459
+URL: blob:https://www.uslchampionship.com/0721f0c4-1454-4482-a6ce-160ee6c12b57
 Status: 200
 Content-Type: text/javascript
 Length: 390
@@ -245,7 +245,18 @@ Preview:
 
 ====================================================================================================
 Candidate 23
-URL: https://sync.ecal.com/v2/ecal.widget.min.js?t=1783841251957
+URL: blob:https://www.uslchampionship.com/a5e5c3f4-de5c-4b64-8b64-746fbdb2751e
+Status: 200
+Content-Type: text/javascript
+Length: 390
+Keyword hits: match
+
+Preview:
+self.onmessage=function(__e){(function(e,t){var o=e.data.classifications,n=o.length;function r(i){var s=e.data.category||"";if(i)for(var c=0;c<n;c++){if(t.loop!==r)return"";var a=o[c][0],l=new RegExp(""+a,"gm");if(String(i).match(l)){var u=o[c][1];s=u&&u.classification||u;break}}return t.postMessage(s||"UNCLASSIFIED"),String(s||"UNCLASSIFIED")}return t.loop=r,r(e.data.value)})(__e,self)}
+
+====================================================================================================
+Candidate 24
+URL: https://sync.ecal.com/v2/ecal.widget.min.js?t=1783930540589
 Status: 200
 Content-Type: application/javascript
 Length: 967
@@ -255,29 +266,7 @@ Preview:
 function ecalWidgetBootstrap(){var a="2.011",t=document.querySelector("script[data-ecal-apikey]"),i=t.getAttribute("data-ecal-apikey"),o=t.getAttribute("src"),d=t.getAttribute("data-ecal-alias"),n=t.getAttribute("data-ecal-script-onload"),c=t.getAttribute("data-ecal-autoboot");function e(){var t=document.createElement("script"),e=(t.onload=function(t){window.EcalWidget.host=o,window[d]=window.EcalWidget,n&&"function"==typeof window[n]&&window[n](window.EcalWidget,{apiKey:i}),c&&window.EcalWidget.boot(i)},o+"/v2/widget.min.js?v="+a);t.setAttribute("src",e),t.setAttribute("type","text/javascript"),document.getElementsByTagName("head")[0].appendChild(t)}c=!c||"false"!==c.toLowerCase(),o=o.split("/v2/ecal.widget")[0],window.EcalWidgetAPIKey=i,(t=document.createElement("link")).onload=function(t){e()},t.setAttribute("rel","stylesheet"),t.setAttribute("href",o+"/v2/widget.min.css"),document.getElementsByTagName("head")[0].appendChild(t)}ecalWidgetBootstrap();
 
 ====================================================================================================
-Candidate 24
-URL: blob:https://www.uslchampionship.com/9fbfc8a1-65ff-4a3d-b21b-0f08f35069c8
-Status: 200
-Content-Type: text/javascript
-Length: 94
-Keyword hits: 
-
-Preview:
-[Could not read response text: Response.text: Target page, context or browser has been closed]
-
-====================================================================================================
 Candidate 25
-URL: https://sync.ecal.com/v2/widget.min.js?v=2.011
-Status: 200
-Content-Type: application/javascript
-Length: 9359
-Keyword hits: widgets, view
-
-Preview:
-function boot(e){window.EcalWidget.apikey=e;var t=window.EcalWidget;t.attachListeners(),t.attachWidget(),t.createMessageActions()}function appMessageListener(e){var t=window.EcalWidget.messageActions[e.data.action];t&&"function"==typeof t&&t(e.data.data)}function construct(){var e,t=window.widgetFuncs;for(e in t)window.EcalWidget[e]=t[e]}window.EcalWidget&&!window.EcalWidget.isFromV1||(window.EcalWidget=function(e,t){this.call=function(e,t){"destroy"!==e&&"boot"===e&&window.EcalWidget.init(t)},this.call(e,t)},window.EcalWidget.widgets=[],window.widgetFuncs={}),window.widgetFuncs.boot=boot,window.widgetFuncs.continueBoot=function(){const e=window.EcalWidget;setTimeout(function(){e.initAppWidget(),e.initButtons(),e.loadButtons()},300)},window.widgetFuncs.renderSyncButton=function(){},window.widgetFuncs.initButtons=function(){var e=window.EcalWidget,n=document.querySelectorAll("[class*='ecal-sync-widget-button'], [class*='ecalApi'], [data-ecal-widget-id]");var n=function(){for(var e=[],t=0;t<n.length;t++){var i=n[t];(!i.className.includes("ecal-sync-widget-button")||i.className.split(" ").includes("ecal-sync-widget-button"))&&e.push(i)}return e}(),t="data-ecal-widget-id";(document.querySelector('script[src*="js/eCal.js"]')||window.eCalapiKey)&&(t="data-id"),window.EcalWidget.buttonElements=n,window.EcalWidget.buttons=[];for(var i=0;i<n.length;i++){var a=n[i].getAttribute(t);e.buttons.push(a)}},window.widgetFuncs.getButton=function(e){return document.querySelector(`[data-ecal-widget-id*='${e}']`)},window.widgetFuncs.loadButtons=function(){var e=window.EcalWidget;e.postMessage({action:"loadButtons",data:{buttons:e.buttons}})},window.widgetFuncs.attachClicks=function(e,l){var g=window.EcalWidget;window.EcalWidget.registerListener(e,function(e){var t={},i={"data-ecal-category":"category","data-ecal-email":"email","data-ecal-calendar-reference":"calendar_reference","data-ecal-calendar-ids":"calendarIds","data-ecal-subscriber-reference":"subscriber_reference","data-ecal-referring-page":"referringPage","data-ecal-state":"state","data-ecal-autosubscribe":"autoSubscribe","data-ecal-skip-schedule-selection":"skip_schedule_selection"},n=e.getAttributeNames();for(let w=0;w<n.length;w++){var a=n[w],d=e.getAttribute(a),o=("data-ecal-skip-schedule-selection"!==a&&"data-ecal-autosubscribe"!==a||(d=g.isAttrTruthy(e,a)),i[a]);o?t[o]=d:t[a]=d}var s=t,c=window.EcalWidgetV1Params;if(c&&c!==undefined)for(var r in c)s[r]=c[r];n.length<=0?g.showWidget(l,null):g.showWidget(l,t)}),e.clickReady=!0},window.widgetFuncs.registerListener=function(e,t){var i=window.EcalWidget,n=(i.listenersRegistry||Array.isArray(i.listenersRegistry)||(i.listenersRegistry=[]),()=>{i.syncDisplayReady&&t(e)});e.clickListener=n,e.addEventListener("click",n),i.listenersRegistry.push({btn:e,listener:n})},window.widgetFuncs.clearListeners=function(){var e=window.EcalWidget;if(Array.isArray(e.listenersRegistry)){for(var t=0;t<e.listenersRegistry.length;t++){var i=e.listenersRegistry[t];i.btn&&i.listener&
-
-====================================================================================================
-Candidate 26
 URL: https://secure.widget.cloud.opta.net/v3/v3.app.opta-widgets.js
 Status: 200
 Content-Type: application/javascript; charset=utf-8
@@ -286,6 +275,17 @@ Keyword hits: competition, table, points, team, opta, widgets, view, match, seas
 
 Preview:
 /** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ (window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["v3.app.opta-widgets"],{"./node_modules/tablesorter/dist/js/jquery.tablesorter.js"(t){t.exports=function(t){return function(e){"use strict";var s=e.tablesorter={version:"2.28.15",parsers:[],widgets:[],defaults:{theme:"default",widthFixed:!1,showProcessing:!1,headerTemplate:"{content}",onRenderTemplate:null,onRenderHeader:null,cancelSelection:!0,tabIndex:!0,dateFormat:"mmddyyyy",sortMultiSortKey:"shiftKey",sortResetKey:"ctrlKey",usNumberFormat:!0,delayInit:!1,serverSideSorting:!1,resort:!0,headers:{},ignoreCase:!0,sortForce:null,sortList:[],sortAppend:null,sortStable:!1,sortInitialOrder:"asc",sortLocaleCompare:!1,sortReset:!1,sortRestart:!1,emptyTo:"bottom",stringTo:"max",duplicateSpan:!0,textExtraction:"basic",textAttribute:"data-text",textSorter:null,numberSorter:null,initWidgets:!0,widgetClass:"widget-{name}",widgets:[],widgetOptions:{zebra:["even","odd"]},initialized:null,tableClass:"",cssAsc:"",cssDesc:"",cssNone:"",cssHeader:"",cssHeaderRow:"",cssProcessing:"",cssChildRow:"tablesorter-childRow",cssInfoBlock:"tablesorter-infoOnly",cssNoSort:"tablesorter-noSort",cssIgnoreRow:"tablesorter-ignoreRow",cssIcon:"tablesorter-icon",cssIconNone:"",cssIconAsc:"",cssIconDesc:"",cssIconDisabled:"",pointerClick:"click",pointerDown:"mousedown",pointerUp:"mouseup",selectorHeaders:"> thead th, > thead td",selectorSort:"th, td",selectorRemove:".remove-me",debug:!1,headerList:[],empties:{},strings:{},parsers:[],globalize:0,imgAttr:0},css:{table:"tablesorter",cssHasChild:"tablesorter-hasChildRow",childRow:"tablesorter-childRow",colgroup:"tablesorter-colgroup",header:"tablesorter-header",headerRow:"tablesorter-headerRow",headerIn:"tablesorter-header-inner",icon:"tablesorter-icon",processing:"tablesorter-processing",sortAsc:"tablesorter-headerAsc",sortDesc:"tablesorter-headerDesc",sortNone:"tablesorter-headerUnSorted"},language:{sortAsc:"Ascending sort applied, ",sortDesc:"Descending sort applied, ",sortNone:"No sort applied, ",sortDisabled:"sorting is disabled",nextAsc:"activate to apply an ascending sort",nextDesc:"activate to apply a descending sort",nextNone:"activate to remove the sort"},regex:{templateContent:/\{content\}/g,templateIcon:/\{icon\}/g,templateName:/\{name\}/i,spaces:/\s+/g,nonWord:/\W/g,formElements:/(input|select|button|textarea)/i,chunk:/(^([+\-]?(?:\d*)(?:\.\d*)?(?:[eE][+\-]?\d+)?)?$|^0x[0-9a-f]+$|\d+)/gi,chunks:/(^\\0|\\0$)/,hex:/^0x[0-9a-f]+$/i,comma:/,/g,digitNonUS:/[\s|\.]/g,digitNegativeTest:/^\s*\([.\d]+\)/,digitNegativeReplace:/^\s*\(([.\d]+)\)/,digitTest:/^[\-+(]?\d+[)]?$/,digitReplace:/[,.'"\s]/g},string:{max:1,min:-1,emptymin:1,emptymax:-1,zero:0,none:0,null:0,top:!0,bottom:!1},keyCodes:{enter:13},dates:{},instanceMethods:{},setup:function(t,i){if(t&&t.tHead&&0!==t.tBodies.length&&!0!==t.hasInitialized){var a,n="",r=e(t),o=e.metadat
+
+====================================================================================================
+Candidate 26
+URL: https://sync.ecal.com/v2/widget.min.js?v=2.011
+Status: 200
+Content-Type: application/javascript
+Length: 9359
+Keyword hits: widgets, view
+
+Preview:
+function boot(e){window.EcalWidget.apikey=e;var t=window.EcalWidget;t.attachListeners(),t.attachWidget(),t.createMessageActions()}function appMessageListener(e){var t=window.EcalWidget.messageActions[e.data.action];t&&"function"==typeof t&&t(e.data.data)}function construct(){var e,t=window.widgetFuncs;for(e in t)window.EcalWidget[e]=t[e]}window.EcalWidget&&!window.EcalWidget.isFromV1||(window.EcalWidget=function(e,t){this.call=function(e,t){"destroy"!==e&&"boot"===e&&window.EcalWidget.init(t)},this.call(e,t)},window.EcalWidget.widgets=[],window.widgetFuncs={}),window.widgetFuncs.boot=boot,window.widgetFuncs.continueBoot=function(){const e=window.EcalWidget;setTimeout(function(){e.initAppWidget(),e.initButtons(),e.loadButtons()},300)},window.widgetFuncs.renderSyncButton=function(){},window.widgetFuncs.initButtons=function(){var e=window.EcalWidget,n=document.querySelectorAll("[class*='ecal-sync-widget-button'], [class*='ecalApi'], [data-ecal-widget-id]");var n=function(){for(var e=[],t=0;t<n.length;t++){var i=n[t];(!i.className.includes("ecal-sync-widget-button")||i.className.split(" ").includes("ecal-sync-widget-button"))&&e.push(i)}return e}(),t="data-ecal-widget-id";(document.querySelector('script[src*="js/eCal.js"]')||window.eCalapiKey)&&(t="data-id"),window.EcalWidget.buttonElements=n,window.EcalWidget.buttons=[];for(var i=0;i<n.length;i++){var a=n[i].getAttribute(t);e.buttons.push(a)}},window.widgetFuncs.getButton=function(e){return document.querySelector(`[data-ecal-widget-id*='${e}']`)},window.widgetFuncs.loadButtons=function(){var e=window.EcalWidget;e.postMessage({action:"loadButtons",data:{buttons:e.buttons}})},window.widgetFuncs.attachClicks=function(e,l){var g=window.EcalWidget;window.EcalWidget.registerListener(e,function(e){var t={},i={"data-ecal-category":"category","data-ecal-email":"email","data-ecal-calendar-reference":"calendar_reference","data-ecal-calendar-ids":"calendarIds","data-ecal-subscriber-reference":"subscriber_reference","data-ecal-referring-page":"referringPage","data-ecal-state":"state","data-ecal-autosubscribe":"autoSubscribe","data-ecal-skip-schedule-selection":"skip_schedule_selection"},n=e.getAttributeNames();for(let w=0;w<n.length;w++){var a=n[w],d=e.getAttribute(a),o=("data-ecal-skip-schedule-selection"!==a&&"data-ecal-autosubscribe"!==a||(d=g.isAttrTruthy(e,a)),i[a]);o?t[o]=d:t[a]=d}var s=t,c=window.EcalWidgetV1Params;if(c&&c!==undefined)for(var r in c)s[r]=c[r];n.length<=0?g.showWidget(l,null):g.showWidget(l,t)}),e.clickReady=!0},window.widgetFuncs.registerListener=function(e,t){var i=window.EcalWidget,n=(i.listenersRegistry||Array.isArray(i.listenersRegistry)||(i.listenersRegistry=[]),()=>{i.syncDisplayReady&&t(e)});e.clickListener=n,e.addEventListener("click",n),i.listenersRegistry.push({btn:e,listener:n})},window.widgetFuncs.clearListeners=function(){var e=window.EcalWidget;if(Array.isArray(e.listenersRegistry)){for(var t=0;t<e.listenersRegistry.length;t++){var i=e.listenersRegistry[t];i.btn&&i.listener&
 
 ====================================================================================================
 Candidate 27
@@ -366,25 +366,25 @@ f3_807_2026({"SoccerFeed":{"SoccerDocument":{"Competition":{"TeamStandings":[{"R
 
 ====================================================================================================
 Candidate 34
-URL: https://omo.akamai.opta.net/auth/competition.php?feed_type=f26&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f26_807_2026
-Status: 200
-Content-Type: application/javascript
-Length: 1939
-Keyword hits: competition, team, club, opta, widgets, match, season
-
-Preview:
-f26_807_2026({"feed":{"content.item":{"content.body":{"results":[{"result":{"home-team":{"score":"0","team-short":"Sporting JAX","team-name":"Sporting JAX","team-code":"JAX","team-official":"Sporting Club Jacksonville","team-id":"22496"},"away-team":{"team-short":"Riverhounds","team-name":"Pittsburgh Riverhounds SC","team-code":"PIT","team-official":"Pittsburgh Riverhounds SC","team-id":"9908","score":"0"},"@attributes":{"match-status":"PRE-MATCH","period":"PreMatch","game-id":"2612298"}},"@attributes":{"last-match":"FALSE","date":"20260716","comp-name":"USL Championship","comp-id":"807","ko-time":"00:30","latest":"TRUE"}},{"result":[{"home-team":{"score":"0","team-id":"11528","team-official":"Miami FC","team-code":"MIA","team-short":"Miami","team-name":"Miami"},"away-team":{"score":"0","team-short":"Indy Eleven","team-name":"Indy Eleven","team-code":"IND","team-id":"9911","team-official":"Indy Eleven"},"@attributes":{"match-status":"PRE-MATCH","period":"PreMatch","game-id":"2612297"}},{"away-team":{"score":"0","team-id":"15151","team-official":"New Mexico United","team-name":"New Mexico United","team-short":"New Mexico","team-code":"NM"},"home-team":{"team-short":"Lexington","team-code":"LEX","team-name":"Lexington","team-id":"20156","team-official":"Lexington SC","score":"0"},"@attributes":{"period":"PreMatch","game-id":"2612296","match-status":"PRE-MATCH"}}],"@attributes":{"comp-id":"807","ko-time":"00:00","date":"20260716","comp-name":"USL Championship","last-match":"FALSE","latest":"TRUE"}}]},"content.head":{"title":"OPTA Football Results","dateline":"12\/07\/2026 00:00 +0100"},"content.meta":{"author":"OPTA","vendor":"OPTA","copyright":"OPTA","category":"Sports"},"@attributes":{"id":"OPTA_football_results_20260712"}},"feed-info":{"@value":"","@attributes":{"gen-date":"","feed-type":"RESULTS","comp-id":"807"}},"@attributes":{"vendorName":"OPTA","id":"OPTA_sports_football_results","status":"NORMAL"}}})
-
-====================================================================================================
-Candidate 35
 URL: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
 Status: 200
 Content-Type: application/javascript
-Length: 414674
+Length: 416622
 Keyword hits: Tampa Bay Rowdies, Louisville City FC, San Antonio FC, competition, team, club, opta, widgets, match, season
 
 Preview:
-f1_807_2026({"SoccerFeed":{"SoccerDocument":{"MatchData":[{"MatchInfo":{"Date":"2026-03-07 23:00:00","DateLocal":{"@value":"2026-03-07 18:00:00","@attributes":{"Offset":"-05:00"}},"DateUtc":"2026-03-07 23:00:00","TZ":"GMT","@attributes":{"MatchDay":"1","MatchType":"Regular","MatchWinner":"t1267","Period":"FullTime","RoundNumber":"1","TimeFrameLengthId":"1","Venue_id":"14576"}},"MatchOfficials":{"MatchOfficial":[{"@value":"","@attributes":{"FirstName":"Natalie","LastName":"Simon","Type":"Referee","uID":"o48287"}},{"@value":"","@attributes":{"FirstName":"Nicholas","LastName":"Seymour","Type":"Assistant Referee#1","uID":"o51035"}},{"@value":"","@attributes":{"FirstName":"Jacob","LastName":"Little","Type":"Assistant Referee#2","uID":"o53282"}},{"@value":"","@attributes":{"FirstName":"Izlen","LastName":"Peksenar","Type":"Fourth official","uID":"o54258"}}]},"Stat":[{"@value":"Patriots Point","@attributes":{"Type":"Venue"}},{"@value":"Mount Pleasant, South Carolina","@attributes":{"Type":"City"}}],"TeamData":[{"Goal":[{"@value":"","@attributes":{"Period":"FirstHalf","PlayerRef":"p427023","Type":"Goal"}},{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p224807","Type":"Goal"}}],"@attributes":{"HalfScore":"1","Score":"2","Side":"Home","TeamRef":"t1267"}},{"Goal":{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p651886","Type":"Own"}},"@attributes":{"HalfScore":"0","Score":"1","Side":"Away","TeamRef":"t9908"}}],"@attributes":{"detail_id":"1","last_modified":"2026-03-12T05:32:06+00:00","timestamp_accuracy_id":"1","timing_id":"1","uID":"g2611301"}},{"MatchInfo":{"Date":"2026-03-07 00:30:00","DateLocal":{"@value":"2026-03-06 19:30:00","@attributes":{"Offset":"-05:00"}},"DateUtc":"2026-03-07 00:30:00","TZ":"GMT","@attributes":{"MatchDay":"1","MatchType":"Regular","MatchWinner":"t10967","Period":"FullTime","RoundNumber":"1","TimeFrameLengthId":"1","Venue_id":"18061"}},"MatchOfficials":{"MatchOfficial":[{"@value":"","@attributes":{"FirstName":"Elton","LastName":"Garc\u00eda","Type":"Referee","uID":"o49928"}},{"@value":"","@attributes":{"FirstName":"Zach","LastName":"Mcwhorter","Type":"Assistant Referee#1","uID":"o53370"}},{"@value":"","@attributes":{"FirstName":"Matthew","LastName":"Rodman","Type":"Assistant Referee#2","uID":"o50065"}},{"@value":"","@attributes":{"FirstName":"Jackson","LastName":"Krauser","Type":"Fourth official","uID":"o56533"}}]},"Stat":[{"@value":"Lexington SC Stadium","@attributes":{"Type":"Venue"}},{"@value":"Lexington, Kentucky","@attributes":{"Type":"City"}}],"TeamData":[{"Goal":{"@value":"","@attributes":{"Period":"FirstHalf","PlayerRef":"p248825","Type":"Goal"}},"@attributes":{"HalfScore":"1","Score":"1","Side":"Home","TeamRef":"t20156"}},{"Goal":[{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p484151","Type":"Goal"}},{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p435257","Type":"Goal"}}],"@attributes":{"HalfScore":"0","Score":"2","Side":"Away","TeamRef":"t10967"}}],"@attribut
+f1_807_2026({"SoccerFeed":{"SoccerDocument":{"MatchData":[{"MatchInfo":{"Date":"2026-03-07 23:00:00","DateLocal":{"@value":"2026-03-07 18:00:00","@attributes":{"Offset":"-05:00"}},"DateUtc":"2026-03-07 23:00:00","TZ":"GMT","@attributes":{"MatchDay":"1","MatchType":"Regular","MatchWinner":"t1267","Period":"FullTime","RoundNumber":"1","TimeFrameLengthId":"1","Venue_id":"14576"}},"MatchOfficials":{"MatchOfficial":[{"@value":"","@attributes":{"FirstName":"Natalie","LastName":"Simon","Type":"Referee","uID":"o48287"}},{"@value":"","@attributes":{"FirstName":"Nicholas","LastName":"Seymour","Type":"Assistant Referee#1","uID":"o51035"}},{"@value":"","@attributes":{"FirstName":"Jacob","LastName":"Little","Type":"Assistant Referee#2","uID":"o53282"}},{"@value":"","@attributes":{"FirstName":"Izlen","LastName":"Peksenar","Type":"Fourth official","uID":"o54258"}}]},"Stat":[{"@value":"Patriots Point","@attributes":{"Type":"Venue"}},{"@value":"Mount Pleasant, South Carolina","@attributes":{"Type":"City"}}],"TeamData":[{"Goal":[{"@value":"","@attributes":{"Period":"FirstHalf","PlayerRef":"p427023","Type":"Goal"}},{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p224807","Type":"Goal"}}],"@attributes":{"HalfScore":"1","Score":"2","Side":"Home","TeamRef":"t1267"}},{"Goal":{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p651886","Type":"Own"}},"@attributes":{"HalfScore":"0","Score":"1","Side":"Away","TeamRef":"t9908"}}],"@attributes":{"detail_id":"1","last_modified":"2026-03-12T05:32:06+00:00","timestamp_accuracy_id":"1","timing_id":"1","uID":"g2611301"}},{"MatchInfo":{"Date":"2026-03-07 00:30:00","DateLocal":{"@value":"2026-03-06 19:30:00","@attributes":{"Offset":"-05:00"}},"DateUtc":"2026-03-07 00:30:00","TZ":"GMT","@attributes":{"MatchDay":"1","MatchType":"Regular","MatchWinner":"t10967","Period":"FullTime","RoundNumber":"1","TimeFrameLengthId":"1","Venue_id":"18061"}},"MatchOfficials":{"MatchOfficial":[{"@value":"","@attributes":{"FirstName":"Elton","LastName":"Garc\u00eda","Type":"Referee","uID":"o49928"}},{"@value":"","@attributes":{"FirstName":"Zach","LastName":"Mcwhorter","Type":"Assistant Referee#1","uID":"o53370"}},{"@value":"","@attributes":{"FirstName":"Matthew","LastName":"Rodman","Type":"Assistant Referee#2","uID":"o50065"}},{"@value":"","@attributes":{"FirstName":"Jackson","LastName":"Krauser","Type":"Fourth official","uID":"o56533"}}]},"Stat":[{"@value":"Lexington SC Stadium","@attributes":{"Type":"Venue"}},{"@value":"Lexington, Kentucky","@attributes":{"Type":"City"}}],"TeamData":[{"Goal":{"@value":"","@attributes":{"Period":"FirstHalf","PlayerRef":"p248825","Type":"Goal"}},"@attributes":{"HalfScore":"1","Score":"1","Side":"Home","TeamRef":"t20156"}},{"Goal":[{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p435257","Type":"Goal"}},{"@value":"","@attributes":{"Period":"SecondHalf","PlayerRef":"p484151","Type":"Goal"}}],"@attributes":{"HalfScore":"0","Score":"2","Side":"Away","TeamRef":"t10967"}}],"@attribut
+
+====================================================================================================
+Candidate 35
+URL: https://secure.widget.cloud.opta.net/v3/trn/opta/comp/f3.js?v=3.264.1
+Status: 200
+Content-Type: application/javascript; charset=utf-8
+Length: 1896
+Keyword hits: standings, standing, competition, team, opta, widgets, season
+
+Preview:
+/** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ "use strict";(window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["trn/opta/comp/f3"],{"./src/trn/opta/comp/f3.ts"(t,e,a){var s=a("./src/tsmodules/Opta.ts"),r=a("./src/utils/deepClone.ts");Opta.trn.opta_comp_f3=async function(t,e){const a=(0,r.A)(t.SoccerFeed.SoccerDocument),n=a["@attributes"],o=n.season_id,i=n.competition_id,c=t=>t?Array.isArray(t)?t:[t]:[];return await(async()=>{const t=[];e.comp()&&t.push(s.A.Trans.loadComps({sport_id:1,season_id:o}).nativePromise()),e.teams&&t.push(s.A.Trans.loadTeams({sport_id:1,competition_id:i,season_id:o}).nativePromise()),await Promise.all(t),a.competition=s.A.Trans.comp(1,o,i),a.Team&&a.Team.forEach((t=>{t.name=s.A.Trans.team(1,t["@attributes"].uID.slice(1))})),c(a.Competition?.TeamStandings).filter((t=>t&&t.TeamRecord)).forEach((t=>{c(t.TeamRecord).forEach((t=>{const e=t["@attributes"]?.TeamRef?.slice(1);t.team_name=s.A.Trans.team(1,e)}))})),c(a.Qualification?.Type).forEach((t=>{c(t?.Team).forEach((t=>{t?.["@attributes"]?.team_id&&(t.translated_name=s.A.Trans.team(1,t["@attributes"].team_id))}))}))})(),a}},"./src/utils/deepClone.ts"(t,e,a){a.d(e,{A:()=>s});const s=function t(e,a=new WeakMap){if(null===e||"object"!=typeof e)return e;if(a.has(e))return a.get(e);if(e instanceof Date)return new Date(e.getTime());if(e instanceof RegExp)return new RegExp(e);if(Array.isArray(e)){const s=[];a.set(e,s);for(let r=0;r<e.length;r++)s[r]=t(e[r],a);return s}const s={};a.set(e,s);for(const r in e)Object.prototype.hasOwnProperty.call(e,r)&&(s[r]=t(e[r],a));return s}}},t=>{var e;e="./src/trn/opta/comp/f3.ts",t(t.s=e)}]); //# sourceURL=https://secure.widget.cloud.opta.net/v3/trn/opta/comp/f3.js //# sourceMappingURL=https://secure.widget.cloud.opta.net/v3/sourcemap/trn/opta/comp/f3.js.map
 
 ====================================================================================================
 Candidate 36
@@ -399,28 +399,6 @@ Preview:
 
 ====================================================================================================
 Candidate 37
-URL: https://secure.widget.cloud.opta.net/v3/trn/opta/comp/f3.js?v=3.264.1
-Status: 200
-Content-Type: application/javascript; charset=utf-8
-Length: 1896
-Keyword hits: standings, standing, competition, team, opta, widgets, season
-
-Preview:
-/** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ "use strict";(window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["trn/opta/comp/f3"],{"./src/trn/opta/comp/f3.ts"(t,e,a){var s=a("./src/tsmodules/Opta.ts"),r=a("./src/utils/deepClone.ts");Opta.trn.opta_comp_f3=async function(t,e){const a=(0,r.A)(t.SoccerFeed.SoccerDocument),n=a["@attributes"],o=n.season_id,i=n.competition_id,c=t=>t?Array.isArray(t)?t:[t]:[];return await(async()=>{const t=[];e.comp()&&t.push(s.A.Trans.loadComps({sport_id:1,season_id:o}).nativePromise()),e.teams&&t.push(s.A.Trans.loadTeams({sport_id:1,competition_id:i,season_id:o}).nativePromise()),await Promise.all(t),a.competition=s.A.Trans.comp(1,o,i),a.Team&&a.Team.forEach((t=>{t.name=s.A.Trans.team(1,t["@attributes"].uID.slice(1))})),c(a.Competition?.TeamStandings).filter((t=>t&&t.TeamRecord)).forEach((t=>{c(t.TeamRecord).forEach((t=>{const e=t["@attributes"]?.TeamRef?.slice(1);t.team_name=s.A.Trans.team(1,e)}))})),c(a.Qualification?.Type).forEach((t=>{c(t?.Team).forEach((t=>{t?.["@attributes"]?.team_id&&(t.translated_name=s.A.Trans.team(1,t["@attributes"].team_id))}))}))})(),a}},"./src/utils/deepClone.ts"(t,e,a){a.d(e,{A:()=>s});const s=function t(e,a=new WeakMap){if(null===e||"object"!=typeof e)return e;if(a.has(e))return a.get(e);if(e instanceof Date)return new Date(e.getTime());if(e instanceof RegExp)return new RegExp(e);if(Array.isArray(e)){const s=[];a.set(e,s);for(let r=0;r<e.length;r++)s[r]=t(e[r],a);return s}const s={};a.set(e,s);for(const r in e)Object.prototype.hasOwnProperty.call(e,r)&&(s[r]=t(e[r],a));return s}}},t=>{var e;e="./src/trn/opta/comp/f3.ts",t(t.s=e)}]); //# sourceURL=https://secure.widget.cloud.opta.net/v3/trn/opta/comp/f3.js //# sourceMappingURL=https://secure.widget.cloud.opta.net/v3/sourcemap/trn/opta/comp/f3.js.map
-
-====================================================================================================
-Candidate 38
-URL: https://secure.widget.cloud.opta.net/translations_v2/default/CP_default_1_en_US_1_2026.json
-Status: 200
-Content-Type: application/javascript; charset=utf-8
-Length: 9495
-Keyword hits: club, opta
-
-Preview:
-CP_default_1_en_US_1_2026({"d": "1243|A-Leagues All Stars Women||¦379|AFC Asian Cup||¦1265|AFC Challenge League Qualifying||¦1086|AFC Champions League Two Qualifying||¦1267|AFC Women's Champions League Qualifying||¦15|Analysis Test||¦674|Argentina Primera B (Metropolitana)||¦675|Argentina Primera C (Metropolitana)||¦627|Argentina Primera Nacional||¦744|Argentina Supercopa||¦449|Armenian Cup||AM_AC¦159|Armenian Premier League||¦740|ASEAN Championship||¦805|ASEAN Championship Qualifying||¦1247|ASEAN Club Championship||¦1283|ASEAN Club Championship Qualifying||¦716|Australia Cup||¦214|Australian A-League Men||¦513|Austrian 2. Liga||¦119|Austrian Bundesliga||¦906|Austrian Frauenliga||¦1104|Austrian Jugendliga U15||¦1105|Austrian Jugendliga U16||¦1106|Austrian Jugendliga U18||¦393|Austrian OFB Pokal||¦1297|Baller League UK Summer||¦1357|Baller League USA||¦161|Belarus Premier League||¦875|Belarus Premier League Women||¦443|Belarusian Cup||¦144|Belgian Challenger Pro League||¦112|Belgian Jupiler Pro League||¦556|Belgian Super Cup||¦907|Belgian Super League Women||¦592|Bolivia Primera División||¦156|Bosnia and Herzegovina Premijer Liga||¦827|Brazilian Brasileiro U20 A||¦1347|Brazilian Cearense||¦829|Brazilian Copa do Brazil U17||¦1363|Brazilian Paulista Women||¦1309|Brazilian Recopa Gaúcha||¦363|Brazilian Serie A||¦364|Brazilian Serie B||¦825|Brazilian Serie C||¦145|Bulgaria First League||¦601|CAF Africa Cup of Nations Qualifiers||¦1005|CAF Women's Africa Cup of Nations||¦957|Campeones Cup||¦552|Canadian Championship||¦1291|Canadian Northern Super League||¦1039|Canadian Premier League||¦1348|Chile Copa de la Liga||¦370|Chile Primera||¦722|Chile Primera B||¦637|Chile Supercopa||¦1212|Chinese FA Cup||¦1171|Chinese Football League 1||¦1172|Chinese Football League 2||¦810|Chinese Super Cup||¦208|Chinese Super League||¦989|Club Friendlies Women||¦847|Colombia Liga Femenina||¦371|Colombia Primera A Apertura||¦589|Colombia Primera A Finalización||¦625|Colombia Primera B Apertura||¦901|Colombia Primera B Clausura||¦747|Colombia Superliga||¦1301|Concacaf Caribbean Cup||¦1224|Concacaf Central American Cup||¦549|Concacaf Champions Cup||¦831|Concacaf U20 Championship||¦738|Concacaf W Championship||¦420|CONMEBOL Libertadores||¦1213|CONMEBOL Libertadores U20||¦602|CONMEBOL Recopa||¦369|CONMEBOL Sudamericana||¦603|Copa Argentina||¦639|Copa Chile||¦664|Copa Colombia||¦563|Copa do Brazil||¦259|Coppa Italia||¦1263|Coppa Italia Primavera||¦201|Costa Rica Primera Division Apertura||¦116|Croatia HNL||¦632|Customer Test||¦912|Czech 1. Liga Women||¦134|Czech First League||¦148|Danish 1. Division||¦913|Danish Kvindeliga Women||¦100|Danish Superligaen||¦96|Dutch Eerste Divisie||¦696|Dutch Eerste Divisie Rounds||¦9|Dutch Eredivisie||¦923|Dutch Eredivisie Women||¦18|Dutch Johan Cruyff Shield||¦1183|Dutch Super Cup Women||¦801|Dutch Tweede Divisie||¦587|Ecuador Liga Pro||¦761|Emirates Cup||¦38|English Community Shield||¦668|English FA Cup Qualifying||¦418|English FA Trophy||¦10|En
-
-====================================================================================================
-Candidate 39
 URL: https://secure.widget.cloud.opta.net/v3/trn/opta/comp/f1.js?v=3.264.1
 Status: 200
 Content-Type: application/javascript; charset=utf-8
@@ -431,18 +409,7 @@ Preview:
 /** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ "use strict";(window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["trn/opta/comp/f1"],{"./src/constants/widget/ContentIcon.ts"(t,a,e){e.d(a,{R:()=>r});const s="Opta-OS-Card-Type-Icon-Mic",r={autoLtc:s,manualLtc:s,nlgPreview:s,insight:"Opta-OS-Card-Type-Icon-LightBulb",insightBetting:s}},"./src/constants/widget/translationTerms.ts"(t,a,e){e.d(a,{eC:()=>r,e_:()=>s});const s=81,r="TBC"},"./src/trn/opta/comp/f1.ts"(t,a,e){e("./src/constants/widget/ContentIcon.ts");var s=e("./src/constants/widget/translationTerms.ts"),r=e("./src/utils/deepClone.ts");Opta.trn.opta_comp_f1=async function(t,a){const e=(0,r.A)(t.SoccerFeed?t.SoccerFeed.SoccerDocument:t);e.MatchData&&!Array.isArray(e.MatchData)&&(e.MatchData=[e.MatchData]);const n=e.MatchData||[],o=e["@attributes"],i=Number(o.season_id),c=Number(o.competition_id),p=async()=>{const t=[];a.comp()&&t.push(Opta.Trans.loadComps({sport_id:1,season_id:i})),a.has("teams")&&t.push(Opta.Trans.loadTeams({sport_id:1,season_id:i,competition_id:c})),a.has("venues")&&t.push(Opta.Trans.loadVenues({sport_id:1,season_id:i,competition_id:c}));(await Promise.allSettled(t)).forEach((t=>{"rejected"===t.status&&console.warn("Error loading translations:",t.reason)})),a.has("team_players")&&await(async()=>{const t={},r=[];n&&n.forEach((n=>{n.TeamData&&n.TeamData.forEach((n=>{if(n["@attributes"]&&n["@attributes"].TeamRef){const o=n["@attributes"].TeamRef.slice(1),p=e.Team.find((t=>t["@attributes"]?.uID?.slice(1)===o)),l=p?.Name?.trim();if(a.has("team_players")&&!t[o]&&l&&l.toUpperCase()!==s.eC){t[o]=!0;const a=Opta.Trans.loadPlayers({sport_id:1,competition_id:c,season_id:i,team_id:o});r.push(a)}}}))})),(await Promise.allSettled(r)).forEach((t=>{"rejected"===t.status&&console.warn("Error loading player translations:",t.reason)}))})(),e.competition=Opta.Trans.comp(1,i,c),e.Team.forEach((t=>{const a=t.Name?.trim();a&&a.toUpperCase()!==s.eC&&(t.name=Opta.Trans.team(1,t["@attributes"].uID.slice(1)))})),n.forEach((t=>{t.MatchInfo["@attributes"].VenueDetails=Opta.Trans.venue(1,i,t.MatchInfo["@attributes"].Venue_id)})),(()=>{const t=new Map;n&&n.forEach((a=>{a.TeamData&&a.TeamData.forEach((a=>{const e=a["@attributes"]?.TeamRef?.slice(1);a.Goal&&(Array.isArray(a.Goal)?a.Goal:[a.Goal]).forEach((a=>{if(a["@attributes"]&&a["@attributes"].PlayerRef){const s=a["@attributes"].PlayerRef.slice(1),r=Opta.Trans.player(1,s);a["@attributes"].PlayerName=r,a["@attributes"].player={id:s,name:r},t.has(s)||t.set(s,{id:s,name:r,teamId:e})}}))}))})),e.players=Array.from(t.values())})()};return c&&i&&await p(),e}},"./src/utils/deepClone.ts"(t,a,e){e.d(a,{A:()=>s});const s=function t(a,e=new WeakMap){if(null===a||"object"!=typeof a)return a;if(e.has(a))return e.get(a);if(a instanceof Date)return new Date(a.getTime());if(a instanceof RegExp)return new RegExp(a);if(Array.isArray(a)){const s=[];e.set(a,s);for(let r=0;
 
 ====================================================================================================
-Candidate 40
-URL: https://secure.widget.cloud.opta.net/v3/map/opta/comp/f26.js?v=3.264.1
-Status: 200
-Content-Type: application/javascript; charset=utf-8
-Length: 3725
-Keyword hits: competition, opta, widgets, view, match, season
-
-Preview:
-/** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ "use strict";(window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["map/opta/comp/f26"],{"./src/enums/model/football/match.ts"(e,t,a){var o,s,l,_,r,n;a.d(t,{HQ:()=>n,Is:()=>s,P7:()=>l,mV:()=>o,pY:()=>r,rC:()=>_}),function(e){e.abandoned="Abandoned",e.end_match="EndOfTheMatch",e.extra_first="ExtraFirstHalf",e.extra_full="ExtraFullTime",e.extra_half="ExtraHalfTime",e.extra_second="ExtraSecondHalf",e.extra_time="ExtraTime",e.first_half="FirstHalf",e.fulltime="FullTime",e.fulltime90="FullTime90",e.fulltimepens="fullTimePens",e.half_time="Halftime",e.live="Live",e.postmatch="PostMatch",e.postponed="Postponed",e.prematch="PreMatch",e.second_half="SecondHalf",e.shootout="Shootout",e.sudden_death="SuddenDeath"}(o||(o={})),function(e){e[e.live=0]="live",e[e.prematch=1]="prematch",e[e.first_half=2]="first_half",e[e.half_time=3]="half_time",e[e.second_half=4]="second_half",e[e.extra_time=5]="extra_time",e[e.extra_first=6]="extra_first",e[e.extra_half=7]="extra_half",e[e.extra_second=8]="extra_second",e[e.fulltime=9]="fulltime",e[e.shootout=10]="shootout",e[e.postmatch=11]="postmatch",e[e.abandoned=12]="abandoned",e[e.postponed=13]="postponed",e[e.fulltime90=14]="fulltime90",e[e.fulltimepens=15]="fulltimepens",e[e.sudden_death=16]="sudden_death",e[e.extra_full=17]="extra_full",e[e.end_match=18]="end_match",e[e.cancelled=25]="cancelled"}(s||(s={})),function(e){e[e.regular=1]="regular",e[e.cup=2]="cup",e[e.cup_gold=3]="cup_gold",e[e.cup_english=4]="cup_english",e[e.cup_short=5]="cup_short",e[e.first_leg=6]="first_leg",e[e.second_leg=7]="second_leg",e[e.second_leg_away_goal=8]="second_leg_away_goal",e[e.replay=9]="replay",e[e.second_leg_cup_short=10]="second_leg_cup_short",e[e.best_of_three=11]="best_of_three",e[e.best_of_five=12]="best_of_five",e[e.best_of_seven=13]="best_of_seven",e[e.best_of_three_long=14]="best_of_three_long",e[e.best_of_five_long=15]="best_of_five_long",e[e.best_of_seven_long=16]="best_of_seven_long"}(l||(l={})),function(e){e[e.abandoned=391]="abandoned",e[e.extra_first=331]="extra_first",e[e.extra_half=341]="extra_half",e[e.extra_second=351]="extra_second",e[e.extra_time=13171]="extra_time",e[e.first_half=511]="first_half",e[e.fulltime=361]="fulltime",e[e.half_time=301]="half_time",e[e.second_half=8581]="second_half",e[e.shootout=8601]="shootout"}(_||(_={})),function(e){e[e.ExtraFirstHalf=105]="ExtraFirstHalf",e[e.ExtraSecondHalf=120]="ExtraSecondHalf",e[e.FirstHalf=45]="FirstHalf",e[e.SecondHalf=90]="SecondHalf"}(r||(r={})),function(e){e.abandoned="Abandoned",e.after_extra_time="AfterExtraTime",e.normal_result="NormalResult",e.penalty_shootout="PenaltyShootout",e.postponed="Postponed",e.prematch="PreMatch",e.var_review="VarReview"}(n||(n={}))},"./src/map/opta/comp/f26.ts"(e,t,a){var o=a("./src/enums/model/football/match.ts"),s=a("./src/tsmodules/Opta.ts");Opta.map.opta_comp_f26=e=>{const t=e.
-
-====================================================================================================
-Candidate 41
+Candidate 38
 URL: https://secure.widget.cloud.opta.net/v3/map/opta/comp/f1.js?v=3.264.1
 Status: 200
 Content-Type: application/javascript; charset=utf-8
@@ -451,6 +418,39 @@ Keyword hits: competition, team, opta, widgets, view, match, season
 
 Preview:
 /** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ "use strict";(window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["map/opta/comp/f1"],{"./src/enums/model/football/match.ts"(e,t,a){var r,o,n,s,l,u;a.d(t,{HQ:()=>u,Is:()=>o,P7:()=>n,mV:()=>r,pY:()=>l,rC:()=>s}),function(e){e.abandoned="Abandoned",e.end_match="EndOfTheMatch",e.extra_first="ExtraFirstHalf",e.extra_full="ExtraFullTime",e.extra_half="ExtraHalfTime",e.extra_second="ExtraSecondHalf",e.extra_time="ExtraTime",e.first_half="FirstHalf",e.fulltime="FullTime",e.fulltime90="FullTime90",e.fulltimepens="fullTimePens",e.half_time="Halftime",e.live="Live",e.postmatch="PostMatch",e.postponed="Postponed",e.prematch="PreMatch",e.second_half="SecondHalf",e.shootout="Shootout",e.sudden_death="SuddenDeath"}(r||(r={})),function(e){e[e.live=0]="live",e[e.prematch=1]="prematch",e[e.first_half=2]="first_half",e[e.half_time=3]="half_time",e[e.second_half=4]="second_half",e[e.extra_time=5]="extra_time",e[e.extra_first=6]="extra_first",e[e.extra_half=7]="extra_half",e[e.extra_second=8]="extra_second",e[e.fulltime=9]="fulltime",e[e.shootout=10]="shootout",e[e.postmatch=11]="postmatch",e[e.abandoned=12]="abandoned",e[e.postponed=13]="postponed",e[e.fulltime90=14]="fulltime90",e[e.fulltimepens=15]="fulltimepens",e[e.sudden_death=16]="sudden_death",e[e.extra_full=17]="extra_full",e[e.end_match=18]="end_match",e[e.cancelled=25]="cancelled"}(o||(o={})),function(e){e[e.regular=1]="regular",e[e.cup=2]="cup",e[e.cup_gold=3]="cup_gold",e[e.cup_english=4]="cup_english",e[e.cup_short=5]="cup_short",e[e.first_leg=6]="first_leg",e[e.second_leg=7]="second_leg",e[e.second_leg_away_goal=8]="second_leg_away_goal",e[e.replay=9]="replay",e[e.second_leg_cup_short=10]="second_leg_cup_short",e[e.best_of_three=11]="best_of_three",e[e.best_of_five=12]="best_of_five",e[e.best_of_seven=13]="best_of_seven",e[e.best_of_three_long=14]="best_of_three_long",e[e.best_of_five_long=15]="best_of_five_long",e[e.best_of_seven_long=16]="best_of_seven_long"}(n||(n={})),function(e){e[e.abandoned=391]="abandoned",e[e.extra_first=331]="extra_first",e[e.extra_half=341]="extra_half",e[e.extra_second=351]="extra_second",e[e.extra_time=13171]="extra_time",e[e.first_half=511]="first_half",e[e.fulltime=361]="fulltime",e[e.half_time=301]="half_time",e[e.second_half=8581]="second_half",e[e.shootout=8601]="shootout"}(s||(s={})),function(e){e[e.ExtraFirstHalf=105]="ExtraFirstHalf",e[e.ExtraSecondHalf=120]="ExtraSecondHalf",e[e.FirstHalf=45]="FirstHalf",e[e.SecondHalf=90]="SecondHalf"}(l||(l={})),function(e){e.abandoned="Abandoned",e.after_extra_time="AfterExtraTime",e.normal_result="NormalResult",e.penalty_shootout="PenaltyShootout",e.postponed="Postponed",e.prematch="PreMatch",e.var_review="VarReview"}(u||(u={}))},"./src/map/opta/comp/f1.ts"(e,t,a){var r=a("./src/enums/model/football/match.ts");const o=(e,t,a,r,o)=>{const u=e["@attributes"],h=e.MatchInfo["@attribu
+
+====================================================================================================
+Candidate 39
+URL: https://omo.akamai.opta.net/auth/competition.php?feed_type=f26&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f26_807_2026
+Status: 200
+Content-Type: application/javascript
+Length: 1939
+Keyword hits: competition, team, club, opta, widgets, match, season
+
+Preview:
+f26_807_2026({"feed":{"content.item":{"content.body":{"results":[{"result":[{"away-team":{"team-name":"New Mexico United","team-short":"New Mexico","team-id":"15151","score":"0","team-code":"NM","team-official":"New Mexico United"},"home-team":{"team-id":"20156","score":"0","team-official":"Lexington SC","team-code":"LEX","team-short":"Lexington","team-name":"Lexington"},"@attributes":{"game-id":"2612296","period":"PreMatch","match-status":"PRE-MATCH"}},{"home-team":{"team-code":"MIA","team-official":"Miami FC","team-id":"11528","score":"0","team-short":"Miami","team-name":"Miami"},"away-team":{"team-name":"Indy Eleven","team-short":"Indy Eleven","team-id":"9911","score":"0","team-official":"Indy Eleven","team-code":"IND"},"@attributes":{"match-status":"PRE-MATCH","period":"PreMatch","game-id":"2612297"}}],"@attributes":{"comp-id":"807","last-match":"FALSE","ko-time":"00:00","comp-name":"USL Championship","latest":"TRUE","date":"20260716"}},{"result":{"away-team":{"team-code":"PIT","team-official":"Pittsburgh Riverhounds SC","team-id":"9908","score":"0","team-short":"Riverhounds","team-name":"Pittsburgh Riverhounds SC"},"home-team":{"team-official":"Sporting Club Jacksonville","team-code":"JAX","team-id":"22496","score":"0","team-name":"Sporting JAX","team-short":"Sporting JAX"},"@attributes":{"game-id":"2612298","match-status":"PRE-MATCH","period":"PreMatch"}},"@attributes":{"latest":"TRUE","date":"20260716","ko-time":"00:30","comp-name":"USL Championship","comp-id":"807","last-match":"FALSE"}}]},"content.meta":{"category":"Sports","vendor":"OPTA","author":"OPTA","copyright":"OPTA"},"content.head":{"dateline":"13\/07\/2026 00:00 +0100","title":"OPTA Football Results"},"@attributes":{"id":"OPTA_football_results_20260713"}},"feed-info":{"@value":"","@attributes":{"feed-type":"RESULTS","comp-id":"807","gen-date":""}},"@attributes":{"id":"OPTA_sports_football_results","status":"NORMAL","vendorName":"OPTA"}}})
+
+====================================================================================================
+Candidate 40
+URL: https://secure.widget.cloud.opta.net/translations_v2/default/CP_default_1_en_US_1_2026.json
+Status: 200
+Content-Type: application/javascript; charset=utf-8
+Length: 9495
+Keyword hits: club, opta
+
+Preview:
+CP_default_1_en_US_1_2026({"d": "1243|A-Leagues All Stars Women||¦379|AFC Asian Cup||¦1265|AFC Challenge League Qualifying||¦1086|AFC Champions League Two Qualifying||¦1267|AFC Women's Champions League Qualifying||¦15|Analysis Test||¦674|Argentina Primera B (Metropolitana)||¦675|Argentina Primera C (Metropolitana)||¦627|Argentina Primera Nacional||¦744|Argentina Supercopa||¦449|Armenian Cup||AM_AC¦159|Armenian Premier League||¦740|ASEAN Championship||¦805|ASEAN Championship Qualifying||¦1247|ASEAN Club Championship||¦1283|ASEAN Club Championship Qualifying||¦716|Australia Cup||¦214|Australian A-League Men||¦513|Austrian 2. Liga||¦119|Austrian Bundesliga||¦906|Austrian Frauenliga||¦1104|Austrian Jugendliga U15||¦1105|Austrian Jugendliga U16||¦1106|Austrian Jugendliga U18||¦393|Austrian OFB Pokal||¦1297|Baller League UK Summer||¦1357|Baller League USA||¦161|Belarus Premier League||¦875|Belarus Premier League Women||¦443|Belarusian Cup||¦144|Belgian Challenger Pro League||¦112|Belgian Jupiler Pro League||¦556|Belgian Super Cup||¦907|Belgian Super League Women||¦592|Bolivia Primera División||¦156|Bosnia and Herzegovina Premijer Liga||¦827|Brazilian Brasileiro U20 A||¦1347|Brazilian Cearense||¦829|Brazilian Copa do Brazil U17||¦1363|Brazilian Paulista Women||¦1309|Brazilian Recopa Gaúcha||¦363|Brazilian Serie A||¦364|Brazilian Serie B||¦825|Brazilian Serie C||¦145|Bulgaria First League||¦601|CAF Africa Cup of Nations Qualifiers||¦1005|CAF Women's Africa Cup of Nations||¦957|Campeones Cup||¦552|Canadian Championship||¦1291|Canadian Northern Super League||¦1039|Canadian Premier League||¦1348|Chile Copa de la Liga||¦370|Chile Primera||¦722|Chile Primera B||¦637|Chile Supercopa||¦1212|Chinese FA Cup||¦1171|Chinese Football League 1||¦1172|Chinese Football League 2||¦810|Chinese Super Cup||¦208|Chinese Super League||¦989|Club Friendlies Women||¦847|Colombia Liga Femenina||¦371|Colombia Primera A Apertura||¦589|Colombia Primera A Finalización||¦625|Colombia Primera B Apertura||¦901|Colombia Primera B Clausura||¦747|Colombia Superliga||¦1301|Concacaf Caribbean Cup||¦1224|Concacaf Central American Cup||¦549|Concacaf Champions Cup||¦831|Concacaf U20 Championship||¦738|Concacaf W Championship||¦420|CONMEBOL Libertadores||¦1213|CONMEBOL Libertadores U20||¦602|CONMEBOL Recopa||¦369|CONMEBOL Sudamericana||¦603|Copa Argentina||¦639|Copa Chile||¦664|Copa Colombia||¦563|Copa do Brazil||¦259|Coppa Italia||¦1263|Coppa Italia Primavera||¦201|Costa Rica Primera Division Apertura||¦116|Croatia HNL||¦632|Customer Test||¦912|Czech 1. Liga Women||¦134|Czech First League||¦148|Danish 1. Division||¦913|Danish Kvindeliga Women||¦100|Danish Superligaen||¦96|Dutch Eerste Divisie||¦696|Dutch Eerste Divisie Rounds||¦9|Dutch Eredivisie||¦923|Dutch Eredivisie Women||¦18|Dutch Johan Cruyff Shield||¦1183|Dutch Super Cup Women||¦801|Dutch Tweede Divisie||¦587|Ecuador Liga Pro||¦761|Emirates Cup||¦38|English Community Shield||¦668|English FA Cup Qualifying||¦418|English FA Trophy||¦10|En
+
+====================================================================================================
+Candidate 41
+URL: https://secure.widget.cloud.opta.net/v3/map/opta/comp/f26.js?v=3.264.1
+Status: 200
+Content-Type: application/javascript; charset=utf-8
+Length: 3725
+Keyword hits: competition, opta, widgets, view, match, season
+
+Preview:
+/** * opta-widgets - v3.264.1 * Copyright (c) 2026 Opta Sports * Licenses: http://widget.cloud.opta.net/v3/licences.txt */ "use strict";(window.webpackChunkOptaWidgetsV3=window.webpackChunkOptaWidgetsV3||[]).push([["map/opta/comp/f26"],{"./src/enums/model/football/match.ts"(e,t,a){var o,s,l,_,r,n;a.d(t,{HQ:()=>n,Is:()=>s,P7:()=>l,mV:()=>o,pY:()=>r,rC:()=>_}),function(e){e.abandoned="Abandoned",e.end_match="EndOfTheMatch",e.extra_first="ExtraFirstHalf",e.extra_full="ExtraFullTime",e.extra_half="ExtraHalfTime",e.extra_second="ExtraSecondHalf",e.extra_time="ExtraTime",e.first_half="FirstHalf",e.fulltime="FullTime",e.fulltime90="FullTime90",e.fulltimepens="fullTimePens",e.half_time="Halftime",e.live="Live",e.postmatch="PostMatch",e.postponed="Postponed",e.prematch="PreMatch",e.second_half="SecondHalf",e.shootout="Shootout",e.sudden_death="SuddenDeath"}(o||(o={})),function(e){e[e.live=0]="live",e[e.prematch=1]="prematch",e[e.first_half=2]="first_half",e[e.half_time=3]="half_time",e[e.second_half=4]="second_half",e[e.extra_time=5]="extra_time",e[e.extra_first=6]="extra_first",e[e.extra_half=7]="extra_half",e[e.extra_second=8]="extra_second",e[e.fulltime=9]="fulltime",e[e.shootout=10]="shootout",e[e.postmatch=11]="postmatch",e[e.abandoned=12]="abandoned",e[e.postponed=13]="postponed",e[e.fulltime90=14]="fulltime90",e[e.fulltimepens=15]="fulltimepens",e[e.sudden_death=16]="sudden_death",e[e.extra_full=17]="extra_full",e[e.end_match=18]="end_match",e[e.cancelled=25]="cancelled"}(s||(s={})),function(e){e[e.regular=1]="regular",e[e.cup=2]="cup",e[e.cup_gold=3]="cup_gold",e[e.cup_english=4]="cup_english",e[e.cup_short=5]="cup_short",e[e.first_leg=6]="first_leg",e[e.second_leg=7]="second_leg",e[e.second_leg_away_goal=8]="second_leg_away_goal",e[e.replay=9]="replay",e[e.second_leg_cup_short=10]="second_leg_cup_short",e[e.best_of_three=11]="best_of_three",e[e.best_of_five=12]="best_of_five",e[e.best_of_seven=13]="best_of_seven",e[e.best_of_three_long=14]="best_of_three_long",e[e.best_of_five_long=15]="best_of_five_long",e[e.best_of_seven_long=16]="best_of_seven_long"}(l||(l={})),function(e){e[e.abandoned=391]="abandoned",e[e.extra_first=331]="extra_first",e[e.extra_half=341]="extra_half",e[e.extra_second=351]="extra_second",e[e.extra_time=13171]="extra_time",e[e.first_half=511]="first_half",e[e.fulltime=361]="fulltime",e[e.half_time=301]="half_time",e[e.second_half=8581]="second_half",e[e.shootout=8601]="shootout"}(_||(_={})),function(e){e[e.ExtraFirstHalf=105]="ExtraFirstHalf",e[e.ExtraSecondHalf=120]="ExtraSecondHalf",e[e.FirstHalf=45]="FirstHalf",e[e.SecondHalf=90]="SecondHalf"}(r||(r={})),function(e){e.abandoned="Abandoned",e.after_extra_time="AfterExtraTime",e.normal_result="NormalResult",e.penalty_shootout="PenaltyShootout",e.postponed="Postponed",e.prematch="PreMatch",e.var_review="VarReview"}(n||(n={}))},"./src/map/opta/comp/f26.ts"(e,t,a){var o=a("./src/enums/model/football/match.ts"),s=a("./src/tsmodules/Opta.ts");Opta.map.opta_comp_f26=e=>{const t=e.
 
 ====================================================================================================
 Candidate 42
@@ -476,17 +476,6 @@ TN_default_1_en_US_1_2026_807({"d": "15145|Birmingham Legion FC||BHM¦22497|Broo
 
 ====================================================================================================
 Candidate 44
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=5621
-Status: 200
-Content-Type: image/png
-Length: 102
-Keyword hits: team, opta
-
-Preview:
-[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
-
-====================================================================================================
-Candidate 45
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=1267
 Status: 200
 Content-Type: image/png
@@ -497,8 +486,19 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
+Candidate 45
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=10967
+Status: 200
+Content-Type: image/png
+Length: 102
+Keyword hits: team, opta
+
+Preview:
+[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
+
+====================================================================================================
 Candidate 46
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=11528
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9911
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -509,39 +509,6 @@ Preview:
 
 ====================================================================================================
 Candidate 47
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=14304
-Status: 200
-Content-Type: image/png
-Length: 102
-Keyword hits: team, opta
-
-Preview:
-[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
-
-====================================================================================================
-Candidate 48
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=21257
-Status: 200
-Content-Type: image/png
-Length: 102
-Keyword hits: team, opta
-
-Preview:
-[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
-
-====================================================================================================
-Candidate 49
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=15146
-Status: 200
-Content-Type: image/png
-Length: 102
-Keyword hits: team, opta
-
-Preview:
-[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
-
-====================================================================================================
-Candidate 50
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9908
 Status: 200
 Content-Type: image/png
@@ -552,10 +519,43 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 51
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=22497
+Candidate 48
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=11528
 Status: 200
-Content-Type: binary/octet-stream
+Content-Type: image/png
+Length: 102
+Keyword hits: team, opta
+
+Preview:
+[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
+
+====================================================================================================
+Candidate 49
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=21257
+Status: 200
+Content-Type: image/png
+Length: 102
+Keyword hits: team, opta
+
+Preview:
+[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
+
+====================================================================================================
+Candidate 50
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=5621
+Status: 200
+Content-Type: image/png
+Length: 102
+Keyword hits: team, opta
+
+Preview:
+[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
+
+====================================================================================================
+Candidate 51
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=14304
+Status: 200
+Content-Type: image/png
 Length: 102
 Keyword hits: team, opta
 
@@ -575,7 +575,7 @@ Preview:
 
 ====================================================================================================
 Candidate 53
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9911
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=15146
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -586,6 +586,17 @@ Preview:
 
 ====================================================================================================
 Candidate 54
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=22497
+Status: 200
+Content-Type: binary/octet-stream
+Length: 102
+Keyword hits: team, opta
+
+Preview:
+[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
+
+====================================================================================================
+Candidate 55
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=15147
 Status: 200
 Content-Type: image/png
@@ -596,7 +607,7 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 55
+Candidate 56
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=22496
 Status: 200
 Content-Type: binary/octet-stream
@@ -607,7 +618,7 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 56
+Candidate 57
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=8677
 Status: 200
 Content-Type: image/png
@@ -618,7 +629,7 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 57
+Candidate 58
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9907
 Status: 200
 Content-Type: image/png
@@ -629,7 +640,7 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 58
+Candidate 59
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=15151
 Status: 200
 Content-Type: image/png
@@ -640,19 +651,8 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 59
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=16550
-Status: 200
-Content-Type: image/png
-Length: 102
-Keyword hits: team, opta
-
-Preview:
-[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
-
-====================================================================================================
 Candidate 60
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=11663
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9904
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -663,17 +663,6 @@ Preview:
 
 ====================================================================================================
 Candidate 61
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=10969
-Status: 200
-Content-Type: image/png
-Length: 102
-Keyword hits: team, opta
-
-Preview:
-[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
-
-====================================================================================================
-Candidate 62
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=18778
 Status: 200
 Content-Type: image/png
@@ -684,7 +673,7 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
-Candidate 63
+Candidate 62
 URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=14160
 Status: 200
 Content-Type: image/png
@@ -695,8 +684,19 @@ Preview:
 [Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
 
 ====================================================================================================
+Candidate 63
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=10969
+Status: 200
+Content-Type: image/png
+Length: 102
+Keyword hits: team, opta
+
+Preview:
+[Could not read response text: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte]
+
+====================================================================================================
 Candidate 64
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=15150
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=16550
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -707,7 +707,7 @@ Preview:
 
 ====================================================================================================
 Candidate 65
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=9904
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=12141
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -729,7 +729,7 @@ Preview:
 
 ====================================================================================================
 Candidate 67
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=12141
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=15150
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -740,7 +740,7 @@ Preview:
 
 ====================================================================================================
 Candidate 68
-URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=10967
+URL: https://omo.akamai.opta.net/image.php?secure=true&h=omo.akamai.opta.net&sport=football&entity=team&description=badges&dimensions=20&id=11663
 Status: 200
 Content-Type: image/png
 Length: 102
@@ -769,4 +769,4 @@ Length: 350554
 Keyword hits: standings, standing, Tampa Bay Rowdies, Louisville City FC, San Antonio FC, Eastern Conference, Western Conference, competition, table, rank, points, team, club, opta, widgets, view, match, season
 
 Preview:
-<!DOCTYPE html><html lang="en-us" id="ngin11666" class="has-main-nav nav-fixed"><head><link rel="dns-prefetch" href="//use.typekit.net"><link rel="dns-prefetch" href="//assets.ngin.com"><link rel="dns-prefetch" href="//cdn4.sportngin.com"><link rel="dns-prefetch" href="//cdn3.sportngin.com"><link rel="dns-prefetch" href="//cdn2.sportngin.com"><link rel="dns-prefetch" href="//cdn1.sportngin.com"><link rel="dns-prefetch" href="//tags.expo9.exponential.com"><link rel="dns-prefetch" href="//adservice.google.com"><link rel="dns-prefetch" href="//rtb.districtm.io"><link rel="dns-prefetch" href="//cdn.doubleverify.com"><link rel="dns-prefetch" href="//rtb.districtm.io"><link rel="dns-prefetch" href="//px.moatads.com"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="dns-prefetch" href="//s0.2mdn.net"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="dns-prefetch" href="//tpc.googlesyndication.com"><link rel="dns-prefetch" href="//c.betrad.com"><link rel="dns-prefetch" href="//gslbeacon.lijit.com"><link rel="dns-prefetch" href="//logs-01.loggly.com"><link rel="dns-prefetch" href="//secure-au.imrworldwide.com"><link rel="dns-prefetch" href="//pixel.quantserve.com"><link rel="dns-prefetch" href="//www.google-analytics.com"><link rel="dns-prefetch" href="//cm.g.doubleclick.net"><link rel="dns-prefetch" href="//googleads.g.doubleclick.net"><link rel="dns-prefetch" href="//googleads4.g.doubleclick.net"><link rel="dns-prefetch" href="//googleads.g.doubleclick.net"><link rel="dns-prefetch" href="//stats.g.doubleclick.net"><link rel="dns-prefetch" href="//securepubads.g.doubleclick.net"><link rel="dns-prefetch" href="//ib.adnxs.com"><link rel="dns-prefetch" href="//secure.adnxs.com"><link rel="dns-prefetch" href="//tb-xv.openx.net"><link rel="dns-prefetch" href="//us-u.openx.net"><link rel="dns-prefetch" href="//as.casalemedia.com"><link rel="dns-prefetch" href="//ap.lijit.com"><link rel="dns-prefetch" href="//aax.amazon-adsystem.com"><style><!----> <!--?lit$967632943$-->.osano-cm-window{font-family:Helvetica,Arial,Hiragino Sans GB,STXihei,Microsoft YaHei,WenQuanYi Micro Hei,Hind,MS Gothic,Apple SD Gothic Neo,NanumBarunGothic,sans-serif;font-size:16px;font-smooth:always;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothingz:auto;display:block;left:0;line-height:1;position:absolute;top:0;width:100%;z-index:2147483638;--fade-transition-time:700ms;--slide-transition-time:400ms}.osano-cm-window--context_amp{height:100%}.osano-visually-hidden{height:1px;left:-10000px;margin:-1px;opacity:0;overflow:hidden;position:absolute;width:1px}.osano-cm-button{background-color:var(--osano-button-background-color);border-color:var(--osano-button-foreground-color);border-radius:.25em;border-style:solid;border-width:thin;color:var(--osano-button-foreground-color);cursor:pointer;flex:1 1 auto;font-size:1em;font-weight:700;line-height:1;margin:.125em;min-width:6em;padding:.5em .75em;transition-duration:.2s;transition-property:background-color;transition-timing-function:ease-out}.osano-cm-button:focus,.osano-cm-button:hover{background-color:var(--osano-button-background-hover);outline:none}.osano-cm-button--type_icon{border-radius:50%;height:1em;line-height:0;min-width:1em;width:1em}.osano-cm-button--type_deny{background-color:var(--osano-button-deny-background-color);border-color:var(--osano-button-deny-foreground-color);color:var(--osano-button-deny-foreground-color)}.osano-cm-button--type_deny:focus,.osano-cm-button--type_deny:hover{background-color:var(--osano-button-deny-background-hover)}.osano-cm-close{border-radius:50%;box-sizing:content-box;cursor:pointer;height:20px;margin:.5em;min-height:20px;min-width:20px;order:0;outline:none;overflow:hidden;padding:0;width:20px;stroke-width:1px;background-color:transparent;border:2px solid transparent;display:flex;justify-content:center;line-height:normal;text-decoration:none;transform:rotate(0deg);transition-duration:.2s;transition-property:transform,color,background-color,stroke,stroke-width;transition-timing-function:ease-out;z-index:2}.osano-cm-close:focus,.osano-cm-close:hover{transform:rotate(90deg);stroke-width:2px}.ccpa-opt-out-icon{display:flex;flex:1 1 auto}.ccpa-opt-out-icon svg{max-width:40px}.osano-cm-link{color:var(--osano-link-color);cursor:pointer;text-decoration:underline;transition-duration:.2s;transition-property:color;transition-timing-function:ease-out}.osano-cm-link:active,.osano-cm-link:hover{color:var(--osano-link-color);outline:none}.osano-cm-link:focus{color:var(--osano-link-color-focus);font-weight:700;outline:none}.osano-cm-link--type_feature,.osano-cm-link--type_purpose,.osano-cm-link--type_specialFeature,.osano-cm-link--type_specialPurpose{cursor:help;display:block;-webkit-text-decoration:dashed;text-decoration:dashed}.osano-cm-link--type_denyAll{display:block;text-align:right}[dir=rtl] .osano-cm-link--type_denyAll{text-align:left}.osano-cm-link--type_vendor{display:block}.osano-cm-link-separator:before{content:"|"
+<!DOCTYPE html><html lang="en-us" id="ngin11666" class="has-main-nav nav-fixed"><head><link rel="dns-prefetch" href="//use.typekit.net"><link rel="dns-prefetch" href="//assets.ngin.com"><link rel="dns-prefetch" href="//cdn4.sportngin.com"><link rel="dns-prefetch" href="//cdn3.sportngin.com"><link rel="dns-prefetch" href="//cdn2.sportngin.com"><link rel="dns-prefetch" href="//cdn1.sportngin.com"><link rel="dns-prefetch" href="//tags.expo9.exponential.com"><link rel="dns-prefetch" href="//adservice.google.com"><link rel="dns-prefetch" href="//rtb.districtm.io"><link rel="dns-prefetch" href="//cdn.doubleverify.com"><link rel="dns-prefetch" href="//rtb.districtm.io"><link rel="dns-prefetch" href="//px.moatads.com"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="dns-prefetch" href="//s0.2mdn.net"><link rel="dns-prefetch" href="//pagead2.googlesyndication.com"><link rel="dns-prefetch" href="//tpc.googlesyndication.com"><link rel="dns-prefetch" href="//c.betrad.com"><link rel="dns-prefetch" href="//gslbeacon.lijit.com"><link rel="dns-prefetch" href="//logs-01.loggly.com"><link rel="dns-prefetch" href="//secure-au.imrworldwide.com"><link rel="dns-prefetch" href="//pixel.quantserve.com"><link rel="dns-prefetch" href="//www.google-analytics.com"><link rel="dns-prefetch" href="//cm.g.doubleclick.net"><link rel="dns-prefetch" href="//googleads.g.doubleclick.net"><link rel="dns-prefetch" href="//googleads4.g.doubleclick.net"><link rel="dns-prefetch" href="//googleads.g.doubleclick.net"><link rel="dns-prefetch" href="//stats.g.doubleclick.net"><link rel="dns-prefetch" href="//securepubads.g.doubleclick.net"><link rel="dns-prefetch" href="//ib.adnxs.com"><link rel="dns-prefetch" href="//secure.adnxs.com"><link rel="dns-prefetch" href="//tb-xv.openx.net"><link rel="dns-prefetch" href="//us-u.openx.net"><link rel="dns-prefetch" href="//as.casalemedia.com"><link rel="dns-prefetch" href="//ap.lijit.com"><link rel="dns-prefetch" href="//aax.amazon-adsystem.com"><style><!----> <!--?lit$474143741$-->.osano-cm-window{font-family:Helvetica,Arial,Hiragino Sans GB,STXihei,Microsoft YaHei,WenQuanYi Micro Hei,Hind,MS Gothic,Apple SD Gothic Neo,NanumBarunGothic,sans-serif;font-size:16px;font-smooth:always;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothingz:auto;display:block;left:0;line-height:1;position:absolute;top:0;width:100%;z-index:2147483638;--fade-transition-time:700ms;--slide-transition-time:400ms}.osano-cm-window--context_amp{height:100%}.osano-visually-hidden{height:1px;left:-10000px;margin:-1px;opacity:0;overflow:hidden;position:absolute;width:1px}.osano-cm-button{background-color:var(--osano-button-background-color);border-color:var(--osano-button-foreground-color);border-radius:.25em;border-style:solid;border-width:thin;color:var(--osano-button-foreground-color);cursor:pointer;flex:1 1 auto;font-size:1em;font-weight:700;line-height:1;margin:.125em;min-width:6em;padding:.5em .75em;transition-duration:.2s;transition-property:background-color;transition-timing-function:ease-out}.osano-cm-button:focus,.osano-cm-button:hover{background-color:var(--osano-button-background-hover);outline:none}.osano-cm-button--type_icon{border-radius:50%;height:1em;line-height:0;min-width:1em;width:1em}.osano-cm-button--type_deny{background-color:var(--osano-button-deny-background-color);border-color:var(--osano-button-deny-foreground-color);color:var(--osano-button-deny-foreground-color)}.osano-cm-button--type_deny:focus,.osano-cm-button--type_deny:hover{background-color:var(--osano-button-deny-background-hover)}.osano-cm-close{border-radius:50%;box-sizing:content-box;cursor:pointer;height:20px;margin:.5em;min-height:20px;min-width:20px;order:0;outline:none;overflow:hidden;padding:0;width:20px;stroke-width:1px;background-color:transparent;border:2px solid transparent;display:flex;justify-content:center;line-height:normal;text-decoration:none;transform:rotate(0deg);transition-duration:.2s;transition-property:transform,color,background-color,stroke,stroke-width;transition-timing-function:ease-out;z-index:2}.osano-cm-close:focus,.osano-cm-close:hover{transform:rotate(90deg);stroke-width:2px}.ccpa-opt-out-icon{display:flex;flex:1 1 auto}.ccpa-opt-out-icon svg{max-width:40px}.osano-cm-link{color:var(--osano-link-color);cursor:pointer;text-decoration:underline;transition-duration:.2s;transition-property:color;transition-timing-function:ease-out}.osano-cm-link:active,.osano-cm-link:hover{color:var(--osano-link-color);outline:none}.osano-cm-link:focus{color:var(--osano-link-color-focus);font-weight:700;outline:none}.osano-cm-link--type_feature,.osano-cm-link--type_purpose,.osano-cm-link--type_specialFeature,.osano-cm-link--type_specialPurpose{cursor:help;display:block;-webkit-text-decoration:dashed;text-decoration:dashed}.osano-cm-link--type_denyAll{display:block;text-align:right}[dir=rtl] .osano-cm-link--type_denyAll{text-align:left}.osano-cm-link--type_vendor{display:block}.osano-cm-link-separator:before{content:"|"
