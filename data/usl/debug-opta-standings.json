@@ -190,12 +190,12 @@
               },
               {
                 "Standing": {
-                  "Against": "24",
-                  "AwayAgainst": "10",
+                  "Against": "26",
+                  "AwayAgainst": "12",
                   "AwayDrawn": "4",
                   "AwayFor": "6",
-                  "AwayLost": "3",
-                  "AwayPlayed": "8",
+                  "AwayLost": "4",
+                  "AwayPlayed": "9",
                   "AwayPoints": "7",
                   "AwayPosition": "7",
                   "AwayWon": "1",
@@ -209,8 +209,8 @@
                   "HomePoints": "14",
                   "HomePosition": "6",
                   "HomeWon": "4",
-                  "Lost": "5",
-                  "Played": "16",
+                  "Lost": "6",
+                  "Played": "17",
                   "Points": "21",
                   "Position": "6",
                   "StartDayPosition": "8",
@@ -502,7 +502,7 @@
                   "HomeLost": "1",
                   "HomePlayed": "6",
                   "HomePoints": "11",
-                  "HomePosition": "8",
+                  "HomePosition": "10",
                   "HomeWon": "3",
                   "Lost": "2",
                   "Played": "16",
@@ -590,6 +590,41 @@
               },
               {
                 "Standing": {
+                  "Against": "22",
+                  "AwayAgainst": "12",
+                  "AwayDrawn": "2",
+                  "AwayFor": "10",
+                  "AwayLost": "3",
+                  "AwayPlayed": "7",
+                  "AwayPoints": "8",
+                  "AwayPosition": "7",
+                  "AwayWon": "2",
+                  "Drawn": "4",
+                  "For": "26",
+                  "HomeAgainst": "10",
+                  "HomeDrawn": "2",
+                  "HomeFor": "16",
+                  "HomeLost": "2",
+                  "HomePlayed": "8",
+                  "HomePoints": "14",
+                  "HomePosition": "3",
+                  "HomeWon": "4",
+                  "Lost": "5",
+                  "Played": "15",
+                  "Points": "22",
+                  "Position": "4",
+                  "StartDayPosition": "9",
+                  "Won": "6",
+                  "@attributes": {
+                    "Type": "Full"
+                  }
+                },
+                "@attributes": {
+                  "TeamRef": "t10969"
+                }
+              },
+              {
+                "Standing": {
                   "Against": "16",
                   "AwayAgainst": "10",
                   "AwayDrawn": "2",
@@ -597,7 +632,7 @@
                   "AwayLost": "2",
                   "AwayPlayed": "6",
                   "AwayPoints": "8",
-                  "AwayPosition": "6",
+                  "AwayPosition": "8",
                   "AwayWon": "2",
                   "Drawn": "4",
                   "For": "18",
@@ -607,12 +642,12 @@
                   "HomeLost": "2",
                   "HomePlayed": "8",
                   "HomePoints": "14",
-                  "HomePosition": "3",
+                  "HomePosition": "4",
                   "HomeWon": "4",
                   "Lost": "4",
                   "Played": "14",
                   "Points": "22",
-                  "Position": "4",
+                  "Position": "5",
                   "StartDayPosition": "4",
                   "Won": "6",
                   "@attributes": {
@@ -625,12 +660,47 @@
               },
               {
                 "Standing": {
-                  "Against": "22",
-                  "AwayAgainst": "14",
+                  "Against": "20",
+                  "AwayAgainst": "10",
+                  "AwayDrawn": "2",
+                  "AwayFor": "11",
+                  "AwayLost": "3",
+                  "AwayPlayed": "7",
+                  "AwayPoints": "8",
+                  "AwayPosition": "6",
+                  "AwayWon": "2",
+                  "Drawn": "3",
+                  "For": "24",
+                  "HomeAgainst": "10",
+                  "HomeDrawn": "1",
+                  "HomeFor": "13",
+                  "HomeLost": "3",
+                  "HomePlayed": "8",
+                  "HomePoints": "13",
+                  "HomePosition": "5",
+                  "HomeWon": "4",
+                  "Lost": "6",
+                  "Played": "15",
+                  "Points": "21",
+                  "Position": "6",
+                  "StartDayPosition": "11",
+                  "Won": "6",
+                  "@attributes": {
+                    "Type": "Full"
+                  }
+                },
+                "@attributes": {
+                  "TeamRef": "t20156"
+                }
+              },
+              {
+                "Standing": {
+                  "Against": "24",
+                  "AwayAgainst": "16",
                   "AwayDrawn": "3",
                   "AwayFor": "14",
-                  "AwayLost": "2",
-                  "AwayPlayed": "7",
+                  "AwayLost": "3",
+                  "AwayPlayed": "8",
                   "AwayPoints": "9",
                   "AwayPosition": "5",
                   "AwayWon": "2",
@@ -642,12 +712,12 @@
                   "HomeLost": "2",
                   "HomePlayed": "8",
                   "HomePoints": "12",
-                  "HomePosition": "7",
+                  "HomePosition": "9",
                   "HomeWon": "3",
-                  "Lost": "4",
-                  "Played": "15",
+                  "Lost": "5",
+                  "Played": "16",
                   "Points": "21",
-                  "Position": "5",
+                  "Position": "7",
                   "StartDayPosition": "3",
                   "Won": "5",
                   "@attributes": {
@@ -677,12 +747,12 @@
                   "HomeLost": "2",
                   "HomePlayed": "7",
                   "HomePoints": "13",
-                  "HomePosition": "4",
+                  "HomePosition": "6",
                   "HomeWon": "4",
                   "Lost": "4",
                   "Played": "14",
                   "Points": "20",
-                  "Position": "6",
+                  "Position": "8",
                   "StartDayPosition": "8",
                   "Won": "5",
                   "@attributes": {
@@ -712,12 +782,12 @@
                   "HomeLost": "2",
                   "HomePlayed": "8",
                   "HomePoints": "12",
-                  "HomePosition": "6",
+                  "HomePosition": "8",
                   "HomeWon": "3",
                   "Lost": "6",
                   "Played": "16",
                   "Points": "20",
-                  "Position": "7",
+                  "Position": "9",
                   "StartDayPosition": "6",
                   "Won": "5",
                   "@attributes": {
@@ -726,41 +796,6 @@
                 },
                 "@attributes": {
                   "TeamRef": "t9904"
-                }
-              },
-              {
-                "Standing": {
-                  "Against": "22",
-                  "AwayAgainst": "12",
-                  "AwayDrawn": "2",
-                  "AwayFor": "10",
-                  "AwayLost": "3",
-                  "AwayPlayed": "7",
-                  "AwayPoints": "8",
-                  "AwayPosition": "8",
-                  "AwayWon": "2",
-                  "Drawn": "4",
-                  "For": "24",
-                  "HomeAgainst": "10",
-                  "HomeDrawn": "2",
-                  "HomeFor": "14",
-                  "HomeLost": "2",
-                  "HomePlayed": "7",
-                  "HomePoints": "11",
-                  "HomePosition": "9",
-                  "HomeWon": "3",
-                  "Lost": "5",
-                  "Played": "14",
-                  "Points": "19",
-                  "Position": "8",
-                  "StartDayPosition": "9",
-                  "Won": "5",
-                  "@attributes": {
-                    "Type": "Full"
-                  }
-                },
-                "@attributes": {
-                  "TeamRef": "t10969"
                 }
               },
               {
@@ -787,7 +822,7 @@
                   "Lost": "6",
                   "Played": "15",
                   "Points": "19",
-                  "Position": "9",
+                  "Position": "10",
                   "StartDayPosition": "7",
                   "Won": "5",
                   "@attributes": {
@@ -817,12 +852,12 @@
                   "HomeLost": "2",
                   "HomePlayed": "7",
                   "HomePoints": "11",
-                  "HomePosition": "10",
+                  "HomePosition": "11",
                   "HomeWon": "3",
                   "Lost": "7",
                   "Played": "15",
                   "Points": "18",
-                  "Position": "10",
+                  "Position": "11",
                   "StartDayPosition": "10",
                   "Won": "5",
                   "@attributes": {
@@ -831,41 +866,6 @@
                 },
                 "@attributes": {
                   "TeamRef": "t14160"
-                }
-              },
-              {
-                "Standing": {
-                  "Against": "20",
-                  "AwayAgainst": "10",
-                  "AwayDrawn": "2",
-                  "AwayFor": "11",
-                  "AwayLost": "3",
-                  "AwayPlayed": "7",
-                  "AwayPoints": "8",
-                  "AwayPosition": "7",
-                  "AwayWon": "2",
-                  "Drawn": "3",
-                  "For": "22",
-                  "HomeAgainst": "10",
-                  "HomeDrawn": "1",
-                  "HomeFor": "11",
-                  "HomeLost": "3",
-                  "HomePlayed": "7",
-                  "HomePoints": "10",
-                  "HomePosition": "11",
-                  "HomeWon": "3",
-                  "Lost": "6",
-                  "Played": "14",
-                  "Points": "18",
-                  "Position": "11",
-                  "StartDayPosition": "11",
-                  "Won": "5",
-                  "@attributes": {
-                    "Type": "Full"
-                  }
-                },
-                "@attributes": {
-                  "TeamRef": "t20156"
                 }
               },
               {
@@ -887,7 +887,7 @@
                   "HomeLost": "3",
                   "HomePlayed": "8",
                   "HomePoints": "13",
-                  "HomePosition": "5",
+                  "HomePosition": "7",
                   "HomeWon": "4",
                   "Lost": "9",
                   "Played": "16",
@@ -1040,11 +1040,27 @@
           }
         },
         {
+          "Name": "Colorado Springs Switchbacks",
+          "OfficialName": "Colorado Springs Switchbacks FC",
+          "ShortName": "Switchbacks",
+          "@attributes": {
+            "uID": "t10969"
+          }
+        },
+        {
           "Name": "FC Tulsa",
           "OfficialName": "FC Tulsa",
           "ShortName": "Tulsa",
           "@attributes": {
             "uID": "t12141"
+          }
+        },
+        {
+          "Name": "Lexington",
+          "OfficialName": "Lexington SC",
+          "ShortName": "Lexington",
+          "@attributes": {
+            "uID": "t20156"
           }
         },
         {
@@ -1072,14 +1088,6 @@
           }
         },
         {
-          "Name": "Colorado Springs Switchbacks",
-          "OfficialName": "Colorado Springs Switchbacks FC",
-          "ShortName": "Switchbacks",
-          "@attributes": {
-            "uID": "t10969"
-          }
-        },
-        {
           "Name": "El Paso Locomotive",
           "OfficialName": "El Paso Locomotive FC",
           "ShortName": "El Paso Loco",
@@ -1093,14 +1101,6 @@
           "ShortName": "LV Lights",
           "@attributes": {
             "uID": "t14160"
-          }
-        },
-        {
-          "Name": "Lexington",
-          "OfficialName": "Lexington SC",
-          "ShortName": "Lexington",
-          "@attributes": {
-            "uID": "t20156"
           }
         },
         {
@@ -1122,7 +1122,7 @@
         "game_system_id": "1",
         "season_id": "2026",
         "season_name": "Season 2026/2027",
-        "timestamp": "2026-07-20 08-20-08"
+        "timestamp": "2026-07-23 08-18-58"
       }
     }
   }

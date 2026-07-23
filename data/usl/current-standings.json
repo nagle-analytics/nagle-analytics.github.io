@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-07-20T07:57:11+00:00",
-  "snapshot_date": "2026-07-20",
+  "last_updated": "2026-07-23T07:31:43+00:00",
+  "snapshot_date": "2026-07-23",
   "source_page": "https://www.uslchampionship.com/league-standings",
   "source_feed": "https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026",
   "team_translation_feed": "https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json",
@@ -85,13 +85,13 @@
         "rank": 6,
         "team": "Miami FC",
         "abbr": "MIA",
-        "played": 16,
+        "played": 17,
         "wins": 5,
-        "losses": 5,
+        "losses": 6,
         "ties": 6,
         "goals_for": 20,
-        "goals_against": 24,
-        "goal_difference": -4,
+        "goals_against": 26,
+        "goal_difference": -6,
         "points": 21,
         "opta_team_id": "11528"
       },
@@ -239,6 +239,20 @@
       },
       {
         "rank": 4,
+        "team": "Colorado Springs Switchbacks FC",
+        "abbr": "COS",
+        "played": 15,
+        "wins": 6,
+        "losses": 5,
+        "ties": 4,
+        "goals_for": 26,
+        "goals_against": 22,
+        "goal_difference": 4,
+        "points": 22,
+        "opta_team_id": "10969"
+      },
+      {
+        "rank": 5,
         "team": "FC Tulsa",
         "abbr": "TUL",
         "played": 14,
@@ -252,21 +266,35 @@
         "opta_team_id": "12141"
       },
       {
-        "rank": 5,
+        "rank": 6,
+        "team": "Lexington SC",
+        "abbr": "LEX",
+        "played": 15,
+        "wins": 6,
+        "losses": 6,
+        "ties": 3,
+        "goals_for": 24,
+        "goals_against": 20,
+        "goal_difference": 4,
+        "points": 21,
+        "opta_team_id": "20156"
+      },
+      {
+        "rank": 7,
         "team": "Oakland Roots SC",
         "abbr": "OAK",
-        "played": 15,
+        "played": 16,
         "wins": 5,
-        "losses": 4,
+        "losses": 5,
         "ties": 6,
         "goals_for": 24,
-        "goals_against": 22,
-        "goal_difference": 2,
+        "goals_against": 24,
+        "goal_difference": 0,
         "points": 21,
         "opta_team_id": "16550"
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "Sacramento Republic FC",
         "abbr": "SAC",
         "played": 14,
@@ -280,7 +308,7 @@
         "opta_team_id": "9907"
       },
       {
-        "rank": 7,
+        "rank": 9,
         "team": "Phoenix Rising FC",
         "abbr": "PHX",
         "played": 16,
@@ -294,21 +322,7 @@
         "opta_team_id": "9904"
       },
       {
-        "rank": 8,
-        "team": "Colorado Springs Switchbacks FC",
-        "abbr": "COS",
-        "played": 14,
-        "wins": 5,
-        "losses": 5,
-        "ties": 4,
-        "goals_for": 24,
-        "goals_against": 22,
-        "goal_difference": 2,
-        "points": 19,
-        "opta_team_id": "10969"
-      },
-      {
-        "rank": 9,
+        "rank": 10,
         "team": "El Paso Locomotive FC",
         "abbr": "ELP",
         "played": 15,
@@ -322,7 +336,7 @@
         "opta_team_id": "15150"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "team": "Las Vegas Lights FC",
         "abbr": "LV",
         "played": 15,
@@ -334,20 +348,6 @@
         "goal_difference": -3,
         "points": 18,
         "opta_team_id": "14160"
-      },
-      {
-        "rank": 11,
-        "team": "Lexington SC",
-        "abbr": "LEX",
-        "played": 14,
-        "wins": 5,
-        "losses": 6,
-        "ties": 3,
-        "goals_for": 22,
-        "goals_against": 20,
-        "goal_difference": 2,
-        "points": 18,
-        "opta_team_id": "20156"
       },
       {
         "rank": 12,
