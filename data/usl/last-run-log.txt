@@ -29,7 +29,10 @@ Repository files:
 ./.git/objects/10/3ebd6f37caaf684fed2e275bfbe9c2222c5977
 ./.git/objects/12/000c756e59ee867e92db926585d7f66918b486
 ./.git/objects/18/405397c33511c82a67631c7a154fbc297a853f
+./.git/objects/1e/f3bfdc1c4268d07976d12638f4e274bbea4144
+./.git/objects/21/364d66f6d4d92b78f99b4b45d9e3c3cf1e2e71
 ./.git/objects/21/d0e7b45844778dffc3e3473014190a1d73ffef
+./.git/objects/26/4c76792f6830e24302e08c8e27cb02d897dc99
 ./.git/objects/2a/16628c6aa3b1323b4b4c31e759d6e8888975df
 ./.git/objects/2e/aeefad887c37e1223528e1c855a94b465ca342
 ./.git/objects/3c/8f26437ed32d9bfaf6ac1ffc69baef9e29bffd
@@ -42,12 +45,12 @@ Repository files:
 ./.git/objects/56/d1de3acc9d6459e822bd10652839b4e839bc45
 ./.git/objects/57/3541ac9702dd3969c9bc859d2b91ec1f7e6e56
 ./.git/objects/58/862b54df636039ef7d5e63c5c734f4d52b7e82
-./.git/objects/59/62760ae4365fad65d0d4757d192406843e7791
 ./.git/objects/5c/685dc87502048c473a8ea5a863d72ee0eea54c
+./.git/objects/64/55c4f5c111fec60959d717563be9422709ae55
 ./.git/objects/68/126dcb6eb58edec44e64d005fedd13d344bb2d
 ./.git/objects/69/719596b59b86943e570cb8f45ff5258021f63e
-./.git/objects/6f/4b6f66471bbe7364fa091227f213eed4e266ac
 ./.git/objects/71/cd952d2eead7e7f4e5d6089628cbf787c7e27d
+./.git/objects/73/d9d7c66e854ce1c7dd2c2a579c18b074e416a9
 ./.git/objects/74/ea06f82cf9b84083482549a077996c3fedbfd8
 ./.git/objects/75/8da900864b5e10c6dad60fef0709094e2ab47d
 ./.git/objects/75/d4a3033a1a5c3a9babffb914ddb1459e55341a
@@ -58,37 +61,34 @@ Repository files:
 ./.git/objects/88/cd0406809eb7a491b11366dce82dffbc1e99ab
 ./.git/objects/89/475bb5c1c9a93fdb1753a76dd30a7f51fb97b8
 ./.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
-./.git/objects/8d/ab7272c81e4bc858ab8ea9bbc2d00753cb61ea
 ./.git/objects/8d/b12b4d5922ced5bfcb3e75e8fe0f9929caf7bd
 ./.git/objects/8e/e26f949a402cf43112b5c537a4c34e83bd4cf3
-./.git/objects/9a/2b6671754433d63a09b5aa77b66f2b0f19d07b
+./.git/objects/99/7aa7aebf475d415f56fdf877b26b7d58c11e19
 ./.git/objects/9c/4649b59680cb6516916cac7309c76b4e5867a0
 ./.git/objects/a2/0593ce0c0e454f556893ab2968a5d611662e45
-./.git/objects/a8/a9c45cb7bd09fe5bcb01071d494b4ee0820516
+./.git/objects/a7/339cb548f916962a34c6a7b9ed801422aa59a3
 ./.git/objects/a9/acd7e286e2ff9233e301a0740caaec40165b8f
 ./.git/objects/aa/1c257db0682393f8bdce10c7fc8d1678b823bc
 ./.git/objects/ab/1d333eb7184ed617fbcc5571636c7735ab1172
 ./.git/objects/b2/00b37e60e3253ba8174fd8784bc55f4723818c
 ./.git/objects/b6/9adc760c94de6611129b44ae23280357ed1be2
-./.git/objects/c7/37cb72de1c74ecd58a9361c3458a14ddc8722e
 ./.git/objects/cd/658d54a97e31fbf5b72c54b96bb5c4b50de719
 ./.git/objects/d3/39ea2a8ad2bf7c34b5451dee72473d49699e56
 ./.git/objects/d7/737c44a5ec645467b3a60a7dda7cbe50eedd73
 ./.git/objects/d9/4e5dfa2ffa6f223b0be7d21efea01b88897b35
 ./.git/objects/d9/6262090f642dcc54fcdc04c8d5142d0967c6c8
 ./.git/objects/da/32a90b6eaef399e63d235c3f931f1fdd173986
+./.git/objects/da/b459f1ddf901e8b440193344047640fc492040
 ./.git/objects/db/97d5eb27d9ea2354c0d944f6ad65b450fb80c7
 ./.git/objects/dc/0b125f83cebbd087803fd1c943b6836f1d9492
 ./.git/objects/df/20e76d4d1e95c5eb506c6b01c08a31772619e5
 ./.git/objects/e0/1dcc90b568f3f478a7e3246e6d3a44de2944fa
-./.git/objects/ee/92aaf8bdc12c70ae69c1222e91cffc8f191818
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
 ./.git/objects/f1/0a80458c821484d712ec369af06d6c5914c692
 ./.git/objects/f1/1989af32b4701a50a2164143097b173dedae20
-./.git/objects/f5/a39db5990d325488d37ab95b4d959dcdd1def1
 ./.git/objects/fd/a1e28904fe4fc6fc90a2854bfbc0d88e1efbac
 ./.git/objects/fe/1e87ac018b41ea8b4e0da3675a052febc81b32
-./.git/objects/fe/5b273e7627a8be2014aecf65ba65937d002085
+./.git/objects/fe/242cdbaeb2bcaac892afa7f4182d1887e7a1a0
 ./.git/refs/heads/main
 ./.git/shallow
 ./.github/workflows/update-usl-standings.yml
@@ -150,16 +150,16 @@ Python version:
 Python 3.11.15
 Running USL endpoint discovery script:
 [INFO] Saved discovered endpoint debug file to: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/debug-discovered-endpoints.txt
-[INFO] Captured 60 candidate response(s).
+[INFO] Captured 61 candidate response(s).
 
 Running USL standings script:
 [INFO] Fetching Opta team translations: https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json
 [INFO] Parsed 25 team translations.
 [INFO] Fetching official current standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
 [INFO] Standings-feed Matchday (diagnostic): 29
-[INFO] Official current snapshot date: 2026-07-30
+[INFO] Official current snapshot date: 2026-08-01
 [INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
-[INFO] Parsed 204 completed regular-season matches.
+[INFO] Parsed 205 completed regular-season matches.
 [INFO] Matchdays available in match feed: 1 to 29
 [WARN] Ignoring noncontiguous completed-match Matchday values after Matchday 21: [29].
 [WARN] Standings-feed Matchday differs from completed-match Matchday: f3=29, completed matches=21. Using the completed-match Matchday for chart history.
