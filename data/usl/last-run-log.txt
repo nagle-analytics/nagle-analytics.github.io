@@ -24,26 +24,27 @@ Repository files:
 ./.git/index
 ./.git/info/exclude
 ./.git/logs/HEAD
+./.git/objects/00/bfdda741c77937f360954c9976d022697cdf21
 ./.git/objects/05/3ee11ad824640e46c3b85e399b831bdf5b805d
 ./.git/objects/0f/1013f10608e0f89b0eb7caae6aba2fc0ed7cda
 ./.git/objects/10/3ebd6f37caaf684fed2e275bfbe9c2222c5977
+./.git/objects/10/9f8dc95dcaa5e1eb06a7d3736b99d0565424e6
 ./.git/objects/12/000c756e59ee867e92db926585d7f66918b486
-./.git/objects/13/d1c12472f68a3e384f78f80c151118f0c75566
+./.git/objects/13/2b61545b67e10a9480d593c607dd1cf3b89a91
 ./.git/objects/18/405397c33511c82a67631c7a154fbc297a853f
-./.git/objects/1e/d711c192ee118c85a36271faff246c45234ca4
-./.git/objects/21/bf195f041b17e18cfca9cef30fb9a4a4447897
 ./.git/objects/21/d0e7b45844778dffc3e3473014190a1d73ffef
 ./.git/objects/2a/16628c6aa3b1323b4b4c31e759d6e8888975df
 ./.git/objects/2e/aeefad887c37e1223528e1c855a94b465ca342
 ./.git/objects/3c/8f26437ed32d9bfaf6ac1ffc69baef9e29bffd
-./.git/objects/3d/15b17f10b07bf0414a8f92b32cd648a009fb07
 ./.git/objects/3d/16e2a01a3ab2dde568765d1109a3f26ef88c7c
 ./.git/objects/3d/eb1a45dcde0998c2594666a2d107801f2fd94b
-./.git/objects/40/fa8826355a706137ffaa79e21606da5ce5af3c
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
 ./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
+./.git/objects/49/5b18da3c69c861889c557799a07a823a7d0f79
 ./.git/objects/49/8c12087062b6f33185bda9af7097a5740b753d
+./.git/objects/4b/77f2fb6e80f64cc1ec5f5129b9dc8cb826c934
 ./.git/objects/4b/97a5cfb17742be0de21913d15608a259fd30b4
+./.git/objects/56/c49b48609bd07e8a064a4182de5f6451932eb1
 ./.git/objects/56/d1de3acc9d6459e822bd10652839b4e839bc45
 ./.git/objects/57/3541ac9702dd3969c9bc859d2b91ec1f7e6e56
 ./.git/objects/5c/685dc87502048c473a8ea5a863d72ee0eea54c
@@ -55,9 +56,9 @@ Repository files:
 ./.git/objects/75/d4a3033a1a5c3a9babffb914ddb1459e55341a
 ./.git/objects/78/1ca9e256f35e92e9727da3c368af33659b54e6
 ./.git/objects/78/4441eaa11e84a104d9b87f39817a9a04c72b0d
-./.git/objects/7f/b07c6edaff7b192cddfb095a865c535605aa92
 ./.git/objects/83/0a56ab54e857276c052784ff906377573f2f16
 ./.git/objects/83/2ddb2cafbf343ce1a1d1a50b32b2dc25a5a85c
+./.git/objects/87/79f3e58bbe6b8f36a5db167883a182ba2ae46d
 ./.git/objects/88/cd0406809eb7a491b11366dce82dffbc1e99ab
 ./.git/objects/89/475bb5c1c9a93fdb1753a76dd30a7f51fb97b8
 ./.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
@@ -70,10 +71,8 @@ Repository files:
 ./.git/objects/ab/1d333eb7184ed617fbcc5571636c7735ab1172
 ./.git/objects/b2/00b37e60e3253ba8174fd8784bc55f4723818c
 ./.git/objects/b6/9adc760c94de6611129b44ae23280357ed1be2
-./.git/objects/b6/e9d69872b20adfe2398e6c01ef830340baa127
-./.git/objects/bf/1d6131ae29046f0c01a1030f09c56c7e8e5111
 ./.git/objects/cd/658d54a97e31fbf5b72c54b96bb5c4b50de719
-./.git/objects/d2/4209c8336923682868885721fab140fe53015b
+./.git/objects/d0/2079e676dbaeb300e9b3b4b27355a11b815892
 ./.git/objects/d3/39ea2a8ad2bf7c34b5451dee72473d49699e56
 ./.git/objects/d7/737c44a5ec645467b3a60a7dda7cbe50eedd73
 ./.git/objects/d9/4e5dfa2ffa6f223b0be7d21efea01b88897b35
@@ -81,12 +80,13 @@ Repository files:
 ./.git/objects/da/32a90b6eaef399e63d235c3f931f1fdd173986
 ./.git/objects/db/97d5eb27d9ea2354c0d944f6ad65b450fb80c7
 ./.git/objects/dc/0b125f83cebbd087803fd1c943b6836f1d9492
-./.git/objects/de/441868a5d84d2c41de8684d84d44276d433842
 ./.git/objects/df/20e76d4d1e95c5eb506c6b01c08a31772619e5
 ./.git/objects/e0/1dcc90b568f3f478a7e3246e6d3a44de2944fa
+./.git/objects/e8/07b82be99aa718a48fc7eb7789ebfe5959cf81
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
 ./.git/objects/f1/0a80458c821484d712ec369af06d6c5914c692
 ./.git/objects/f1/1989af32b4701a50a2164143097b173dedae20
+./.git/objects/f7/de165e866142460706eb7dc1250853ad941983
 ./.git/objects/fd/a1e28904fe4fc6fc90a2854bfbc0d88e1efbac
 ./.git/objects/fe/1e87ac018b41ea8b4e0da3675a052febc81b32
 ./.git/refs/heads/main
@@ -157,7 +157,7 @@ Running USL standings script:
 [INFO] Parsed 25 team translations.
 [INFO] Fetching official current standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
 [INFO] Standings-feed Matchday (diagnostic): 29
-[INFO] Official current snapshot date: 2026-08-10
+[INFO] Official current snapshot date: 2026-08-13
 [INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
 [INFO] Parsed 230 completed regular-season matches.
 [INFO] Matchdays available in match feed: 1 to 29
