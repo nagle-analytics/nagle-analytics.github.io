@@ -25,19 +25,20 @@ Repository files:
 ./.git/info/exclude
 ./.git/logs/HEAD
 ./.git/objects/05/3ee11ad824640e46c3b85e399b831bdf5b805d
+./.git/objects/08/34c471f6144935f9784ac05534d34486e84e6c
 ./.git/objects/0f/1013f10608e0f89b0eb7caae6aba2fc0ed7cda
 ./.git/objects/10/3ebd6f37caaf684fed2e275bfbe9c2222c5977
 ./.git/objects/12/000c756e59ee867e92db926585d7f66918b486
 ./.git/objects/18/405397c33511c82a67631c7a154fbc297a853f
+./.git/objects/1d/d89ae2b016bbee0d84f44bbbd52aa8729a06a7
 ./.git/objects/21/d0e7b45844778dffc3e3473014190a1d73ffef
 ./.git/objects/2a/16628c6aa3b1323b4b4c31e759d6e8888975df
+./.git/objects/2c/cf0b7247d40a22f991ca2899fd1d464e40cb2d
 ./.git/objects/2e/aeefad887c37e1223528e1c855a94b465ca342
 ./.git/objects/3c/8f26437ed32d9bfaf6ac1ffc69baef9e29bffd
 ./.git/objects/3d/16e2a01a3ab2dde568765d1109a3f26ef88c7c
-./.git/objects/3d/6c5845532130ad45389de902f01238013bc5b7
 ./.git/objects/3d/eb1a45dcde0998c2594666a2d107801f2fd94b
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
-./.git/objects/46/dfc058346d5a11d4dda140ca24a4191b4996f7
 ./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
 ./.git/objects/49/8c12087062b6f33185bda9af7097a5740b753d
 ./.git/objects/4b/97a5cfb17742be0de21913d15608a259fd30b4
@@ -54,6 +55,7 @@ Repository files:
 ./.git/objects/75/d4a3033a1a5c3a9babffb914ddb1459e55341a
 ./.git/objects/78/1ca9e256f35e92e9727da3c368af33659b54e6
 ./.git/objects/78/4441eaa11e84a104d9b87f39817a9a04c72b0d
+./.git/objects/7f/9c7c58402cf74985a4b7e7d9a61c6e47642bdd
 ./.git/objects/83/0a56ab54e857276c052784ff906377573f2f16
 ./.git/objects/83/2ddb2cafbf343ce1a1d1a50b32b2dc25a5a85c
 ./.git/objects/88/cd0406809eb7a491b11366dce82dffbc1e99ab
@@ -61,16 +63,16 @@ Repository files:
 ./.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
 ./.git/objects/8d/b12b4d5922ced5bfcb3e75e8fe0f9929caf7bd
 ./.git/objects/8e/e26f949a402cf43112b5c537a4c34e83bd4cf3
-./.git/objects/99/2000514723888068a8be6a6d1aa28577a45bed
 ./.git/objects/9c/4649b59680cb6516916cac7309c76b4e5867a0
 ./.git/objects/a2/0593ce0c0e454f556893ab2968a5d611662e45
 ./.git/objects/a9/acd7e286e2ff9233e301a0740caaec40165b8f
 ./.git/objects/aa/1c257db0682393f8bdce10c7fc8d1678b823bc
 ./.git/objects/ab/1d333eb7184ed617fbcc5571636c7735ab1172
+./.git/objects/ab/e47131cdaf9ac9d7f4317ed10d252c5ca0a491
 ./.git/objects/b2/00b37e60e3253ba8174fd8784bc55f4723818c
+./.git/objects/b3/956c23a5ded66f6b73faeb93dd1efea5079fbb
 ./.git/objects/b6/9adc760c94de6611129b44ae23280357ed1be2
-./.git/objects/c5/5ca4918d7290e260c5d3387054ab62d6f9fc14
-./.git/objects/c9/9e6715b3817ab9fe8f8c992de71dcc496e53ac
+./.git/objects/c5/0c7b3e7aa746a63cf9cbaba2d0efd16ba5302a
 ./.git/objects/cd/658d54a97e31fbf5b72c54b96bb5c4b50de719
 ./.git/objects/d3/39ea2a8ad2bf7c34b5451dee72473d49699e56
 ./.git/objects/d7/737c44a5ec645467b3a60a7dda7cbe50eedd73
@@ -81,14 +83,12 @@ Repository files:
 ./.git/objects/dc/0b125f83cebbd087803fd1c943b6836f1d9492
 ./.git/objects/df/20e76d4d1e95c5eb506c6b01c08a31772619e5
 ./.git/objects/e0/1dcc90b568f3f478a7e3246e6d3a44de2944fa
-./.git/objects/e7/9de8b7cbcf2615fd8d63009d32697db774b38a
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
 ./.git/objects/f1/0a80458c821484d712ec369af06d6c5914c692
 ./.git/objects/f1/1989af32b4701a50a2164143097b173dedae20
-./.git/objects/fb/308f1fae568a112bb022a7744e7a82a8e619c5
+./.git/objects/fc/68bbf8b7afd378284f61e4a27f60f966f870dd
 ./.git/objects/fd/a1e28904fe4fc6fc90a2854bfbc0d88e1efbac
 ./.git/objects/fe/1e87ac018b41ea8b4e0da3675a052febc81b32
-./.git/objects/ff/97af80c3fe6fd3a520a10e21f8e69b72a42c1e
 ./.git/refs/heads/main
 ./.git/shallow
 ./.github/workflows/update-usl-standings.yml
@@ -150,16 +150,16 @@ Python version:
 Python 3.11.16
 Running USL endpoint discovery script:
 [INFO] Saved discovered endpoint debug file to: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/debug-discovered-endpoints.txt
-[INFO] Captured 65 candidate response(s).
+[INFO] Captured 61 candidate response(s).
 
 Running USL standings script:
 [INFO] Fetching Opta team translations: https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json
 [INFO] Parsed 25 team translations.
 [INFO] Fetching official current standings feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026
 [INFO] Standings-feed Matchday (diagnostic): 29
-[INFO] Official current snapshot date: 2026-08-27
+[INFO] Official current snapshot date: 2026-08-30
 [INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
-[INFO] Parsed 257 completed regular-season matches.
+[INFO] Parsed 269 completed regular-season matches.
 [INFO] Matchdays available in match feed: 1 to 29
 [WARN] Ignoring noncontiguous completed-match Matchday values after Matchday 25: [29].
 [WARN] Standings-feed Matchday differs from completed-match Matchday: f3=29, completed matches=25. Using the completed-match Matchday for chart history.
@@ -170,8 +170,8 @@ Running USL standings script:
 [INFO] Updated: /home/runner/work/nagle-analytics.github.io/nagle-analytics.github.io/data/usl/standings-history.csv
 [INFO] History rows: 625
 [INFO] Eastern Conference: 13 teams
-[INFO] Current Eastern Conference leader: Tampa Bay Rowdies — 44 pts
+[INFO] Current Eastern Conference leader: Tampa Bay Rowdies — 45 pts
 [INFO] Western Conference: 12 teams
-[INFO] Current Western Conference leader: New Mexico United — 37 pts
+[INFO] Current Western Conference leader: El Paso Locomotive FC — 40 pts
 
 Script exit code: 0
