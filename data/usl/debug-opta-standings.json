@@ -50,27 +50,27 @@
               },
               {
                 "Standing": {
-                  "Against": "27",
+                  "Against": "29",
                   "AwayAgainst": "20",
                   "AwayDrawn": "1",
                   "AwayFor": "14",
                   "AwayLost": "7",
                   "AwayPlayed": "12",
                   "AwayPoints": "13",
-                  "AwayPosition": "4",
+                  "AwayPosition": "5",
                   "AwayWon": "4",
                   "Drawn": "3",
-                  "For": "46",
-                  "HomeAgainst": "7",
+                  "For": "47",
+                  "HomeAgainst": "9",
                   "HomeDrawn": "2",
-                  "HomeFor": "32",
-                  "HomeLost": "0",
-                  "HomePlayed": "10",
+                  "HomeFor": "33",
+                  "HomeLost": "1",
+                  "HomePlayed": "11",
                   "HomePoints": "26",
                   "HomePosition": "1",
                   "HomeWon": "8",
-                  "Lost": "7",
-                  "Played": "22",
+                  "Lost": "8",
+                  "Played": "23",
                   "Points": "39",
                   "Position": "2",
                   "StartDayPosition": "2",
@@ -92,7 +92,7 @@
                   "AwayLost": "4",
                   "AwayPlayed": "11",
                   "AwayPoints": "13",
-                  "AwayPosition": "5",
+                  "AwayPosition": "6",
                   "AwayWon": "3",
                   "Drawn": "6",
                   "For": "27",
@@ -127,7 +127,7 @@
                   "AwayLost": "5",
                   "AwayPlayed": "11",
                   "AwayPoints": "14",
-                  "AwayPosition": "2",
+                  "AwayPosition": "3",
                   "AwayWon": "4",
                   "Drawn": "4",
                   "For": "25",
@@ -162,7 +162,7 @@
                   "AwayLost": "5",
                   "AwayPlayed": "11",
                   "AwayPoints": "14",
-                  "AwayPosition": "3",
+                  "AwayPosition": "4",
                   "AwayWon": "4",
                   "Drawn": "5",
                   "For": "37",
@@ -190,6 +190,41 @@
               },
               {
                 "Standing": {
+                  "Against": "21",
+                  "AwayAgainst": "9",
+                  "AwayDrawn": "4",
+                  "AwayFor": "9",
+                  "AwayLost": "4",
+                  "AwayPlayed": "12",
+                  "AwayPoints": "16",
+                  "AwayPosition": "2",
+                  "AwayWon": "4",
+                  "Drawn": "9",
+                  "For": "20",
+                  "HomeAgainst": "12",
+                  "HomeDrawn": "5",
+                  "HomeFor": "11",
+                  "HomeLost": "1",
+                  "HomePlayed": "9",
+                  "HomePoints": "14",
+                  "HomePosition": "9",
+                  "HomeWon": "3",
+                  "Lost": "5",
+                  "Played": "21",
+                  "Points": "30",
+                  "Position": "6",
+                  "StartDayPosition": "9",
+                  "Won": "7",
+                  "@attributes": {
+                    "Type": "Full"
+                  }
+                },
+                "@attributes": {
+                  "TeamRef": "t15146"
+                }
+              },
+              {
+                "Standing": {
                   "Against": "24",
                   "AwayAgainst": "16",
                   "AwayDrawn": "2",
@@ -212,7 +247,7 @@
                   "Lost": "8",
                   "Played": "20",
                   "Points": "28",
-                  "Position": "6",
+                  "Position": "7",
                   "StartDayPosition": "8",
                   "Won": "8",
                   "@attributes": {
@@ -247,7 +282,7 @@
                   "Lost": "8",
                   "Played": "20",
                   "Points": "28",
-                  "Position": "7",
+                  "Position": "8",
                   "StartDayPosition": "6",
                   "Won": "8",
                   "@attributes": {
@@ -256,41 +291,6 @@
                 },
                 "@attributes": {
                   "TeamRef": "t21257"
-                }
-              },
-              {
-                "Standing": {
-                  "Against": "20",
-                  "AwayAgainst": "8",
-                  "AwayDrawn": "4",
-                  "AwayFor": "7",
-                  "AwayLost": "4",
-                  "AwayPlayed": "11",
-                  "AwayPoints": "13",
-                  "AwayPosition": "6",
-                  "AwayWon": "3",
-                  "Drawn": "9",
-                  "For": "18",
-                  "HomeAgainst": "12",
-                  "HomeDrawn": "5",
-                  "HomeFor": "11",
-                  "HomeLost": "1",
-                  "HomePlayed": "9",
-                  "HomePoints": "14",
-                  "HomePosition": "9",
-                  "HomeWon": "3",
-                  "Lost": "5",
-                  "Played": "20",
-                  "Points": "27",
-                  "Position": "8",
-                  "StartDayPosition": "9",
-                  "Won": "6",
-                  "@attributes": {
-                    "Type": "Full"
-                  }
-                },
-                "@attributes": {
-                  "TeamRef": "t15146"
                 }
               },
               {
@@ -952,6 +952,14 @@
           }
         },
         {
+          "Name": "Hartford Athletic",
+          "OfficialName": "Hartford Athletic",
+          "ShortName": "Hartford Ath",
+          "@attributes": {
+            "uID": "t15146"
+          }
+        },
+        {
           "Name": "Indy Eleven",
           "OfficialName": "Indy Eleven",
           "ShortName": "Indy Eleven",
@@ -965,14 +973,6 @@
           "ShortName": "Rhode Island",
           "@attributes": {
             "uID": "t21257"
-          }
-        },
-        {
-          "Name": "Hartford Athletic",
-          "OfficialName": "Hartford Athletic",
-          "ShortName": "Hartford Ath",
-          "@attributes": {
-            "uID": "t15146"
           }
         },
         {
@@ -1122,7 +1122,7 @@
         "game_system_id": "1",
         "season_id": "2026",
         "season_name": "Season 2026/2027",
-        "timestamp": "2026-08-31 08-19-01"
+        "timestamp": "2026-09-03 08-01-31"
       }
     }
   }
