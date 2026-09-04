@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-03T09:26:57+00:00",
-  "snapshot_date": "2026-09-03",
+  "last_updated": "2026-09-04T09:19:34+00:00",
+  "snapshot_date": "2026-09-04",
   "source_page": "https://www.uslchampionship.com/league-standings",
   "source_feed": "https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026",
   "team_translation_feed": "https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json",
