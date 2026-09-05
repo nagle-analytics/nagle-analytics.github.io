@@ -330,7 +330,7 @@
               },
               {
                 "Standing": {
-                  "Against": "34",
+                  "Against": "39",
                   "AwayAgainst": "16",
                   "AwayDrawn": "3",
                   "AwayFor": "7",
@@ -340,17 +340,17 @@
                   "AwayPosition": "8",
                   "AwayWon": "2",
                   "Drawn": "11",
-                  "For": "22",
-                  "HomeAgainst": "18",
+                  "For": "26",
+                  "HomeAgainst": "23",
                   "HomeDrawn": "8",
-                  "HomeFor": "15",
-                  "HomeLost": "3",
-                  "HomePlayed": "12",
+                  "HomeFor": "19",
+                  "HomeLost": "4",
+                  "HomePlayed": "13",
                   "HomePoints": "11",
                   "HomePosition": "11",
                   "HomeWon": "1",
-                  "Lost": "7",
-                  "Played": "21",
+                  "Lost": "8",
+                  "Played": "22",
                   "Points": "20",
                   "Position": "10",
                   "StartDayPosition": "10",
@@ -660,6 +660,41 @@
               },
               {
                 "Standing": {
+                  "Against": "36",
+                  "AwayAgainst": "22",
+                  "AwayDrawn": "2",
+                  "AwayFor": "17",
+                  "AwayLost": "6",
+                  "AwayPlayed": "12",
+                  "AwayPoints": "14",
+                  "AwayPosition": "6",
+                  "AwayWon": "4",
+                  "Drawn": "4",
+                  "For": "38",
+                  "HomeAgainst": "14",
+                  "HomeDrawn": "2",
+                  "HomeFor": "21",
+                  "HomeLost": "3",
+                  "HomePlayed": "11",
+                  "HomePoints": "20",
+                  "HomePosition": "5",
+                  "HomeWon": "6",
+                  "Lost": "9",
+                  "Played": "23",
+                  "Points": "34",
+                  "Position": "6",
+                  "StartDayPosition": "9",
+                  "Won": "10",
+                  "@attributes": {
+                    "Type": "Full"
+                  }
+                },
+                "@attributes": {
+                  "TeamRef": "t10969"
+                }
+              },
+              {
+                "Standing": {
                   "Against": "19",
                   "AwayAgainst": "10",
                   "AwayDrawn": "6",
@@ -667,7 +702,7 @@
                   "AwayLost": "3",
                   "AwayPlayed": "11",
                   "AwayPoints": "12",
-                  "AwayPosition": "8",
+                  "AwayPosition": "9",
                   "AwayWon": "2",
                   "Drawn": "8",
                   "For": "28",
@@ -682,7 +717,7 @@
                   "Lost": "5",
                   "Played": "21",
                   "Points": "32",
-                  "Position": "6",
+                  "Position": "7",
                   "StartDayPosition": "7",
                   "Won": "8",
                   "@attributes": {
@@ -691,41 +726,6 @@
                 },
                 "@attributes": {
                   "TeamRef": "t9907"
-                }
-              },
-              {
-                "Standing": {
-                  "Against": "32",
-                  "AwayAgainst": "18",
-                  "AwayDrawn": "2",
-                  "AwayFor": "12",
-                  "AwayLost": "6",
-                  "AwayPlayed": "11",
-                  "AwayPoints": "11",
-                  "AwayPosition": "9",
-                  "AwayWon": "3",
-                  "Drawn": "4",
-                  "For": "33",
-                  "HomeAgainst": "14",
-                  "HomeDrawn": "2",
-                  "HomeFor": "21",
-                  "HomeLost": "3",
-                  "HomePlayed": "11",
-                  "HomePoints": "20",
-                  "HomePosition": "5",
-                  "HomeWon": "6",
-                  "Lost": "9",
-                  "Played": "22",
-                  "Points": "31",
-                  "Position": "7",
-                  "StartDayPosition": "9",
-                  "Won": "9",
-                  "@attributes": {
-                    "Type": "Full"
-                  }
-                },
-                "@attributes": {
-                  "TeamRef": "t10969"
                 }
               },
               {
@@ -772,7 +772,7 @@
                   "AwayLost": "6",
                   "AwayPlayed": "11",
                   "AwayPoints": "13",
-                  "AwayPosition": "6",
+                  "AwayPosition": "7",
                   "AwayWon": "4",
                   "Drawn": "5",
                   "For": "28",
@@ -842,7 +842,7 @@
                   "AwayLost": "4",
                   "AwayPlayed": "11",
                   "AwayPoints": "13",
-                  "AwayPosition": "7",
+                  "AwayPosition": "8",
                   "AwayWon": "3",
                   "Drawn": "9",
                   "For": "28",
@@ -1056,19 +1056,19 @@
           }
         },
         {
-          "Name": "Sacramento Republic",
-          "OfficialName": "Sacramento Republic FC",
-          "ShortName": "Sacramento",
-          "@attributes": {
-            "uID": "t9907"
-          }
-        },
-        {
           "Name": "Colorado Springs Switchbacks",
           "OfficialName": "Colorado Springs Switchbacks FC",
           "ShortName": "Switchbacks",
           "@attributes": {
             "uID": "t10969"
+          }
+        },
+        {
+          "Name": "Sacramento Republic",
+          "OfficialName": "Sacramento Republic FC",
+          "ShortName": "Sacramento",
+          "@attributes": {
+            "uID": "t9907"
           }
         },
         {
@@ -1122,7 +1122,7 @@
         "game_system_id": "1",
         "season_id": "2026",
         "season_name": "Season 2026/2027",
-        "timestamp": "2026-09-04 10-02-22"
+        "timestamp": "2026-09-05 07-12-39"
       }
     }
   }
