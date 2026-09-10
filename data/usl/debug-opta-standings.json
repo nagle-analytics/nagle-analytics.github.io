@@ -485,41 +485,6 @@
             "TeamRecord": [
               {
                 "Standing": {
-                  "Against": "29",
-                  "AwayAgainst": "11",
-                  "AwayDrawn": "2",
-                  "AwayFor": "19",
-                  "AwayLost": "4",
-                  "AwayPlayed": "12",
-                  "AwayPoints": "20",
-                  "AwayPosition": "2",
-                  "AwayWon": "6",
-                  "Drawn": "4",
-                  "For": "39",
-                  "HomeAgainst": "18",
-                  "HomeDrawn": "2",
-                  "HomeFor": "20",
-                  "HomeLost": "3",
-                  "HomePlayed": "11",
-                  "HomePoints": "20",
-                  "HomePosition": "4",
-                  "HomeWon": "6",
-                  "Lost": "7",
-                  "Played": "23",
-                  "Points": "40",
-                  "Position": "1",
-                  "StartDayPosition": "4",
-                  "Won": "12",
-                  "@attributes": {
-                    "Type": "Full"
-                  }
-                },
-                "@attributes": {
-                  "TeamRef": "t15150"
-                }
-              },
-              {
-                "Standing": {
                   "Against": "21",
                   "AwayAgainst": "10",
                   "AwayDrawn": "2",
@@ -542,7 +507,7 @@
                   "Lost": "5",
                   "Played": "21",
                   "Points": "40",
-                  "Position": "2",
+                  "Position": "1",
                   "StartDayPosition": "2",
                   "Won": "12",
                   "@attributes": {
@@ -551,6 +516,41 @@
                 },
                 "@attributes": {
                   "TeamRef": "t15151"
+                }
+              },
+              {
+                "Standing": {
+                  "Against": "29",
+                  "AwayAgainst": "11",
+                  "AwayDrawn": "2",
+                  "AwayFor": "19",
+                  "AwayLost": "4",
+                  "AwayPlayed": "12",
+                  "AwayPoints": "20",
+                  "AwayPosition": "2",
+                  "AwayWon": "6",
+                  "Drawn": "4",
+                  "For": "39",
+                  "HomeAgainst": "18",
+                  "HomeDrawn": "2",
+                  "HomeFor": "20",
+                  "HomeLost": "3",
+                  "HomePlayed": "11",
+                  "HomePoints": "20",
+                  "HomePosition": "4",
+                  "HomeWon": "6",
+                  "Lost": "7",
+                  "Played": "23",
+                  "Points": "40",
+                  "Position": "2",
+                  "StartDayPosition": "4",
+                  "Won": "12",
+                  "@attributes": {
+                    "Type": "Full"
+                  }
+                },
+                "@attributes": {
+                  "TeamRef": "t15150"
                 }
               },
               {
@@ -1016,19 +1016,19 @@
           }
         },
         {
-          "Name": "El Paso Locomotive",
-          "OfficialName": "El Paso Locomotive FC",
-          "ShortName": "El Paso Loco",
-          "@attributes": {
-            "uID": "t15150"
-          }
-        },
-        {
           "Name": "New Mexico United",
           "OfficialName": "New Mexico United",
           "ShortName": "New Mexico",
           "@attributes": {
             "uID": "t15151"
+          }
+        },
+        {
+          "Name": "El Paso Locomotive",
+          "OfficialName": "El Paso Locomotive FC",
+          "ShortName": "El Paso Loco",
+          "@attributes": {
+            "uID": "t15150"
           }
         },
         {
@@ -1122,7 +1122,7 @@
         "game_system_id": "1",
         "season_id": "2026",
         "season_name": "Season 2026/2027",
-        "timestamp": "2026-09-07 09-17-08"
+        "timestamp": "2026-09-10 02-13-33"
       }
     }
   }

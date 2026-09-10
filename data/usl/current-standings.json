@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-07T09:56:59+00:00",
-  "snapshot_date": "2026-09-07",
+  "last_updated": "2026-09-10T09:23:08+00:00",
+  "snapshot_date": "2026-09-10",
   "source_page": "https://www.uslchampionship.com/league-standings",
   "source_feed": "https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026",
   "team_translation_feed": "https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json",
@@ -197,20 +197,6 @@
     "Western Conference": [
       {
         "rank": 1,
-        "team": "El Paso Locomotive FC",
-        "abbr": "ELP",
-        "played": 23,
-        "wins": 12,
-        "losses": 7,
-        "ties": 4,
-        "goals_for": 39,
-        "goals_against": 29,
-        "goal_difference": 10,
-        "points": 40,
-        "opta_team_id": "15150"
-      },
-      {
-        "rank": 2,
         "team": "New Mexico United",
         "abbr": "NM",
         "played": 21,
@@ -222,6 +208,20 @@
         "goal_difference": 10,
         "points": 40,
         "opta_team_id": "15151"
+      },
+      {
+        "rank": 2,
+        "team": "El Paso Locomotive FC",
+        "abbr": "ELP",
+        "played": 23,
+        "wins": 12,
+        "losses": 7,
+        "ties": 4,
+        "goals_for": 39,
+        "goals_against": 29,
+        "goal_difference": 10,
+        "points": 40,
+        "opta_team_id": "15150"
       },
       {
         "rank": 3,
