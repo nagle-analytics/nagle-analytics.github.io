@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-09-27T10:21:35+00:00",
-  "snapshot_date": "2026-09-27",
+  "last_updated": "2026-09-28T11:26:09+00:00",
+  "snapshot_date": "2026-09-28",
   "source_page": "https://www.uslchampionship.com/league-standings",
   "source_feed": "https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026",
   "team_translation_feed": "https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json",
@@ -253,20 +253,6 @@
       },
       {
         "rank": 5,
-        "team": "Colorado Springs Switchbacks FC",
-        "abbr": "COS",
-        "played": 26,
-        "wins": 11,
-        "losses": 9,
-        "ties": 6,
-        "goals_for": 40,
-        "goals_against": 37,
-        "goal_difference": 3,
-        "points": 39,
-        "opta_team_id": "10969"
-      },
-      {
-        "rank": 6,
         "team": "Orange County SC",
         "abbr": "OC",
         "played": 26,
@@ -278,6 +264,20 @@
         "goal_difference": -5,
         "points": 39,
         "opta_team_id": "8677"
+      },
+      {
+        "rank": 6,
+        "team": "Colorado Springs Switchbacks FC",
+        "abbr": "COS",
+        "played": 26,
+        "wins": 11,
+        "losses": 9,
+        "ties": 6,
+        "goals_for": 40,
+        "goals_against": 37,
+        "goal_difference": 3,
+        "points": 39,
+        "opta_team_id": "10969"
       },
       {
         "rank": 7,
@@ -309,6 +309,20 @@
       },
       {
         "rank": 9,
+        "team": "Oakland Roots SC",
+        "abbr": "OAK",
+        "played": 26,
+        "wins": 8,
+        "losses": 9,
+        "ties": 9,
+        "goals_for": 33,
+        "goals_against": 35,
+        "goal_difference": -2,
+        "points": 33,
+        "opta_team_id": "16550"
+      },
+      {
+        "rank": 10,
         "team": "Phoenix Rising FC",
         "abbr": "PHX",
         "played": 26,
@@ -322,7 +336,7 @@
         "opta_team_id": "9904"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "team": "Las Vegas Lights FC",
         "abbr": "LV",
         "played": 25,
@@ -334,20 +348,6 @@
         "goal_difference": -3,
         "points": 33,
         "opta_team_id": "14160"
-      },
-      {
-        "rank": 11,
-        "team": "Oakland Roots SC",
-        "abbr": "OAK",
-        "played": 26,
-        "wins": 8,
-        "losses": 9,
-        "ties": 9,
-        "goals_for": 33,
-        "goals_against": 35,
-        "goal_difference": -2,
-        "points": 33,
-        "opta_team_id": "16550"
       },
       {
         "rank": 12,
