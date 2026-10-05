@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-04T10:53:33+00:00",
-  "snapshot_date": "2026-10-04",
+  "last_updated": "2026-10-05T12:01:51+00:00",
+  "snapshot_date": "2026-10-05",
   "source_page": "https://www.uslchampionship.com/league-standings",
   "source_feed": "https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026",
   "team_translation_feed": "https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json",
@@ -211,6 +211,20 @@
       },
       {
         "rank": 2,
+        "team": "New Mexico United",
+        "abbr": "NM",
+        "played": 27,
+        "wins": 13,
+        "losses": 7,
+        "ties": 7,
+        "goals_for": 41,
+        "goals_against": 32,
+        "goal_difference": 9,
+        "points": 46,
+        "opta_team_id": "15151"
+      },
+      {
+        "rank": 3,
         "team": "Sacramento Republic FC",
         "abbr": "SAC",
         "played": 27,
@@ -224,7 +238,7 @@
         "opta_team_id": "9907"
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Lexington SC",
         "abbr": "LEX",
         "played": 27,
@@ -236,20 +250,6 @@
         "goal_difference": 16,
         "points": 43,
         "opta_team_id": "20156"
-      },
-      {
-        "rank": 4,
-        "team": "New Mexico United",
-        "abbr": "NM",
-        "played": 26,
-        "wins": 12,
-        "losses": 7,
-        "ties": 7,
-        "goals_for": 39,
-        "goals_against": 31,
-        "goal_difference": 8,
-        "points": 43,
-        "opta_team_id": "15151"
       },
       {
         "rank": 5,
@@ -339,13 +339,13 @@
         "rank": 11,
         "team": "Phoenix Rising FC",
         "abbr": "PHX",
-        "played": 26,
+        "played": 27,
         "wins": 8,
-        "losses": 9,
+        "losses": 10,
         "ties": 9,
-        "goals_for": 35,
-        "goals_against": 38,
-        "goal_difference": -3,
+        "goals_for": 36,
+        "goals_against": 40,
+        "goal_difference": -4,
         "points": 33,
         "opta_team_id": "9904"
       },
