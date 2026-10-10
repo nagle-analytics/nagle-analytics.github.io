@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-10-09T11:39:01+00:00",
-  "snapshot_date": "2026-10-09",
+  "last_updated": "2026-10-10T10:56:49+00:00",
+  "snapshot_date": "2026-10-10",
   "source_page": "https://www.uslchampionship.com/league-standings",
   "source_feed": "https://omo.akamai.opta.net/auth/competition.php?feed_type=f3&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f3_807_2026",
   "team_translation_feed": "https://secure.widget.cloud.opta.net/translations_v2/default/TN_default_1_en_US_1_2026_807.json",
@@ -225,6 +225,20 @@
       },
       {
         "rank": 3,
+        "team": "Lexington SC",
+        "abbr": "LEX",
+        "played": 28,
+        "wins": 13,
+        "losses": 10,
+        "ties": 5,
+        "goals_for": 49,
+        "goals_against": 33,
+        "goal_difference": 16,
+        "points": 44,
+        "opta_team_id": "20156"
+      },
+      {
+        "rank": 4,
         "team": "Sacramento Republic FC",
         "abbr": "SAC",
         "played": 27,
@@ -238,31 +252,17 @@
         "opta_team_id": "9907"
       },
       {
-        "rank": 4,
-        "team": "Lexington SC",
-        "abbr": "LEX",
-        "played": 27,
-        "wins": 13,
-        "losses": 10,
-        "ties": 4,
-        "goals_for": 49,
-        "goals_against": 33,
-        "goal_difference": 16,
-        "points": 43,
-        "opta_team_id": "20156"
-      },
-      {
         "rank": 5,
         "team": "FC Tulsa",
         "abbr": "TUL",
-        "played": 27,
+        "played": 28,
         "wins": 11,
         "losses": 7,
-        "ties": 9,
+        "ties": 10,
         "goals_for": 32,
         "goals_against": 25,
         "goal_difference": 7,
-        "points": 42,
+        "points": 43,
         "opta_team_id": "12141"
       },
       {
