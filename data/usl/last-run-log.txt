@@ -29,50 +29,50 @@ Repository files:
 ./.git/objects/10/3ebd6f37caaf684fed2e275bfbe9c2222c5977
 ./.git/objects/12/000c756e59ee867e92db926585d7f66918b486
 ./.git/objects/18/405397c33511c82a67631c7a154fbc297a853f
+./.git/objects/21/4ea42ac4f0fe8fc3c0ea490a7d382bf10f3687
 ./.git/objects/21/d0e7b45844778dffc3e3473014190a1d73ffef
+./.git/objects/27/1bc8e996c7d364e158d125f978dcf182445cd1
 ./.git/objects/2a/16628c6aa3b1323b4b4c31e759d6e8888975df
 ./.git/objects/2e/aeefad887c37e1223528e1c855a94b465ca342
-./.git/objects/30/c0b45520f82edc38a905c7f6bc5ca08ae14fd7
 ./.git/objects/3c/8f26437ed32d9bfaf6ac1ffc69baef9e29bffd
 ./.git/objects/3d/16e2a01a3ab2dde568765d1109a3f26ef88c7c
 ./.git/objects/3d/eb1a45dcde0998c2594666a2d107801f2fd94b
 ./.git/objects/43/1dd36d8d3d97329f167543e693e1f1e8a504d3
 ./.git/objects/49/1ccfb120a08e197de6ea41f1a34784866b59a5
 ./.git/objects/49/8c12087062b6f33185bda9af7097a5740b753d
+./.git/objects/4b/257daa5b1c98cea7c8ce112027bfe21342787a
 ./.git/objects/4b/97a5cfb17742be0de21913d15608a259fd30b4
-./.git/objects/51/a39e2e2003ff529a22768162cf9b4e50926a0e
 ./.git/objects/56/d1de3acc9d6459e822bd10652839b4e839bc45
 ./.git/objects/57/3541ac9702dd3969c9bc859d2b91ec1f7e6e56
+./.git/objects/59/1bd1c5ff2291b75e8a2f9f66504e592c6a83cd
 ./.git/objects/5c/685dc87502048c473a8ea5a863d72ee0eea54c
-./.git/objects/66/b8248ba8373bc1f982d2d8b2fd386bdcb24695
 ./.git/objects/68/126dcb6eb58edec44e64d005fedd13d344bb2d
 ./.git/objects/69/719596b59b86943e570cb8f45ff5258021f63e
-./.git/objects/71/39984143576191a6c0f624ff1c6cd9e077789e
 ./.git/objects/71/cd952d2eead7e7f4e5d6089628cbf787c7e27d
 ./.git/objects/74/ea06f82cf9b84083482549a077996c3fedbfd8
 ./.git/objects/75/8da900864b5e10c6dad60fef0709094e2ab47d
 ./.git/objects/75/d4a3033a1a5c3a9babffb914ddb1459e55341a
 ./.git/objects/78/1ca9e256f35e92e9727da3c368af33659b54e6
 ./.git/objects/78/4441eaa11e84a104d9b87f39817a9a04c72b0d
+./.git/objects/82/d60b67b289ad1d244d0e62555117746e63591f
 ./.git/objects/83/0a56ab54e857276c052784ff906377573f2f16
 ./.git/objects/83/2ddb2cafbf343ce1a1d1a50b32b2dc25a5a85c
 ./.git/objects/88/cd0406809eb7a491b11366dce82dffbc1e99ab
 ./.git/objects/89/475bb5c1c9a93fdb1753a76dd30a7f51fb97b8
 ./.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
 ./.git/objects/8d/b12b4d5922ced5bfcb3e75e8fe0f9929caf7bd
-./.git/objects/8d/deb4b3e5c297ef649de5cf7cd2b48d3df41fe8
 ./.git/objects/8e/e26f949a402cf43112b5c537a4c34e83bd4cf3
-./.git/objects/97/f1c67aad84e0341f4c2e7a6dd173c815256b62
+./.git/objects/98/89c1f5589d2a570b20111cec13353eaa2c102f
 ./.git/objects/9c/4649b59680cb6516916cac7309c76b4e5867a0
 ./.git/objects/a2/0593ce0c0e454f556893ab2968a5d611662e45
-./.git/objects/a5/d76b7243c380a8457fd2b5bdb511e3e7eb3c79
 ./.git/objects/a9/acd7e286e2ff9233e301a0740caaec40165b8f
 ./.git/objects/aa/1c257db0682393f8bdce10c7fc8d1678b823bc
 ./.git/objects/ab/1d333eb7184ed617fbcc5571636c7735ab1172
+./.git/objects/ac/fafa33d598f33e3608bfd55184da531e595c44
+./.git/objects/ae/384bd40c5537494518544bbfb4a345f74e57fa
 ./.git/objects/b2/00b37e60e3253ba8174fd8784bc55f4723818c
 ./.git/objects/b6/9adc760c94de6611129b44ae23280357ed1be2
-./.git/objects/be/065ea6b4c399477aece277d85dabc98bbe9965
-./.git/objects/bf/cc665809d8e23c0d5c7c52d833156bd768d041
+./.git/objects/b6/c58ff3481c48af6f978875a234a198c8f54890
 ./.git/objects/cd/658d54a97e31fbf5b72c54b96bb5c4b50de719
 ./.git/objects/d3/39ea2a8ad2bf7c34b5451dee72473d49699e56
 ./.git/objects/d7/737c44a5ec645467b3a60a7dda7cbe50eedd73
@@ -81,10 +81,10 @@ Repository files:
 ./.git/objects/da/32a90b6eaef399e63d235c3f931f1fdd173986
 ./.git/objects/db/97d5eb27d9ea2354c0d944f6ad65b450fb80c7
 ./.git/objects/dc/0b125f83cebbd087803fd1c943b6836f1d9492
+./.git/objects/dd/cfbbd23c25c7c31702b2a61935d843c249844a
 ./.git/objects/df/20e76d4d1e95c5eb506c6b01c08a31772619e5
 ./.git/objects/e0/1dcc90b568f3f478a7e3246e6d3a44de2944fa
 ./.git/objects/ef/cb84175d01b8feda569e8d690d787d59c2908d
-./.git/objects/f0/c9ea33547100f56d3d64e8dbf7eb7df8bbd2e5
 ./.git/objects/f1/0a80458c821484d712ec369af06d6c5914c692
 ./.git/objects/f1/1989af32b4701a50a2164143097b173dedae20
 ./.git/objects/fd/a1e28904fe4fc6fc90a2854bfbc0d88e1efbac
@@ -159,7 +159,7 @@ Running USL standings script:
 [INFO] Standings-feed Matchday (diagnostic): 33
 [INFO] Official current snapshot date: 2026-10-18
 [INFO] Fetching completed match results feed: https://omo.akamai.opta.net/auth/competition.php?feed_type=f1&competition=807&season_id=2026&user=OW2017&psw=dXWg5gVZ&sps=widgets&jsoncallback=f1_807_2026
-[INFO] Parsed 360 completed regular-season matches.
+[INFO] Parsed 361 completed regular-season matches.
 [INFO] Matchdays available in match feed: 1 to 33
 [INFO] Chart current matchday: 33
 [INFO] Final reconstructed stats match official current standings.
