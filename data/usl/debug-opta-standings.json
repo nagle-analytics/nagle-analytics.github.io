@@ -1113,7 +1113,7 @@
         }
       ],
       "@attributes": {
-        "CurrentRound": "2",
+        "CurrentRound": "3",
         "Round": "1",
         "Type": "STANDINGS Latest",
         "competition_code": "US_SL",
@@ -1122,7 +1122,7 @@
         "game_system_id": "1",
         "season_id": "2026",
         "season_name": "Season 2026/2027",
-        "timestamp": "2026-11-06 08-55-08"
+        "timestamp": "2026-11-08 05-09-11"
       }
     }
   }
